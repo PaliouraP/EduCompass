@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Quiz";
+}
+
+<section class="vh-100" style="background-color: #E9DAC8;">
+    <div class="container px-5 py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                                <form>
+                                    <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Μάθημα - Κεφάλαιο</h3>
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;" id="subject">Ερώτηση</h5>
+                                <div class="question-body multichoice">
+                                    <input type="radio" id="ans1" name="question" value="ans1">
+                                    <label for="ans1">Example 1</label><br>
+                                    <input type="radio" id="ans2" name="question" value="ans2">
+                                    <label for="ans2">Example 2</label><br>
+                                    <input type="radio" id="ans3" name="question" value="ans3">
+                                    <label for="ans3">Example 3</label>
+                                </div>
+                                
+                                <div class="question-body fill-empty" hidden>
+                                    <input type="text" id="answer">
+                                </div>
+                              
+                                
+
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-outline-dark btn-lg btn-block" type="button">Προηγούμενο</button>
+                                        <button class="btn btn-dark btn-lg btn-block" type="button">Επόμενο</button>
+                                    </div>
+
+                                    
+                                </form>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

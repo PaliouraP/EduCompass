@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Evi Palioura\\source\\repos\\EduCompass\\EduCompass\\EduCompass.csproj",
+      "projectUniqueName": "C:\\Users\\Evi Palioura\\Documents\\GitHub\\EduCompass\\EduCompass\\EduCompass\\EduCompass.csproj",
       "projectName": "EduCompass",
-      "projectPath": "C:\\Users\\Evi Palioura\\source\\repos\\EduCompass\\EduCompass\\EduCompass.csproj",
+      "projectPath": "C:\\Users\\Evi Palioura\\Documents\\GitHub\\EduCompass\\EduCompass\\EduCompass\\EduCompass.csproj",
       "packagesPath": "C:\\Users\\Evi Palioura\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Evi Palioura\\source\\repos\\EduCompass\\EduCompass\\obj\\",
+      "outputPath": "C:\\Users\\Evi Palioura\\Documents\\GitHub\\EduCompass\\EduCompass\\EduCompass\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
