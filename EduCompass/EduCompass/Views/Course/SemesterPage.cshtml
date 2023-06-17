@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "SemesterPage";
+}
+
+<section class="subjects">
+    <div class="content">
+
+        <div class="subjects__head">
+            <h3 class="mb-5">Μαθήματα</h3>
+        </div>
+        <div class="semesters mt-3">
+            <div class="semester-template mb-5">
+                    <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                       aria-controls="collapseExample" class="test">
+                        <div class="semester-title ">
+                            Εξάμηνο 1
+                        </div>
+                    <div class="semester-progress ">
+                        2/6
+                    </div>
+                        <div class="expand-arrow">
+                            <i class="fas fa-arrow-circle-right" aria-hidden="true"></i>
+                            <i class="fas fa-arrow-circle-down" aria-hidden="true"></i>
+                        </div>
+                    </a>
+
+                <div class="collapse show subjects-list" id="collapseExample">
+                    <div class="subjects-list">
+                        <div class="subject-card">
+                            <label for="file">Subject title</label><br />
+                            <progress id="file" value="100" max="100"> </progress>
+                        </div>
+                        <div class="subject-card">
+                            <label for="file">Subject title</label><br />
+                            <progress id="file" value="80" max="100"> </progress>
+                        </div>
+                        <div class="subject-card">
+                            <label for="file">Subject title</label><br />
+                            <progress id="file" value="32" max="100"> </progress>
+                        </div>
+                        <div class="subject-card">
+                            <label for="file">Subject title</label><br />
+                            <progress id="file" value="0" max="100"> </progress>
+                        </div>
+                        <div class="subject-card">
+                            <label for="file">Subject title</label><br />
+                            <progress id="file" value="32" max="100"> </progress>
+                        </div>
+                        <div class="subject-card">
+                            <label for="file">Subject title</label><br />
+                            <progress id="file" value="15" max="100"> </progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+

@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Evi Palioura\Documents\GitHub\EduCompass\EduCompass\EduCompass
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Evi Palioura/Documents/GitHub/EduCompass/EduCompass/EduCompass/Views/Course/CoursePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Evi Palioura/Documents/GitHub/EduCompass/EduCompass/EduCompass/Views/Course/SemesterPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFNlbWVzdGVyUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Evi Palioura/Documents/GitHub/EduCompass/EduCompass/EduCompass/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
