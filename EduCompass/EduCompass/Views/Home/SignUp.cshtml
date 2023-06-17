@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "SignUp";
+}
+
+<!-- Stylesheet connection for Login page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+
+<section class="vh-100" style="background-color: #E9DAC8;">
+    <div class="container px-5 py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                                <form>
+                                    <div class="d-flex mb-3 pb-1">
+                                        <img src="~/images/EduCompass.png" alt="logo" class="logo-img" />
+                                    </div>
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Εγγραφή</h5>
+                                <div class="col-md-6 col-lg-6 d-flex align-items-center">
+                                    <div class="row form-outline mb-4">
+                                        <input type="text" id="usrnm" class="form-control form-control-lg" />
+                                        <label class="form-label" for="usrnm">Όνομα χρήστη</label>
+                                    </div>
+
+                                    <div class="row form-outline mb-4">
+                                        <input type="text" id="email" class="form-control form-control-lg" />
+                                        <label class="form-label" for="email">E-mail</label>
+                                    </div>
+
+                                    <div class="row form-outline mb-4">
+                                        <input type="text" id="name" class="form-control form-control-lg" />
+                                        <label class="form-label" for="name">Όνομα</label>
+                                    </div>
+
+                                    <div class="row form-outline mb-4">
+                                        <input type="text" id="srname" class="form-control form-control-lg" />
+                                        <label class="form-label" for="srname">Επώνυμο</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 d-flex align-items-center">
+                                    <div class="row form-outline mb-4">
+                                        <input type="password" id="term" class="form-control form-control-lg" />
+                                        <label class="form-label" for="term">Εξάμηνο παρακολούθησης</label>
+                                    </div>
+                                    <div class="row form-outline mb-4">
+                                        <input type="password" id="pswrd" class="form-control form-control-lg" />
+                                        <label class="form-label" for="pswrd">Κωδικός πρόσβασης</label>
+                                    </div>
+
+                                    <div class="row form-outline mb-4">
+                                        <input type="password" id="pswrd2" class="form-control form-control-lg" />
+                                        <label class="form-label" for="pswrd2">Επιβεβαίωση κωδικού πρόσβασης</label>
+                                    </div>
+                                </div>
+
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-dark btn-lg btn-block left" type="button">Εγγραφή</button>
+                                    </div>
+
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">
+                                        Έχετε ήδη λογαριασμό <a href="#!"
+                                                                  style="color: #393f81;"> Συνδεθείτε εδώ</a>
+                                    </p>
+                                </form>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
