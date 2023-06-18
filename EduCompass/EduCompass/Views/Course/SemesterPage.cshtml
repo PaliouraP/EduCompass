@@ -2,16 +2,22 @@
     ViewData["Title"] = "SemesterPage";
 }
 
-<section class="subjects">
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/courses.css" />
+}
+
+
+<section class="subjects mx-5 my-5">
     <div class="content">
 
-        <div class="subjects__head">
-            <h3 class="mb-5">Μαθήματα</h3>
+        <div class="subjects-head">
+            <h3 class="mb-5">Τα μαθήματα μου</h3>
         </div>
         <div class="semesters mt-3">
             <div class="semester-template mb-5">
                     <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-                       aria-controls="collapseExample" class="test">
+                       aria-controls="collapseExample" class="details">
                         <div class="semester-title ">
                             Εξάμηνο 1
                         </div>
@@ -24,7 +30,7 @@
                         </div>
                     </a>
 
-                <div class="collapse show subjects-list" id="collapseExample">
+                <div class="collapse subjects-list" id="collapseExample">
                     <div class="subjects-list">
                         <div class="subject-card">
                             <label for="file">Subject title</label><br />

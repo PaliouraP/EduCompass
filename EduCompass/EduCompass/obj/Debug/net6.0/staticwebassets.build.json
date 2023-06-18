@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dY8N6zrrz7VZt7hS4K90wbX4MtfdH0Trn+n8NUoBLT8=",
+  "Hash": "ONcvdJ/qhoo+6vfOAlKbukSExgFUmJeO+CX9HGo9940=",
   "Source": "EduCompass",
   "BasePath": "_content/EduCompass",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\completion_bar.css"
+    },
+    {
+      "Identity": "C:\\Users\\Evi Palioura\\Documents\\GitHub\\EduCompass\\EduCompass\\EduCompass\\wwwroot\\css\\courses.css",
+      "SourceId": "EduCompass",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Evi Palioura\\Documents\\GitHub\\EduCompass\\EduCompass\\EduCompass\\wwwroot\\",
+      "BasePath": "_content/EduCompass",
+      "RelativePath": "css/courses.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\courses.css"
     },
     {
       "Identity": "C:\\Users\\Evi Palioura\\Documents\\GitHub\\EduCompass\\EduCompass\\EduCompass\\wwwroot\\css\\login.css",

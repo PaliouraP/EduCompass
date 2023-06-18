@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\completion_bar.css"
     },
     {
+      "Id": "C:\\Users\\Evi Palioura\\Documents\\GitHub\\EduCompass\\EduCompass\\EduCompass\\wwwroot\\css\\courses.css",
+      "PackagePath": "staticwebassets\\css\\courses.css"
+    },
+    {
       "Id": "C:\\Users\\Evi Palioura\\Documents\\GitHub\\EduCompass\\EduCompass\\EduCompass\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },

@@ -33,7 +33,7 @@ namespace EduCompass.Controllers
             return View();
         }
 
-        public IActionResult Profile()
+        public IActionResult Dashboard()
         {
             return View();
         }

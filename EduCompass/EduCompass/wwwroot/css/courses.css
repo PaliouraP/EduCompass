@@ -1,0 +1,43 @@
+﻿a {
+    text-decoration: none;
+}
+
+.subjects-head {
+    
+}
+
+.semester-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.semester-progress {
+    font-size: 18px;
+    color: black;
+}
+
+.expand-arrow {
+    margin-left: auto;
+}
+
+i {
+    font-size: 25px;
+}
+
+.details .fa-arrow-circle-right {
+    display: none;
+}
+
+.details .fa-arrow-circle-down {
+    display: initial;
+}
+
+.collapsed .fa-arrow-circle-right {
+   display: initial;                        
+}
+
+.collapsed .fa-arrow-circle-down {
+    display: none;
+}
+
