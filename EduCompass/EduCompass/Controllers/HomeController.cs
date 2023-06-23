@@ -1,4 +1,5 @@
-﻿using EduCompass.Models;
+﻿using EduCompass.Data;
+using EduCompass.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +8,12 @@ namespace EduCompass.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _Database;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
             _logger = logger;
+            _Database = db;
         }
 
         public IActionResult Index()
@@ -27,6 +30,8 @@ namespace EduCompass.Controllers
         {
             return View();
         }
+
+
 
         public IActionResult IntroTest()
         {
