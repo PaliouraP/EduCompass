@@ -26,6 +26,15 @@ namespace EduCompass.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Login(object obj)
+        {
+
+
+
+            return RedirectToAction("Dashboard");
+        }
+
         // GET
         public IActionResult SignUp()
         {
