@@ -26,12 +26,18 @@ namespace EduCompass.Controllers
             return View();
         }
 
+        // GET
         public IActionResult SignUp()
         {
             return View();
         }
 
-
+        //POST
+        [HttpPost]
+        public IActionResult SignUp(User obj)
+        {
+            return View();
+        }
 
         public IActionResult IntroTest()
         {
