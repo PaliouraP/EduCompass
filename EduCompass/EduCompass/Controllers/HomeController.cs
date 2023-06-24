@@ -36,6 +36,7 @@ namespace EduCompass.Controllers
         [HttpPost]
         public IActionResult SignUp(User obj)
         {
+            // Get Parameters
             string username = Request.Form["usrnm"];
             string email = Request.Form["email"];
             string firstname = Request.Form["name"];
@@ -44,9 +45,47 @@ namespace EduCompass.Controllers
             string password = Request.Form["pswrd"];
             string password_confirmation = Request.Form["pswrd2"];
 
-            Debug.WriteLine($"{username}, {email}, {firstname}, {lastname}, {semester}, {password}, {password_confirmation}");
+            //Debug.WriteLine($"{username}, {email}, {firstname}, {lastname}, {semester}, {password}, {password_confirmation}");
 
-            return View();
+            // test cases for failing.
+            if ( (from user in _Database.Users where user.Username == username select user).Any() )
+            {
+                // fail and display error to the user.
+                Debug.WriteLine($"This should fail, because {username} a duplicate username.");
+                return RedirectToAction("SignUp");
+            }
+
+            if ((from user in _Database.Users where user.Email == email select user).Any())
+            {
+                // fail and display error to the user.
+                Debug.WriteLine($"This should fail, because {email} a duplicate username.");
+                return RedirectToAction("SignUp");
+            }
+
+            if (password != password_confirmation)
+            {
+                // fail and display error to the user.
+                Debug.WriteLine($"This should fail, because passwords don't match.");
+                return RedirectToAction("SignUp");
+                
+            }
+
+            // if none of the above cases fail, then create the user.
+            User new_user = new User();
+            new_user.Username = username;
+            new_user.Email = email;
+            new_user.FirstName = firstname;
+            new_user.LastName = lastname;
+            new_user.Semester = int.Parse(semester);
+            new_user.Password = password;
+
+            // add the user to the database.
+            _Database.Add(new_user);
+
+            _Database.SaveChanges();
+
+            // and then redirect the user to home.
+            return RedirectToAction("Dashboard");
         }
 
         public IActionResult IntroTest()
