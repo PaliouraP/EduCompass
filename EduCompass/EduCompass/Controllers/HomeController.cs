@@ -33,18 +33,16 @@ namespace EduCompass.Controllers
             string username = Request.Form["usrnm"];
             string password = Request.Form["pswrd"];
 
-            User? user = _Database.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+            // Search by username first and then by email.
+            User? user = _Database.Users.FirstOrDefault(u => (u.Username == username && u.Password == password) || (u.Email == username && u.Password == password));
 
+            // If it doesn't exist, fail.
             if (user == null)
             {
-                user = _Database.Users.FirstOrDefault(u => u.Email == username && u.Password == password);
-
-                if (user == null)
-                {
-                    return RedirectToAction("Login");
-                }
+                return RedirectToAction("Login");
             }
 
+            // Otherwise redirect to dashboard.
             return RedirectToAction("Dashboard");
         }
 
