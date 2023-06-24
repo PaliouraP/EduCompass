@@ -36,6 +36,16 @@ namespace EduCompass.Controllers
         [HttpPost]
         public IActionResult SignUp(User obj)
         {
+            string username = Request.Form["usrnm"];
+            string email = Request.Form["email"];
+            string firstname = Request.Form["name"];
+            string lastname = Request.Form["srname"];
+            string semester = Request.Form["term"];
+            string password = Request.Form["pswrd"];
+            string password_confirmation = Request.Form["pswrd2"];
+
+            Debug.WriteLine($"{username}, {email}, {firstname}, {lastname}, {semester}, {password}, {password_confirmation}");
+
             return View();
         }
 
