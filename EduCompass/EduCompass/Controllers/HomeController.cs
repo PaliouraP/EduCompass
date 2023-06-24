@@ -29,8 +29,16 @@ namespace EduCompass.Controllers
         [HttpPost]
         public IActionResult Login(object obj)
         {
+            // Get Parameters
+            string username = Request.Form["usrnm"];
+            string password = Request.Form["pswrd"];
 
+            User? user = _Database.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
 
+            if (user == null)
+            {
+                return RedirectToAction("Login");
+            }
 
             return RedirectToAction("Dashboard");
         }
