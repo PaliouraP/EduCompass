@@ -37,7 +37,12 @@ namespace EduCompass.Controllers
 
             if (user == null)
             {
-                return RedirectToAction("Login");
+                user = _Database.Users.FirstOrDefault(u => u.Email == username && u.Password == password);
+
+                if (user == null)
+                {
+                    return RedirectToAction("Login");
+                }
             }
 
             return RedirectToAction("Dashboard");
