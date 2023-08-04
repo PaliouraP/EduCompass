@@ -27,6 +27,7 @@ namespace EduCompass.Controllers
                 TempData["Error"] = "Your session has expired. Please log in again.";
                 context.Result = RedirectToAction("Login", "Auth");
                 base.OnActionExecuting(context);
+                return;
             }
 
             _currentUser = _database.Users.First(u => u.Username == HttpContext.Session.GetString("username"));
