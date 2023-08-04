@@ -8,6 +8,7 @@ namespace EduCompass.Controllers
         {
             return View();
         }
+        
         public IActionResult CoursePage()
         {
             return View();
