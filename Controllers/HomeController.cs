@@ -10,6 +10,7 @@ namespace EduCompass.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _database;
+        private User _currentUser; 
 
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
@@ -21,12 +22,15 @@ namespace EduCompass.Controllers
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             // if the session exists, do nothing.
-            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("username"))) return;
-            
-            // if it doesn't, then log the user out.
-            TempData["Error"] = "Your session has expired. Please log in again.";
-            context.Result = RedirectToAction("Login", "Auth");
-            base.OnActionExecuting(context);
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
+            {
+                // if it doesn't, then log the user out.
+                TempData["Error"] = "Your session has expired. Please log in again.";
+                context.Result = RedirectToAction("Login", "Auth");
+                base.OnActionExecuting(context);
+            }
+
+            _currentUser = _database.Users.First(u => u.Username == HttpContext.Session.GetString("username"));
         }
         
 
