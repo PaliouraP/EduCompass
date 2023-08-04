@@ -102,6 +102,12 @@ public class AuthController : Controller
         return RedirectToAction("Dashboard", "Home");
     }
 
+    public IActionResult Logout()
+    {
+        DestroySession();
+        return RedirectToAction("Login");
+    }
+
     private void CreateSession(string username)
     {
         HttpContext.Session.SetString("username", username);
