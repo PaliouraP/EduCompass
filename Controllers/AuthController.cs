@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using EduCompass.Classes;
 using EduCompass.Data;
 using EduCompass.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +26,8 @@ public class AuthController : Controller
     public IActionResult Login(string usrnm, string pswrd)
     {
         // Search by username first and then by email.
-        User? user = _database.Users.FirstOrDefault(u => (u.Username == usrnm && u.Password == pswrd) || (u.Email == usrnm && u.Password == pswrd));
+        User? user = _database.Users.FirstOrDefault(u => (u.Username == usrnm && PasswordManager.VerifyPassword(pswrd, u.Password)) 
+                                                         || (u.Email == usrnm && PasswordManager.VerifyPassword(pswrd, u.Password)));
 
         // If it doesn't exist, fail.
         if (user == null)
@@ -82,7 +84,7 @@ public class AuthController : Controller
             FirstName = name,
             LastName = srname,
             Semester = int.Parse(term),
-            Password = pswrd
+            Password = PasswordManager.HashPassword(pswrd)
         };
 
         // add the user to the database.
