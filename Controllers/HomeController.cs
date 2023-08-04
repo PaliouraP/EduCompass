@@ -27,18 +27,15 @@ namespace EduCompass.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(object obj)
+        public IActionResult Login(string usrnm, string pswrd)
         {
-            // Get Parameters
-            string username = Request.Form["usrnm"];
-            string password = Request.Form["pswrd"];
-
             // Search by username first and then by email.
-            User? user = _Database.Users.FirstOrDefault(u => (u.Username == username && u.Password == password) || (u.Email == username && u.Password == password));
+            User? user = _Database.Users.FirstOrDefault(u => (u.Username == usrnm && u.Password == pswrd) || (u.Email == usrnm && u.Password == pswrd));
 
             // If it doesn't exist, fail.
             if (user == null)
             {
+                TempData["Error"] = "Invalid Credentials.";
                 return RedirectToAction("Login");
             }
 
