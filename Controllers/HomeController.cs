@@ -2,6 +2,7 @@
 using EduCompass.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace EduCompass.Controllers
 {
@@ -15,6 +16,18 @@ namespace EduCompass.Controllers
             _logger = logger;
             _database = db;
         }
+        
+        // this method gets executed before any views.
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            // if the session exists, do nothing.
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("username"))) return;
+            
+            // if it doesn't, then log the user out.
+            context.Result = RedirectToAction("Login", "Auth");
+            base.OnActionExecuting(context);
+        }
+        
 
         public IActionResult Index()
         {
