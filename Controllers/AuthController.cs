@@ -26,11 +26,17 @@ public class AuthController : Controller
     public IActionResult Login(string usrnm, string pswrd)
     {
         // Search by username first and then by email.
-        User? user = _database.Users.FirstOrDefault(u => (u.Username == usrnm && PasswordManager.VerifyPassword(pswrd, u.Password)) 
-                                                         || (u.Email == usrnm && PasswordManager.VerifyPassword(pswrd, u.Password)));
+        var user = _database.Users.FirstOrDefault(u => u.Username == usrnm || u.Email == usrnm);
 
         // If it doesn't exist, fail.
         if (user == null)
+        {
+            TempData["Error"] = "Invalid Credentials.";
+            return RedirectToAction("Login");
+        }
+
+        // If the password isn't valid, fail.
+        if (!PasswordManager.VerifyPassword(pswrd, user.Password))
         {
             TempData["Error"] = "Invalid Credentials.";
             return RedirectToAction("Login");
