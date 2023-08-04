@@ -35,6 +35,7 @@ public class AuthController : Controller
         }
 
         // Otherwise redirect to dashboard.
+        CreateSession(user.Username);
         return RedirectToAction("Dashboard", "Home");
     }
 
@@ -96,5 +97,10 @@ public class AuthController : Controller
     private void CreateSession(string username)
     {
         HttpContext.Session.SetString("username", username);
+    }
+
+    private void DestroySession()
+    {
+        HttpContext.Session.SetString("username", string.Empty);
     }
 }
