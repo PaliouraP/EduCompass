@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <AdditionalFiles Include="Views\Auth\Login.cshtml" />
+    <AdditionalFiles Include="Views\Auth\SignUp.cshtml" />
+  </ItemGroup>
+
 </Project>
