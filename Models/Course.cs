@@ -20,4 +20,29 @@ public class Course
     public string Description { get; set; }
 
     public bool InIntro { get; set; } = false;
+    
+    // COEFFICIENTS
+    [Required]
+    public int SoftwareProgramming { get; set; }
+    
+    [Required]
+    public int SoftwareEngineering { get; set; }
+    
+    [Required]
+    public int AI_ML { get; set; }
+    
+    [Required]
+    public int ProjectManagement { get; set; }
+    
+    [Required]
+    public int WebDev { get; set; }
+    
+    [Required]
+    public int Security { get; set; }
+    
+    [Required]
+    public int CloudArchitect { get; set; }
+    
+    [Required]
+    public int UI_UX { get; set; }
 }
