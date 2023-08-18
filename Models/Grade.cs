@@ -14,7 +14,7 @@ public class Grade
     public int UserId { get; set; }
     
     [ForeignKey("Course"), NotNull]
-    public int CourseId { get; set; }
+    public int CourseUUID { get; set; }
     
     public int FinalGrade { get; set; }
     

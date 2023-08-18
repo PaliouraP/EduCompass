@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EduCompass.Models;
 
@@ -6,10 +7,11 @@ public class Course
 {
     // PRIMARY KEY
     [Key]
-    public int Id { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    public int UUID { get; set; }
     
     [Required]
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
     
     [Required]
     public int Semester { get; set; }
@@ -17,7 +19,7 @@ public class Course
     [Required]
     public int Year { get; set; }
     
-    public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
     public bool InIntro { get; set; } = false;
     
