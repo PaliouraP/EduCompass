@@ -22,6 +22,7 @@
   <ItemGroup>
     <AdditionalFiles Include="Views\Auth\Login.cshtml" />
     <AdditionalFiles Include="Views\Auth\SignUp.cshtml" />
+    <AdditionalFiles Include="Views\User\EditProfile.cshtml" />
   </ItemGroup>
 
 </Project>

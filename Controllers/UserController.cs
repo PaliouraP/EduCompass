@@ -40,6 +40,14 @@ namespace EduCompass.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public IActionResult EditProfile()
+        {
+            var model = _currentUser;
+            
+            return View(model);
+        }
+
         public IActionResult Statistics()
         {
             return View();
