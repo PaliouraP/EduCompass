@@ -11,5 +11,8 @@ namespace EduCompass.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<PostGraduateInstitution> PostGraduateInstitutions { get; set; }
+        public DbSet<Grade> Grades { get; set; }
     }
 }
