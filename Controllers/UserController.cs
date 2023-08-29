@@ -35,7 +35,9 @@ namespace EduCompass.Controllers
         
         public IActionResult Profile()
         {
-            return View();
+            var model = _currentUser;
+            
+            return View(model);
         }
 
         public IActionResult Statistics()
