@@ -14,60 +14,111 @@
             <div class="col col-xl-10">
                 <div class="card" style="border-radius: 1rem;">
                     <div class="row g-0">
-                            <div class="card-body p-4 p-lg-5 text-black">       
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <p class="mb-0">Ονοματεπώνυμο</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted mb-0">@Model.FirstName @Model.LastName</p>
-                                            </div>
-                                        </div>
+                        <div class="card-body p-4 p-lg-5 text-black">       
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Ονοματεπώνυμο</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.FirstName @Model.LastName</p>
+                                </div>
+                            </div>
                                         
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <p class="mb-0">Email</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted mb-0">@Model.Email</p>
-                                            </div>
-                                        </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.Email</p>
+                                </div>
+                            </div>
                                         
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <p class="mb-0">Όνομα χρήστη</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted mb-0">@Model.Username</p>
-                                            </div>
-                                        </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Όνομα χρήστη</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.Username</p>
+                                </div>
+                            </div>
                                         
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <p class="mb-0">Εξάμηνο</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted mb-0">@Model.Semester</p>
-                                            </div>
-                                        </div>
-                                <a href="#!" class="btn btn-primary"> Ξανακάντε το εισαγωγικό τεστ</a>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Εξάμηνο</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.Semester</p>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Μέλος από:</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.Created.ToLongDateString()</p>
+                                </div>
+                            </div>
+                            <a href="#!" class="btn btn-primary"> Ξανακάντε το εισαγωγικό τεστ</a>
                                 
-                                <a href="/User/EditProfile" class="btn btn-success">Επεξεργασία Προφίλ</a>
+                            <a href="/User/EditProfile" class="btn btn-success">Επεξεργασία Προφίλ</a>
                                    
                             
-                            </div>
-                            <div class="card-body">
-                            <p>Category 1</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            
+                            <p>Τεχνολογία Λογισμικού</p>
                             <div class="container">
-                                <div class="cat1">90%</div>
+                                <div class="cat1">@Model.SoftwareEngineerPercentage%</div>
                             </div>
 
-                            <p>Category 2</p>
+                            <p>Τεχνητή Νοημοσύνη & Μηχανική Μάθηση</p>
                             <div class="container">
-                                <div class="cat2">80%</div>
+                                <div class="cat2">@Model.AI_ML_Percentage%</div>
+                            </div>
+                            
+                            <p>Σχεδίαση UI/UX & Αλληλεπίδραση Ανθρώπου-Υπολογιστή</p>
+                            <div class="container">
+                                <div class="cat2">@Model.UI_UX_Percentage%</div>
+                            </div>
+                            
+                            <p>Ασφάλεια & Κρυπτογραφία</p>
+                            <div class="container">
+                                <div class="cat2">@Model.SecurityPercentage%</div>
+                            </div>
+                            
+                            <p>Δίκτυα Υπολογιστών</p>
+                            <div class="container">
+                                <div class="cat1">@Model.ComputerNetworksPercentage%</div>
                             </div>
 
+                            <p>Ανάλυση Εικόνας & Γραφικών</p>
+                            <div class="container">
+                                <div class="cat2">@Model.ComputerVisionAndGraphicsPercentage%</div>
                             </div>
+                            
+                            <p>Ανάπτυξη Ηλεκτρονικών Παιχνιδιών</p>
+                            <div class="container">
+                                <div class="cat2">@Model.GameDevPercentage%</div>
+                            </div>
+                            
+                            <p>Ανάπτυξη Βάσεων Δεδομένων</p>
+                            <div class="container">
+                                <div class="cat2">@Model.DatabaseManagementPercentage%</div>
+                            </div>
+                            
+                            <p>Ανάπτυξη Διαδικτυακών Εφαρμογών</p>
+                            <div class="container">
+                                <div class="cat2">@Model.WebDevPercentage%</div>
+                            </div>
+                            
+                            <p>Ανάπτυξη Εφαρμογών Κινητών Τηλεφώνων</p>
+                            <div class="container">
+                                <div class="cat2">@Model.MobileAppDevPercentage%"</div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
