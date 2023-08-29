@@ -24,27 +24,33 @@ public class Course
     public bool InIntro { get; set; } = false;
     
     // COEFFICIENTS
-    [Required]
-    public int SoftwareProgramming { get; set; }
+    [Required] 
+    public int SoftwareEngineering { get; set; } = 0;
     
-    [Required]
-    public int SoftwareEngineering { get; set; }
+    [Required] 
+    public int AI_ML { get; set; } = 0;
     
-    [Required]
-    public int AI_ML { get; set; }
+    [Required] 
+    public int UI_UX { get; set; } = 0;
     
-    [Required]
-    public int ProjectManagement { get; set; }
+    [Required] 
+    public int Security { get; set; } = 0;
     
-    [Required]
-    public int WebDev { get; set; }
+    [Required] 
+    public int ComputerNetworks { get; set; } = 0;
     
-    [Required]
-    public int Security { get; set; }
+    [Required] 
+    public int ComputerVisionAndGraphics { get; set; } = 0;
     
-    [Required]
-    public int CloudArchitect { get; set; }
+    [Required] 
+    public int GameDev { get; set; } = 0;
     
-    [Required]
-    public int UI_UX { get; set; }
+    [Required] 
+    public int DatabaseManagement { get; set; } = 0;
+    
+    [Required] 
+    public int WebDev { get; set; } = 0;
+    
+    [Required] 
+    public int MobileAppDev { get; set; } = 0;
 }

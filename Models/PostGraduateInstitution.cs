@@ -22,9 +22,6 @@ public class PostGraduateInstitution
     public string Town { get; set; } = string.Empty;
     
     // COEFFICIENTS
-    [Required]
-    public bool SoftwareProgramming { get; set; } = false;
-
     [Required] 
     public bool SoftwareEngineering { get; set; } = false;
 
@@ -32,18 +29,27 @@ public class PostGraduateInstitution
     public bool AI_ML { get; set; } = false;
 
     [Required] 
-    public bool ProjectManagement { get; set; } = false;
-
-    [Required] 
-    public bool WebDev { get; set; } = false;
+    public bool UI_UX { get; set; } = false;
 
     [Required] 
     public bool Security { get; set; } = false;
 
     [Required] 
-    public bool CloudArchitect { get; set; } = false;
+    public bool ComputerNetworks { get; set; } = false;
 
     [Required] 
-    public bool UI_UX { get; set; } = false;
+    public bool ComputerVisionAndGraphics { get; set; } = false;
+
+    [Required] 
+    public bool GameDev { get; set; } = false;
+
+    [Required] 
+    public bool DatabaseManagement { get; set; } = false;
+
+    [Required] 
+    public bool WebDev { get; set; } = false;
+
+    [Required] 
+    public bool MobileAppDev { get; set; } = false;
 
 }
