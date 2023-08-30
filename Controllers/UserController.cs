@@ -54,6 +54,24 @@ namespace EduCompass.Controllers
             // retrieve the user.
             var userToBeEdited = _database.Users.First(u => u.Username == _currentUser.Username);
             
+            // check for duplicates.
+            if (!string.IsNullOrEmpty(username))
+            {
+                if (_database.Users.Any(u => u.Username == username))
+                {
+                    TempData["Error"] = "To username που επιλέξατε είναι ήδη σε χρήση.";
+                    return RedirectToAction("EditProfile");
+                }
+                
+                HttpContext.Session.SetString("username", username);
+            }
+            
+            if (!string.IsNullOrEmpty(email) && _database.Users.Any(u => u.Email == email))
+            {
+                TempData["Error"] = "To ηλεκτρονικό ταχυδρομείο που επιλέξατε είναι ήδη σε χρήση.";
+                return RedirectToAction("EditProfile");
+            }
+            
             // edit user properties.
             userToBeEdited.Username = string.IsNullOrEmpty(username) ? userToBeEdited.Username : username;
             userToBeEdited.Email = string.IsNullOrEmpty(email) ? userToBeEdited.Email : email;
