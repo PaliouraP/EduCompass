@@ -48,6 +48,27 @@ namespace EduCompass.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public IActionResult EditProfile(string username, string email, string firstname, string lastname, int semester)
+        {
+            // retrieve the user.
+            var userToBeEdited = _database.Users.First(u => u.Username == _currentUser.Username);
+            
+            // edit user properties.
+            userToBeEdited.Username = string.IsNullOrEmpty(username) ? userToBeEdited.Username : username;
+            userToBeEdited.Email = string.IsNullOrEmpty(email) ? userToBeEdited.Email : email;
+            userToBeEdited.FirstName = string.IsNullOrEmpty(firstname) ? userToBeEdited.FirstName : firstname;
+            userToBeEdited.LastName = string.IsNullOrEmpty(lastname) ? userToBeEdited.LastName : lastname;
+            userToBeEdited.Semester = semester == 0 ? userToBeEdited.Semester : semester;
+            
+            // apply the edited properties.
+            _database.Users.Update(userToBeEdited);
+            _database.SaveChanges();
+            
+            // redirect to the edit profile view.
+            return RedirectToAction("Profile");
+        }
+
         public IActionResult Statistics()
         {
             return View();
