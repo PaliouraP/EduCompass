@@ -8,7 +8,7 @@ public class Course
     // PRIMARY KEY
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
-    public int UUID { get; set; }
+    public string UUID { get; set; } = string.Empty;
     
     [Required]
     public string Name { get; set; } = string.Empty;

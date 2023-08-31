@@ -6,45 +6,16 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EduCompass.Migrations
 {
     /// <inheritdoc />
-    public partial class remake_coefficients_and_tables : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "SoftwareProgrammerPercentage",
-                table: "Users",
-                newName: "MobileAppDevPercentage");
-
-            migrationBuilder.RenameColumn(
-                name: "ProjectManagerPercentage",
-                table: "Users",
-                newName: "GameDevPercentage");
-
-            migrationBuilder.RenameColumn(
-                name: "CloudArchitectPercentage",
-                table: "Users",
-                newName: "DatabaseManagementPercentage");
-
-            migrationBuilder.AddColumn<float>(
-                name: "ComputerNetworksPercentage",
-                table: "Users",
-                type: "real",
-                nullable: false,
-                defaultValue: 0f);
-
-            migrationBuilder.AddColumn<float>(
-                name: "ComputerVisionAndGraphicsPercentage",
-                table: "Users",
-                type: "real",
-                nullable: false,
-                defaultValue: 0f);
-
             migrationBuilder.CreateTable(
                 name: "Courses",
                 columns: table => new
                 {
-                    UUID = table.Column<int>(type: "int", nullable: false),
+                    UUID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Semester = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
@@ -93,13 +64,43 @@ namespace EduCompass.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Semester = table.Column<int>(type: "int", nullable: false),
+                    HasCompletedIntroTest = table.Column<bool>(type: "bit", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SoftwareEngineerPercentage = table.Column<float>(type: "real", nullable: false),
+                    AI_ML_Percentage = table.Column<float>(type: "real", nullable: false),
+                    UI_UX_Percentage = table.Column<float>(type: "real", nullable: false),
+                    SecurityPercentage = table.Column<float>(type: "real", nullable: false),
+                    ComputerNetworksPercentage = table.Column<float>(type: "real", nullable: false),
+                    ComputerVisionAndGraphicsPercentage = table.Column<float>(type: "real", nullable: false),
+                    GameDevPercentage = table.Column<float>(type: "real", nullable: false),
+                    DatabaseManagementPercentage = table.Column<float>(type: "real", nullable: false),
+                    WebDevPercentage = table.Column<float>(type: "real", nullable: false),
+                    MobileAppDevPercentage = table.Column<float>(type: "real", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Grades",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    CourseUUID = table.Column<int>(type: "int", nullable: false),
+                    CourseUUID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FinalGrade = table.Column<int>(type: "int", nullable: false),
                     InterestScore = table.Column<int>(type: "int", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -144,28 +145,8 @@ namespace EduCompass.Migrations
             migrationBuilder.DropTable(
                 name: "Courses");
 
-            migrationBuilder.DropColumn(
-                name: "ComputerNetworksPercentage",
-                table: "Users");
-
-            migrationBuilder.DropColumn(
-                name: "ComputerVisionAndGraphicsPercentage",
-                table: "Users");
-
-            migrationBuilder.RenameColumn(
-                name: "MobileAppDevPercentage",
-                table: "Users",
-                newName: "SoftwareProgrammerPercentage");
-
-            migrationBuilder.RenameColumn(
-                name: "GameDevPercentage",
-                table: "Users",
-                newName: "ProjectManagerPercentage");
-
-            migrationBuilder.RenameColumn(
-                name: "DatabaseManagementPercentage",
-                table: "Users",
-                newName: "CloudArchitectPercentage");
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

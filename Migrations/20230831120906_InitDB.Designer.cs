@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCompass.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230829134143_remake_coefficients_and_tables")]
-    partial class remake_coefficients_and_tables
+    [Migration("20230831120906_InitDB")]
+    partial class InitDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,8 +27,8 @@ namespace EduCompass.Migrations
 
             modelBuilder.Entity("EduCompass.Models.Course", b =>
                 {
-                    b.Property<int>("UUID")
-                        .HasColumnType("int");
+                    b.Property<string>("UUID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AI_ML")
                         .HasColumnType("int");
@@ -90,8 +90,9 @@ namespace EduCompass.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CourseUUID")
-                        .HasColumnType("int");
+                    b.Property<string>("CourseUUID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");

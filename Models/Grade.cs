@@ -10,11 +10,11 @@ public class Grade
     [Key]
     public int Id { get; set; }
     
-    [ForeignKey("User"), NotNull]
+    [ForeignKey("User")]
     public int UserId { get; set; }
     
-    [ForeignKey("Course"), NotNull]
-    public int CourseUUID { get; set; }
+    [ForeignKey("Course")]
+    public string CourseUUID { get; set; }
     
     public int FinalGrade { get; set; }
     
