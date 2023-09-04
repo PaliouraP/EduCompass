@@ -15,10 +15,12 @@ public class Grade
     
     [ForeignKey("Course")]
     public string CourseUUID { get; set; }
-    
-    public int FinalGrade { get; set; }
-    
-    public int InterestScore { get; set; }
+
+    public int FinalGrade { get; set; } = -1;
+
+    public int InterestScore { get; set; } = -1;
+
+    public int TestGrade { get; set; } = -1;
     
     public DateTime Created { get; set; } = DateTime.Now;
     

@@ -60,5 +60,27 @@ namespace EduCompass.Models
 
         [Required] 
         public float MobileAppDevPercentage { get; set; } = 0f;
+        
+        // CALCULATING COEFFICIENTS
+        public static float SoftwareEngineeringTotal(List<Course> courses, List<Grade> grades, User user)
+        {
+            var coursesAndGradesWithSoftwareEngineeringPoints = (from grade in grades
+                where grade.UserId == user.Id && grade.FinalGrade != -1 && grade.InterestScore != -1
+                join course in courses on grade.CourseUUID equals course.UUID
+                select (course, grade)).ToList();
+
+            int totalSoftwareEngineeringPoints = coursesAndGradesWithSoftwareEngineeringPoints.Sum(c => c.Item1.SoftwareEngineering);
+            float userSum = 0;
+            
+            foreach (var courseAndGrade in coursesAndGradesWithSoftwareEngineeringPoints)
+            {
+                int courseCoefficient = courseAndGrade.Item1.SoftwareEngineering;
+
+                float fromGradesTotal = (float)(courseCoefficient * (float)courseAndGrade.Item2.FinalGrade / 10 * 0.7 + courseCoefficient * (float)courseAndGrade.Item2.InterestScore/5 * 0.3);
+                userSum += fromGradesTotal;
+            }
+            
+            return userSum/totalSoftwareEngineeringPoints;
+        }
     }
 }
