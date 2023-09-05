@@ -2,6 +2,7 @@
 using EduCompass.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EduCompass.Controllers;
 
@@ -31,5 +32,47 @@ public class IntroController : Controller
         }
 
         _currentUser = _database.Users.First(u => u.Username == HttpContext.Session.GetString("username"));
+    }
+    
+    
+    [HttpGet]
+    public IActionResult IntroTest(string? courseUUID)
+    {
+        // if the courseUUID is not typed
+        if (courseUUID.IsNullOrEmpty())
+        {
+            // get all the courses that should be on the intro test.
+            var coursesInIntro = _database.Courses.Where(c => c.InIntro).ToList();
+
+            // initialize a null course for after.
+            Course courseToBeAdded = null;
+            
+            // for every course that exists in the intro test...
+            foreach (var course in coursesInIntro)
+            {
+                // check if there is grade for the user. If there is, skip it.
+                if (_database.Grades.Any(g => g.CourseUUID == course.UUID && g.UserId == _currentUser.Id))
+                    continue;
+
+                // otherwise the course to be displayed is the one with no grade from the user.
+                courseToBeAdded = course;
+                break;
+            }
+
+            // if all the courses have grade regarding the user, the user has finished the intro test.
+            if (courseToBeAdded == null)
+                return RedirectToAction("Finished");
+
+            // if the course is not null, display the course
+            return RedirectToAction("IntroTest", new { courseUUID = courseToBeAdded.UUID });
+        }
+
+        var model = _database.Courses.First(c => c.UUID == courseUUID);
+        return View(model);
+    }
+
+    public IActionResult Finished()
+    {
+        return View();
     }
 }

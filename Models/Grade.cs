@@ -20,7 +20,7 @@ public class Grade
 
     public int InterestScore { get; set; } = -1;
 
-    public int TestGrade { get; set; } = -1;
+    //public int TestGrade { get; set; } = -1;
     
     public DateTime Created { get; set; } = DateTime.Now;
     

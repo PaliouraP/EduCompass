@@ -40,11 +40,6 @@ namespace EduCompass.Controllers
             return View();
         }
 
-        public IActionResult IntroTest()
-        {
-            return View();
-        }
-
         public IActionResult Dashboard()
         {
             return View();
