@@ -71,6 +71,25 @@ public class IntroController : Controller
         return View(model);
     }
 
+    [HttpPost]
+    public IActionResult PostGrade(string courseUUID, int finalGrade, int interestScore)
+    {
+        
+        
+        var grade = new Grade
+        {
+            FinalGrade = finalGrade,
+            InterestScore = interestScore,
+            CourseUUID = courseUUID,
+            UserId = _currentUser.Id
+        };
+
+        _database.Grades.Add(grade);
+        _database.SaveChanges();
+
+        return RedirectToAction("IntroTest");
+    }
+
     public IActionResult Finished()
     {
         return View();
