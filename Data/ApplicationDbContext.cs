@@ -114,6 +114,23 @@ namespace EduCompass.Data
                     
                     // (ΤΑ ΕΠΙΛΟΓΗΣ) //
                     
+                    new Course { UUID = "ΠΛΔΙΚ01", Name = "Δίκαιο της Πληροφορικής", InIntro = false, Optional = true, Description = "", 
+                        Year = 2, Semester = 3, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΜΑΘ35-1", Name = "Εφαρμογές Θεωρίας Γραφημάτων", InIntro = false, Optional = true, Description = "", 
+                        Year = 2, Semester = 3, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΜΑΝΖ01", Name = "Μάνατζμεντ", InIntro = false, Optional = true, Description = "", 
+                        Year = 2, Semester = 3, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΠΑΙΔ01", Name = "Παιδαγωγικά", InIntro = false, Optional = true, Description = "", 
+                        Year = 2, Semester = 3, 
+                    },
+                    
+                    
                     // τέταρτο εξάμηνο
                 
                     new Course { UUID = "ΠΛΠΛΗ30-1", Name = "Βάσεις Δεδομένων", InIntro = true, Description = "Σκοπός του μαθήματος είναι αρχικά η κατανόηση των Βάσεων Δεδομένων (ΒΔ) ως συλλογές σχέσεων (πινάκων), " +
@@ -153,7 +170,8 @@ namespace EduCompass.Data
                             "είναι να παρουσιάσει με ενιαίο τρόπο τις ευρύτερα χρησιμοποιούμενες τεχνικές και μεθοδολογίες για προβλήματα αναγνώρισης προτύπων.", 
                             Year = 3, Semester = 5, 
                             AI_ML = 10}
-                
+                    
+                    
                     
                     
                 );
