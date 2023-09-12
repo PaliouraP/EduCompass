@@ -22,6 +22,10 @@ public class Course
     public string Description { get; set; } = string.Empty;
 
     public bool InIntro { get; set; } = false;
+
+    public bool Optional { get; set; } = false;
+
+    public Katefthinsi CourseDirection { get; set; } = Katefthinsi.None;
     
     // COEFFICIENTS
     [Required] 
@@ -53,4 +57,12 @@ public class Course
     
     [Required] 
     public int MobileAppDev { get; set; } = 0;
+}
+
+public enum Katefthinsi
+{
+    None,
+    TLES,
+    PSY,
+    DYS
 }
