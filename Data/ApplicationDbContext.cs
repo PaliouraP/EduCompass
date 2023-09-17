@@ -114,19 +114,19 @@ namespace EduCompass.Data
                     
                     // (ΤΑ ΕΠΙΛΟΓΗΣ) //
                     
-                    new Course { UUID = "ΠΛΔΙΚ01", Name = "Δίκαιο της Πληροφορικής", InIntro = false, Optional = true, Description = "", 
+                    new Course { UUID = "ΠΛΔΙΚ01", Name = "Δίκαιο της Πληροφορικής", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
                         Year = 2, Semester = 3, 
                     },
                     
-                    new Course { UUID = "ΠΛΜΑΘ35-1", Name = "Εφαρμογές Θεωρίας Γραφημάτων", InIntro = false, Optional = true, Description = "", 
+                    new Course { UUID = "ΠΛΜΑΘ35-1", Name = "Εφαρμογές Θεωρίας Γραφημάτων", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
                         Year = 2, Semester = 3, 
                     },
                     
-                    new Course { UUID = "ΠΛΜΑΝΖ01", Name = "Μάνατζμεντ", InIntro = false, Optional = true, Description = "", 
+                    new Course { UUID = "ΠΛΜΑΝΖ01", Name = "Μάνατζμεντ", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
                         Year = 2, Semester = 3, 
                     },
                     
-                    new Course { UUID = "ΠΛΠΑΙΔ01", Name = "Παιδαγωγικά", InIntro = false, Optional = true, Description = "", 
+                    new Course { UUID = "ΠΛΠΑΙΔ01", Name = "Παιδαγωγικά", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
                         Year = 2, Semester = 3, 
                     },
                     
@@ -157,23 +157,135 @@ namespace EduCompass.Data
                     },
                     
                     // (ΤΑ ΕΠΙΛΟΓΗΣ) //
+                    
+                    new Course { UUID = "ΟΚΟΔΕ08", Name = "Επιχερησιακή Στρατηγική", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                        Year = 2, Semester = 4, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΜΑΘ46-1", Name = "Εφαρμοσμένη Συνδυαστική", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                        Year = 2, Semester = 4, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΠΛΗ73-1", Name = "Θεωρία Πληροφοριών και Κωδίκων", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                        Year = 2, Semester = 4, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΠΛΗΚΕΚ01", Name = "Πληροφορική στην Εκπαίδευση", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                        Year = 2, Semester = 4, 
+                    },
                 
                 // ΤΡΙΤΟ ΕΤΟΣ
+                    
+                    // πέμπτο εξάμηνο
                 
                     new Course { UUID = "ΠΛΠΛΗ20", Name = "Αλληλεπίδραση Ανθρώπου-Υπολογιστή", InIntro = true, Description = "Σχεδιασμός του συστήματος διεπαφής με τον χρήστη, η ανθρώπινη πλευρά στην αλληλεπίδραση. " +
                             "Κλασσικά και σύγχρονα μέσα επικοινωνίας του υπολογιστή. Μοντέλα αλληλεπίδρασης και μοντέλα για τον χρήστη. Στόχοι, μέθοδοι, ανάλυση εργασιών. Χρηστικότητα, φιλικότητα λογισμικού.", 
                         Year = 3, Semester = 5, 
                         UI_UX = 10, SoftwareEngineering = 4},
                 
-                    new Course { UUID = "ΠΛΠΛΗ81-2", Name = "Αναγνώριση Προτύπων", InIntro = true, Description = "Αναγνώριση Προτύπων (pattern recognition) είναι η επιστημονική περιοχή που έχει στόχο την " +
+                    new Course { UUID = "ΠΛΠΛΗ50", Name = "Αναγνώριση Προτύπων", InIntro = true, Description = "Αναγνώριση Προτύπων (pattern recognition) είναι η επιστημονική περιοχή που έχει στόχο την " +
                             "ταξινόμηση αντικειμένων σε κατηγορίες (κλάσεις) και συμπεριλαμβάνει το επιστημονικό πεδίο της Μηχανικής Μάθησης (machine learning). Σκοπός, επομένως, του παρόντος μαθήματος " +
                             "είναι να παρουσιάσει με ενιαίο τρόπο τις ευρύτερα χρησιμοποιούμενες τεχνικές και μεθοδολογίες για προβλήματα αναγνώρισης προτύπων.", 
                             Year = 3, Semester = 5, 
-                            AI_ML = 10}
+                            AI_ML = 10},
                     
+                    new Course { UUID = "ΠΛΠΛΗ81-2", Name = "Πληροφοριακά Συστήματα", InIntro = false, Description = "", 
+                        Year = 3, Semester = 5},
+
+                    // τλες
+                    new Course { UUID = "ΠΛΜΑΘ71", Name = "Λογικός Προγραμματισμός", InIntro = true, Description = "", Type = new [] { CourseType.TLES },
+                            Year = 3, Semester = 5, 
+                        },
+                
+                    // πσυ
+                    new Course { UUID = "ΠΛΚΡΥ01", Name = "Κρυπτογραφία", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
+                            Year = 3, Semester = 5, 
+                        },
+                
+                    // πσυ + τλες
+                    new Course { UUID = "ΠΛΠΛΗ33-2", Name = "Συστήματα Διαχείρισης Βάσεων Δεδομένων", InIntro = true, Description = "", Type = new [] { CourseType.PSY, CourseType.TLES },
+                            Year = 3, Semester = 5, 
+                        },
                     
+                    // δυς
+                
+                    new Course { UUID = "ΠΛΠΘΕ01", Name = "Προηγμένα Θέματα Επικοινωνιών", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                        Year = 3, Semester = 5, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΡΟ01", Name = "Προηγμένη Αρχιτεκτονική Υπολογιστών", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                            Year = 3, Semester = 5, 
+                        },
                     
+                    // επιλογής
+                
+                    new Course { UUID = "ΠΛΘΕΠ01", Name = "Ειδικά Θέματα Επιχειρησιακής Έρευνας", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                            Year = 3, Semester = 5, 
+                        },
                     
+                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Λογισμικό Διαχείρισης Μάθησης", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                            Year = 3, Semester = 5, 
+                        },
+                
+                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Θεωρία Υπολογισμού", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                        Year = 3, Semester = 5, 
+                    },
+                
+                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Ουρές Αναμονής", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                        Year = 3, Semester = 5, 
+                    },
+                
+                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Ουρές Αναμονής", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                        Year = 3, Semester = 5, 
+                    },
+                
+                    // έκτο εξάμηνο
+                
+                    new Course { UUID = "ΠΛΠΛΗ46", Name = "Τεχνολογία Λογισμικού", InIntro = true, Description = "",
+                        Year = 3, Semester = 6, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΛΗ18-1", Name = "Τεχνητή Νοημοσύνη και Έμπειρα Συστήματα", InIntro = true, Description = "",
+                        Year = 3, Semester = 6, 
+                    },
+
+                    // τλες
+                
+                    new Course { UUID = "ΠΛΒΙΟΠ01", Name = "Βιοπληροφορική", InIntro = true, Description = "", Type = new [] { CourseType.TLES },
+                            Year = 3, Semester = 6, 
+                        },
+                
+                    new Course { UUID = "ΠΛΠΛΗ24-01", Name = "Επεξεργασία Φυσικής Γλώσσας", InIntro = true, Description = "", Type = new [] { CourseType.TLES },
+                        Year = 3, Semester = 6, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΛΗ48", Name = "Συστήματα Πολυμέσων", InIntro = true, Description = "", Type = new [] { CourseType.TLES },
+                        Year = 3, Semester = 6, 
+                    },
+                
+                    // πσυ
+                
+                    new Course { UUID = "ΠΛΑΝΑΔΕ01", Name = "Αναλυτική Δεδομένων", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
+                        Year = 3, Semester = 6, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΜΑΘ36-1", Name = "Συστήματα Υποστήριξης Αποφάσεων", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
+                        Year = 3, Semester = 6, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΛΗ69-1", Name = "Συστημική Ανάλυση", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
+                        Year = 3, Semester = 6, 
+                    }
+                
+                    // δυς
+                
+                // ΤΕΤΑΡΤΟ ΕΤΟΣ
+                    
+                    // έβδομο εξάμηνο
+                
+                    // όγδοο εξάμηνο
+                    
+                
                 );
         }
     }
