@@ -275,11 +275,43 @@ namespace EduCompass.Data
                 
                     new Course { UUID = "ΠΛΠΛΗ69-1", Name = "Συστημική Ανάλυση", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
                         Year = 3, Semester = 6, 
-                    }
+                    },
                 
                     // δυς
                 
+                    new Course { UUID = "ΠΛΠΛΗ49", Name = "Δίκτυα Υψηλών Ταχυτήτων", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                        Year = 3, Semester = 6, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΠΛΗ91-1", Name = "Προγραμματισμός Συστημάτων, Τηλεπικοινωνιών και Υπηρεσιών", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                        Year = 3, Semester = 6, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΛΗ53", Name = "Σχεδίαση Υπολογιστικών Συστημάτων", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                        Year = 3, Semester = 6, 
+                    },
+                
+                    // επιλογής
+                
+                    new Course { UUID = "ΠΛΔΙΠ01-1", Name = "Διδακτική της Πληροφορικής", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                        Year = 3, Semester = 6, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΕΑΚΔ01", Name = "Ευφυής Αλληλεπίδραση με Κοινωνικά Δίκτυα", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                        Year = 3, Semester = 6, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΡΑΝ01", Name = "Παράλληλος Υπολογισμός", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                        Year = 3, Semester = 6, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΡΑΝΑΛ01", Name = "Πρότυπα Ανάπτυξης Λογισμικού", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                        Year = 3, Semester = 6, 
+                    }
+                
                 // ΤΕΤΑΡΤΟ ΕΤΟΣ
+                
+                    
                     
                     // έβδομο εξάμηνο
                 
