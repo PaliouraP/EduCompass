@@ -74,8 +74,6 @@ public class IntroController : Controller
     [HttpPost]
     public IActionResult PostGrade(string courseUUID, int finalGrade, int interestScore)
     {
-        
-        
         var grade = new Grade
         {
             FinalGrade = finalGrade,
