@@ -355,8 +355,40 @@ namespace EduCompass.Data
                 
                     // επιλογης
                 
-                    new Course { UUID = "ΠΛΠΛΗ47", Name = "Ασφάλεια Πληροφοριακών Συστημάτων", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                    new Course { UUID = "ΠΛΔΙΓ01", Name = "Διαχείριση Γνώσης", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
                             Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΑΠΡΟΔΙΔ01", Name = "Αξιολόγηση Προγραμμάτων Διδασκαλίας", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΕΠΔΙΠΡ01", Name = "Έξυπνες Πόλεις και Διαδίκτυο των Πραγμάτων", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΗΛΜΚΔ01", Name = "Ηλεκτρονική Μάθηση και Κοινωνικά Δίκτυα", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΟΔΕΓ01", Name = "Οχηματικά Δίκτυα Επόμενης Γενιάς", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΛΗ74", Name = "Ανάκτηση Πληροφορίας και Αναζήτηση στον Παγκόσμιο Ιστό", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΣΝΑΥΤ01", Name = "Πληροφοριακά Συστήματα στη Ναυτιλία", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΤΑΗΠ01", Name = "Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΥΠΛΟ01", Name = "Υπηρεσιοστρεφές Λογισμικό", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
                     }
                 
                     // όγδοο εξάμηνο
