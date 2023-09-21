@@ -114,19 +114,19 @@ namespace EduCompass.Data
                     
                     // (ΤΑ ΕΠΙΛΟΓΗΣ) //
                     
-                    new Course { UUID = "ΠΛΔΙΚ01", Name = "Δίκαιο της Πληροφορικής", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                    new Course { UUID = "ΠΛΔΙΚ01", Name = "Δίκαιο της Πληροφορικής", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 3, 
                     },
                     
-                    new Course { UUID = "ΠΛΜΑΘ35-1", Name = "Εφαρμογές Θεωρίας Γραφημάτων", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                    new Course { UUID = "ΠΛΜΑΘ35-1", Name = "Εφαρμογές Θεωρίας Γραφημάτων", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 3, 
                     },
                     
-                    new Course { UUID = "ΠΛΜΑΝΖ01", Name = "Μάνατζμεντ", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                    new Course { UUID = "ΠΛΜΑΝΖ01", Name = "Μάνατζμεντ", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 3, 
                     },
                     
-                    new Course { UUID = "ΠΛΠΑΙΔ01", Name = "Παιδαγωγικά", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                    new Course { UUID = "ΠΛΠΑΙΔ01", Name = "Παιδαγωγικά", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 3, 
                     },
                     
@@ -158,19 +158,19 @@ namespace EduCompass.Data
                     
                     // (ΤΑ ΕΠΙΛΟΓΗΣ) //
                     
-                    new Course { UUID = "ΟΚΟΔΕ08", Name = "Επιχερησιακή Στρατηγική", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                    new Course { UUID = "ΟΚΟΔΕ08", Name = "Επιχερησιακή Στρατηγική", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 4, 
                     },
                     
-                    new Course { UUID = "ΠΛΜΑΘ46-1", Name = "Εφαρμοσμένη Συνδυαστική", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                    new Course { UUID = "ΠΛΜΑΘ46-1", Name = "Εφαρμοσμένη Συνδυαστική", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 4, 
                     },
                     
-                    new Course { UUID = "ΠΛΠΛΗ73-1", Name = "Θεωρία Πληροφοριών και Κωδίκων", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                    new Course { UUID = "ΠΛΠΛΗ73-1", Name = "Θεωρία Πληροφοριών και Κωδίκων", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 4, 
                     },
                     
-                    new Course { UUID = "ΠΛΠΛΗΚΕΚ01", Name = "Πληροφορική στην Εκπαίδευση", InIntro = false, Type = new [] { CourseType.Optional }, Description = "", 
+                    new Course { UUID = "ΠΛΠΛΗΚΕΚ01", Name = "Πληροφορική στην Εκπαίδευση", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 4, 
                     },
                 
@@ -193,49 +193,49 @@ namespace EduCompass.Data
                         Year = 3, Semester = 5},
 
                     // τλες
-                    new Course { UUID = "ΠΛΜΑΘ71", Name = "Λογικός Προγραμματισμός", InIntro = true, Description = "", Type = new [] { CourseType.TLES },
+                    new Course { UUID = "ΠΛΜΑΘ71", Name = "Λογικός Προγραμματισμός", InIntro = true, Description = "", CourseType = "TLES",
                             Year = 3, Semester = 5, 
                         },
                 
                     // πσυ
-                    new Course { UUID = "ΠΛΚΡΥ01", Name = "Κρυπτογραφία", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
+                    new Course { UUID = "ΠΛΚΡΥ01", Name = "Κρυπτογραφία", InIntro = true, Description = "", CourseType = "PSY",
                             Year = 3, Semester = 5, 
                         },
                 
                     // πσυ + τλες
-                    new Course { UUID = "ΠΛΠΛΗ33-2", Name = "Συστήματα Διαχείρισης Βάσεων Δεδομένων", InIntro = true, Description = "", Type = new [] { CourseType.PSY, CourseType.TLES },
+                    new Course { UUID = "ΠΛΠΛΗ33-2", Name = "Συστήματα Διαχείρισης Βάσεων Δεδομένων", InIntro = true, Description = "", CourseType = "PSY, TLES",
                             Year = 3, Semester = 5, 
                         },
                     
                     // δυς
                 
-                    new Course { UUID = "ΠΛΠΘΕ01", Name = "Προηγμένα Θέματα Επικοινωνιών", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                    new Course { UUID = "ΠΛΠΘΕ01", Name = "Προηγμένα Θέματα Επικοινωνιών", InIntro = true, Description = "", CourseType = "DYS",
                         Year = 3, Semester = 5, 
                     },
                 
-                    new Course { UUID = "ΠΛΠΡΟ01", Name = "Προηγμένη Αρχιτεκτονική Υπολογιστών", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                    new Course { UUID = "ΠΛΠΡΟ01", Name = "Προηγμένη Αρχιτεκτονική Υπολογιστών", InIntro = true, Description = "", CourseType = "DYS",
                             Year = 3, Semester = 5, 
                         },
                     
                     // επιλογής
                 
-                    new Course { UUID = "ΠΛΘΕΠ01", Name = "Ειδικά Θέματα Επιχειρησιακής Έρευνας", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΘΕΠ01", Name = "Ειδικά Θέματα Επιχειρησιακής Έρευνας", InIntro = true, Description = "", CourseType = "Optional",
                             Year = 3, Semester = 5, 
                         },
                     
-                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Λογισμικό Διαχείρισης Μάθησης", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Λογισμικό Διαχείρισης Μάθησης", InIntro = true, Description = "", CourseType = "Optional",
                             Year = 3, Semester = 5, 
                         },
                 
-                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Θεωρία Υπολογισμού", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Θεωρία Υπολογισμού", InIntro = true, Description = "", CourseType = "Optional",
                         Year = 3, Semester = 5, 
                     },
                 
-                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Ουρές Αναμονής", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Ουρές Αναμονής", InIntro = true, Description = "", CourseType = "Optional",
                         Year = 3, Semester = 5, 
                     },
                 
-                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Ουρές Αναμονής", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Ουρές Αναμονής", InIntro = true, Description = "", CourseType = "Optional",
                         Year = 3, Semester = 5, 
                     },
                 
@@ -251,74 +251,149 @@ namespace EduCompass.Data
 
                     // τλες
                 
-                    new Course { UUID = "ΠΛΒΙΟΠ01", Name = "Βιοπληροφορική", InIntro = true, Description = "", Type = new [] { CourseType.TLES },
+                    new Course { UUID = "ΠΛΒΙΟΠ01", Name = "Βιοπληροφορική", InIntro = true, Description = "", CourseType = "TLES",
                             Year = 3, Semester = 6, 
                         },
                 
-                    new Course { UUID = "ΠΛΠΛΗ24-01", Name = "Επεξεργασία Φυσικής Γλώσσας", InIntro = true, Description = "", Type = new [] { CourseType.TLES },
+                    new Course { UUID = "ΠΛΠΛΗ24-01", Name = "Επεξεργασία Φυσικής Γλώσσας", InIntro = true, Description = "", CourseType = "TLES",
                         Year = 3, Semester = 6, 
                     },
                 
-                    new Course { UUID = "ΠΛΠΛΗ48", Name = "Συστήματα Πολυμέσων", InIntro = true, Description = "", Type = new [] { CourseType.TLES },
+                    new Course { UUID = "ΠΛΠΛΗ48", Name = "Συστήματα Πολυμέσων", InIntro = true, Description = "", CourseType = "TLES",
                         Year = 3, Semester = 6, 
                     },
                 
                     // πσυ
                 
-                    new Course { UUID = "ΠΛΑΝΑΔΕ01", Name = "Αναλυτική Δεδομένων", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
+                    new Course { UUID = "ΠΛΑΝΑΔΕ01", Name = "Αναλυτική Δεδομένων", InIntro = true, Description = "", CourseType = "PSY",
                         Year = 3, Semester = 6, 
                     },
                     
-                    new Course { UUID = "ΠΛΜΑΘ36-1", Name = "Συστήματα Υποστήριξης Αποφάσεων", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
+                    new Course { UUID = "ΠΛΜΑΘ36-1", Name = "Συστήματα Υποστήριξης Αποφάσεων", InIntro = true, Description = "", CourseType = "PSY",
                         Year = 3, Semester = 6, 
                     },
                 
-                    new Course { UUID = "ΠΛΠΛΗ69-1", Name = "Συστημική Ανάλυση", InIntro = true, Description = "", Type = new [] { CourseType.PSY },
+                    new Course { UUID = "ΠΛΠΛΗ69-1", Name = "Συστημική Ανάλυση", InIntro = true, Description = "", CourseType = "PSY",
                         Year = 3, Semester = 6, 
                     },
                 
                     // δυς
                 
-                    new Course { UUID = "ΠΛΠΛΗ49", Name = "Δίκτυα Υψηλών Ταχυτήτων", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                    new Course { UUID = "ΠΛΠΛΗ49", Name = "Δίκτυα Υψηλών Ταχυτήτων", InIntro = true, Description = "", CourseType = "DYS",
                         Year = 3, Semester = 6, 
                     },
                     
-                    new Course { UUID = "ΠΛΠΛΗ91-1", Name = "Προγραμματισμός Συστημάτων, Τηλεπικοινωνιών και Υπηρεσιών", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                    new Course { UUID = "ΠΛΠΛΗ91-1", Name = "Προγραμματισμός Συστημάτων, Τηλεπικοινωνιών και Υπηρεσιών", InIntro = true, Description = "", CourseType = "DYS",
                         Year = 3, Semester = 6, 
                     },
                 
-                    new Course { UUID = "ΠΛΠΛΗ53", Name = "Σχεδίαση Υπολογιστικών Συστημάτων", InIntro = true, Description = "", Type = new [] { CourseType.DYS },
+                    new Course { UUID = "ΠΛΠΛΗ53", Name = "Σχεδίαση Υπολογιστικών Συστημάτων", InIntro = true, Description = "", CourseType = "DYS",
                         Year = 3, Semester = 6, 
                     },
                 
                     // επιλογής
                 
-                    new Course { UUID = "ΠΛΔΙΠ01-1", Name = "Διδακτική της Πληροφορικής", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΔΙΠ01-1", Name = "Διδακτική της Πληροφορικής", InIntro = true, Description = "", CourseType = "Optional",
                         Year = 3, Semester = 6, 
                     },
                     
-                    new Course { UUID = "ΠΛΕΑΚΔ01", Name = "Ευφυής Αλληλεπίδραση με Κοινωνικά Δίκτυα", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΕΑΚΔ01", Name = "Ευφυής Αλληλεπίδραση με Κοινωνικά Δίκτυα", InIntro = true, Description = "", CourseType = "Optional",
                         Year = 3, Semester = 6, 
                     },
                 
-                    new Course { UUID = "ΠΛΠΡΑΝ01", Name = "Παράλληλος Υπολογισμός", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΠΡΑΝ01", Name = "Παράλληλος Υπολογισμός", InIntro = true, Description = "", CourseType = "Optional",
                         Year = 3, Semester = 6, 
                     },
                 
-                    new Course { UUID = "ΠΛΠΡΑΝΑΛ01", Name = "Πρότυπα Ανάπτυξης Λογισμικού", InIntro = true, Description = "", Type = new [] { CourseType.Optional },
+                    new Course { UUID = "ΠΛΠΡΑΝΑΛ01", Name = "Πρότυπα Ανάπτυξης Λογισμικού", InIntro = true, Description = "", CourseType = "Optional",
                         Year = 3, Semester = 6, 
-                    }
+                    },
                 
                 // ΤΕΤΑΡΤΟ ΕΤΟΣ
-                
-                    
-                    
-                    
+
                     // έβδομο εξάμηνο
+                    
+                    // τλες
+                
+                    new Course { UUID = "ΠΛΕΙΚ03", Name = "Εικονική Πραγματικότητα", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                            Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΕΙΚ01", Name = "Ανάλυση Εικόνας", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                            Year = 4, Semester = 7, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΘΕΤΚΑΕ01", Name = "Σύγχρονα Θέματα Τεχνολογίας Λογισμικού", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    // πσυ
+                
+                    new Course { UUID = "ΠΛΗΘΕΔ01", Name = "Θέματα Επιστήμης Δεδομένων", InIntro = true, Description = "", CourseType = "ΠΣΥ",
+                            Year = 4, Semester = 7, 
+                    },
+                    
+                    new Course { UUID = "ΠΛΜΑΘ34-4", Name = "Προσομοίωση Συστημάτων", InIntro = true, Description = "", CourseType = "ΠΣΥ",
+                        Year = 4, Semester = 7, 
+                    },
+                    
+                    // δυς
+                
+                    new Course { UUID = "ΠΛΚΑΕ01", Name = "Κινητές και Ασύρματες Επικοινωνίες", InIntro = true, Description = "", CourseType = "ΔΥΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΣΥΣ01-1", Name = "Κατανεμημένα και Πολυεπεξεργαστικά Υπολογιστικά Συστήματα", InIntro = true, Description = "", CourseType = "ΔΥΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    // πσυ + δυς
+                
+                    new Course { UUID = "ΠΛΠΛΗ47", Name = "Ασφάλεια Πληροφοριακών Συστημάτων", InIntro = true, Description = "", CourseType = "ΠΣΥ, ΔΥΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    // επιλογης
+                
+                    new Course { UUID = "ΠΛΔΙΓ01", Name = "Διαχείριση Γνώσης", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                            Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΑΠΡΟΔΙΔ01", Name = "Αξιολόγηση Προγραμμάτων Διδασκαλίας", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΕΠΔΙΠΡ01", Name = "Έξυπνες Πόλεις και Διαδίκτυο των Πραγμάτων", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΗΛΜΚΔ01", Name = "Ηλεκτρονική Μάθηση και Κοινωνικά Δίκτυα", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΟΔΕΓ01", Name = "Οχηματικά Δίκτυα Επόμενης Γενιάς", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΠΛΗ74", Name = "Ανάκτηση Πληροφορίας και Αναζήτηση στον Παγκόσμιο Ιστό", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΣΝΑΥΤ01", Name = "Πληροφοριακά Συστήματα στη Ναυτιλία", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΤΑΗΠ01", Name = "Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    },
+                
+                    new Course { UUID = "ΠΛΥΠΛΟ01", Name = "Υπηρεσιοστρεφές Λογισμικό", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 7, 
+                    }
                 
                     // όγδοο εξάμηνο
                     
-                
+                    
                 );
         }
     }
