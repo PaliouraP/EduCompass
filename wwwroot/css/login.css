@@ -1,4 +1,12 @@
-﻿.btn-long {
+﻿.container {
+    background: linear-gradient(to right, #f8f8f8 55%, white 55%);
+}
+
+.container-alt {
+    background: linear-gradient(to right, #f8f8f8 46%, white 46%);
+}
+
+.btn-long {
     color: white;
     font-weight: 500;
     height: 50px;
