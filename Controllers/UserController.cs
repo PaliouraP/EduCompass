@@ -24,7 +24,7 @@ namespace EduCompass.Controllers
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
             {
                 // if it doesn't, then log the user out.
-                TempData["Error"] = "Your session has expired. Please log in again.";
+                TempData["Error"] = "Ουπς! Φαίνεται ότι η συνεδρία σας έχει λήξει. Παρακαλώ ξανασυνδεθείτε.";
                 context.Result = RedirectToAction("Login", "Auth");
                 base.OnActionExecuting(context);
                 return;
@@ -63,7 +63,7 @@ namespace EduCompass.Controllers
             {
                 if (_database.Users.Any(u => u.Username == username))
                 {
-                    TempData["Error"] = "To username που επιλέξατε είναι ήδη σε χρήση.";
+                    TempData["Error"] = "To όνομα χρήστη που επιλέξατε είναι ήδη σε χρήση.";
                     return RedirectToAction("EditProfile");
                 }
                 

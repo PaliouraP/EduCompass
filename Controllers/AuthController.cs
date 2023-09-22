@@ -62,7 +62,7 @@ public class AuthController : Controller
         {
             // fail and display error to the user.
             Debug.WriteLine($"This should fail, because {usrnm} a duplicate username.");
-            TempData["Error"] = "This Username is already taken.";
+            TempData["Error"] = "To όνομα χρήστη που επιλέξατε είναι ήδη σε χρήση.";
             return RedirectToAction("SignUp");
         }
 
@@ -70,7 +70,7 @@ public class AuthController : Controller
         {
             // fail and display error to the user.
             Debug.WriteLine($"This should fail, because {email} a duplicate username.");
-            TempData["Error"] = "This E-Mail is already taken.";
+            TempData["Error"] = "To ηλεκτρονικό ταχυδρομείο που επιλέξατε είναι ήδη σε χρήση";
             return RedirectToAction("SignUp");
         }
 
@@ -78,7 +78,7 @@ public class AuthController : Controller
         {
             // fail and display error to the user.
             Debug.WriteLine($"This should fail, because passwords don't match.");
-            TempData["Error"] = "Please confirm your password correctly.";
+            TempData["Error"] = "Βεβαιωθείτε ότι εισάγετε το ίδιο συνθηματικό και στα δύο πεδία κωδικού.";
             return RedirectToAction("SignUp");
         }
 
