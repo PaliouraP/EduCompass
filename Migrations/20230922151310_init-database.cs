@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EduCompass.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDB : Migration
+    public partial class initdatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,6 +21,7 @@ namespace EduCompass.Migrations
                     Year = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     InIntro = table.Column<bool>(type: "bit", nullable: false),
+                    CourseType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SoftwareEngineering = table.Column<int>(type: "int", nullable: false),
                     AI_ML = table.Column<int>(type: "int", nullable: false),
                     UI_UX = table.Column<int>(type: "int", nullable: false),

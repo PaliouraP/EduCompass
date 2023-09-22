@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCompass.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230831133112_TestSeedData")]
-    partial class TestSeedData
+    [Migration("20230922151310_init-database")]
+    partial class initdatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,6 +38,10 @@ namespace EduCompass.Migrations
 
                     b.Property<int>("ComputerVisionAndGraphics")
                         .HasColumnType("int");
+
+                    b.Property<string>("CourseType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("DatabaseManagement")
                         .HasColumnType("int");
@@ -80,46 +84,6 @@ namespace EduCompass.Migrations
                     b.HasKey("UUID");
 
                     b.ToTable("Courses");
-
-                    b.HasData(
-                        new
-                        {
-                            UUID = "ΠΛΠΛΗ90",
-                            AI_ML = 0,
-                            ComputerNetworks = 8,
-                            ComputerVisionAndGraphics = 0,
-                            DatabaseManagement = 0,
-                            Description = "Μάθημα 1ου εξαμήνου",
-                            GameDev = 0,
-                            InIntro = true,
-                            MobileAppDev = 0,
-                            Name = "Τεχνολογίες Διαδικτύου",
-                            Security = 0,
-                            Semester = 1,
-                            SoftwareEngineering = 4,
-                            UI_UX = 1,
-                            WebDev = 8,
-                            Year = 1
-                        },
-                        new
-                        {
-                            UUID = "ΠΛΠΛΗ37-2",
-                            AI_ML = 0,
-                            ComputerNetworks = 0,
-                            ComputerVisionAndGraphics = 0,
-                            DatabaseManagement = 0,
-                            Description = "Αντικειμενοστρέφεια",
-                            GameDev = 0,
-                            InIntro = true,
-                            MobileAppDev = 0,
-                            Name = "Αντικειμενοστρεφής Προγραμματισμός",
-                            Security = 0,
-                            Semester = 2,
-                            SoftwareEngineering = 10,
-                            UI_UX = 0,
-                            WebDev = 0,
-                            Year = 1
-                        });
                 });
 
             modelBuilder.Entity("EduCompass.Models.Grade", b =>

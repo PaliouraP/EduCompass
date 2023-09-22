@@ -23,7 +23,7 @@ public class Course
 
     public bool InIntro { get; set; } = false;
 
-    public CourseType[] Type { get; set; } = { CourseType.None };
+    public string CourseType { get; set; } = string.Empty;
     
     // COEFFICIENTS
     [Required] 
@@ -55,13 +55,4 @@ public class Course
     
     [Required] 
     public int MobileAppDev { get; set; } = 0;
-}
-
-public enum CourseType
-{
-    None,
-    TLES,
-    PSY,
-    DYS,
-    Optional
 }
