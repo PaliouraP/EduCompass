@@ -16,31 +16,33 @@
 }
 
 .nav-item {
-    font-weight: 800;
+    font-weight: 500;
     font-size: medium;
     width: 100%;
 }
 
     .nav-item:hover {
-        background-color: #7678ED;
-        font-size: large;
+        background: linear-gradient(180deg, #7678ED 0%, #7678ED 26%, #3D348B 100%);
+        font-weight: 800;
     }
 
 .nav-item-b {
-    font-weight: 800;
+    font-weight: 500;
     font-size: medium;
     width: 100%;
 }
 
-.nav-item-b:hover {
-    background-color: #7678ED;
-    font-size: large;
-    border-radius: 0px 0px 25px 0px;
-}
+    .nav-item-b:hover {
+        background: linear-gradient(180deg, #7678ED 0%, #7678ED 26%, #3D348B 100%);
+        font-weight: 800;
+        border-radius: 0px 0px 25px 25px;
+    }
 
 .nav-bg {
-    background-color: #3D348B;
-    border-radius: 0px 25px 25px 0px ;
+    /*background-color: #3D348B;*/
+    background: linear-gradient(0deg, #7678ED 0%, #7678ED 26%, #3D348B 100%);
+    border-radius: 25px;
+    height: inherit;
 }
 
 .logo-img {

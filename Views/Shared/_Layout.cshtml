@@ -11,64 +11,63 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/navigation.css" />
 </head>
-<body>
-    <!---Navigation--->
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 mx-0 px-0 nav-bg">
-                <div class="d-flex flex-column align-items-center align-items-sm-start pt-2 text-white min-vh-100">
-                    <div class="d-flex justify-content-center my-5 py-5">
-                        <img src="~/images/logo-2.png" alt="logo" class="logo-img" />
-                    </div>
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                        <li class="nav-item">
-                            <a href="/Home/Index" class="nav-link align-middle px-auto">
-                                <i class="fas fa-home"></i> <span class="ms-5 d-none d-sm-inline">Αρχική</span>
-                            </a>
+<body class="vh-100">
+    <div class="container center px-0">
+        <!---Navigation--->
+        <div class="nav-bg col-auto col-md-3 col-xl-2 d-flex flex-column">
+            <div class="d-flex justify-content-center my-5 py-5">
+                <img src="~/images/logo-2.png" alt="logo" class="logo-img" />
+            </div>
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <li class="nav-item">
+                    <a href="/Home/Index" class="nav-link align-middle px-auto">
+                        <i class="fas fa-home"></i> <span class="ms-5 d-none d-sm-inline">Αρχική</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Course/CoursePage/" class="nav-link align-middle px-auto">
+                        <i class="fas fa-book-open"></i> <span class="ms-5 d-none d-sm-inline">Μαθήματα</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/User/Profile/" class="nav-link px-auto align-middle">
+                        <i class="fas fa-user"></i> <span class="ms-5 d-none d-sm-inline">Προφίλ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" data-bs-toggle="collapse" class="nav-link px-auto align-middle ">
+                        <i class="fas fa-chart-pie"></i> <span class="ms-5 d-none d-sm-inline">Στατιστικά</span>
+                    </a>
+                    <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                        <li class="w-100">
+                            <a href="#" class="nav-link px-auto"> <span class="d-none d-sm-inline">Item</span> 1</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/Course/CoursePage/" class="nav-link align-middle px-auto">
-                                <i class="fas fa-book-open"></i> <span class="ms-5 d-none d-sm-inline">Μαθήματα</span>
-                            </a>
+                        <li>
+                            <a href="#" class="nav-link px-auto"> <span class="d-none d-sm-inline">Item</span> 2</a>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a href="/User/Profile/" class="nav-link px-auto align-middle">
-                                <i class="fas fa-user"></i> <span class="ms-5 d-none d-sm-inline">Προφίλ</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" data-bs-toggle="collapse" class="nav-link px-auto align-middle ">
-                                <i class="fas fa-chart-pie"></i> <span class="ms-5 d-none d-sm-inline">Στατιστικά</span>
-                            </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-auto"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-auto"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                        
                     </ul>
-                    <hr>
-                    <div class="nav-item-b pb-4">
-                        <a href="/Auth/Logout" class="nav-link px-auto align-middle">
-                            <i class="fas fa-sign-out-alt"></i> <span class="ms-1 d-none d-sm-inline">Αποσύνδεση</span>
-                        </a>
-                    </div>
-                </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/User/Profile/" class="nav-link px-auto align-middle">
+                        <i class="fas fa-question"></i> <span class="ms-5 d-none d-sm-inline">Βοήθεια</span>
+                    </a>
+                </li>
+
+
+            </ul>
+            <hr class="py-0 my-0">
+            <div class="nav-item-b py-4">
+                <a href="/Auth/Logout" class="nav-link px-auto align-middle">
+                    <i class="fas fa-sign-out-alt"></i> <span class="ms-1 d-none d-sm-inline">Αποσύνδεση</span>
+                </a>
             </div>
-            <div class="col py-3">
-                @RenderBody()
-            </div>
+        </div>
+        <div class="col py-3">
+            @RenderBody()
         </div>
     </div>
 
-    
-    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
