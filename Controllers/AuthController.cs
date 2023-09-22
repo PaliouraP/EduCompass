@@ -44,7 +44,7 @@ public class AuthController : Controller
 
         // Otherwise redirect to dashboard.
         CreateSession(user.Username);
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Dashboard", "Home");
     }
 
     // GET
@@ -99,7 +99,7 @@ public class AuthController : Controller
 
         // and then redirect the user to home.
         CreateSession(newUser.Username);
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Dashboard", "Home");
     }
 
     public IActionResult Logout()

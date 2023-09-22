@@ -35,9 +35,9 @@ namespace EduCompass.Controllers
         
         public IActionResult Profile()
         {
-            _currentUser.SoftwareEngineerPercentage = Models.User.SoftwareEngineeringTotal(_database.Courses.ToList(), _database.Grades.ToList(), _currentUser) * 100;
-            _database.Users.Update(_currentUser);
-            _database.SaveChanges();
+            //_currentUser.SoftwareEngineerPercentage = Models.User.SoftwareEngineeringTotal(_database.Courses.ToList(), _database.Grades.ToList(), _currentUser) * 100;
+            //_database.Users.Update(_currentUser);
+            //_database.SaveChanges();
             
             var model = _currentUser;
 

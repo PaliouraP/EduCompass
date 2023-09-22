@@ -131,7 +131,6 @@ namespace EduCompass.Data
                         Year = 2, Semester = 3, 
                     },
                     
-                    
                     // τέταρτο εξάμηνο
                 
                     new Course { UUID = "ΠΛΠΛΗ30-1", Name = "Βάσεις Δεδομένων", InIntro = true, Description = "Σκοπός του μαθήματος είναι αρχικά η κατανόηση των Βάσεων Δεδομένων (ΒΔ) ως συλλογές σχέσεων (πινάκων), " +
