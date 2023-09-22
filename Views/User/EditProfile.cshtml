@@ -4,38 +4,60 @@
     ViewData["Title"] = "Profile";
 }
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/site.css" />
+@{
+    Layout = "_Layout";
 }
 
-<h1>Επεξεργασία Στοιχείων</h1>
+@section Styles {
+    <link rel="stylesheet" href="~/css/profile.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+}
+
+
 
 @if (@TempData["Error"] != null)
 {
     <div class="error-msg overlay px-4 py-4 ">@TempData["Error"]<i class="fas fa-times"></i></div>
 }
-<section class="vh-100" style="background-color: #E9DAC8;">
 
+<div class="profile-card-body mx-auto my-5 px-5 py-5">
+    <h3 class="mb-3" style="letter-spacing: 1px;" id="subject"><b>Επεξεργασία Στοιχείων</b></h3>
     <form method="post">
-        <label for="firstname">Όνομα:</label>
-        <input type="text" name="firstname" id="firstname"/>
-    
-        <label for="lastname">Επώνυμο:</label>
-        <input type="text" name="lastname" id="lastname" />
-    
-        <label for="username">Όνομα Χρήστη:</label>
-        <input type="text" name="username" id="username" />
+        <div class="row my-2">
+            <div class="col">
+                <label for="firstname">Όνομα:</label>
+                <input type="text" name="firstname" id="firstname" class="form-control form-control-lg" />
+            </div>
+            <div class="col">
+                <label for="lastname">Επώνυμο:</label>
+                <input type="text" name="lastname" id="lastname" class="form-control form-control-lg" />
+            </div>
+            
+        </div>
         
-        <label for="email">Ηλεκτρονικό Ταχυδρομείο:</label>
-        <input type="email" name="email" id="email" />
-    
-        <label for="semester">Εξάμηνο:</label>
-        <input type="number" name="semester" id="semester" max="32" min="1" />
+        <div class="row my-2">
+            <div class="col">
+                <label for="username">Όνομα Χρήστη:</label>
+                <input type="text" name="username" id="username" class="form-control form-control-lg" />
+            </div>
+            <div class="col">
+                <label for="email">Ηλεκτρονικό Ταχυδρομείο:</label>
+                <input type="email" name="email" id="email" class="form-control form-control-lg" />
+            </div>
+        </div>
+        
+        <div class="row my-2">
+            <div class="col">
+                <label for="semester">Εξάμηνο:</label>
+                <input type="number" name="semester" id="semester" max="32" min="1" class="form-control form-control-lg" />
+            </div>
+            <div class="col"></div>
+        </div>
 
-        <button type="submit">Υποβολη</button>
+        <div class="row d-flex justify-content-center my-4">
+            <button type="submit" class="btn-long">Υποβολη</button>
+        </div>
     </form>
-    
-</section>
-
+</div>
 
 
