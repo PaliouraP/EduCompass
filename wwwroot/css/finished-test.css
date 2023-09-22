@@ -1,0 +1,51 @@
+﻿.container {
+    background-color: white;
+}
+
+h6 {
+    text-align: center;
+}
+
+.btn-proceed {
+    color: white;
+    transition: none;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-proceed:hover {
+    color:white;
+}
+
+@media screen and (min-width:320px) { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+}
+
+@media screen and (min-width:480px) { /* smartphones, Android phones, landscape iPhone */
+}
+
+@media screen and (min-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+}
+
+@media screen and (min-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+@media screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    .main-img {
+        width: 250px;
+    }
+}
+
+@media screen and (min-width:1281px) { /* hi-res laptops and desktops */
+    .main-img {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width:2000px) { /* hi-res laptops and desktops */
+
+    .main-img {
+        width: 500px;
+    }
+}

@@ -6,24 +6,6 @@
     background: linear-gradient(to right, #f8f8f8 46%, white 46%);
 }
 
-.btn-long {
-    color: white;
-    font-weight: 500;
-    height: 50px;
-    font-size: 20px;
-    background-color: #3D348B;
-    border: 0px;
-    border-radius: 15px;
-    width: 50%;
-    
-}
-
-    .btn-long:hover {
-        background-color: #7678ED;
-    }
-
-
-
 .main-img {
     
 }

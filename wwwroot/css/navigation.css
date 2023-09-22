@@ -14,9 +14,6 @@
     color:white;
 }
 
-.navigation-link:after {
-    background-color: cyan;
-}
 
 .navigation-item {
     font-weight: 500;

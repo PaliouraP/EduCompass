@@ -4,21 +4,39 @@
     ViewData["Title"] = "IntroTest";
 }
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/site.css" />
+@{
+    Layout = null;
 }
 
-<style>
-    .radio-group 
-    {
-        display: inline-block;
-        margin-right: 10px; /* Adjust this value for spacing between radio buttons */
-    }
-</style>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/finished-test.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
 
 
+<body class="vh-100">
+    <div class="container center">
+        <div class="center">
+            <h1 class="d-flex justify-content-evenly mt-5"><b>Συγχαρητήρια!</b></h1>
+            <h6 class="d-flex justify-content-evenly">Ολοκληρώσατε το τεστ προτιμήσεων! Μπορείτε να μεταβείτε στην αρχική κάνωντας κλικ στο παρακάτω κουμπί.</h6>
+            <div class="d-flex justify-content-evenly">
+                <img src="~/images/finished-test.png"
+                     alt="login form" class="main-img" />
+            </div>
+            <div class="d-flex justify-content-evenly pt-1 my-5">
+                <a href="/Home/Dashboard" class="btn-long btn-proceed px-auto">Αρχική σελίδα</a>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</body>
 
-Finished.
 
 
 
