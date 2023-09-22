@@ -1,0 +1,48 @@
+﻿.nav {
+    width: 100%;
+}
+
+.nav-link {
+    color: white;
+    transition: none;
+}
+
+.nav-link:hover {
+    color:white;
+}
+
+.nav-link:after {
+    background-color: cyan;
+}
+
+.nav-item {
+    font-weight: 800;
+    font-size: medium;
+    width: 100%;
+}
+
+    .nav-item:hover {
+        background-color: #7678ED;
+        font-size: large;
+    }
+
+.nav-item-b {
+    font-weight: 800;
+    font-size: medium;
+    width: 100%;
+}
+
+.nav-item-b:hover {
+    background-color: #7678ED;
+    font-size: large;
+    border-radius: 0px 0px 25px 0px;
+}
+
+.nav-bg {
+    background-color: #3D348B;
+    border-radius: 0px 25px 25px 0px ;
+}
+
+.logo-img {
+    width: 90%;
+}
