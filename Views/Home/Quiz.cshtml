@@ -2,48 +2,54 @@
     ViewData["Title"] = "Quiz";
 }
 
-<section class="vh-100" style="background-color: #E9DAC8;">
-    <div class="container px-5 py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col col-xl-10">
-                <div class="card" style="border-radius: 1rem;">
-                    <div class="row g-0">
-                            <div class="card-body p-4 p-lg-5 text-black">
+@{
+    Layout = "_Layout";
+}
 
-                                <form>
-                                <h3 class="fw-normal mb-3 pb-3 text-center" style="letter-spacing: 1px;">Μάθημα - Κεφάλαιο</h3>
+@section Styles {
+    <link rel="stylesheet" href="~/css/test.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+}
 
-                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;" id="subject">Ερώτηση</h5>
-                                <div class="question-body multichoice">
-                                    <input type="radio" id="ans1" name="question" value="ans1">
-                                    <label for="ans1">Example 1</label><br>
-                                    <input type="radio" id="ans2" name="question" value="ans2">
-                                    <label for="ans2">Example 2</label><br>
-                                    <input type="radio" id="ans3" name="question" value="ans3">
-                                    <label for="ans3">Example 3</label>
-                                </div>
-                                
-                                <div class="question-body fill-empty" hidden>
-                                    <input type="text" id="answer">
-                                </div>
-                              
-                                
+<div class="px-5 py-5" style="height:inherit">
+        <h1 class="d-flex justify-content-evenly my-5"><b>Μάθημα - Κεφάλαιο</b></h1>
+        
+        <div>
+        <h6 class="d-flex justify-content-start mt-5">Κείμενο ερώτησης</h6>
+        <div class="row radio-group type-choose ">
+                <div class="row radio-group my-1">
+                    <input type="radio" name="choice-answer" class="col-1" id="" value="" />
+                    <label class="form-check-label col-9" for="interest2">Επιλογή 1</label>
+                </div>
 
-                                    <div class="pt-1 mb-4">
-                                        <button class="btn btn-outline-primary" type="button">Προηγούμενο</button>
-                                        <button class="btn btn-primary" type="button">Επόμενο</button>
-                                    </div>
+            <div class="row radio-group my-1">
+                <input type="radio" name="choice-answer" class="col-1" id="" value="" />
+                    <label class="form-check-label col-9" for="interest2">Επιλογή 2</label>
+                </div>
 
-                                    
-                                </form>
+            <div class="row radio-group my-1">
+                <input type="radio" name="choice-answer" class="col-1" id="" value="" />
+                    <label class="form-check-label col-9" for="interest2">Επιλογή 3</label>
+                </div>
 
-                            </div>
-                    </div>
+            <div class="row radio-group my-1">
+                <input type="radio" name="choice-answer" class="col-1" id="" value="" />
+                    <label class="form-check-label col-9" for="interest2">Επιλογή 4</label>
                 </div>
             </div>
+
+        <h6 class="d-flex justify-content-start mt-5">Κείμενο ερώτησης</h6>
+            <div class="row type-write">
+                <input type="text" name="text-answer" id="text-answer" class="form-control form-control-lg" />
+            </div>
+            
+                <div class="row d-flex justify-content-between mt-5">
+                    <button class="btn-long-alt" type="submit">Ακύρωση</button>
+                    <button class="btn-long" type="submit">Τέλος τεστ</button>
+                </div>
+            
         </div>
-    </div>
-</section>
+</div>
 
 
 

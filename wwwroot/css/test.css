@@ -19,5 +19,17 @@
         background-color: #7678ED;
     }
 
+.btn-long-alt {
+    max-width: 200px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+    .btn-long-alt:hover {
+        border: solid;
+        border-width: medium;
+        border-color: #3D348B;
+    }
 
 
