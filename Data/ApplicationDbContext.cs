@@ -395,41 +395,57 @@ namespace EduCompass.Data
                     
                     // τλες
                     
-                    new Course { UUID = "", Name = "Επεξεργασία Σημάτων Φωνής και Ήχου", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                    new Course { UUID = "ΠΛΕΠΣΦΗ01", Name = "Επεξεργασία Σημάτων Φωνής και Ήχου", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
                         Year = 4, Semester = 8, 
                     },
                 
-                    new Course { UUID = "", Name = "Ευφυείς Πράκτορες", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                    new Course { UUID = "ΠΛΕΥΦΠΡ01", Name = "Ευφυείς Πράκτορες", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
                         Year = 4, Semester = 8, 
                     },
                 
-                    new Course { UUID = "", Name = "Εκπαιδευτικό Λογισμικό", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                    new Course { UUID = "ΠΛΕΚΛ01", Name = "Εκπαιδευτικό Λογισμικό", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
                         Year = 4, Semester = 8, 
                     },
                     
                     // πσυ
                 
-                    new Course { UUID = "", Name = "Διοικητική Πληροφορική", InIntro = true, Description = "", CourseType = "ΠΣΥ",
+                    new Course { UUID = "ΠΛΔΙΠ01", Name = "Διοικητική Πληροφορική", InIntro = true, Description = "", CourseType = "ΠΣΥ",
                         Year = 4, Semester = 8, 
                     },
                     
                     // δυς
                     
-                    new Course { UUID = "", Name = "Ασφάλεια Δικτύων", InIntro = true, Description = "", CourseType = "ΔΥΣ",
+                    new Course { UUID = "ΠΛΑΣΦΔ01", Name = "Ασφάλεια Δικτύων", InIntro = true, Description = "", CourseType = "ΔΥΣ",
                         Year = 4, Semester = 8, 
                     },
                     
                     // πσυ + δυς
                 
-                    new Course { UUID = "", Name = "Ηλεκτρονικό Επιχειρήν και Καινοτομία", InIntro = true, Description = "", CourseType = "ΠΣΥ, ΔΥΣ",
+                    new Course { UUID = "ΠΛΗΕΠΚ01", Name = "Ηλεκτρονικό Επιχειρήν και Καινοτομία", InIntro = true, Description = "", CourseType = "ΠΣΥ, ΔΥΣ",
                         Year = 4, Semester = 8, 
                     },
                 
-                    new Course { UUID = "", Name = "Πληροφοριακά Συστήματα στο Διαδίκτυο", InIntro = true, Description = "", CourseType = "ΠΣΥ, ΔΥΣ",
+                    new Course { UUID = "ΠΛΣΥΔ01", Name = "Πληροφοριακά Συστήματα στο Διαδίκτυο", InIntro = true, Description = "", CourseType = "ΠΣΥ, ΔΥΣ",
                         Year = 4, Semester = 8, 
-                    }
+                    },
                 
                     // επιλογης
+
+                    new Course { UUID = "ΠΛΘΕΔΔΚΕ01", Name = "Προηγμένα Θέματα Διαχείρισης Δικτύων και Κινητών Επικοινωνιών", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 8, 
+                    },
+                
+                    new Course { UUID = "ΠΛΣΥΣ02", Name = "Συστήματα ERP/CRM", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 8, 
+                    },
+                
+                    new Course { UUID = "ΠΛΣΥΣ03", Name = "Συστήματα Διασφάλισης Ποιότητας", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 8, 
+                    },
+                
+                    new Course { UUID = "ΠΛΤΕΒΕΦ01", Name = "Τεχνολογίες Blockchain και Εφαρμογές", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
+                        Year = 4, Semester = 8, 
+                    }
                 
                 );
         }
