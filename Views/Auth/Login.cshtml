@@ -18,6 +18,10 @@
 
 <body class="vh-100">
     <section class="mt-5 vh-95">
+        @if(@TempData["Error"] != null) {
+            <div class="error-msg overlay px-4 py-4 ">@TempData["Error"]<i class="fas fa-times"></i></div>
+        } 
+        
         <div class="container center">
             <div class="row d-flex align-items-center h-100">
                 <div class="d-flex justify-content-center px-5 col-md-8 col-lg-7 col-xl-6">
@@ -27,7 +31,7 @@
                 </div>
                 <div class="px-5 col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <!-- TODO: Change the tempdata styling. -->
-                    <h3>@TempData["Error"]</h3>
+                    
                     <form method="post">
 
                         <div class="d-flex justify-content-evenly mb-3 pb-1">

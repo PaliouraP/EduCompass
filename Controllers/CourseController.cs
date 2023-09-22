@@ -29,7 +29,7 @@ namespace EduCompass.Controllers
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
             {
                 // if it doesn't, then log the user out.
-                TempData["Error"] = "Your session has expired. Please log in again.";
+                TempData["Error"] = "⚠️ Ουπς! Φαίνεται ότι η σύνοδός σας έχει λήξει. Παρακαλώ ξανασυνδεθείτε.";
                 context.Result = RedirectToAction("Login", "Auth");
                 base.OnActionExecuting(context);
                 return;
