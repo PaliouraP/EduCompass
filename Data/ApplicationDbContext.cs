@@ -389,11 +389,48 @@ namespace EduCompass.Data
                 
                     new Course { UUID = "ΠΛΥΠΛΟ01", Name = "Υπηρεσιοστρεφές Λογισμικό", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
                         Year = 4, Semester = 7, 
-                    }
+                    },
                 
                     // όγδοο εξάμηνο
                     
+                    // τλες
                     
+                    new Course { UUID = "", Name = "Επεξεργασία Σημάτων Φωνής και Ήχου", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                        Year = 4, Semester = 8, 
+                    },
+                
+                    new Course { UUID = "", Name = "Ευφυείς Πράκτορες", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                        Year = 4, Semester = 8, 
+                    },
+                
+                    new Course { UUID = "", Name = "Εκπαιδευτικό Λογισμικό", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
+                        Year = 4, Semester = 8, 
+                    },
+                    
+                    // πσυ
+                
+                    new Course { UUID = "", Name = "Διοικητική Πληροφορική", InIntro = true, Description = "", CourseType = "ΠΣΥ",
+                        Year = 4, Semester = 8, 
+                    },
+                    
+                    // δυς
+                    
+                    new Course { UUID = "", Name = "Ασφάλεια Δικτύων", InIntro = true, Description = "", CourseType = "ΔΥΣ",
+                        Year = 4, Semester = 8, 
+                    },
+                    
+                    // πσυ + δυς
+                
+                    new Course { UUID = "", Name = "Ηλεκτρονικό Επιχειρήν και Καινοτομία", InIntro = true, Description = "", CourseType = "ΠΣΥ, ΔΥΣ",
+                        Year = 4, Semester = 8, 
+                    },
+                
+                    new Course { UUID = "", Name = "Πληροφοριακά Συστήματα στο Διαδίκτυο", InIntro = true, Description = "", CourseType = "ΠΣΥ, ΔΥΣ",
+                        Year = 4, Semester = 8, 
+                    }
+                
+                    // επιλογης
+                
                 );
         }
     }
