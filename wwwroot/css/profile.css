@@ -1,0 +1,49 @@
+﻿.container {
+    background-color: #f8f8f8;
+}
+
+.profile-card-body {
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 4px 4px 27px 5px rgba(0, 0, 0, 0.1);
+    width: 95%;
+}
+
+.btn-long {
+    color: white;
+    transition: none;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    width: 350px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+    .btn-long:hover {
+        color: white;
+    }
+
+.card-mini {
+    background-color: #F18701;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.card-mini-alt {
+    background-color: #7678ED;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.card-mini-alt2 {
+    background-color: #F35B04;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}

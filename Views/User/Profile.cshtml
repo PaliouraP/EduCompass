@@ -4,127 +4,161 @@
     ViewData["Title"] = "Profile";
 }
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/site.css" />
+@{
+    Layout = "_Layout";
 }
 
-<section class="vh-100" style="background-color: #E9DAC8;">
-    <div class="container px-5 py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col col-xl-10">
-                <div class="card" style="border-radius: 1rem;">
-                    <div class="row g-0">
-                        <div class="card-body p-4 p-lg-5 text-black">       
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0">Ονοματεπώνυμο</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">@Model.FirstName @Model.LastName</p>
-                                </div>
-                            </div>
-                                        
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0">Email</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">@Model.Email</p>
-                                </div>
-                            </div>
-                                        
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0">Όνομα χρήστη</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">@Model.Username</p>
-                                </div>
-                            </div>
-                                        
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0">Εξάμηνο</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">@Model.Semester</p>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0">Μέλος από:</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">@Model.Created.ToLongDateString()</p>
-                                </div>
-                            </div>
-                            <a href="#!" class="btn btn-primary"> Ξανακάντε το εισαγωγικό τεστ</a>
-                                
-                            <a href="/User/EditProfile" class="btn btn-success">Επεξεργασία Προφίλ</a>
-                                   
-                            
-                        </div>
-                        
-                        <div class="card-body">
-                            
-                            <p>Τεχνολογία Λογισμικού</p>
-                            <div class="container">
-                                <div class="cat1">@Model.SoftwareEngineerPercentage%</div>
-                            </div>
+@section Styles {
+    <link rel="stylesheet" href="~/css/profile.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+}
 
-                            <p>Τεχνητή Νοημοσύνη & Μηχανική Μάθηση</p>
-                            <div class="container">
-                                <div class="cat2">@Model.AI_ML_Percentage%</div>
-                            </div>
-                            
-                            <p>Σχεδίαση UI/UX & Αλληλεπίδραση Ανθρώπου-Υπολογιστή</p>
-                            <div class="container">
-                                <div class="cat2">@Model.UI_UX_Percentage%</div>
-                            </div>
-                            
-                            <p>Ασφάλεια & Κρυπτογραφία</p>
-                            <div class="container">
-                                <div class="cat2">@Model.SecurityPercentage%</div>
-                            </div>
-                            
-                            <p>Δίκτυα Υπολογιστών</p>
-                            <div class="container">
-                                <div class="cat1">@Model.ComputerNetworksPercentage%</div>
-                            </div>
+<div>
+    <div class="profile-card-body px-5 py-5 mx-4" >
+        <h5 class="mb-3" style="letter-spacing: 1px;" id="subject"><b>Γενικά στοιχεία</b></h5>
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-3">
+                <p class="mb-0">Ονοματεπώνυμο</p>
+            </div>
+            <div class="col-sm-8 offset-1">
+                <p class="text-muted mb-0">ονομα επώνυμο""Model.FirstName Model.LastName""</p>
+            </div>
+        </div>
 
-                            <p>Ανάλυση Εικόνας & Γραφικών</p>
-                            <div class="container">
-                                <div class="cat2">@Model.ComputerVisionAndGraphicsPercentage%</div>
-                            </div>
-                            
-                            <p>Ανάπτυξη Ηλεκτρονικών Παιχνιδιών</p>
-                            <div class="container">
-                                <div class="cat2">@Model.GameDevPercentage%</div>
-                            </div>
-                            
-                            <p>Ανάπτυξη Βάσεων Δεδομένων</p>
-                            <div class="container">
-                                <div class="cat2">@Model.DatabaseManagementPercentage%</div>
-                            </div>
-                            
-                            <p>Ανάπτυξη Διαδικτυακών Εφαρμογών</p>
-                            <div class="container">
-                                <div class="cat2">@Model.WebDevPercentage%</div>
-                            </div>
-                            
-                            <p>Ανάπτυξη Εφαρμογών Κινητών Τηλεφώνων</p>
-                            <div class="container">
-                                <div class="cat2">@Model.MobileAppDevPercentage%"</div>
-                            </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-8 offset-1">
+                <p class="text-muted mb-0">
+                    someone@gmail.com""Model.Email""
+                </p>
+            </div>
+        </div>
 
-                        </div>
-                    </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-3">
+                <p class="mb-0">Όνομα χρήστη</p>
+            </div>
+            <div class="col-sm-8 offset-1">
+                <p class="text-muted mb-0">
+                    someone""Model.Username""
+                </p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-3">
+                <p class="mb-0">Εξάμηνο</p>
+            </div>
+            <div class="col-sm-8 offset-1">
+                <p class="text-muted mb-0">
+                    6""Model.Semester""
+                </p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-3">
+                <p class="mb-0">Μέλος από:</p>
+            </div>
+            <div class="col-sm-8 offset-1">
+                <p class="text-muted mb-0">
+                    08-22-2023""Model.Created.ToLongDateString()""
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <a href="#!" class="btn-long col-5"><i class="fas fa-redo-alt"></i> Ξανακάντε το εισαγωγικό τεστ</a>
+
+            <a href="/User/EditProfile" class="btn-long col-5 offset-2"><i class="fas fa-user-edit"></i> Επεξεργασία Προφίλ</a>
+        </div>
+    </div>
+    <div class="px-5 py-5 mb-4 mx-4">
+        <h5 class="mb-3" style="letter-spacing: 1px;" id="subject"><b>Γενικά στοιχεία</b></h5>
+        <div class="row">
+            <div class="col card-mini mx-3 my-3 px-2 py-1">
+                <p>Τεχνολογία Λογισμικού</p>
+                <div class="cat1">
+                    @Model.SoftwareEngineerPercentage%""
+                </div>
+            </div>
+
+            <div class="col card-mini-alt mx-3 my-3 px-2 py-1">
+                <p>Τεχνητή Νοημοσύνη & Μηχανική Μάθηση</p>
+                <div class="cat2">
+                    @Model.AI_ML_Percentage%""
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col card-mini-alt2 mx-3 my-3 px-2 py-1">
+                <p>Σχεδίαση UI/UX & Αλληλεπίδραση Ανθρώπου-Υπολογιστή</p>
+                <div class="cat2">
+                    @Model.UI_UX_Percentage%""
+                </div>
+            </div>
+
+            <div class="col card-mini mx-3 my-3 px-2 py-1">
+                <p>Ασφάλεια & Κρυπτογραφία</p>
+                <div class="cat2">
+                    @Model.SecurityPercentage%""
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col card-mini-alt mx-3 my-3 px-2 py-1">
+                <p>Δίκτυα Υπολογιστών</p>
+                <div class="cat1">
+                    @Model.ComputerNetworksPercentage%""
+                </div>
+            </div>
+            
+            <div class="col card-mini-alt2 mx-3 my-3 px-2 py-1">
+                <p>Ανάλυση Εικόνας & Γραφικών</p>
+                <div class="cat2">
+                    @Model.ComputerVisionAndGraphicsPercentage%""
+                </div>
+            </div>
+        </div>
+
+        <div class="row">       
+            <div class="col card-mini-alt2 mx-3 my-3 px-2 py-1">
+                <p>Ανάπτυξη Ηλεκτρονικών Παιχνιδιών</p>
+                <div class="cat2">
+                    @Model.GameDevPercentage%""
+                </div>
+            </div>
+
+            <div class="col card-mini mx-3 my-3 px-2 py-1">
+                <p>Ανάπτυξη Βάσεων Δεδομένων</p>
+                <div class="cat2">
+                    @Model.DatabaseManagementPercentage%""
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col card-mini mx-3 my-3 px-2 py-1">
+                <p>Ανάπτυξη Διαδικτυακών Εφαρμογών</p>
+                <div class="cat2">
+                    @Model.WebDevPercentage%
+                </div>
+            </div>
+
+            <div class="col card-mini-alt mx-3 my-3 px-2 py-1">
+                <p>Ανάπτυξη Εφαρμογών Κινητών Τηλεφώνων</p>
+                <div class="cat2">
+                    @Model.MobileAppDevPercentage%"
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
 
 
 
