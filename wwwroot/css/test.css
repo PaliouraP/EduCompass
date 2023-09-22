@@ -1,0 +1,18 @@
+﻿.container {
+    background-color: white;
+}
+
+.radio-group {
+    display: inline-block;
+    margin-right: 10px; /* Adjust this value for spacing between radio buttons */
+}
+
+.btn-long {
+    max-width: 200px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+
