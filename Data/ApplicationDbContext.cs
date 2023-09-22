@@ -17,7 +17,7 @@ namespace EduCompass.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            SeedData(modelBuilder);
+            //SeedData(modelBuilder);
         }
 
         private void SeedData(ModelBuilder modelBuilder)
@@ -106,6 +106,7 @@ namespace EduCompass.Data
                     
                     new Course { UUID = "ΠΛΠΛΗ08", Name = "Μεταγλωττιστές", InIntro = false, Description = "", 
                         Year = 2, Semester = 3, 
+                        AI_ML = 6
                     },
                     
                     new Course { UUID = "ΠΛΜΑΘ23-1", Name = "Πιθανότητες και Στατιστική", InIntro = false, Description = "", 
@@ -150,10 +151,12 @@ namespace EduCompass.Data
                     
                     new Course { UUID = "ΠΛΠΛΗ10-1", Name = "Αρχές και Εφαρμογές Σημάτων και Συστημάτων", InIntro = false, Description = "", 
                         Year = 2, Semester = 4, 
+                        AI_ML = 8
                     },
                     
                     new Course { UUID = "ΠΛΠΛΗ44", Name = "Δίκτυα Υπολογιστών", InIntro = false, Description = "", 
                         Year = 2, Semester = 4, 
+                        ComputerNetworks = 10
                     },
                     
                     // (ΤΑ ΕΠΙΛΟΓΗΣ) //
@@ -168,6 +171,7 @@ namespace EduCompass.Data
                     
                     new Course { UUID = "ΠΛΠΛΗ73-1", Name = "Θεωρία Πληροφοριών και Κωδίκων", InIntro = false, CourseType = "Optional", Description = "", 
                         Year = 2, Semester = 4, 
+                        Security = 5, AI_ML = 3
                     },
                     
                     new Course { UUID = "ΠΛΠΛΗΚΕΚ01", Name = "Πληροφορική στην Εκπαίδευση", InIntro = false, CourseType = "Optional", Description = "", 
@@ -190,31 +194,38 @@ namespace EduCompass.Data
                             AI_ML = 10},
                     
                     new Course { UUID = "ΠΛΠΛΗ81-2", Name = "Πληροφοριακά Συστήματα", InIntro = false, Description = "", 
-                        Year = 3, Semester = 5},
+                        Year = 3, Semester = 5
+                        
+                    },
 
                     // τλες
                     new Course { UUID = "ΠΛΜΑΘ71", Name = "Λογικός Προγραμματισμός", InIntro = true, Description = "", CourseType = "ΤΛΕΣ",
                             Year = 3, Semester = 5, 
+                            AI_ML = 7
                         },
                 
                     // πσυ
                     new Course { UUID = "ΠΛΚΡΥ01", Name = "Κρυπτογραφία", InIntro = true, Description = "", CourseType = "ΠΣΥ",
                             Year = 3, Semester = 5, 
+                            Security = 10
                         },
                 
                     // πσυ + τλες
                     new Course { UUID = "ΠΛΠΛΗ33-2", Name = "Συστήματα Διαχείρισης Βάσεων Δεδομένων", InIntro = true, Description = "", CourseType = "ΠΣΥ, ΤΛΕΣ",
                             Year = 3, Semester = 5, 
+                            DatabaseManagement = 10
                         },
                     
                     // δυς
                 
                     new Course { UUID = "ΠΛΠΘΕ01", Name = "Προηγμένα Θέματα Επικοινωνιών", InIntro = true, Description = "", CourseType = "ΔΥΣ",
                         Year = 3, Semester = 5, 
+                        ComputerNetworks = 10
                     },
                 
                     new Course { UUID = "ΠΛΠΡΟ01", Name = "Προηγμένη Αρχιτεκτονική Υπολογιστών", InIntro = true, Description = "", CourseType = "ΔΥΣ",
                             Year = 3, Semester = 5, 
+                            ComputerNetworks = 6
                         },
                     
                     // επιλογής
@@ -225,6 +236,7 @@ namespace EduCompass.Data
                     
                     new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Λογισμικό Διαχείρισης Μάθησης", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
                             Year = 3, Semester = 5, 
+                            SoftwareEngineering = 7
                         },
                 
                     new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Θεωρία Υπολογισμού", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
@@ -232,7 +244,8 @@ namespace EduCompass.Data
                     },
                 
                     new Course { UUID = "ΠΛΛΟΔΙΜ01", Name = "Ουρές Αναμονής", InIntro = true, Description = "", CourseType = "ΕΠΙΛΟΓΗΣ",
-                        Year = 3, Semester = 5, 
+                        Year = 3, Semester = 5,
+                        
                     },
 
                     // έκτο εξάμηνο
