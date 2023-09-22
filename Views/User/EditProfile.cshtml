@@ -10,7 +10,10 @@
 
 <h1>Επεξεργασία Στοιχείων</h1>
 
-<h3>@TempData["Error"]</h3>
+@if (@TempData["Error"] != null)
+{
+    <div class="error-msg overlay px-4 py-4 ">@TempData["Error"]<i class="fas fa-times"></i></div>
+}
 <section class="vh-100" style="background-color: #E9DAC8;">
 
     <form method="post">

@@ -25,7 +25,7 @@ public class IntroController : Controller
         if (string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
         {
             // if it doesn't, then log the user out.
-            TempData["Error"] = "Ουπς! Φαίνεται ότι η συνεδρία σας έχει λήξει. Παρακαλώ ξανασυνδεθείτε.";
+            TempData["Error"] = "⚠️ Ουπς! Φαίνεται ότι η συνεδρία σας έχει λήξει. Παρακαλώ ξανασυνδεθείτε.";
             context.Result = RedirectToAction("Login", "Auth");
             base.OnActionExecuting(context);
             return;
