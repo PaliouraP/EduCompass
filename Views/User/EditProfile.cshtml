@@ -20,44 +20,46 @@
     <div class="error-msg overlay px-4 py-4 ">@TempData["Error"]<i class="fas fa-times"></i></div>
 }
 
-<div class="profile-card-body mx-auto my-5 px-5 py-5">
-    <h3 class="mb-3" style="letter-spacing: 1px;" id="subject"><b>Επεξεργασία Στοιχείων</b></h3>
-    <form method="post">
-        <div class="row my-2">
-            <div class="col">
-                <label for="firstname">Όνομα:</label>
-                <input type="text" name="firstname" id="firstname" class="form-control form-control-lg" />
-            </div>
-            <div class="col">
-                <label for="lastname">Επώνυμο:</label>
-                <input type="text" name="lastname" id="lastname" class="form-control form-control-lg" />
-            </div>
-            
-        </div>
-        
-        <div class="row my-2">
-            <div class="col">
-                <label for="username">Όνομα Χρήστη:</label>
-                <input type="text" name="username" id="username" class="form-control form-control-lg" />
-            </div>
-            <div class="col">
-                <label for="email">Ηλεκτρονικό Ταχυδρομείο:</label>
-                <input type="email" name="email" id="email" class="form-control form-control-lg" />
-            </div>
-        </div>
-        
-        <div class="row my-2">
-            <div class="col">
-                <label for="semester">Εξάμηνο:</label>
-                <input type="number" name="semester" id="semester" max="32" min="1" class="form-control form-control-lg" />
-            </div>
-            <div class="col"></div>
-        </div>
+<div class="d-flex align-items-center" style="height:inherit">
+    <div class="profile-card-body mx-auto my-5 px-5 py-5">
+        <h3 class="mb-3" style="letter-spacing: 1px;" id="subject"><b>Επεξεργασία Στοιχείων</b></h3>
+        <form method="post">
+            <div class="row my-2">
+                <div class="col">
+                    <label for="firstname">Όνομα:</label>
+                    <input type="text" name="firstname" id="firstname" class="form-control form-control-lg" />
+                </div>
+                <div class="col">
+                    <label for="lastname">Επώνυμο:</label>
+                    <input type="text" name="lastname" id="lastname" class="form-control form-control-lg" />
+                </div>
 
-        <div class="row d-flex justify-content-center my-4">
-            <button type="submit" class="btn-long">Υποβολη</button>
-        </div>
-    </form>
+            </div>
+
+            <div class="row my-2">
+                <div class="col">
+                    <label for="username">Όνομα Χρήστη:</label>
+                    <input type="text" name="username" id="username" class="form-control form-control-lg" />
+                </div>
+                <div class="col">
+                    <label for="email">Ηλεκτρονικό Ταχυδρομείο:</label>
+                    <input type="email" name="email" id="email" class="form-control form-control-lg" />
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col">
+                    <label for="semester">Εξάμηνο:</label>
+                    <input type="number" name="semester" id="semester" max="32" min="1" class="form-control form-control-lg" />
+                </div>
+                <div class="col"></div>
+            </div>
+
+            <div class="row d-flex justify-content-center my-4">
+                <button type="submit" class="btn-long">Υποβολη</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 
