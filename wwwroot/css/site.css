@@ -225,6 +225,10 @@ progress {
     color: #7678ED;
 }
 
+#stop_audio_btn {
+    display: none;
+}
+
 .description {
     font-size: 15px;
     color: #7678ED;
