@@ -44,7 +44,7 @@ public class PostGraduateInstitution
     public bool GameDev { get; set; } = false;
 
     [Required] 
-    public bool DatabaseManagement { get; set; } = false;
+    public bool DatabaseEngineering { get; set; } = false;
 
     [Required] 
     public bool WebDev { get; set; } = false;
