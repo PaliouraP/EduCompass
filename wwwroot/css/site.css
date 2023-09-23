@@ -107,6 +107,7 @@ a {
 }
 
     .btn-long:hover {
+        color: white;
         background-color: #7678ED;
     }
 
@@ -213,3 +214,22 @@ progress {
     .progress-purple::-moz-progress-bar {
         background-color: white;
     }
+
+
+.audio-btn {
+    color: #3D348B;
+    font-size: 60px;
+}
+
+.audio-btn:hover {
+    color: #7678ED;
+}
+
+#stop_audio_btn {
+    display: none;
+}
+
+.description {
+    font-size: 15px;
+    color: #7678ED;
+}
