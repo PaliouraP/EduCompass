@@ -501,7 +501,7 @@ namespace EduCompass.Data
                 // ΕΜΠ
                 new PostGraduateInstitution
                 {
-                    Name = "Εθνικό Μετσόβειο Πολυτεχνείο", Department = "Επιστήμη Δεδομένων και Μηχανική Μάθηση", Town = "Αθήνα",
+                    Name = "Εθνικό Μετσόβειο Πολυτεχνείο", Department = "Επιστήμη Δεδομένων και Μηχανική Μάθηση", Town = "Αθήνα", Hyperlink = "https://dsml.ece.ntua.gr/",
                     AI_ML = true, DatabaseEngineering = true, 
                 },
                 
@@ -509,63 +509,57 @@ namespace EduCompass.Data
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Κυβερνοασφάλεια και Επιστήμη Δεδομένων", Town = "Πειραιάς",
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Κυβερνοασφάλεια και Επιστήμη Δεδομένων", Town = "Πειραιάς", Hyperlink = "https://www.cs.unipi.gr/index.php?option=com_k2&view=item&layout=item&id=609&Itemid=813&lang=el",
                     AI_ML = true, Security = true, DatabaseEngineering = true
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Προηγμένα Συστήματα Πληροφορικής - Ανάπτυξη Λογισμικού και Τεχνητής Νοημοσύνης", Town = "Πειραιάς",
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Προηγμένα Συστήματα Πληροφορικής - Ανάπτυξη Λογισμικού και Τεχνητής Νοημοσύνης", Town = "Πειραιάς", Hyperlink = "https://www.cs.unipi.gr/index.php?option=com_k2&view=item&layout=item&id=626&Itemid=815&lang=el",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Ψηφιακός Πολιτισμός, Έξυπνες Πόλεις, IoT και Προηγμένες Ψηφιακές Τεχνολογίες", Town = "Πειραιάς",
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Ψηφιακός Πολιτισμός, Έξυπνες Πόλεις, IoT και Προηγμένες Ψηφιακές Τεχνολογίες", Town = "Πειραιάς", Hyperlink = "https://www.cs.unipi.gr/index.php?option=com_k2&view=item&layout=item&id=576&Itemid=814&lang=el",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Προηγμένες Τεχνολογίες Πληροφορικής και Υπηρεσίες", Town = "Πειραιάς",
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Προηγμένες Τεχνολογίες Πληροφορικής και Υπηρεσίες", Town = "Πειραιάς", Hyperlink = "https://www.cs.unipi.gr/index.php?option=com_k2&view=item&layout=item&id=653&Itemid=812&lang=el",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Οργάνωση και Διοίκηση Υπηρεσιών Υγείας - Πληροφορική Υγείας", Town = "Πειραιάς",
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Οργάνωση και Διοίκηση Υπηρεσιών Υγείας - Πληροφορική Υγείας", Town = "Πειραιάς", Hyperlink = "https://www.cs.unipi.gr/index.php?option=com_k2&view=item&layout=item&id=568&Itemid=817&lang=el"
                     
                 },
-                
-                new PostGraduateInstitution
-                {
-                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Οργάνωση και Διοίκηση Υπηρεσιών Υγείας - Πληροφορική Υγείας", Town = "Πειραιάς",
-                    
-                },
-                
+
                 // ΟΠΑ (ΑΣΟΕΕ)
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Ανάπτυξη και Ασφάλεια Πληροφοριακών Συστημάτων", Town = "Αθήνα",
+                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Ανάπτυξη και Ασφάλεια Πληροφοριακών Συστημάτων", Town = "Αθήνα", Hyperlink = "https://mscis.cs.aueb.gr/el/normal/home",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Επιστήμη Υπολογιστών", Town = "Αθήνα",
+                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Επιστήμη Υπολογιστών", Town = "Αθήνα", Hyperlink = "http://grad.cs.aueb.gr/",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Επιστήμη Δεδομένων", Town = "Αθήνα",
+                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Επιστήμη Δεδομένων", Town = "Αθήνα", Hyperlink = "https://www.dept.aueb.gr/el/cs/content/%CF%80%CE%BC%CF%83-%CF%83%CF%84%CE%B7%CE%BD-%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%AE%CE%BC%CE%B7-%CE%B4%CE%B5%CE%B4%CE%BF%CE%BC%CE%AD%CE%BD%CF%89%CE%BD",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Ψηφιακές Μέθοδοι για τις Ανθρωπιστικές Επιστήμες", Town = "Αθήνα",
+                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Ψηφιακές Μέθοδοι για τις Ανθρωπιστικές Επιστήμες", Town = "Αθήνα", Hyperlink = "https://www.dept.aueb.gr/el/MScdmh",
                     
                 },
                 
@@ -573,31 +567,31 @@ namespace EduCompass.Data
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Μηχανική Υπολογιστών, Τηλεποικοινωνιών και Δικτύων", Town = "Αθήνα",
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Μηχανική Υπολογιστών, Τηλεποικοινωνιών και Δικτύων", Town = "Αθήνα", Hyperlink = "https://www.di.uoa.gr/eng",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Τεχνολογίες Πληροφορικής και Τηλεποικοινωνιών", Town = "Αθήνα",
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Τεχνολογίες Πληροφορικής και Τηλεποικοινωνιών", Town = "Αθήνα", Hyperlink = "https://www.di.uoa.gr/ict",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Πληροφορική", Town = "Αθήνα",
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Πληροφορική", Town = "Αθήνα", Hyperlink = "https://www.di.uoa.gr/cs",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Αλγόριθμοι, Λογική και Διακριτά Μαθηματικά", Town = "Αθήνα",
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Αλγόριθμοι, Λογική και Διακριτά Μαθηματικά", Town = "Αθήνα", Hyperlink = "http://alma.di.uoa.gr/",
                     
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Data Science and Information Technologies", Town = "Αθήνα",
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Data Science and Information Technologies", Town = "Αθήνα", Hyperlink = "https://dsit.di.uoa.gr/"
                     
                 }
             );
