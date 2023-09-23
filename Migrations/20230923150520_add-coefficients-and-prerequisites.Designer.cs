@@ -4,6 +4,7 @@ using EduCompass.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCompass.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230923150520_add-coefficients-and-prerequisites")]
+    partial class addcoefficientsandprerequisites
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,7 +36,7 @@ namespace EduCompass.Migrations
 
                     b.HasKey("Name");
 
-                    b.ToTable("Coefficients");
+                    b.ToTable("Coefficient");
 
                     b.HasData(
                         new
@@ -2193,19 +2196,6 @@ namespace EduCompass.Migrations
                             UI_UX = true,
                             WebDev = false
                         });
-                });
-
-            modelBuilder.Entity("EduCompass.Models.PrerequisiteCourse", b =>
-                {
-                    b.Property<string>("BaseCourseUUID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("PrerequisiteCourseUUID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("BaseCourseUUID", "PrerequisiteCourseUUID");
-
-                    b.ToTable("PrerequisiteCourses");
                 });
 
             modelBuilder.Entity("EduCompass.Models.User", b =>

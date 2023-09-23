@@ -36,7 +36,7 @@ public class IntroController : Controller
     
     
     [HttpGet]
-    public IActionResult IntroTest(string? courseUUID)
+    public IActionResult IntroTest(string courseUUID)
     {
         // if the courseUUID is not typed
         if (courseUUID.IsNullOrEmpty())
@@ -69,6 +69,18 @@ public class IntroController : Controller
 
         var model = _database.Courses.First(c => c.UUID == courseUUID);
         return View(model);
+    }
+
+    [HttpGet]
+    public void NextCourse()
+    {
+        var courseUUIDsWithGrade = (from grade in _database.Grades
+            where grade.InterestScore != -1 && grade.FinalGrade != -1 && grade.UserId == _currentUser.Id
+            select grade.CourseUUID).ToList();
+
+        var nextCourse = _database.Courses.OrderBy(c => c.Semester).FirstOrDefault(c => !courseUUIDsWithGrade.Contains(c.UUID) && c.InIntro);
+
+        
     }
 
     [HttpPost]

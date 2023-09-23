@@ -4,6 +4,7 @@ using EduCompass.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCompass.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230923141356_seed-courses-and-post-graduate-institutes")]
+    partial class seedcoursesandpostgraduateinstitutes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,72 +24,6 @@ namespace EduCompass.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("EduCompass.Models.Coefficient", b =>
-                {
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("NameInGreek")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Name");
-
-                    b.ToTable("Coefficients");
-
-                    b.HasData(
-                        new
-                        {
-                            Name = "Software Technology",
-                            NameInGreek = "Τεχνολογία Λογισμικού"
-                        },
-                        new
-                        {
-                            Name = "Artificial Intelligence and Machine Learning",
-                            NameInGreek = "Τεχνητή Νοημοσύνη και Μηχανική Μάθηση"
-                        },
-                        new
-                        {
-                            Name = "User Interface and User Experience",
-                            NameInGreek = "Αλληλεπίδραση Ανθρώπου-Υπολογιστή"
-                        },
-                        new
-                        {
-                            Name = "Security",
-                            NameInGreek = "Ασφάλεια"
-                        },
-                        new
-                        {
-                            Name = "Computer Networks",
-                            NameInGreek = "Δίκτυα Υπολογιστών"
-                        },
-                        new
-                        {
-                            Name = "Computer Vision and Graphics",
-                            NameInGreek = "Ανάλυση Εικόνας και Γραφικών"
-                        },
-                        new
-                        {
-                            Name = "Game Development",
-                            NameInGreek = "Ανάπτυξη Ηλεκτρονικών Παιχνιδιών"
-                        },
-                        new
-                        {
-                            Name = "Database Engineering",
-                            NameInGreek = "Ανάπτυξη Βάσεων Δεδομένων και Επιστήμη Δεδομένων"
-                        },
-                        new
-                        {
-                            Name = "Web Development",
-                            NameInGreek = "Ανάπτυξη Διαδικτυακών Εφαρμογών"
-                        },
-                        new
-                        {
-                            Name = "Mobile App Development",
-                            NameInGreek = "Ανάπτυξη Εφαρμογών Κινητών Τηλεφώνων"
-                        });
-                });
 
             modelBuilder.Entity("EduCompass.Models.Course", b =>
                 {
@@ -2193,19 +2130,6 @@ namespace EduCompass.Migrations
                             UI_UX = true,
                             WebDev = false
                         });
-                });
-
-            modelBuilder.Entity("EduCompass.Models.PrerequisiteCourse", b =>
-                {
-                    b.Property<string>("BaseCourseUUID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("PrerequisiteCourseUUID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("BaseCourseUUID", "PrerequisiteCourseUUID");
-
-                    b.ToTable("PrerequisiteCourses");
                 });
 
             modelBuilder.Entity("EduCompass.Models.User", b =>

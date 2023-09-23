@@ -38,14 +38,12 @@ namespace EduCompass.Controllers
             _currentUser = _database.Users.First(u => u.Username == HttpContext.Session.GetString("username"));
         }
 
-        public IActionResult AddCourse()
+        public IActionResult OrientationPage()
         {
-            return View();
-        }
-
-        public IActionResult SemesterPage()
-        {
-            return View();
+            var model = new Tuple<List<Coefficient>, List<Course>>(_database.Coefficients.ToList(),
+                _database.Courses.ToList());
+            
+            return View(model);
         }
         
         public IActionResult CoursePage()
