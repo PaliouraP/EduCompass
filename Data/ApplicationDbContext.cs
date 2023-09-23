@@ -498,16 +498,107 @@ namespace EduCompass.Data
 
             modelBuilder.Entity<PostGraduateInstitution>().HasData(
                 
+                // ΕΜΠ
                 new PostGraduateInstitution
                 {
-                    Name = "University of Piraeus", Department = "Cybersecurity and Data Science", Country = "Greece", Town = "Piraeus",
-                    AI_ML = true, Security = true
+                    Name = "Εθνικό Μετσόβειο Πολυτεχνείο", Department = "Επιστήμη Δεδομένων και Μηχανική Μάθηση", Town = "Αθήνα",
+                    AI_ML = true, DatabaseEngineering = true, 
+                },
+                
+                // ΠΑΠΕΙ
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Κυβερνοασφάλεια και Επιστήμη Δεδομένων", Town = "Πειραιάς",
+                    AI_ML = true, Security = true, DatabaseEngineering = true
                 },
                 
                 new PostGraduateInstitution
                 {
-                    Name = "University of Piraeus", Department = "Cybersecurity and Data Science", Country = "Greece", Town = "Piraeus",
-                    AI_ML = true, Security = true
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Προηγμένα Συστήματα Πληροφορικής - Ανάπτυξη Λογισμικού και Τεχνητής Νοημοσύνης", Town = "Πειραιάς",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Ψηφιακός Πολιτισμός, Έξυπνες Πόλεις, IoT και Προηγμένες Ψηφιακές Τεχνολογίες", Town = "Πειραιάς",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Προηγμένες Τεχνολογίες Πληροφορικής και Υπηρεσίες", Town = "Πειραιάς",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Οργάνωση και Διοίκηση Υπηρεσιών Υγείας - Πληροφορική Υγείας", Town = "Πειραιάς",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Πανεπιστήμιο Πειραιώς", Department = "Οργάνωση και Διοίκηση Υπηρεσιών Υγείας - Πληροφορική Υγείας", Town = "Πειραιάς",
+                    
+                },
+                
+                // ΟΠΑ (ΑΣΟΕΕ)
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Ανάπτυξη και Ασφάλεια Πληροφοριακών Συστημάτων", Town = "Αθήνα",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Επιστήμη Υπολογιστών", Town = "Αθήνα",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Επιστήμη Δεδομένων", Town = "Αθήνα",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Οικονομικό Πανεπιστήμιο Αθηνών", Department = "Ψηφιακές Μέθοδοι για τις Ανθρωπιστικές Επιστήμες", Town = "Αθήνα",
+                    
+                },
+                
+                // ΕΚΠΑ
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Μηχανική Υπολογιστών, Τηλεποικοινωνιών και Δικτύων", Town = "Αθήνα",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Τεχνολογίες Πληροφορικής και Τηλεποικοινωνιών", Town = "Αθήνα",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Πληροφορική", Town = "Αθήνα",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Αλγόριθμοι, Λογική και Διακριτά Μαθηματικά", Town = "Αθήνα",
+                    
+                },
+                
+                new PostGraduateInstitution
+                {
+                    Name = "Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών", Department = "Data Science and Information Technologies", Town = "Αθήνα",
+                    
                 }
             );
         }
