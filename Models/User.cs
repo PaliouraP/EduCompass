@@ -28,6 +28,8 @@ namespace EduCompass.Models
 
         public bool HasCompletedIntroTest { get; set; } = false;
 
+        //public string Track { get; set; } = string.Empty;
+
         public DateTime Created { get; set; } = DateTime.Now;
         
         // COEFFICIENTS
@@ -53,7 +55,7 @@ namespace EduCompass.Models
         public float GameDevPercentage { get; set; } = 0f;
 
         [Required] 
-        public float DatabaseManagementPercentage { get; set; } = 0f;
+        public float DatabaseEngineeringPercentage { get; set; } = 0f;
 
         [Required]
         public float WebDevPercentage { get; set; } = 0f;

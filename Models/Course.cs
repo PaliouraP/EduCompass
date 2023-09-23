@@ -48,7 +48,7 @@ public class Course
     public int GameDev { get; set; } = 0;
     
     [Required] 
-    public int DatabaseManagement { get; set; } = 0;
+    public int DatabaseEngineering { get; set; } = 0;
     
     [Required] 
     public int WebDev { get; set; } = 0;

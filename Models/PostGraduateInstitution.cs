@@ -14,12 +14,15 @@ public class PostGraduateInstitution
 
     [Required]
     public string Department { get; set; } = string.Empty;
-    
-    [Required]
-    public string Country { get; set; } = string.Empty;
-    
+
     [Required]
     public string Town { get; set; } = string.Empty;
+    
+    [Required]
+    public string Hyperlink { get; set; } = string.Empty;
+
+    [Required] 
+    public string Description { get; set; } = string.Empty;
     
     // COEFFICIENTS
     [Required] 
@@ -44,7 +47,7 @@ public class PostGraduateInstitution
     public bool GameDev { get; set; } = false;
 
     [Required] 
-    public bool DatabaseManagement { get; set; } = false;
+    public bool DatabaseEngineering { get; set; } = false;
 
     [Required] 
     public bool WebDev { get; set; } = false;
