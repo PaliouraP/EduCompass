@@ -1,4 +1,8 @@
-﻿a {
+﻿.container {
+    background-color: white;
+}
+
+a {
     text-decoration: none;
 }
 
@@ -6,23 +10,33 @@
     
 }
 
+.semester-template {
+    background-color: #3D348B;
+    border-radius: 15px;
+    width: 200px;
+}
+
 .semester-title {
     font-size: 18px;
     font-weight: bold;
-    color: black;
+    color: white;
 }
 
 .semester-progress {
     font-size: 18px;
-    color: black;
+    color: white;
 }
 
 .expand-arrow {
-    margin-left: auto;
+    color: #F7B801;
+}
+
+.subject-card {
+    color: white;
 }
 
 i {
-    font-size: 25px;
+    font-size: 45px;
 }
 
 .details .fa-arrow-circle-right {
