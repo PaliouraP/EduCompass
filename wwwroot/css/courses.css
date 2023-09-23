@@ -52,3 +52,8 @@ a {
 .collapsed .fa-arrow-circle-down {
     display: initial;
 }
+
+.audio-img {
+    width: 250px;
+    float: right;
+}
