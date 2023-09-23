@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "OrientationPage";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/courses.css" />
+}
+
+<!--TODO: ADD ORIENTATION TOTAL GRADE-->
+<div class="px-5 py-5">
+    <div class="subjects-head">
+        <h3 class="my-4">Τα μαθήματα μου</h3>
+    </div>
+    <div class="orientations mt-3">
+        <div class="orientation-template px-4 py-3">
+            <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+               aria-controls="collapseExample" class="row details collapsed">
+                <div class="col-8">
+                    <div class="orientation-title">
+                        Όνομα προσανατολισμού
+                    </div>
+                    <div class="orientation-progress ">
+                        2/4
+                    </div>
+                </div>
+                <div class="expand-arrow d-flex justify-content-center align-items-center col-4">
+                    <i class="fas fa-arrow-circle-right" aria-hidden="true"></i>
+                    <i class="fas fa-arrow-circle-down" aria-hidden="true"></i>
+                </div>
+            </a>
+
+            <div class="collapse subjects-list my-4" id="collapseExample">
+                <div class="subjects-list">
+                    <!--TODO: load actual subjects with correct values and ids-->
+                    <div class="subject-card">
+                        <label for="file">Τίτλος Μαθήματος <a href="/Course/CoursePage/"><i class="fas fa-link hyperlink"></i></a></label><br />
+                        <progress id="progress-1" value="86" max="100"> </progress>
+                        <script>
+                            check_value('progress-1');
+                        </script>
+                    </div>
+
+                    <div class="subject-card">
+                        <label for="file">Τίτλος Μαθήματος <a href="/Course/CoursePage/"><i class="fas fa-link hyperlink"></i></a></label><br />
+                        <progress id="progress-2" value="56" max="100"> </progress>
+                        <script>
+                            check_value('progress-2');
+                        </script>
+                    </div>
+
+                    <div class="subject-card">
+                        <label for="file">Τίτλος Μαθήματος <a href="/Course/CoursePage/"><i class="fas fa-link hyperlink"></i></a></label><br />
+                        <progress id="progress-3" value="36" max="100"> </progress>
+                        <script>
+                            check_value('progress-3');
+                        </script>
+                    </div>
+
+                    <div class="subject-card">
+                        <label for="file">Τίτλος Μαθήματος <a href="/Course/CoursePage/"><i class="fas fa-link hyperlink"></i> </a><span title="Αυτό το μάθημα είναι κλειδωμένο."><i class="fas fa-lock locked"></i></span></label><br />
+                        <progress id="progress-4" value="0" max="100"> </progress>
+                        <script>
+                            check_value('progress-4');
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+        
+

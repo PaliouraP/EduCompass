@@ -10,48 +10,45 @@ a {
     
 }
 
-.semester-template {
+.orientation-template {
     background-color: #3D348B;
     border-radius: 15px;
-    width: 200px;
+    width: 300px;
 }
 
-.semester-title {
+.orientation-title {
     font-size: 18px;
     font-weight: bold;
     color: white;
 }
 
-.semester-progress {
+.orientation-progress {
     font-size: 18px;
     color: white;
 }
 
 .expand-arrow {
-    color: #F7B801;
+    color: white;
+    font-size: 45px;
 }
 
 .subject-card {
     color: white;
 }
 
-i {
-    font-size: 45px;
-}
 
 .details .fa-arrow-circle-right {
-    display: none;
-}
-
-.details .fa-arrow-circle-down {
     display: initial;
 }
 
-.collapsed .fa-arrow-circle-right {
-   display: initial;                        
-}
-
-.collapsed .fa-arrow-circle-down {
+.details .fa-arrow-circle-down {
     display: none;
 }
 
+.collapsed .fa-arrow-circle-right {
+   display: none;                        
+}
+
+.collapsed .fa-arrow-circle-down {
+    display: initial;
+}
