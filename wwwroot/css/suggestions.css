@@ -1,0 +1,10 @@
+﻿.container {
+    background-color: white;
+}
+
+.main-img {
+    width: 350px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
