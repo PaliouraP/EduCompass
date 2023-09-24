@@ -8,6 +8,7 @@
     display: block;
     padding: .5rem 1rem;
     text-decoration: none;
+   
 }
 
 .navigation-link:hover {
@@ -47,4 +48,8 @@
 
 .logo-img {
     width: 90%;
+}
+
+span {
+    font-size: 85%;
 }
