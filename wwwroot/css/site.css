@@ -122,11 +122,12 @@ a {
     width: 50%;
 }
 
-.btn-long-alt:hover {
-    border: solid;
-    border-width: medium;
-    border-color: #3D348B;
-}
+    .btn-long-alt:hover {
+        color: white;
+        border: solid;
+        border-width: medium;
+        border-color: #3D348B;
+    }
 
 .radio-checked {
     width: 1em;

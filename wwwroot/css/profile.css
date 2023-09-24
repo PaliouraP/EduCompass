@@ -17,7 +17,7 @@
     display: block;
     padding: .5rem 1rem;
     text-decoration: none;
-    width: 350px;
+    max-width: 200px;
     font-size: 18px;
     font-weight: 400;
     text-align: center;
@@ -25,6 +25,24 @@
 
     .btn-long:hover {
         color: white;
+    }
+
+.btn-long-alt {
+    max-width: 200px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    transition: none;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+    .btn-long-alt:hover {
+        border: solid;
+        border-width: medium;
+        border-color: #3D348B;
     }
 
 .card-mini {
