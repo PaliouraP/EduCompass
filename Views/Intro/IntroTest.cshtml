@@ -27,8 +27,8 @@
                 <h1 class="d-flex justify-content-evenly mt-5"><b>Πριν ξεκινήσουμε...</b></h1>
                 <h6 class="d-flex justify-content-evenly">Απαντήστε τις ερωτήσεις με βάση τους βαθμούς σας στα παρακάτω μαθήματα και το ενδιαφέρον σας για αυτά</h6>
                 <div class="d-flex justify-content-evenly">
-                    <form action="PostGrade" method="post">
-                        <h5 class="mt-3" style="letter-spacing: 1px;" id="subject"><b>Model.Name</b></h5>
+                    <form action="NextOrPreviousCourse" method="post">
+                        <h5 class="mt-3" style="letter-spacing: 1px;" id="subject"><b>@Model.Name</b></h5>
                         <div class ="mb-3">
                             <input type="checkbox" id="skip" name="skip" value="skip" onchange="skip_subject()">
                             <label for="skip"> Παράλειψη μαθήματος</label>
@@ -62,11 +62,11 @@
                                 <label class="form-check-label" for="interest5">5</label>
                             </div>
                         </div>
-                        <input type="hidden" value="Model.UUID" name="courseUUID" />
+                        <input type="hidden" value="@Model.UUID" name="currentUuid" />
 
                         <div class="row d-flex justify-content-between">
-                            <button class="btn-long-alt" type="submit"><i class="fas fa-arrow-left"></i> Προηγούμενο</button>
-                            <button class="btn-long" type="submit">Επόμενο <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn-long-alt" type="submit" name="direction" value="back"><i class="fas fa-arrow-left"></i> Προηγούμενο</button>
+                            <button class="btn-long" type="submit" name="direction" value="next">Επόμενο <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </form>                    
                 </div>

@@ -11,11 +11,13 @@ public class IntroController : Controller
     private readonly ILogger<IntroController> _logger;
     private readonly ApplicationDbContext _database;
     private User _currentUser;
+    private int[] _courseIdsInSemesterOrder;
 
     public IntroController(ILogger<IntroController> logger, ApplicationDbContext database)
     {
         _logger = logger;
         _database = database;
+        _courseIdsInSemesterOrder = _database.Courses.OrderBy(c => c.Semester).Select(c => c.Id).ToArray();
     }
     
     // this method gets executed before any views.
@@ -36,33 +38,80 @@ public class IntroController : Controller
     
     
     [HttpGet]
-    public IActionResult IntroTest()
+    public IActionResult IntroTest(string uuid)
     {
-        return View();
+        var model = _database.Courses.First(c => c.UUID == uuid);
+
+        if (model == null)
+            throw new Exception("Wrong Course UUID");
+        
+        return View(model);
     }
 
     [HttpGet]
-    public void NextCourse()
+    public IActionResult StartIntroTest()
     {
-
+        // redirect to Intro Test with the first course.
+        var startingCourseUUID = _database.Courses.First(c => c.Id == _courseIdsInSemesterOrder[0]).UUID;
+        
+        return RedirectToAction("IntroTest", new { uuid = startingCourseUUID });
     }
 
     [HttpPost]
-    public IActionResult PostGrade(int courseId, int finalGrade, int interestScore)
+    public IActionResult NextOrPreviousCourse(string direction, string currentUuid, int? finalGrade, int? interestScore)
     {
-        var grade = new Grade
+        // NEXT
+        if (direction == "next")
         {
-            FinalGrade = finalGrade,
-            InterestScore = interestScore,
-            CourseId = courseId,
-            UserId = _currentUser.Id
-        };
+            // find the current course that the user is in.
+            var course = _database.Courses.First(c => c.UUID == currentUuid);
 
-        _database.Grades.Add(grade);
-        _database.SaveChanges();
+            // add the grade to the database.
+            var grade = new Grade
+            {
+                CourseId = course.Id,
+                Created = DateTime.Now,
+                FinalGrade = finalGrade ?? -1,
+                InterestScore = interestScore ?? -1,
+                UserId = _currentUser.Id
+            };
+        
+            _database.Grades.Add(grade);
+            _database.SaveChanges();
 
-        return RedirectToAction("IntroTest");
+            // find the index of that course.
+            int index = Array.IndexOf(_courseIdsInSemesterOrder, course.Id);
+
+            // if there is a next course, go to it.
+            if (index != _courseIdsInSemesterOrder.Length - 1)
+            {
+                string nextCourseUUID = _database.Courses.First(c => c.Id == _courseIdsInSemesterOrder[index + 1]).UUID;
+                return RedirectToAction("IntroTest", new { uuid = nextCourseUUID });
+            }
+
+            // otherwise there is no course left.
+            return RedirectToAction("Finished");
+        }
+        
+        // PREV
+        
+        // find the current course that the user is in.
+        var course1 = _database.Courses.First(c => c.UUID == currentUuid);
+
+        // find the index of that course.
+        int index1 = Array.IndexOf(_courseIdsInSemesterOrder, course1.Id);
+
+        // if there is a next course, go to it.
+        if (index1 != 0)
+        {
+            string nextCourseUUID = _database.Courses.First(c => c.Id == _courseIdsInSemesterOrder[index1 - 1]).UUID;
+            return RedirectToAction("IntroTest", new { uuid = nextCourseUUID });
+        }
+
+        // otherwise there is no course left.
+        return RedirectToAction("StartIntroTest");
     }
+    
 
     public IActionResult Finished()
     {
