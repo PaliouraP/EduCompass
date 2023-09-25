@@ -40,15 +40,33 @@ namespace EduCompass.Controllers
 
         public IActionResult OrientationPage()
         {
-            var model = new Tuple<List<Coefficient>, List<Course>>(_database.Coefficients.ToList(),
-                _database.Courses.ToList());
+            var model = new Tuple<List<Coefficient>, List<CourseHasCoefficient>, List<Course>>(_database.Coefficients.ToList(), _database.CourseHasCoefficients.ToList(), _database.Courses.ToList());
             
             return View(model);
         }
         
-        public IActionResult CoursePage()
+        [HttpGet]
+        public IActionResult CoursePage(string uuid)
         {
-            return View();
+            // TODO: Add check for locked course.
+            var course = _database.Courses.First(c => c.UUID == uuid);
+            
+            //if (course == null)
+                //throw new Exception("This course doesn't exist!");
+            
+            // prerequisite courses.
+            var necessaryCourseIds = _database.PrerequisiteCourses.Where(p => p.BaseCourseId == course.Id).ToList();
+            var necessaryCourses = (from pc in necessaryCourseIds join _course in _database.Courses on pc.PrerequisiteCourseId equals course.Id select _course).ToList();
+
+            // coefficients related to a career
+            var baseCourseCoefficients = _database.CourseHasCoefficients.Where(chc => chc.Value > 5 && chc.CourseId == course.Id).ToList();
+            var careers = (from chc in baseCourseCoefficients
+                join career in _database.Careers on chc.CoefficientName equals career.CoefficientName
+                select career).ToList();
+
+            var model = new Tuple<Course, List<Course>, List<Career>>(course, necessaryCourses, careers);
+            
+            return View(model);
         }
     }
 }

@@ -46,7 +46,7 @@ namespace EduCompass.Data
 
         private void SeedDataToCourses(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PostGraduateInstitution>().HasData(
+            modelBuilder.Entity<Course>().HasData(
                 
                 new Course
                 {
@@ -150,7 +150,6 @@ namespace EduCompass.Data
                 new PostGraduateInstitution
                 {
                     Id = 12, Name = "Πανεπιστήμιο Μακεδονίας", Department = "Ανάπτυξη Ψηφιακών Παιχνιδιών και Πολυμεσικών Εφαρμογών", Town = "Θεσσαλονίκη", Hyperlink = "https://gamedev.uowm.gr/",
-                    //ComputerVisionAndGraphics = true
                 },
                 
                 new PostGraduateInstitution
@@ -178,7 +177,7 @@ namespace EduCompass.Data
                 
                 new Coefficient
                 {
-                    Name = "AI_ML", LongName = "Artificial Intelligence and Machine Learning", NameInGreek = "Τεχνητή Νοημοσύνη και Μηχανική Μάθηση"
+                    Name = "AI_ML", NameInGreek = "Τεχνητή Νοημοσύνη και Μηχανική Μάθηση"
                 },
                 
                 new Coefficient

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Tuple<Course, List<Course>, List<Career>>
+
+@{
     ViewData["Title"] = "CoursePage";
 }
 
@@ -9,12 +11,23 @@
 
 <div class="px-5 py-5">
     <div class="course-head">
-        <h3 class="my-4">Όνομα Μαθήματος</h3>
+        <!-- όνομα μαθήματος -->
+        <h3 class="my-4">@Model.Item1.Name</h3>
     </div>
     <div class="course-description">
-        <p>Το μάθημα "-Ονομα Μαθήματος-" διδάσκεται στο -εξάμηνο- εξάμηνο, στο τμήμα Πληροφορικής του Πανεπιστημίου Πειραιώς. 
-            <br />Σχετίζεται με τους επαγγελματικους προσανατολισμούς: -επαγγελματικοι προσανατολισμοί-
-            <br />Για να ξεκλειδώσετε το μάθημα πρέπει να έχετε περάσει τα προαπαιτούμενα μαθήματα: -προαπαιτουμενα μαθήματα-</p>
+        <p>Το μάθημα «@Model.Item1.Name» διδάσκεται στο @Model.Item1.Semester εξάμηνο, στο τμήμα Πληροφορικής του Πανεπιστημίου Πειραιώς.
+            
+            <br />Σχετίζεται με τους επαγγελματικους προσανατολισμούς:
+            @foreach (var career in Model.Item3)
+            {
+                @career.Name
+            }
+            
+            <br />Για να ξεκλειδώσετε το μάθημα πρέπει να έχετε περάσει τα προαπαιτούμενα μαθήματα:</p>
+            @foreach (var course in Model.Item2)
+            {
+                @course.Name
+            }
     </div>
     <div class="row mt-3">
         <!--if unlcoked-->
@@ -22,14 +35,14 @@
             <h3>Περιεχόμενο</h3>
             <p id="course_content">
                 <!--actual course content goes here-->
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                @Model.Item1.Content
             </p>
         </div>
         <div class="col">
             <div class="row">
                 <audio controls>
                     <!--TODO: add actual audio file-->
-                    <source src="~/sounds/correct.mp3" type="audio/mpeg">
+                    <source src="~/sounds/@Model.Item1.AudioFileName" type="audio/mpeg">
                 </audio>
             </div>
             <div class="row d-flex justify-content-center">

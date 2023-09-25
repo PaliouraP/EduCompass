@@ -8,10 +8,7 @@ public class Coefficient
     [Key] 
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public string Name { get; set; } = string.Empty;
-    
-    [Required]
-    public string LongName { get; set; } = string.Empty;
-    
+
     [Required]
     public string NameInGreek { get; set; } = string.Empty;
 }

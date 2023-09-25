@@ -8,8 +8,10 @@ namespace EduCompass.Models;
 public class PrerequisiteCourse
 {
     [Required]
+    [ForeignKey("Course")]
     public int BaseCourseId { get; set; }
     
     [Required]
+    [ForeignKey("Course")]
     public int PrerequisiteCourseId { get; set; }
 }
