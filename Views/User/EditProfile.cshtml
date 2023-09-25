@@ -17,7 +17,7 @@
 
 @if (@TempData["Error"] != null)
 {
-    <div class="error-msg overlay px-4 py-4 ">@TempData["Error"]<i class="fas fa-times"></i></div>
+    <div id="popup_error" class="error-msg overlay px-4 py-4 ">@TempData["Error"]<i class="fas fa-times" onclick="close_popup()"></i></div>
 }
 
 <div class="d-flex align-items-center" style="height:inherit">
