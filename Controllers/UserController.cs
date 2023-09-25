@@ -95,5 +95,15 @@ namespace EduCompass.Controllers
         {
             return View();
         }
+
+        public IActionResult Suggestions()
+        {
+            
+            
+            var model = _database.PostGraduateInstitutions.ToList();
+            
+            return View();
+        }
+        
     }
 }

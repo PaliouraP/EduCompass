@@ -34,12 +34,6 @@ namespace EduCompass.Controllers
             _currentUser = _database.Users.First(u => u.Username == HttpContext.Session.GetString("username"));
         }
 
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult Dashboard()
         {
             return View();
