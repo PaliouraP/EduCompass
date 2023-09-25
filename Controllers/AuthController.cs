@@ -31,20 +31,24 @@ public class AuthController : Controller
         // If it doesn't exist, fail.
         if (user == null)
         {
-            TempData["Error"] = "Invalid Credentials.";
+            TempData["Error"] = "❌  Λάθος στοιχεία. Παρακαλώ προσπαθήστε ξανά.";
             return RedirectToAction("Login");
         }
 
         // If the password isn't valid, fail.
         if (!PasswordManager.VerifyPassword(pswrd, user.Password))
         {
-            TempData["Error"] = "Invalid Credentials.";
+            TempData["Error"] = "❌  Λάθος στοιχεία. Παρακαλώ προσπαθήστε ξανά.";
             return RedirectToAction("Login");
         }
 
-        // Otherwise redirect to dashboard.
+        // Otherwise redirect to dashboard or the intro test if it's not completed yet.
         CreateSession(user.Username);
-        return RedirectToAction("Dashboard", "Home");
+        
+        if (user.HasCompletedIntroTest)
+            return RedirectToAction("Dashboard", "Home");
+
+        return RedirectToAction("StartIntroTest", "Intro");
     }
 
     // GET
@@ -97,9 +101,9 @@ public class AuthController : Controller
         _database.Add(newUser);
         _database.SaveChanges();
 
-        // and then redirect the user to home.
+        // and then redirect the user to the start of the intro test.
         CreateSession(newUser.Username);
-        return RedirectToAction("Dashboard", "Home");
+        return RedirectToAction("StartIntroTest", "Intro");
     }
 
     public IActionResult Logout()
