@@ -44,76 +44,15 @@
                         
                         @foreach (Course course in Model.Item2)
                         {
-                            switch (c.Name)
-                            {
-                                case "Software Technology":
-                                    
-                                    if (course.SoftwareEngineering > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "Artificial Intelligence and Machine Learning":
-                                    
-                                    if (course.AI_ML > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "User Interface and User Experience":
-                                    
-                                    if (course.UI_UX > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "Security":
-                                    
-                                    if (course.Security > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "Computer Networks":
-                                    
-                                    if (course.ComputerNetworks > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "Computer Vision and Graphics":
-                                    
-                                    if (course.ComputerVisionAndGraphics > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "Game Development":
-                                    
-                                    if (course.GameDev > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "Database Engineering":
-                                    
-                                    if (course.DatabaseEngineering > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "Web Development":
-                                    
-                                    if (course.WebDev > 0)
-                                        break;
-                                    continue;
-                                    
-                                case "Mobile App Development":
-                                    
-                                    if (course.MobileAppDev > 0)
-                                        break;
-                                    continue;
-                            }
+                            <!-- TODO: Show coefficients -->
                             
                             
-                            <!--TODO: load actual subjects with correct values and ids-->
+                            <!-- TODO: load actual subjects with correct values and ids -->
                             <div class="subject-card">
                                 <label for="file">@course.Name <a href="/Course/CoursePage/"><i class="fas fa-link hyperlink"></i></a></label><br/>
-                                <progress id="progress-1" value="86" max="100"> </progress>
+                                <progress id="progress-@course.UUID" value="32" max="100"> </progress>
                                 <script>
-                                    check_value('progress-1');
+                                    check_value('progress-@course.UUID');
                                 </script>
                             </div>
                         }

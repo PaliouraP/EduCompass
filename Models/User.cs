@@ -29,8 +29,6 @@ namespace EduCompass.Models
 
         public bool HasCompletedIntroTest { get; set; } = false;
 
-        //public string Track { get; set; } = string.Empty;
-
         public DateTime Created { get; set; } = DateTime.Now;
 
     }
