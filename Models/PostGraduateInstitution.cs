@@ -24,36 +24,4 @@ public class PostGraduateInstitution
 
     [Required] 
     public string Description { get; set; } = string.Empty;
-    
-    // COEFFICIENTS
-    [Required] 
-    public bool SoftwareEngineering { get; set; } = false;
-
-    [Required] 
-    public bool AI_ML { get; set; } = false;
-
-    [Required] 
-    public bool UI_UX { get; set; } = false;
-
-    [Required] 
-    public bool Security { get; set; } = false;
-
-    [Required] 
-    public bool ComputerNetworks { get; set; } = false;
-
-    [Required] 
-    public bool ComputerVisionAndGraphics { get; set; } = false;
-
-    [Required] 
-    public bool GameDev { get; set; } = false;
-
-    [Required] 
-    public bool DatabaseEngineering { get; set; } = false;
-
-    [Required] 
-    public bool WebDev { get; set; } = false;
-
-    [Required] 
-    public bool MobileAppDev { get; set; } = false;
-
 }
