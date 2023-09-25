@@ -32,18 +32,56 @@ namespace EduCompass.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            SeedData(modelBuilder);
+            SeedDataToCourses(modelBuilder);
+            SeedDataToPostGraduate(modelBuilder);
+            SeedDataToCoefficients(modelBuilder);
+            SeedDataToCoefficientPgi(modelBuilder);
+            SeedDataToCoefficientsCourses(modelBuilder);
         }
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.EnableSensitiveDataLogging();
         }
 
-        private void SeedData(ModelBuilder modelBuilder)
+        private void SeedDataToCourses(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Course>().HasData();
-
+            modelBuilder.Entity<PostGraduateInstitution>().HasData(
+                
+                new Course
+                {
+                    Id = 1, Name = "Σύγχρονα Θέματα Τεχνολογίας Λογισμικού", UUID = "ΠΛΘΕΤΚΑΕ01", Semester = 7, Description = "", Content = "", AudioFileName = ""
+                },
+                
+                new Course
+                {
+                    Id = 2, Name = "Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών", UUID = "ΠΛΠΛΗ37-3", Semester = 3, Description = "", Content = "", AudioFileName = ""
+                },
+                
+                new Course
+                {
+                    Id = 3, Name = "Αντικειμενοστρεφής Προγραμματισμός", UUID = "ΠΛΠΛΗ37-2", Semester = 2, Description = "", Content = "", AudioFileName = ""
+                },
+                
+                new Course
+                {
+                    Id = 4, Name = "Εικονική Πραγματικότητα", UUID = "ΠΛΕΙΚ03", Semester = 7, Description = "", Content = "", AudioFileName = ""
+                },
+                
+                new Course
+                {
+                    Id = 5, Name = "Ευφυείς Πράκτορες", UUID = "ΠΛΕΥΠΡ01", Semester = 8, Description = "", Content = "", AudioFileName = ""
+                },
+                
+                new Course
+                {
+                    Id = 6, Name = "Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών", UUID = "ΠΛΤΑΗΠ01", Semester = 7, Description = "", Content = "", AudioFileName = ""
+                }
+            );
+        }
+        
+        private void SeedDataToPostGraduate(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<PostGraduateInstitution>().HasData(
                 
                 // ΕΜΠ
@@ -127,7 +165,10 @@ namespace EduCompass.Data
                     Id = 14, Name = "Πανεπιστήμιο Πατρών", Department = "Αλληλεπίδραση Ανθρώπου-Υπολογιστή", Town = "Πάτρα", Hyperlink = "https://hcimaster.upatras.gr/regulation/",
                 }
             );
-
+        }
+        
+        private void SeedDataToCoefficients(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<Coefficient>().HasData(
 
                 new Coefficient
@@ -180,7 +221,10 @@ namespace EduCompass.Data
                     Name = "MobileAppDev", NameInGreek = "Ανάπτυξη Εφαρμογών Κινητών Τηλεφώνων"
                 }
             );
-            
+        }
+        
+        private void SeedDataToCoefficientPgi(ModelBuilder modelBuilder)
+        {
             // COEFFICIENTS FOR MASTER'S
             modelBuilder.Entity<PostGraduateInstitutionHasCoefficient>().HasData(
                 
@@ -397,6 +441,150 @@ namespace EduCompass.Data
                     PostGraduateInstitutionId = 12,
                     CoefficientName = "ComputerVisionAndGraphics",
                     HasCoefficient = true
+                }
+            );
+        }
+
+        private void SeedDataToCoefficientsCourses(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CourseHasCoefficient>().HasData(
+
+                // Android
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 1,
+                    CoefficientName = "MobileAppDev",
+                    Value = 10
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 1,
+                    CoefficientName = "SoftwareEngineering",
+                    Value = 10
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 1,
+                    CoefficientName = "WebDev",
+                    Value = 5
+                },
+
+                // Αντικειμενοστρεφής Ανάπτυξη
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 2,
+                    CoefficientName = "SoftwareEngineering",
+                    Value = 10
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 2,
+                    CoefficientName = "WebDev",
+                    Value = 4
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 2,
+                    CoefficientName = "MobileAppDev",
+                    Value = 3
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 2,
+                    CoefficientName = "DatabaseEngineering",
+                    Value = 1
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 2,
+                    CoefficientName = "GameDev",
+                    Value = 1
+                },
+                
+                // OOP
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 3,
+                    CoefficientName = "SoftwareEngineering",
+                    Value = 10
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 3,
+                    CoefficientName = "MobileAppDev",
+                    Value = 2
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 3,
+                    CoefficientName = "WebDev",
+                    Value = 1
+                },
+                
+                // VR
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 4,
+                    CoefficientName = "GameDev",
+                    Value = 10
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 4,
+                    CoefficientName = "ComputerVisionAndGraphics",
+                    Value = 7
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 4,
+                    CoefficientName = "AI_ML",
+                    Value = 2
+                },
+                
+                // intelligent agents
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 5,
+                    CoefficientName = "AI_ML",
+                    Value = 10
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 5,
+                    CoefficientName = "GameDev",
+                    Value = 8
+                },
+                
+                // video games
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 6,
+                    CoefficientName = "GameDev",
+                    Value = 10
+                },
+                
+                new CourseHasCoefficient
+                {
+                    CourseId = 6,
+                    CoefficientName = "SoftwareEngineering",
+                    Value = 3
                 }
             );
         }
