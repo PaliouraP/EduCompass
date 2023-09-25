@@ -234,3 +234,7 @@ progress {
     font-size: 15px;
     color: #7678ED;
 }
+
+.fa-times:hover {
+    cursor: pointer;
+}
