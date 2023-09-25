@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCompass.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230923141356_seed-courses-and-post-graduate-institutes")]
-    partial class seedcoursesandpostgraduateinstitutes
+    [Migration("20230923172113_seed-data")]
+    partial class seeddata
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,10 +25,79 @@ namespace EduCompass.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("EduCompass.Models.Coefficient", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("NameInGreek")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("Coefficients");
+
+                    b.HasData(
+                        new
+                        {
+                            Name = "Software Technology",
+                            NameInGreek = "Τεχνολογία Λογισμικού"
+                        },
+                        new
+                        {
+                            Name = "Artificial Intelligence and Machine Learning",
+                            NameInGreek = "Τεχνητή Νοημοσύνη και Μηχανική Μάθηση"
+                        },
+                        new
+                        {
+                            Name = "User Interface and User Experience",
+                            NameInGreek = "Αλληλεπίδραση Ανθρώπου-Υπολογιστή"
+                        },
+                        new
+                        {
+                            Name = "Security",
+                            NameInGreek = "Ασφάλεια"
+                        },
+                        new
+                        {
+                            Name = "Computer Networks",
+                            NameInGreek = "Δίκτυα Υπολογιστών"
+                        },
+                        new
+                        {
+                            Name = "Computer Vision and Graphics",
+                            NameInGreek = "Ανάλυση Εικόνας και Γραφικών"
+                        },
+                        new
+                        {
+                            Name = "Game Development",
+                            NameInGreek = "Ανάπτυξη Ηλεκτρονικών Παιχνιδιών"
+                        },
+                        new
+                        {
+                            Name = "Database Engineering",
+                            NameInGreek = "Ανάπτυξη Βάσεων Δεδομένων και Επιστήμη Δεδομένων"
+                        },
+                        new
+                        {
+                            Name = "Web Development",
+                            NameInGreek = "Ανάπτυξη Διαδικτυακών Εφαρμογών"
+                        },
+                        new
+                        {
+                            Name = "Mobile App Development",
+                            NameInGreek = "Ανάπτυξη Εφαρμογών Κινητών Τηλεφώνων"
+                        });
+                });
+
             modelBuilder.Entity("EduCompass.Models.Course", b =>
                 {
-                    b.Property<string>("UUID")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AI_ML")
                         .HasColumnType("int");
@@ -75,20 +144,24 @@ namespace EduCompass.Migrations
                     b.Property<int>("UI_UX")
                         .HasColumnType("int");
 
+                    b.Property<string>("UUID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("WebDev")
                         .HasColumnType("int");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
-                    b.HasKey("UUID");
+                    b.HasKey("Id");
 
                     b.ToTable("Courses");
 
                     b.HasData(
                         new
                         {
-                            UUID = "ΠΛΠΛΗ90",
+                            Id = 1,
                             AI_ML = 0,
                             ComputerNetworks = 8,
                             ComputerVisionAndGraphics = 0,
@@ -103,12 +176,13 @@ namespace EduCompass.Migrations
                             Semester = 1,
                             SoftwareEngineering = 4,
                             UI_UX = 4,
+                            UUID = "ΠΛΠΛΗ90",
                             WebDev = 8,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ24",
+                            Id = 2,
                             AI_ML = 4,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -123,12 +197,13 @@ namespace EduCompass.Migrations
                             Semester = 1,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ24",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ68",
+                            Id = 3,
                             AI_ML = 0,
                             ComputerNetworks = 4,
                             ComputerVisionAndGraphics = 0,
@@ -143,12 +218,13 @@ namespace EduCompass.Migrations
                             Semester = 1,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ68",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘΥ01",
+                            Id = 4,
                             AI_ML = 4,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -163,12 +239,13 @@ namespace EduCompass.Migrations
                             Semester = 1,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘΥ01",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ01-1",
+                            Id = 5,
                             AI_ML = 5,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -183,12 +260,13 @@ namespace EduCompass.Migrations
                             Semester = 1,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ01-1",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ02-2",
+                            Id = 6,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -203,12 +281,13 @@ namespace EduCompass.Migrations
                             Semester = 1,
                             SoftwareEngineering = 7,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ02-2",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ37-2",
+                            Id = 7,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -223,12 +302,13 @@ namespace EduCompass.Migrations
                             Semester = 2,
                             SoftwareEngineering = 10,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ37-2",
                             WebDev = 1,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ25",
+                            Id = 8,
                             AI_ML = 5,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -243,12 +323,13 @@ namespace EduCompass.Migrations
                             Semester = 2,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ25",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ52",
+                            Id = 9,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -263,12 +344,13 @@ namespace EduCompass.Migrations
                             Semester = 2,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ52",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ71",
+                            Id = 10,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -283,12 +365,13 @@ namespace EduCompass.Migrations
                             Semester = 2,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ71",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ31",
+                            Id = 11,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -303,12 +386,13 @@ namespace EduCompass.Migrations
                             Semester = 2,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ31",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ02-3",
+                            Id = 12,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -323,12 +407,13 @@ namespace EduCompass.Migrations
                             Semester = 2,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ02-3",
                             WebDev = 0,
                             Year = 1
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ37-3",
+                            Id = 13,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -343,12 +428,13 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 10,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ37-3",
                             WebDev = 3,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ41-1",
+                            Id = 14,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -363,12 +449,13 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ41-1",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ06-1",
+                            Id = 15,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -383,12 +470,13 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ06-1",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ08",
+                            Id = 16,
                             AI_ML = 6,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -403,12 +491,13 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ08",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ23-1",
+                            Id = 17,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -423,16 +512,17 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ23-1",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΔΙΚ01",
+                            Id = 18,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
-                            CourseType = "Optional",
+                            CourseType = "ΕΠΙΛΟΓΗΣ",
                             DatabaseEngineering = 0,
                             Description = "",
                             GameDev = 0,
@@ -443,16 +533,17 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΔΙΚ01",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ35-1",
+                            Id = 19,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
-                            CourseType = "Optional",
+                            CourseType = "ΕΠΙΛΟΓΗΣ",
                             DatabaseEngineering = 0,
                             Description = "",
                             GameDev = 0,
@@ -463,16 +554,17 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ35-1",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΝΖ01",
+                            Id = 20,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
-                            CourseType = "Optional",
+                            CourseType = "ΕΠΙΛΟΓΗΣ",
                             DatabaseEngineering = 0,
                             Description = "",
                             GameDev = 0,
@@ -483,16 +575,17 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΝΖ01",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΑΙΔ01",
+                            Id = 21,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
-                            CourseType = "Optional",
+                            CourseType = "ΕΠΙΛΟΓΗΣ",
                             DatabaseEngineering = 0,
                             Description = "",
                             GameDev = 0,
@@ -503,12 +596,13 @@ namespace EduCompass.Migrations
                             Semester = 3,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΑΙΔ01",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ30-1",
+                            Id = 22,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -523,12 +617,13 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ30-1",
                             WebDev = 5,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΔΠΙ01",
+                            Id = 23,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -543,12 +638,13 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 4,
                             UI_UX = 3,
+                            UUID = "ΠΛΔΠΙ01",
                             WebDev = 10,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ45",
+                            Id = 24,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -563,12 +659,13 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ45",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ10-1",
+                            Id = 25,
                             AI_ML = 8,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -583,12 +680,13 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ10-1",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ44",
+                            Id = 26,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -603,16 +701,17 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ44",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΟΚΟΔΕ08",
+                            Id = 27,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
-                            CourseType = "Optional",
+                            CourseType = "ΕΠΙΛΟΓΗΣ",
                             DatabaseEngineering = 0,
                             Description = "",
                             GameDev = 0,
@@ -623,16 +722,17 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΟΚΟΔΕ08",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ46-1",
+                            Id = 28,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
-                            CourseType = "Optional",
+                            CourseType = "ΕΠΙΛΟΓΗΣ",
                             DatabaseEngineering = 0,
                             Description = "",
                             GameDev = 0,
@@ -643,16 +743,17 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ46-1",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ73-1",
+                            Id = 29,
                             AI_ML = 3,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
-                            CourseType = "Optional",
+                            CourseType = "ΕΠΙΛΟΓΗΣ",
                             DatabaseEngineering = 0,
                             Description = "",
                             GameDev = 0,
@@ -663,16 +764,17 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ73-1",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗΚΕΚ01",
+                            Id = 30,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
-                            CourseType = "Optional",
+                            CourseType = "ΕΠΙΛΟΓΗΣ",
                             DatabaseEngineering = 0,
                             Description = "",
                             GameDev = 0,
@@ -683,12 +785,13 @@ namespace EduCompass.Migrations
                             Semester = 4,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗΚΕΚ01",
                             WebDev = 0,
                             Year = 2
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ20",
+                            Id = 31,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -703,12 +806,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 4,
                             UI_UX = 10,
+                            UUID = "ΠΛΠΛΗ20",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ50",
+                            Id = 32,
                             AI_ML = 10,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -723,12 +827,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ50",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ81-2",
+                            Id = 33,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -743,12 +848,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ81-2",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ71",
+                            Id = 34,
                             AI_ML = 7,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -763,12 +869,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ71",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΚΡΥ01",
+                            Id = 35,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -783,12 +890,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΚΡΥ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ33-2",
+                            Id = 36,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -803,12 +911,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ33-2",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΘΕ01",
+                            Id = 37,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -823,12 +932,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΘΕ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΡΟ01",
+                            Id = 38,
                             AI_ML = 0,
                             ComputerNetworks = 6,
                             ComputerVisionAndGraphics = 0,
@@ -843,12 +953,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΡΟ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΘΕΠ01",
+                            Id = 39,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -863,12 +974,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΘΕΠ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΛΟΔΙΜ01",
+                            Id = 40,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -883,12 +995,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 7,
                             UI_UX = 0,
+                            UUID = "ΠΛΛΟΔΙΜ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ49",
+                            Id = 41,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -903,12 +1016,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ49",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ72-1",
+                            Id = 42,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -923,12 +1037,13 @@ namespace EduCompass.Migrations
                             Semester = 5,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ72-1",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ46",
+                            Id = 43,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -943,12 +1058,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 10,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ46",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ18-1",
+                            Id = 44,
                             AI_ML = 10,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -963,12 +1079,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ18-1",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΒΙΟΠ01",
+                            Id = 45,
                             AI_ML = 5,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 4,
@@ -983,12 +1100,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΒΙΟΠ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ24-01",
+                            Id = 46,
                             AI_ML = 6,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1003,12 +1121,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ24-01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ48",
+                            Id = 47,
                             AI_ML = 6,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 8,
@@ -1023,12 +1142,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ48",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΑΝΑΔΕ01",
+                            Id = 48,
                             AI_ML = 10,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1043,12 +1163,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΑΝΑΔΕ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ36-1",
+                            Id = 49,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1063,32 +1184,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΜΑΘ36-1",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ69-1",
-                            AI_ML = 6,
-                            ComputerNetworks = 0,
-                            ComputerVisionAndGraphics = 0,
-                            CourseType = "ΠΣΥ",
-                            DatabaseEngineering = 0,
-                            Description = "",
-                            GameDev = 0,
-                            InIntro = true,
-                            MobileAppDev = 0,
-                            Name = "Συστημική Ανάλυση",
-                            Security = 0,
-                            Semester = 6,
-                            SoftwareEngineering = 0,
-                            UI_UX = 0,
-                            WebDev = 0,
-                            Year = 3
-                        },
-                        new
-                        {
-                            UUID = "ΠΛΠΛΗ49",
+                            Id = 51,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -1103,12 +1205,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ49",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ91-1",
+                            Id = 52,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -1123,12 +1226,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ91-1",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ53",
+                            Id = 53,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -1143,12 +1247,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ53",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΔΙΠ01-1",
+                            Id = 54,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1163,12 +1268,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 6,
                             UI_UX = 6,
+                            UUID = "ΠΛΔΙΠ01-1",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΕΑΚΔ01",
+                            Id = 55,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -1183,12 +1289,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΕΑΚΔ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΡΑΝ01",
+                            Id = 56,
                             AI_ML = 5,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1203,12 +1310,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΡΑΝ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΠΡΑΝΑΛ01",
+                            Id = 57,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1223,12 +1331,13 @@ namespace EduCompass.Migrations
                             Semester = 6,
                             SoftwareEngineering = 10,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΡΑΝΑΛ01",
                             WebDev = 0,
                             Year = 3
                         },
                         new
                         {
-                            UUID = "ΠΛΕΙΚ03",
+                            Id = 58,
                             AI_ML = 2,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 7,
@@ -1243,12 +1352,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΕΙΚ03",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΕΙΚ01",
+                            Id = 59,
                             AI_ML = 7,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 10,
@@ -1263,12 +1373,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΕΙΚ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΘΕΤΚΑΕ01",
+                            Id = 60,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1283,17 +1394,18 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 10,
                             UI_UX = 0,
+                            UUID = "ΠΛΘΕΤΚΑΕ01",
                             WebDev = 5,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΗΘΕΔ01",
+                            Id = 61,
                             AI_ML = 8,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
                             CourseType = "ΠΣΥ",
-                            DatabaseEngineering = 0,
+                            DatabaseEngineering = 5,
                             Description = "",
                             GameDev = 0,
                             InIntro = true,
@@ -1303,32 +1415,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΗΘΕΔ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΜΑΘ34-4",
-                            AI_ML = 3,
-                            ComputerNetworks = 3,
-                            ComputerVisionAndGraphics = 0,
-                            CourseType = "ΠΣΥ",
-                            DatabaseEngineering = 0,
-                            Description = "",
-                            GameDev = 0,
-                            InIntro = true,
-                            MobileAppDev = 0,
-                            Name = "Προσομοίωση Συστημάτων",
-                            Security = 0,
-                            Semester = 7,
-                            SoftwareEngineering = 0,
-                            UI_UX = 0,
-                            WebDev = 0,
-                            Year = 4
-                        },
-                        new
-                        {
-                            UUID = "ΠΛΚΑΕ01",
+                            Id = 63,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -1343,12 +1436,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΚΑΕ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΣΥΣ01-1",
+                            Id = 64,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -1363,12 +1457,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΣΥΣ01-1",
                             WebDev = 5,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ47",
+                            Id = 65,
                             AI_ML = 0,
                             ComputerNetworks = 6,
                             ComputerVisionAndGraphics = 0,
@@ -1383,12 +1478,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ47",
                             WebDev = 6,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΔΙΓ01",
+                            Id = 67,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1403,12 +1499,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΔΙΓ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΑΠΡΟΔΙΔ01",
+                            Id = 68,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1423,12 +1520,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΑΠΡΟΔΙΔ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΕΠΔΙΠΡ01",
+                            Id = 69,
                             AI_ML = 0,
                             ComputerNetworks = 8,
                             ComputerVisionAndGraphics = 0,
@@ -1443,12 +1541,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΕΠΔΙΠΡ01",
                             WebDev = 1,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΗΛΜΚΔ01",
+                            Id = 70,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1463,12 +1562,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 5,
                             UI_UX = 0,
+                            UUID = "ΠΛΗΛΜΚΔ01",
                             WebDev = 3,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΟΔΕΓ01",
+                            Id = 71,
                             AI_ML = 5,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -1483,12 +1583,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΟΔΕΓ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΠΛΗ74",
+                            Id = 72,
                             AI_ML = 5,
                             ComputerNetworks = 3,
                             ComputerVisionAndGraphics = 0,
@@ -1503,12 +1604,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΠΛΗ74",
                             WebDev = 5,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΤΑΗΠ01",
+                            Id = 73,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1523,12 +1625,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 3,
                             UI_UX = 0,
+                            UUID = "ΠΛΤΑΗΠ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΥΠΛΟ01",
+                            Id = 74,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1543,12 +1646,13 @@ namespace EduCompass.Migrations
                             Semester = 7,
                             SoftwareEngineering = 6,
                             UI_UX = 4,
+                            UUID = "ΠΛΥΠΛΟ01",
                             WebDev = 10,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΕΠΣΦΗ01",
+                            Id = 75,
                             AI_ML = 10,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1563,12 +1667,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΕΠΣΦΗ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΕΥΦΠΡ01",
+                            Id = 76,
                             AI_ML = 10,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1583,12 +1688,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΕΥΦΠΡ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΕΚΛ01",
+                            Id = 77,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1603,12 +1709,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 7,
                             UI_UX = 4,
+                            UUID = "ΠΛΕΚΛ01",
                             WebDev = 1,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΔΙΠ01",
+                            Id = 78,
                             AI_ML = 4,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1623,12 +1730,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΔΙΠ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΑΣΦΔ01",
+                            Id = 79,
                             AI_ML = 0,
                             ComputerNetworks = 6,
                             ComputerVisionAndGraphics = 0,
@@ -1643,12 +1751,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΑΣΦΔ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΗΕΠΚ01",
+                            Id = 80,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1663,12 +1772,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 6,
                             UI_UX = 0,
+                            UUID = "ΠΛΗΕΠΚ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΣΥΔ01",
+                            Id = 81,
                             AI_ML = 0,
                             ComputerNetworks = 3,
                             ComputerVisionAndGraphics = 0,
@@ -1683,12 +1793,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 5,
                             UI_UX = 5,
+                            UUID = "ΠΛΣΥΔ01",
                             WebDev = 10,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΘΕΔΔΚΕ01",
+                            Id = 82,
                             AI_ML = 0,
                             ComputerNetworks = 10,
                             ComputerVisionAndGraphics = 0,
@@ -1703,12 +1814,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΘΕΔΔΚΕ01",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΣΥΣ02",
+                            Id = 83,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1723,12 +1835,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΣΥΣ02",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΣΥΣ03",
+                            Id = 84,
                             AI_ML = 0,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1743,12 +1856,13 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΣΥΣ03",
                             WebDev = 0,
                             Year = 4
                         },
                         new
                         {
-                            UUID = "ΠΛΤΕΒΕΦ01",
+                            Id = 85,
                             AI_ML = 8,
                             ComputerNetworks = 0,
                             ComputerVisionAndGraphics = 0,
@@ -1763,6 +1877,7 @@ namespace EduCompass.Migrations
                             Semester = 8,
                             SoftwareEngineering = 0,
                             UI_UX = 0,
+                            UUID = "ΠΛΤΕΒΕΦ01",
                             WebDev = 0,
                             Year = 4
                         });
@@ -1776,9 +1891,8 @@ namespace EduCompass.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CourseUUID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -1789,12 +1903,15 @@ namespace EduCompass.Migrations
                     b.Property<int>("InterestScore")
                         .HasColumnType("int");
 
+                    b.Property<int>("TestGrade")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseUUID");
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("UserId");
 
@@ -2132,6 +2249,19 @@ namespace EduCompass.Migrations
                         });
                 });
 
+            modelBuilder.Entity("EduCompass.Models.PrerequisiteCourse", b =>
+                {
+                    b.Property<int>("BaseCourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PrerequisiteCourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BaseCourseId", "PrerequisiteCourseId");
+
+                    b.ToTable("PrerequisiteCourses");
+                });
+
             modelBuilder.Entity("EduCompass.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -2208,7 +2338,7 @@ namespace EduCompass.Migrations
                 {
                     b.HasOne("EduCompass.Models.Course", "_Course")
                         .WithMany()
-                        .HasForeignKey("CourseUUID")
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

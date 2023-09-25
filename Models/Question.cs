@@ -4,21 +4,14 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace EduCompass.Models;
 
-public class Grade
+public class Question
 {
-    // PRIMARY KEY
     [Key]
     public int Id { get; set; }
-    
-    [ForeignKey("User")]
-    public int UserId { get; set; }
+
+    [NotNull]
+    public string Content { get; set; } = string.Empty;
     
     [ForeignKey("Course")]
     public int CourseId { get; set; }
-
-    public int FinalGrade { get; set; } = -1;
-
-    public int InterestScore { get; set; } = -1;
-
-    public DateTime Created { get; set; } = DateTime.Now;
 }

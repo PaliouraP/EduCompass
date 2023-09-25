@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCompass.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230922151310_init-database")]
-    partial class initdatabase
+    [Migration("20230923165054_initialize-database")]
+    partial class initializedatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,10 +25,27 @@ namespace EduCompass.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("EduCompass.Models.Coefficient", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("NameInGreek")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("Coefficients");
+                });
+
             modelBuilder.Entity("EduCompass.Models.Course", b =>
                 {
-                    b.Property<string>("UUID")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AI_ML")
                         .HasColumnType("int");
@@ -43,7 +60,7 @@ namespace EduCompass.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DatabaseManagement")
+                    b.Property<int>("DatabaseEngineering")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -75,13 +92,17 @@ namespace EduCompass.Migrations
                     b.Property<int>("UI_UX")
                         .HasColumnType("int");
 
+                    b.Property<string>("UUID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("WebDev")
                         .HasColumnType("int");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
-                    b.HasKey("UUID");
+                    b.HasKey("Id");
 
                     b.ToTable("Courses");
                 });
@@ -94,9 +115,8 @@ namespace EduCompass.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CourseUUID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -107,12 +127,15 @@ namespace EduCompass.Migrations
                     b.Property<int>("InterestScore")
                         .HasColumnType("int");
 
+                    b.Property<int>("TestGrade")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseUUID");
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("UserId");
 
@@ -136,19 +159,23 @@ namespace EduCompass.Migrations
                     b.Property<bool>("ComputerVisionAndGraphics")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("DatabaseManagement")
+                    b.Property<bool>("DatabaseEngineering")
                         .HasColumnType("bit");
 
                     b.Property<string>("Department")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("GameDev")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Hyperlink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("MobileAppDev")
                         .HasColumnType("bit");
@@ -178,6 +205,19 @@ namespace EduCompass.Migrations
                     b.ToTable("PostGraduateInstitutions");
                 });
 
+            modelBuilder.Entity("EduCompass.Models.PrerequisiteCourse", b =>
+                {
+                    b.Property<int>("BaseCourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PrerequisiteCourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BaseCourseId", "PrerequisiteCourseId");
+
+                    b.ToTable("PrerequisiteCourses");
+                });
+
             modelBuilder.Entity("EduCompass.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -198,7 +238,7 @@ namespace EduCompass.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
-                    b.Property<float>("DatabaseManagementPercentage")
+                    b.Property<float>("DatabaseEngineeringPercentage")
                         .HasColumnType("real");
 
                     b.Property<string>("Email")
@@ -254,7 +294,7 @@ namespace EduCompass.Migrations
                 {
                     b.HasOne("EduCompass.Models.Course", "_Course")
                         .WithMany()
-                        .HasForeignKey("CourseUUID")
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

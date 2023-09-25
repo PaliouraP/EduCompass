@@ -1,12 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
 
 namespace EduCompass.Models;
 
-public class Grade
+public class TimeSpent
 {
-    // PRIMARY KEY
     [Key]
     public int Id { get; set; }
     
@@ -15,10 +13,6 @@ public class Grade
     
     [ForeignKey("Course")]
     public int CourseId { get; set; }
-
-    public int FinalGrade { get; set; } = -1;
-
-    public int InterestScore { get; set; } = -1;
-
-    public DateTime Created { get; set; } = DateTime.Now;
+    
+    public int TotalTime { get; set; }
 }

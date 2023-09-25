@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EduCompass.Models;
 
-[PrimaryKey(nameof(BaseCourseUUID), nameof(PrerequisiteCourseUUID))]
+[PrimaryKey(nameof(BaseCourseId), nameof(PrerequisiteCourseId))]
 public class PrerequisiteCourse
 {
     [Required]
-    public string BaseCourseUUID { get; set; }
+    public int BaseCourseId { get; set; }
     
     [Required]
-    public string PrerequisiteCourseUUID { get; set; }
+    public int PrerequisiteCourseId { get; set; }
 }

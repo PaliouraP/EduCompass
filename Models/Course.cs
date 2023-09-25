@@ -6,8 +6,11 @@ namespace EduCompass.Models;
 public class Course
 {
     // PRIMARY KEY
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    [Key] 
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get; set; }
+    
+    [Required]
     public string UUID { get; set; } = string.Empty;
     
     [Required]
@@ -15,15 +18,15 @@ public class Course
     
     [Required]
     public int Semester { get; set; }
-    
+
     [Required]
-    public int Year { get; set; }
-    
     public string Description { get; set; } = string.Empty;
 
-    public bool InIntro { get; set; } = false;
+    [Required]
+    public string Content { get; set; } = string.Empty;
 
-    public string CourseType { get; set; } = string.Empty;
+    [Required] 
+    public string AudioFileName { get; set; } = string.Empty;
     
     // COEFFICIENTS
     [Required] 
