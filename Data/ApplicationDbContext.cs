@@ -622,21 +622,21 @@ namespace EduCompass.Data
                 new Career { Name = "Mobile UI/UX Designer", NameInGreek = "Σχεδιαστής UI/UX για Εφαρμογές Κινητών Τηλεφώνων", CoefficientName = "MobileAppDev" },
                 
                 // database engineer
-                new Career { Name = "Big Data Engineer", NameInGreek = "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων", CoefficientName = "DatabaseEngineering" },
-                new Career { Name = "Data Architect", NameInGreek = "Προγραμματιστής Εφαρμογών για iOS", CoefficientName = "DatabaseEngineering" },
-                new Career { Name = "Database Developer", NameInGreek = "Προγραμματιστής Εφαρμογών για Android", CoefficientName = "DatabaseEngineering" },
-                new Career { Name = "Cloud Data Engineer", NameInGreek = "Σχεδιαστής UI/UX για Εφαρμογές Κινητών Τηλεφώνων", CoefficientName = "DatabaseEngineering" },
+                new Career { Name = "Big Data Engineer", NameInGreek = "Μηχανικός Δεδομένων Μεγάλου Όγκου", CoefficientName = "DatabaseEngineering" },
+                new Career { Name = "Data Architect", NameInGreek = "Αρχιτέκτονας Δεδομένων", CoefficientName = "DatabaseEngineering" },
+                new Career { Name = "Database Developer", NameInGreek = "Προγραμματιστής Βάσεων Δεδομένων", CoefficientName = "DatabaseEngineering" },
+                new Career { Name = "Cloud Data Engineer", NameInGreek = "Μηχανικός Δεδομένων Υπολογιστικής Νέφους", CoefficientName = "DatabaseEngineering" },
                 
                 // computer networks
-                new Career { Name = "Network Administrator", NameInGreek = "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων", CoefficientName = "ComputerNetworks" },
-                new Career { Name = "Network Engineer", NameInGreek = "Προγραμματιστής Εφαρμογών για iOS", CoefficientName = "ComputerNetworks" },
-                new Career { Name = "Network Security Specialist", NameInGreek = "Προγραμματιστής Εφαρμογών για Android", CoefficientName = "ComputerNetworks" },
+                new Career { Name = "Network Administrator", NameInGreek = "Διαχειριστής Δικτύων", CoefficientName = "ComputerNetworks" },
+                new Career { Name = "Network Engineer", NameInGreek = "Μηχανικός Δικτύων", CoefficientName = "ComputerNetworks" },
+                new Career { Name = "Network Security Specialist", NameInGreek = "Ειδικός Ασφάλειας Δικτύων", CoefficientName = "ComputerNetworks" },
                 
                 // computer vision and graphics 
-                new Career { Name = "Computer Vision Engineer", NameInGreek = "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων", CoefficientName = "ComputerVisionAndGraphics" },
-                new Career { Name = "Computer Graphics Programmer", NameInGreek = "Προγραμματιστής Εφαρμογών για iOS", CoefficientName = "ComputerVisionAndGraphics" },
-                new Career { Name = "3D Artist/Animator", NameInGreek = "Προγραμματιστής Εφαρμογών για Android", CoefficientName = "ComputerVisionAndGraphics" },
-                new Career { Name = "Virtual Reality Developer", NameInGreek = "Σχεδιαστής UI/UX για Εφαρμογές Κινητών Τηλεφώνων", CoefficientName = "ComputerVisionAndGraphics" },
+                new Career { Name = "Computer Vision Engineer", NameInGreek = "Μηχανικός Γραφικών Υπολογιστών", CoefficientName = "ComputerVisionAndGraphics" },
+                new Career { Name = "Computer Graphics Programmer", NameInGreek = "Προγραμματιστής Γραφικών", CoefficientName = "ComputerVisionAndGraphics" },
+                new Career { Name = "3D Artist/Animator", NameInGreek = "Σχεδιαστής Τρισδιάστατων Σχεδίων", CoefficientName = "ComputerVisionAndGraphics" },
+                new Career { Name = "Virtual Reality Developer", NameInGreek = "Προγραμματιστής Εικονικής Πραγματικότητας", CoefficientName = "ComputerVisionAndGraphics" },
                 
                 // security 
                 new Career { Name = "Security Analyst", NameInGreek = "Αναλυτής Ασφαλείας", CoefficientName = "Security" },
