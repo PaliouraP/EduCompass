@@ -28,13 +28,13 @@
 
                         <div class="row radio-group type-choose">
                             <div class="row radio-group my-1">
-                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
-                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer1</label>
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer1"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer1</label>
                             </div>
 
                             <div class="row radio-group my-1">
-                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
-                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer2</label>
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer2"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer2</label>
                             </div>
                         </div>
                     
@@ -42,9 +42,9 @@
                         
                     case QuestionType.FillTheBlank:
 
-                        <h6 class="d-flex justify-content-start mt-5">Απάντηση</h6>
+                        <h6 class="d-flex justify-content-start mt-5">Απάντηση:</h6>
                         <div class="row type-write">
-                            <input type="text" name="text-answer-@item.Key.Id" id="text-answer" class="form-control form-control-lg"/>
+                            <input type="text" name="answer-@item.Key.Id" id="text-answer" class="form-control form-control-lg"/>
                         </div>
                         
                         break;
@@ -52,23 +52,23 @@
 
                         <div class="row radio-group type-choose ">
                             <div class="row radio-group my-1">
-                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
-                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer1</label>
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer1"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer1</label>
                             </div>
 
                             <div class="row radio-group my-1">
-                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
-                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer2</label>
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer2"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer2</label>
                             </div>
 
                             <div class="row radio-group my-1">
-                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
-                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer3</label>
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer3"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer3</label>
                             </div>
 
                             <div class="row radio-group my-1">
-                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
-                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer4</label>
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer4"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer4</label>
                             </div>
                         </div>
                         

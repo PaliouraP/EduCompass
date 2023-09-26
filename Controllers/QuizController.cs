@@ -108,8 +108,14 @@ public class QuizController : Controller
     }
 
     [HttpPost]
-    public IActionResult PostAnswers(string answers)
+    public IActionResult PostAnswers()
     {
+        var answer1 = Request.Form["answer-1"].ToString();
+        var answer2 = Request.Form["answer-2"].ToString();
+        var answer3 = Request.Form["answer-3"].ToString();
+        var answer4 = Request.Form["answer-4"].ToString();
+        var answer5 = Request.Form["answer-5"].ToString();
+
         return RedirectToAction("Dashboard", "Home");
     }
 
