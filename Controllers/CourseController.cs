@@ -40,7 +40,8 @@ namespace EduCompass.Controllers
 
         public IActionResult OrientationPage()
         {
-            var model = new Tuple<List<Coefficient>, List<CourseHasCoefficient>, List<Course>>(_database.Coefficients.ToList(), _database.CourseHasCoefficients.ToList(), _database.Courses.ToList());
+            var model = new Tuple<List<Coefficient>, List<CourseHasCoefficient>, List<Course>, List<CourseQuizGrade>, List<PrerequisiteCourse>>
+                (_database.Coefficients.ToList(), _database.CourseHasCoefficients.ToList(), _database.Courses.ToList(), _database.CourseQuizGrades.ToList(), _database.PrerequisiteCourses.ToList());
             
             return View(model);
         }
