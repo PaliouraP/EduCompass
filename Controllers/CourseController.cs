@@ -65,7 +65,7 @@ namespace EduCompass.Controllers
                 join career in _database.Careers on chc.CoefficientName equals career.CoefficientName
                 select career).ToList();
 
-            var model = new Tuple<Course, List<Course>, List<Career>>(course, necessaryCourses, careers);
+            var model = new Tuple<Course, List<Course>, List<Career>, List<CourseQuizGrade>>(course, necessaryCourses, careers, _database.CourseQuizGrades.ToList());
             
             return View(model);
         }
