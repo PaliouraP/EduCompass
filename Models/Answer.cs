@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EduCompass.Models;
 
@@ -30,7 +31,12 @@ public class Answer
     // method to find the QuestionType
     public QuestionType GetQuestionType()
     {
-        // TODO: ΝΑ ΤΟ ΦΤΙΑΞΩ ΑΡΓΟΤΕΡΑ ΩΣΤΕ ΝΑ ΛΕΙΤΟΥΡΓΕΙ
+        if (Answer2.IsNullOrEmpty())
+            return QuestionType.FillTheBlank;
+        
+        if (Answer3.IsNullOrEmpty())
+            return QuestionType.TrueOrFalse;
+
         return QuestionType.MultipleChoice;
     }
 }
