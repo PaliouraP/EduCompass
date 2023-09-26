@@ -60,11 +60,16 @@ public class QuizController : Controller
         _database.CourseQuizGrades.Add(quiz);
         _database.SaveChanges();
 
+        TempData["QuizId"] = quiz.Id;
+        TempData.Keep("QuizId");
+        
         return RedirectToAction("Quiz");
+        
     }
 
     public IActionResult Quiz()
     {
+        TempData.Keep("QuizId");
         return View();
     }
     
