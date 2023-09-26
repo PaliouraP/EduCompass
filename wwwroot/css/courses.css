@@ -12,8 +12,9 @@ a {
 
 .orientation-template {
     background-color: #3D348B;
+    box-shadow: 4px 4px 27px 5px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-    width: 300px;
+    width: 100%;
 }
 
 .orientation-title {
@@ -23,7 +24,7 @@ a {
 }
 
 .orientation-progress {
-    font-size: 18px;
+    font-size: 15px;
     color: white;
 }
 

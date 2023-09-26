@@ -129,6 +129,21 @@ a {
         border-color: #3D348B;
     }
 
+.btn-long-alt-2 {
+    color: white;
+    font-weight: 500;
+    height: 50px;
+    font-size: 20px;
+    background-color: #7678ED;
+    border: 0px;
+    border-radius: 15px;
+    width: 50%;
+}
+    .btn-long-alt-2:hover {
+        color: white;
+        background-color: #9698ED;
+    }
+
 .radio-checked {
     width: 1em;
     height: 1em;

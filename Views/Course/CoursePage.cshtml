@@ -34,14 +34,12 @@
         <div class="col">
             <h3>Περιεχόμενο</h3>
             <p id="course_content">
-                <!--actual course content goes here-->
                 @Model.Item1.Content
             </p>
         </div>
         <div class="col">
             <div class="row">
                 <audio controls>
-                    <!--TODO: add actual audio file-->
                     <source src="~/sounds/@Model.Item1.AudioFileName" type="audio/mpeg">
                 </audio>
             </div>
@@ -51,7 +49,7 @@
                 
             </div>
 
-            <div class="row  d-flec justify-content-evenly pt-1">
+            <div class="row  d-flex justify-content-evenly pt-1">
                 <a href="/Home/Quiz/" class="btn-long btn-proceed d-flex justify-content-center align-items-center">Κάνετε το Τεστ</a>
 
             </div>

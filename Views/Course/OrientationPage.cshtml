@@ -15,26 +15,30 @@
         <h3 class="my-4">Τα μαθήματα μου</h3>
     </div>
     <div class="orientations mt-3">
+        <div class="row pt-1">
+            <p>Για να ξεκλειδώσετε ένα μάθημα πρέπει να έχετε προσβάσιμο βαθμό στα προαπαιτούμενά του. Για να ξεκλειδώσετε το επαναληπτικό τεστ πρέπει να έχετε προσβάσιμο βαθμό σε όλα τα μαθήματα του συγκεκριμένου προσανατολισμού.</p>
+        </div>
         
         @{
             int i = 0;
             int j = 0;
         }
 
-        @foreach (Coefficient coefficient in Model.Item1)
+        foreach (Coefficient coefficient in Model.Item1)
         {
             <div class="orientation-template px-4 py-3">
+ 
                 <a data-bs-toggle="collapse" href="#coefficient-@i" role="button" aria-expanded="false"
                    aria-controls="collapseExample" class="row details collapsed">
                     <div class="col-8">
                         <div class="orientation-title">
-                            @coefficient.NameInGreek
+                            coefficient.NameInGreek
                         </div>
                         <div class="orientation-progress ">
-                            2/4 <!-- Πόσα μαθήματα έχεις περάσει -->
+                            2/4 <!-- Πόσα μαθήματα έχεις περάσει - replace with actual value-->
                         </div>
                     </div>
-                    <div class="expand-arrow d-flex justify-content-center align-items-center col-4">
+                    <div class="expand-arrow d-flex justify-content-end align-items-center col-4">
                         <i class="fas fa-arrow-circle-right" aria-hidden="true"></i>
                         <i class="fas fa-arrow-circle-down" aria-hidden="true"></i>
                     </div>
@@ -43,7 +47,7 @@
                 <div class="collapse subjects-list my-4" id="coefficient-@i">
                     <div class="subjects-list">
 
-                        @foreach (Course course in Model.Item3)
+                        foreach (Course course in Model.Item3)
                         {
                             <!-- Εμφάνισε μαθήματα που 'ναι μέσα σε αυτό το coefficient -->
                             if (!Model.Item2.Any(cc => cc.CoefficientName == coefficient.Name && course.Id == cc.CourseId && cc.Value > 0))
@@ -51,7 +55,7 @@
                             
                             <!-- TODO: load actual subjects with correct values and ids -->
                             <div class="subject-card">
-                                <label for="file">@course.Name <a asp-controller="Course" asp-route-uuid="@course.UUID" asp-action="CoursePage"><i class="fas fa-link hyperlink"></i></a></label><br/>
+                                <label for="file">course.Name <a asp-controller="Course" asp-route-uuid="course.UUID" asp-action="CoursePage"><i class="fas fa-link hyperlink"></i></a></label><br/>
                                 <progress id="progress-@j" value="0" max="100"> </progress>
                                 <script>
                                     check_value('progress-@j');
@@ -65,6 +69,11 @@
                         
 
                     </div>
+                <div class="row  d-flex justify-content-evenly pt-1">
+                    <!--if locked href empty and add locked icon-->
+                    <a href="#" class="btn-long-alt-2  d-flex justify-content-center align-items-center">Επαναληπτικό Τεστ<span title="Χρειάζεστε προσβάσιμο βαθμό σε όλα τα μαθήματα του προσανατολισμού."><i class="fas fa-lock locked mx-2"></i></span></a>
+
+                </div>
                 </div>
             </div>
             
