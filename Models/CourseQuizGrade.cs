@@ -18,5 +18,9 @@ public class CourseQuizGrade
     
     public DateTime TimeFinished { get; set; }
     
+    public string QuestionIds { get; set; }
+    
+    public string AnswerIds { get; set; }
+    
     public int Grade { get; set; }
 }

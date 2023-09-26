@@ -79,8 +79,7 @@
                 </div>
 
                 <div class="row  d-flex justify-content-evenly pt-1">
-                    <a href="/Home/Quiz/" class="btn-long btn-proceed d-flex justify-content-center align-items-center">Κάνετε το Τεστ</a>
-
+                    <a asp-controller="Quiz" asp-action="StartQuiz" asp-route-courseUUID="@Model.Item1.UUID" class="btn-long btn-proceed d-flex justify-content-center align-items-center">Κάνετε το Τεστ</a>
                 </div>
 
             </div>
