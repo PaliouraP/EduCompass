@@ -89,7 +89,11 @@ public class IntroController : Controller
                 return RedirectToAction("IntroTest", new { uuid = nextCourseUUID });
             }
 
-            // otherwise there is no course left.
+            // otherwise there is no course left. Modify the user in the database, and redirect to the finished page.
+            _currentUser.HasCompletedIntroTest = true;
+            _database.Users.Update(_currentUser);
+            _database.SaveChanges();
+            
             return RedirectToAction("Finished");
         }
         

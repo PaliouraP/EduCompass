@@ -17,17 +17,35 @@
     <div class="course-description">
         <p>Το μάθημα «@Model.Item1.Name» διδάσκεται στο @Model.Item1.Semester εξάμηνο, στο τμήμα Πληροφορικής του Πανεπιστημίου Πειραιώς.
             
-            <br />Σχετίζεται με τους επαγγελματικους προσανατολισμούς:
-            @foreach (var career in Model.Item3)
-            {
-                @career.Name
-            }
+            <br />Σχετίζεται με τους επαγγελματικούς προσανατολισμούς:
+            <ul>
+                @foreach (var career in Model.Item3)
+                {
+                    <li>
+                        @career.NameInGreek (@career.Name)
+                    </li>
+                    
+                }
+            </ul>
             
-            <br />Για να ξεκλειδώσετε το μάθημα πρέπει να έχετε περάσει τα προαπαιτούμενα μαθήματα:</p>
+            @if (Model.Item2.Count == 0)
+            {
+                <br/> <div>Αυτό το μάθημα δεν έχει προαπαιτούμενα μαθήματα.</div>
+            }
+            else
+            {
+                <br /> <div>Για να ξεκλειδώσετε το μάθημα πρέπει να έχετε περάσει τα προαπαιτούμενα μαθήματα:</div>
+            }
+            </p>
+        <ul>
             @foreach (var course in Model.Item2)
             {
-                @course.Name
+                <li>
+                    @course.Name
+                </li>
             }
+        </ul>
+        
     </div>
     <div class="row mt-3">
         <!--if unlcoked-->

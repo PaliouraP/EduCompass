@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EduCompass.Migrations
 {
     /// <inheritdoc />
-    public partial class test1 : Migration
+    public partial class test2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -36,7 +36,8 @@ namespace EduCompass.Migrations
                 columns: table => new
                 {
                     Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CoefficientName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CoefficientName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NameInGreek = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -107,8 +108,6 @@ namespace EduCompass.Migrations
                 name: "Grades",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     CourseId = table.Column<int>(type: "int", nullable: false),
                     FinalGrade = table.Column<int>(type: "int", nullable: false),
@@ -117,7 +116,7 @@ namespace EduCompass.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Grades", x => x.Id);
+                    table.PrimaryKey("PK_Grades", x => new { x.UserId, x.CourseId });
                 });
 
             migrationBuilder.CreateTable(
@@ -222,6 +221,50 @@ namespace EduCompass.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Careers",
+                columns: new[] { "Name", "CoefficientName", "NameInGreek" },
+                values: new object[,]
+                {
+                    { "3D Artist/Animator", "ComputerVisionAndGraphics", "Σχεδιαστής Τρισδιάστατων Σχεδίων" },
+                    { "Accessibility Specialist", "UI_UX", "Ειδικός Προσβασιμότητας" },
+                    { "Android Developer", "MobileAppDev", "Προγραμματιστής Εφαρμογών για Android" },
+                    { "Back-End Developer", "WebDev", "Προγραμματιστής Back-End" },
+                    { "Big Data Engineer", "DatabaseEngineering", "Μηχανικός Δεδομένων Μεγάλου Όγκου" },
+                    { "Cloud Data Engineer", "DatabaseEngineering", "Μηχανικός Δεδομένων Υπολογιστικής Νέφους" },
+                    { "Computer Graphics Programmer", "ComputerVisionAndGraphics", "Προγραμματιστής Γραφικών" },
+                    { "Computer Vision Engineer", "ComputerVisionAndGraphics", "Μηχανικός Γραφικών Υπολογιστών" },
+                    { "Data Architect", "DatabaseEngineering", "Αρχιτέκτονας Δεδομένων" },
+                    { "Data Scientist", "AI_ML", "Επιστήμονας Δεδομένων" },
+                    { "Database Developer", "DatabaseEngineering", "Προγραμματιστής Βάσεων Δεδομένων" },
+                    { "DevOps Engineer", "SoftwareEngineering", "Μηχανικός DevOps" },
+                    { "Front-End Developer", "UI_UX", "Προγραμματιστής Front-End" },
+                    { "Full-Stack Developer", "SoftwareEngineering", "Προγραμματιστής Full-Stack" },
+                    { "Games Designer", "GameDev", "Σχεδιαστής Ηλεκτρονικών Παιχνιδιών" },
+                    { "Games Programmer", "GameDev", "Προγραμματιστής Ηλεκτρονικών Παιχνιδιών" },
+                    { "Incident Responder", "Security", "Ανταποκριτής Συμβάντων" },
+                    { "iOS Developer", "MobileAppDev", "Προγραμματιστής Εφαρμογών για iOS" },
+                    { "Level Designer", "GameDev", "Σχεδιαστής Επιπέδων Ηλεκτρονικών Παιχνιδιών" },
+                    { "Machine Learning Engineer", "AI_ML", "Μηχανικός Μηχανικής Μάθησης" },
+                    { "Mobile App Developer", "MobileAppDev", "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων" },
+                    { "Mobile UI/UX Designer", "MobileAppDev", "Σχεδιαστής UI/UX για Εφαρμογές Κινητών Τηλεφώνων" },
+                    { "N.L.P. Engineer", "AI_ML", "Μηχανικός Επεξεργασίας Φυσικής Γλώσσας" },
+                    { "Network Administrator", "ComputerNetworks", "Διαχειριστής Δικτύων" },
+                    { "Network Engineer", "ComputerNetworks", "Μηχανικός Δικτύων" },
+                    { "Network Security Specialist", "ComputerNetworks", "Ειδικός Ασφάλειας Δικτύων" },
+                    { "Penetration Tester", "Security", "Ελεγκτής Διείσδυσης" },
+                    { "Robotics Engineer", "AI_ML", "Μηχανικός Ρομποτικής" },
+                    { "Security Analyst", "Security", "Αναλυτής Ασφαλείας" },
+                    { "Security Engineer", "Security", "Μηχανικός Ασφαλείας" },
+                    { "Software Consultant", "SoftwareEngineering", "Σύμβουλος Λογισμικού" },
+                    { "Software Developer", "SoftwareEngineering", "Προγραμματιστής Λογισμικού" },
+                    { "UI/UX Designer", "UI_UX", "Σχεδιαστής UI/UX" },
+                    { "Virtual Reality Developer", "ComputerVisionAndGraphics", "Προγραμματιστής Εικονικής Πραγματικότητας" },
+                    { "Visual Designer", "UI_UX", "Οπτικός Σχεδιαστής" },
+                    { "Web App Developer", "WebDev", "Προγραμματιστής Διαδικτυακών Εφαρμογών" },
+                    { "Web Designer", "WebDev", "Σχεδιαστής Ιστοσελίδων" }
                 });
 
             migrationBuilder.InsertData(

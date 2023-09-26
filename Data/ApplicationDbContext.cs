@@ -37,6 +37,7 @@ namespace EduCompass.Data
             SeedDataToCoefficients(modelBuilder);
             SeedDataToCoefficientPgi(modelBuilder);
             SeedDataToCoefficientsCourses(modelBuilder);
+            SeedDataToCareer(modelBuilder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

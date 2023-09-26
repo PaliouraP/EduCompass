@@ -67,9 +67,237 @@ namespace EduCompass.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NameInGreek")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Name");
 
                     b.ToTable("Careers");
+
+                    b.HasData(
+                        new
+                        {
+                            Name = "Software Developer",
+                            CoefficientName = "SoftwareEngineering",
+                            NameInGreek = "Προγραμματιστής Λογισμικού"
+                        },
+                        new
+                        {
+                            Name = "Full-Stack Developer",
+                            CoefficientName = "SoftwareEngineering",
+                            NameInGreek = "Προγραμματιστής Full-Stack"
+                        },
+                        new
+                        {
+                            Name = "DevOps Engineer",
+                            CoefficientName = "SoftwareEngineering",
+                            NameInGreek = "Μηχανικός DevOps"
+                        },
+                        new
+                        {
+                            Name = "Software Consultant",
+                            CoefficientName = "SoftwareEngineering",
+                            NameInGreek = "Σύμβουλος Λογισμικού"
+                        },
+                        new
+                        {
+                            Name = "Machine Learning Engineer",
+                            CoefficientName = "AI_ML",
+                            NameInGreek = "Μηχανικός Μηχανικής Μάθησης"
+                        },
+                        new
+                        {
+                            Name = "Data Scientist",
+                            CoefficientName = "AI_ML",
+                            NameInGreek = "Επιστήμονας Δεδομένων"
+                        },
+                        new
+                        {
+                            Name = "N.L.P. Engineer",
+                            CoefficientName = "AI_ML",
+                            NameInGreek = "Μηχανικός Επεξεργασίας Φυσικής Γλώσσας"
+                        },
+                        new
+                        {
+                            Name = "Robotics Engineer",
+                            CoefficientName = "AI_ML",
+                            NameInGreek = "Μηχανικός Ρομποτικής"
+                        },
+                        new
+                        {
+                            Name = "UI/UX Designer",
+                            CoefficientName = "UI_UX",
+                            NameInGreek = "Σχεδιαστής UI/UX"
+                        },
+                        new
+                        {
+                            Name = "Visual Designer",
+                            CoefficientName = "UI_UX",
+                            NameInGreek = "Οπτικός Σχεδιαστής"
+                        },
+                        new
+                        {
+                            Name = "Front-End Developer",
+                            CoefficientName = "UI_UX",
+                            NameInGreek = "Προγραμματιστής Front-End"
+                        },
+                        new
+                        {
+                            Name = "Accessibility Specialist",
+                            CoefficientName = "UI_UX",
+                            NameInGreek = "Ειδικός Προσβασιμότητας"
+                        },
+                        new
+                        {
+                            Name = "Games Programmer",
+                            CoefficientName = "GameDev",
+                            NameInGreek = "Προγραμματιστής Ηλεκτρονικών Παιχνιδιών"
+                        },
+                        new
+                        {
+                            Name = "Games Designer",
+                            CoefficientName = "GameDev",
+                            NameInGreek = "Σχεδιαστής Ηλεκτρονικών Παιχνιδιών"
+                        },
+                        new
+                        {
+                            Name = "Level Designer",
+                            CoefficientName = "GameDev",
+                            NameInGreek = "Σχεδιαστής Επιπέδων Ηλεκτρονικών Παιχνιδιών"
+                        },
+                        new
+                        {
+                            Name = "Mobile App Developer",
+                            CoefficientName = "MobileAppDev",
+                            NameInGreek = "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων"
+                        },
+                        new
+                        {
+                            Name = "iOS Developer",
+                            CoefficientName = "MobileAppDev",
+                            NameInGreek = "Προγραμματιστής Εφαρμογών για iOS"
+                        },
+                        new
+                        {
+                            Name = "Android Developer",
+                            CoefficientName = "MobileAppDev",
+                            NameInGreek = "Προγραμματιστής Εφαρμογών για Android"
+                        },
+                        new
+                        {
+                            Name = "Mobile UI/UX Designer",
+                            CoefficientName = "MobileAppDev",
+                            NameInGreek = "Σχεδιαστής UI/UX για Εφαρμογές Κινητών Τηλεφώνων"
+                        },
+                        new
+                        {
+                            Name = "Big Data Engineer",
+                            CoefficientName = "DatabaseEngineering",
+                            NameInGreek = "Μηχανικός Δεδομένων Μεγάλου Όγκου"
+                        },
+                        new
+                        {
+                            Name = "Data Architect",
+                            CoefficientName = "DatabaseEngineering",
+                            NameInGreek = "Αρχιτέκτονας Δεδομένων"
+                        },
+                        new
+                        {
+                            Name = "Database Developer",
+                            CoefficientName = "DatabaseEngineering",
+                            NameInGreek = "Προγραμματιστής Βάσεων Δεδομένων"
+                        },
+                        new
+                        {
+                            Name = "Cloud Data Engineer",
+                            CoefficientName = "DatabaseEngineering",
+                            NameInGreek = "Μηχανικός Δεδομένων Υπολογιστικής Νέφους"
+                        },
+                        new
+                        {
+                            Name = "Network Administrator",
+                            CoefficientName = "ComputerNetworks",
+                            NameInGreek = "Διαχειριστής Δικτύων"
+                        },
+                        new
+                        {
+                            Name = "Network Engineer",
+                            CoefficientName = "ComputerNetworks",
+                            NameInGreek = "Μηχανικός Δικτύων"
+                        },
+                        new
+                        {
+                            Name = "Network Security Specialist",
+                            CoefficientName = "ComputerNetworks",
+                            NameInGreek = "Ειδικός Ασφάλειας Δικτύων"
+                        },
+                        new
+                        {
+                            Name = "Computer Vision Engineer",
+                            CoefficientName = "ComputerVisionAndGraphics",
+                            NameInGreek = "Μηχανικός Γραφικών Υπολογιστών"
+                        },
+                        new
+                        {
+                            Name = "Computer Graphics Programmer",
+                            CoefficientName = "ComputerVisionAndGraphics",
+                            NameInGreek = "Προγραμματιστής Γραφικών"
+                        },
+                        new
+                        {
+                            Name = "3D Artist/Animator",
+                            CoefficientName = "ComputerVisionAndGraphics",
+                            NameInGreek = "Σχεδιαστής Τρισδιάστατων Σχεδίων"
+                        },
+                        new
+                        {
+                            Name = "Virtual Reality Developer",
+                            CoefficientName = "ComputerVisionAndGraphics",
+                            NameInGreek = "Προγραμματιστής Εικονικής Πραγματικότητας"
+                        },
+                        new
+                        {
+                            Name = "Security Analyst",
+                            CoefficientName = "Security",
+                            NameInGreek = "Αναλυτής Ασφαλείας"
+                        },
+                        new
+                        {
+                            Name = "Penetration Tester",
+                            CoefficientName = "Security",
+                            NameInGreek = "Ελεγκτής Διείσδυσης"
+                        },
+                        new
+                        {
+                            Name = "Security Engineer",
+                            CoefficientName = "Security",
+                            NameInGreek = "Μηχανικός Ασφαλείας"
+                        },
+                        new
+                        {
+                            Name = "Incident Responder",
+                            CoefficientName = "Security",
+                            NameInGreek = "Ανταποκριτής Συμβάντων"
+                        },
+                        new
+                        {
+                            Name = "Back-End Developer",
+                            CoefficientName = "WebDev",
+                            NameInGreek = "Προγραμματιστής Back-End"
+                        },
+                        new
+                        {
+                            Name = "Web Designer",
+                            CoefficientName = "WebDev",
+                            NameInGreek = "Σχεδιαστής Ιστοσελίδων"
+                        },
+                        new
+                        {
+                            Name = "Web App Developer",
+                            CoefficientName = "WebDev",
+                            NameInGreek = "Προγραμματιστής Διαδικτυακών Εφαρμογών"
+                        });
                 });
 
             modelBuilder.Entity("EduCompass.Models.Coefficient", b =>

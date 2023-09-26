@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Tuple<List<Career>, List<PostGraduateInstitution>, Coefficient>
+
+@{
     ViewData["Title"] = "Suggestions";
 }
 
@@ -13,18 +15,26 @@
 <div>
     <div class="suggestions-card-body px-5 py-5 mx-4">
         <h5 class="mb-3" id="subject"><b>Σύμφωνα με τις επιδώσεις σας στα τεστ...</b></h5>
-        <p>Ο επαγγελματικός προσανατολισμός που σας ταιριάζει είναι ο/η/το -προσανατολισμος-. Τα σχετικά επαγγέλματα είναι τα: 
-            -επ1-, -επ2-, -επ3-. Παρακάτω μπορείτε να δείτε και κάποια μεταπτυχιακά προγράμματα που θα σας βοηθήσουν να εμπλουτίσετε 
-            τις γνώσεις σας στο συγκεκριμένο αντικείμενο. 
-        </p>
-        <ul>
-            <li class="">
-                Μεταπτυχιακό 1
-            </li>
-            <li class="">
-                Μεταπτυχιακό 2
-            </li>
+        <p>Ο επαγγελματικός προσανατολισμός που σας ταιριάζει είναι <b>«@Model.Item3.NameInGreek»</b>.</p>
 
+        <p>Τα σχετικά επαγγέλματα είναι τα:</p>
+        <ul>
+            @foreach (var career in Model.Item1)
+            {
+                <li>
+                    <b>@career.NameInGreek</b> (@career.Name)
+                </li>
+            }
+        </ul>
+        
+        <p>Παρακάτω μπορείτε να δείτε και κάποια μεταπτυχιακά προγράμματα που θα σας βοηθήσουν να εμπλουτίσετε τις γνώσεις σας στο συγκεκριμένο αντικείμενο. </p>
+        <ul>
+            @foreach (var pgi in Model.Item2)
+            {
+                <li class="">
+                    <a href="@pgi.Hyperlink"><b>@pgi.Department </b> | @pgi.Name</a> (@pgi.Town)
+                </li>
+            }
         </ul>
         
         <img src="~/images/career.png" alt="logo" class="main-img" />

@@ -94,7 +94,22 @@ namespace EduCompass.Controllers
 
         public IActionResult Suggestions()
         {
-            return View();
+            // retrieve the top three coefficients of the user
+            var userBestCoefficients = _database.UserHasCoefficients.ToList().OrderByDescending(uhc => uhc.Percentage).Take(3).ToArray();
+            
+            var bestPostGraduateIds = _database.PostGraduateInstitutionHasCoefficients.ToList().Where(pgic =>
+                pgic.CoefficientName == userBestCoefficients[0].CoefficientName);
+
+            var bestPostGraduates = (from pgic in bestPostGraduateIds
+                join pgi in _database.PostGraduateInstitutions.ToList() on pgic.PostGraduateInstitutionId equals pgi.Id
+                select pgi).ToList();
+
+            var userBestCoefficient = _database.Coefficients.First(c => c.Name == userBestCoefficients[0].CoefficientName);
+            var careers = (from career in _database.Careers.ToList() where career.CoefficientName == userBestCoefficients[0].CoefficientName select career).ToList();
+
+            var model = new Tuple<List<Career>, List<PostGraduateInstitution>, Coefficient>(careers, bestPostGraduates, userBestCoefficient);
+            
+            return View(model);
         }
         
     }
