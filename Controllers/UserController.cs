@@ -97,6 +97,7 @@ namespace EduCompass.Controllers
             // retrieve the top three coefficients of the user
             var userBestCoefficients = _database.UserHasCoefficients.ToList().OrderByDescending(uhc => uhc.Percentage).Take(3).ToArray();
             
+            // retrieve the post graduate institutions based on the top coefficient of the user
             var bestPostGraduateIds = _database.PostGraduateInstitutionHasCoefficients.ToList().Where(pgic =>
                 pgic.CoefficientName == userBestCoefficients[0].CoefficientName);
 
@@ -104,11 +105,12 @@ namespace EduCompass.Controllers
                 join pgi in _database.PostGraduateInstitutions.ToList() on pgic.PostGraduateInstitutionId equals pgi.Id
                 select pgi).ToList();
 
+            // retrieve the careers based on the top coefficient of the user.
             var userBestCoefficient = _database.Coefficients.First(c => c.Name == userBestCoefficients[0].CoefficientName);
             var careers = (from career in _database.Careers.ToList() where career.CoefficientName == userBestCoefficients[0].CoefficientName select career).ToList();
 
+            // put it in the model and show it.
             var model = new Tuple<List<Career>, List<PostGraduateInstitution>, Coefficient>(careers, bestPostGraduates, userBestCoefficient);
-            
             return View(model);
         }
         
