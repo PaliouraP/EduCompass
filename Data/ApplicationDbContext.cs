@@ -587,5 +587,68 @@ namespace EduCompass.Data
                 }
             );
         }
+
+        private void SeedDataToCareer(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Career>().HasData(
+                
+                // soft eng
+                new Career { Name = "Software Developer", NameInGreek = "Προγραμματιστής Λογισμικού", CoefficientName = "SoftwareEngineering" },
+                new Career { Name = "Full-Stack Developer", NameInGreek = "Προγραμματιστής Full-Stack", CoefficientName = "SoftwareEngineering" },
+                new Career { Name = "DevOps Engineer", NameInGreek = "Μηχανικός DevOps", CoefficientName = "SoftwareEngineering" },
+                new Career { Name = "Software Consultant", NameInGreek = "Σύμβουλος Λογισμικού", CoefficientName = "SoftwareEngineering" },
+                
+                // ai_ml
+                new Career { Name = "Machine Learning Engineer", NameInGreek = "Μηχανικός Μηχανικής Μάθησης", CoefficientName = "AI_ML" },
+                new Career { Name = "Data Scientist", NameInGreek = "Επιστήμονας Δεδομένων", CoefficientName = "AI_ML" },
+                new Career { Name = "N.L.P. Engineer", NameInGreek = "Μηχανικός Επεξεργασίας Φυσικής Γλώσσας", CoefficientName = "AI_ML" },
+                new Career { Name = "Robotics Engineer", NameInGreek = "Μηχανικός Ρομποτικής", CoefficientName = "AI_ML" },
+                
+                // ui_ux
+                new Career { Name = "UI/UX Designer", NameInGreek = "Σχεδιαστής UI/UX", CoefficientName = "UI_UX" },
+                new Career { Name = "Visual Designer", NameInGreek = "Οπτικός Σχεδιαστής", CoefficientName = "UI_UX" },
+                new Career { Name = "Front-End Developer", NameInGreek = "Προγραμματιστής Front-End", CoefficientName = "UI_UX" },
+                new Career { Name = "Accessibility Specialist", NameInGreek = "Ειδικός Προσβασιμότητας", CoefficientName = "UI_UX" },
+                
+                // game dev
+                new Career { Name = "Games Programmer", NameInGreek = "Προγραμματιστής Ηλεκτρονικών Παιχνιδιών", CoefficientName = "GameDev" },
+                new Career { Name = "Games Designer", NameInGreek = "Σχεδιαστής Ηλεκτρονικών Παιχνιδιών", CoefficientName = "GameDev" },
+                new Career { Name = "Level Designer", NameInGreek = "Σχεδιαστής Επιπέδων Ηλεκτρονικών Παιχνιδιών", CoefficientName = "GameDev" },
+
+                // mobile app dev
+                new Career { Name = "Mobile App Developer", NameInGreek = "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων", CoefficientName = "MobileAppDev" },
+                new Career { Name = "iOS Developer", NameInGreek = "Προγραμματιστής Εφαρμογών για iOS", CoefficientName = "MobileAppDev" },
+                new Career { Name = "Android Developer", NameInGreek = "Προγραμματιστής Εφαρμογών για Android", CoefficientName = "MobileAppDev" },
+                new Career { Name = "Mobile UI/UX Designer", NameInGreek = "Σχεδιαστής UI/UX για Εφαρμογές Κινητών Τηλεφώνων", CoefficientName = "MobileAppDev" },
+                
+                // database engineer
+                new Career { Name = "Big Data Engineer", NameInGreek = "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων", CoefficientName = "DatabaseEngineering" },
+                new Career { Name = "Data Architect", NameInGreek = "Προγραμματιστής Εφαρμογών για iOS", CoefficientName = "DatabaseEngineering" },
+                new Career { Name = "Database Developer", NameInGreek = "Προγραμματιστής Εφαρμογών για Android", CoefficientName = "DatabaseEngineering" },
+                new Career { Name = "Cloud Data Engineer", NameInGreek = "Σχεδιαστής UI/UX για Εφαρμογές Κινητών Τηλεφώνων", CoefficientName = "DatabaseEngineering" },
+                
+                // computer networks
+                new Career { Name = "Network Administrator", NameInGreek = "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων", CoefficientName = "ComputerNetworks" },
+                new Career { Name = "Network Engineer", NameInGreek = "Προγραμματιστής Εφαρμογών για iOS", CoefficientName = "ComputerNetworks" },
+                new Career { Name = "Network Security Specialist", NameInGreek = "Προγραμματιστής Εφαρμογών για Android", CoefficientName = "ComputerNetworks" },
+                
+                // computer vision and graphics 
+                new Career { Name = "Computer Vision Engineer", NameInGreek = "Προγραμματιστής Εφαρμογών Κινητών Τηλεφώνων", CoefficientName = "ComputerVisionAndGraphics" },
+                new Career { Name = "Computer Graphics Programmer", NameInGreek = "Προγραμματιστής Εφαρμογών για iOS", CoefficientName = "ComputerVisionAndGraphics" },
+                new Career { Name = "3D Artist/Animator", NameInGreek = "Προγραμματιστής Εφαρμογών για Android", CoefficientName = "ComputerVisionAndGraphics" },
+                new Career { Name = "Virtual Reality Developer", NameInGreek = "Σχεδιαστής UI/UX για Εφαρμογές Κινητών Τηλεφώνων", CoefficientName = "ComputerVisionAndGraphics" },
+                
+                // security 
+                new Career { Name = "Security Analyst", NameInGreek = "Αναλυτής Ασφαλείας", CoefficientName = "Security" },
+                new Career { Name = "Penetration Tester", NameInGreek = "Ελεγκτής Διείσδυσης", CoefficientName = "Security" },
+                new Career { Name = "Security Engineer", NameInGreek = "Μηχανικός Ασφαλείας", CoefficientName = "Security" },
+                new Career { Name = "Incident Responder", NameInGreek = "Ανταποκριτής Συμβάντων", CoefficientName = "Security" },
+                
+                // webdev
+                new Career { Name = "Back-End Developer", NameInGreek = "Προγραμματιστής Back-End", CoefficientName = "WebDev" },
+                new Career { Name = "Web Designer", NameInGreek = "Σχεδιαστής Ιστοσελίδων", CoefficientName = "WebDev" },
+                new Career { Name = "Web App Developer", NameInGreek = "Προγραμματιστής Διαδικτυακών Εφαρμογών", CoefficientName = "WebDev" }
+                );
+        }
     }
 }

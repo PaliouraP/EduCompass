@@ -8,7 +8,9 @@ public class Career
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public string Name { get; set; } = string.Empty;
+
+    [ForeignKey("Coefficient")] 
+    public string CoefficientName { get; set; } = string.Empty;
     
-    [ForeignKey("Coefficient")]
-    public string CoefficientName { get; set; }
+    public string NameInGreek { get; set; } = string.Empty;
 }
