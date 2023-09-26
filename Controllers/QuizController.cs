@@ -43,9 +43,7 @@ public class QuizController : Controller
         var stringBuilder = new StringBuilder();
         var rng = new Random();
 
-        for (var i = 0; i < 5; i++)
-            stringBuilder.Append(rng.Next(1, 11).ToString() + ';');
-
+        // TODO: Edit this code, because there can be duplicate questions.
         var randomQuestionIds = stringBuilder.ToString();
 
         var quiz = new CourseQuizGrade
@@ -70,7 +68,38 @@ public class QuizController : Controller
     public IActionResult Quiz()
     {
         TempData.Keep("QuizId");
+        
+        // get the quiz object
+        int quizId = int.Parse(TempData["QuizId"].ToString());
+        var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
+
+        // create a list that maps the question for its answers
+        var questionsAndAnswers = new Dictionary<Question, List<Answer>>();
+
+        foreach (var questionIdString in quiz.QuestionIds.Split(';'))
+        {
+            // get the question object from the id
+            int questionId = int.Parse(questionIdString);
+            Question question = _database.Questions.First(q => q.Id == questionId);
+            
+            // get the answers of that question
+            List<Answer> answers = _database.Answers.Where(a => a.QuestionId == questionId).ToList();
+            
+            questionsAndAnswers.Add(question, answers);
+        }
+        
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult PostAnswers(string answers)
+    {
+        
+    }
+
+    public IActionResult Finish()
+    {
+        
     }
     
     
