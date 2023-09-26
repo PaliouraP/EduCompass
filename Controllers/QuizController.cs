@@ -110,13 +110,55 @@ public class QuizController : Controller
     [HttpPost]
     public IActionResult PostAnswers()
     {
+        TempData.Keep("QuizId");
+        
+        // get the quiz object
+        int quizId = int.Parse(TempData["QuizId"].ToString());
+        var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
+        
+        // get the user's answers
         var answer1 = Request.Form["answer-1"].ToString();
         var answer2 = Request.Form["answer-2"].ToString();
         var answer3 = Request.Form["answer-3"].ToString();
         var answer4 = Request.Form["answer-4"].ToString();
         var answer5 = Request.Form["answer-5"].ToString();
 
-        return RedirectToAction("Dashboard", "Home");
+        // create the answer string to store it to the database.
+        string answersString = $"{answer1};{answer2};{answer3};{answer4};{answer5}";
+        
+        // calculate accuracy
+        int correctAnswerCounter = 0;
+        
+        for (int i = 0; i < 5; i++)
+        {
+            var stringAnswers = answersString.Split(';');
+            var stringQuestions = quiz.QuestionIds.Split(';');
+            Array.Sort(stringQuestions);
+            
+            // get the question object from the id
+            int questionId = int.Parse(stringQuestions[i]);
+
+            // get the answers of that question
+            Answer answers = _database.Answers.First(a => a.QuestionId == questionId);
+
+            if (string.Equals(answers.CorrectAnswer, stringAnswers[i], StringComparison.CurrentCultureIgnoreCase))
+                correctAnswerCounter++;
+        }
+
+        // calculate grade
+        int grade = 100 * correctAnswerCounter / 5;
+
+        // store the data to the quiz object.
+        quiz.Grade = grade;
+        quiz.AnswerIds = answersString;
+        quiz.TimeFinished = DateTime.Now;
+
+        // save the changes to the database.
+        _database.Update(quiz);
+        _database.SaveChanges();
+
+        // return to finished
+        return RedirectToAction("FinishedExam");
     }
 
     public IActionResult FinishedExam()
