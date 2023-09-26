@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Tuple<Course, Dictionary<Question, Answer>>
+
+@{
     ViewData["Title"] = "Quiz";
 }
 
@@ -12,43 +14,78 @@
 }
 
 <div class="px-5 py-5" style="height:inherit">
-        <h1 class="d-flex justify-content-evenly my-5"><b>Μάθημα - Κεφάλαιο</b></h1>
+    <h1 class="d-flex justify-content-evenly my-5"><b>@Model.Item1.Name</b></h1>
+    <form asp-action="PostAnswers" method="post">
+        @foreach (var item in Model.Item2)
+        {
+            <div>
+                <!-- Κείμενο Ερώτησης -->
+                <h6 class="d-flex justify-content-start mt-5">@item.Key.Content</h6>
+
+                @switch (item.Value.GetQuestionType())
+                {
+                    case QuestionType.TrueOrFalse:
+
+                        <div class="row radio-group type-choose">
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
+                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer1</label>
+                            </div>
+
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
+                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer2</label>
+                            </div>
+                        </div>
+                    
+                        break;
+                        
+                    case QuestionType.FillTheBlank:
+
+                        <h6 class="d-flex justify-content-start mt-5">Απάντηση</h6>
+                        <div class="row type-write">
+                            <input type="text" name="text-answer-@item.Key.Id" id="text-answer" class="form-control form-control-lg"/>
+                        </div>
+                        
+                        break;
+                    case QuestionType.MultipleChoice:
+
+                        <div class="row radio-group type-choose ">
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
+                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer1</label>
+                            </div>
+
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
+                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer2</label>
+                            </div>
+
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
+                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer3</label>
+                            </div>
+
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="choice-answer-@item.Key.Id" class="col-1" id="" value=""/>
+                                <label class="form-check-label col-9" for="interest2">@item.Value.Answer4</label>
+                            </div>
+                        </div>
+                        
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            </div>
+        }
         
-        <div>
-        <h6 class="d-flex justify-content-start mt-5">Κείμενο ερώτησης</h6>
-        <div class="row radio-group type-choose ">
-                <div class="row radio-group my-1">
-                    <input type="radio" name="choice-answer" class="col-1" id="" value="" />
-                    <label class="form-check-label col-9" for="interest2">Επιλογή 1</label>
-                </div>
-
-            <div class="row radio-group my-1">
-                <input type="radio" name="choice-answer" class="col-1" id="" value="" />
-                    <label class="form-check-label col-9" for="interest2">Επιλογή 2</label>
-                </div>
-
-            <div class="row radio-group my-1">
-                <input type="radio" name="choice-answer" class="col-1" id="" value="" />
-                    <label class="form-check-label col-9" for="interest2">Επιλογή 3</label>
-                </div>
-
-            <div class="row radio-group my-1">
-                <input type="radio" name="choice-answer" class="col-1" id="" value="" />
-                    <label class="form-check-label col-9" for="interest2">Επιλογή 4</label>
-                </div>
-            </div>
-
-        <h6 class="d-flex justify-content-start mt-5">Κείμενο ερώτησης</h6>
-            <div class="row type-write">
-                <input type="text" name="text-answer" id="text-answer" class="form-control form-control-lg" />
-            </div>
-            
-                <div class="row d-flex justify-content-evenly mt-5">
-                    <button class="btn-long-alt" type="submit">Ακύρωση</button>
-                    <button class="btn-long" type="submit">Τέλος τεστ</button>
-                </div>
-            
+        <!-- buttons -->
+        <div class="row d-flex justify-content-evenly mt-5">
+            <button class="btn-long-alt" type="submit">Ακύρωση</button>
+            <button class="btn-long" type="submit">Τέλος τεστ</button>
         </div>
+        
+    </form>
 </div>
 
 

@@ -40,12 +40,21 @@ public class QuizController : Controller
         var course = _database.Courses.First(c => c.UUID == courseUUID);
 
         // retrieve random question ids
+        var questions = _database.Questions.Where(q => q.CourseId == course.Id).ToList();
+        questions = RandomizeList(questions);
+
+        // create a string with all the question ids separated by a ';'
         var stringBuilder = new StringBuilder();
-        var rng = new Random();
 
-        // TODO: Edit this code, because there can be duplicate questions.
-        var randomQuestionIds = stringBuilder.ToString();
+        stringBuilder.Append(questions[0].Id.ToString() + ';');
+        stringBuilder.Append(questions[1].Id.ToString() + ';'); 
+        stringBuilder.Append(questions[2].Id.ToString() + ';');
+        stringBuilder.Append(questions[3].Id.ToString() + ';');
+        stringBuilder.Append(questions[4].Id.ToString());
 
+        string randomQuestionIds = stringBuilder.ToString();
+
+        // create the quiz object
         var quiz = new CourseQuizGrade
         {
             QuestionIds = randomQuestionIds,
@@ -55,14 +64,16 @@ public class QuizController : Controller
             UserId = _currentUser.Id
         };
 
+        // add it to the database.
         _database.CourseQuizGrades.Add(quiz);
         _database.SaveChanges();
 
+        // store the quiz id
         TempData["QuizId"] = quiz.Id;
         TempData.Keep("QuizId");
         
+        // go to the quiz page
         return RedirectToAction("Quiz");
-        
     }
 
     public IActionResult Quiz()
@@ -74,7 +85,7 @@ public class QuizController : Controller
         var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
 
         // create a list that maps the question for its answers
-        var questionsAndAnswers = new Dictionary<Question, List<Answer>>();
+        var questionsAndAnswers = new Dictionary<Question, Answer>();
 
         foreach (var questionIdString in quiz.QuestionIds.Split(';'))
         {
@@ -83,24 +94,44 @@ public class QuizController : Controller
             Question question = _database.Questions.First(q => q.Id == questionId);
             
             // get the answers of that question
-            List<Answer> answers = _database.Answers.Where(a => a.QuestionId == questionId).ToList();
-            
+            Answer answers = _database.Answers.First(a => a.QuestionId == questionId);
+
             questionsAndAnswers.Add(question, answers);
         }
+
+        // get the course that the quiz is about.
+        var course = _database.Courses.First(c => c.Id == quiz.CourseId);
         
-        return View();
+        // return the model.
+        var model = new Tuple<Course, Dictionary<Question, Answer>>(course, questionsAndAnswers);
+        return View(model);
     }
 
     [HttpPost]
     public IActionResult PostAnswers(string answers)
     {
-        
+        return RedirectToAction("Dashboard", "Home");
     }
 
-    public IActionResult Finish()
+    public IActionResult FinishedExam()
     {
-        
+        return View();
     }
     
-    
+    private static List<T> RandomizeList<T>(List<T> list)
+    {
+        Random random = new Random();
+        int n = list.Count;
+        
+        for (int i = n - 1; i > 0; i--)
+        {
+            // Generate a random index to swap with the current element.
+            int j = random.Next(0, i + 1);
+
+            // Swap the elements at i and j.
+            (list[i], list[j]) = (list[j], list[i]);
+        }
+        
+        return list;
+    }
 }
