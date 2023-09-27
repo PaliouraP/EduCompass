@@ -783,16 +783,28 @@ namespace EduCompass.Data
                 new Answer { Id = 40, QuestionId = 40, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
                 
                 // video games
-                new Answer { Id = 41, QuestionId = 41, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 42, QuestionId = 42, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 43, QuestionId = 43, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 44, QuestionId = 44, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 45, QuestionId = 45, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 46, QuestionId = 46, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 47, QuestionId = 47, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 48, QuestionId = 48, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 49, QuestionId = 49, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 50, QuestionId = 50, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" }
+                new Answer { Id = 41, QuestionId = 41, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 42, QuestionId = 42, Answer1 = "χαρακτηριστικά", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "χαρακτηριστικά" },
+                new Answer { Id = 43, QuestionId = 43, Answer1 = "υλοποίησης", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "υλοποίησης" },
+                new Answer { Id = 44, QuestionId = 44, Answer1 = "First Person", Answer2 = "Educational", Answer3 = "Role-playing", Answer4 = "Fourth Person", CorrectAnswer = "Fourth Person" },
+                new Answer { Id = 45, QuestionId = 45, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 46, QuestionId = 46, Answer1 = "Unity3D", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "Unity3D" },
+                new Answer { Id = 47, QuestionId = 47, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Λάθος" },
+                new Answer { Id = 48, QuestionId = 48, Answer1 = "C", Answer2 = "C++", Answer3 = "PythonFmu", Answer4 = "C#", CorrectAnswer = "C#" },
+                new Answer { Id = 49, QuestionId = 49, Answer1 = "3D μοντέλα", Answer2 = "bolts", Answer3 = "sprites", Answer4 = "animations", CorrectAnswer = "bolts" },
+                new Answer { Id = 50, QuestionId = 50, Answer1 = "Παίκτες", Answer2 = "Πράκτορες", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
+                
+                // antikeimenostrfhs anmptyjh
+                new Answer { Id = 51, QuestionId = 51, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 52, QuestionId = 52, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 53, QuestionId = 53, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 54, QuestionId = 54, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 55, QuestionId = 55, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 56, QuestionId = 56, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 57, QuestionId = 57, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 58, QuestionId = 58, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 59, QuestionId = 59, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 60, QuestionId = 60, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" }
             );
         }
     }
