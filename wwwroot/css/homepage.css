@@ -1,3 +1,27 @@
 ﻿.container {
     background-color: white;
 }
+
+.welcome-card {
+    background-color: #3D348B;
+    color: white;
+    box-shadow: 4px 4px 27px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 100%;
+}
+
+.welcome-img {
+    float: right;
+    margin-top: -75px;
+    width: 300px;
+}
+
+
+.option-img {
+    width: 300px;
+    margin-top: -25px;
+}
+
+.option-text {
+    text-align: center;
+}
