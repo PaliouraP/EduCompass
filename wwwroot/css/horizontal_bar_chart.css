@@ -1,0 +1,49 @@
+﻿
+.grid {
+    position: relative;
+    padding: 5px 0 5px 0;
+    height: fit-content;
+    width: 100%;
+    border-left: 2px solid #aaa;
+    border-bottom: 2px solid #aaa;
+    background: repeating-linear-gradient( 90deg, rgba(170,170,170,0.7) 0, rgba(170,170,170,0.7) 1px, transparent 1px, transparent 20% );
+}
+
+    .grid::before {
+        font-size: 0.8em;
+        font-weight: bold;
+        content: '0%';
+        position: absolute;
+        left: -0.5em;
+        top: -1.5em;
+    }
+
+    .grid::after {
+        font-size: 0.8em;
+        font-weight: bold;
+        content: '100%';
+        position: absolute;
+        right: -1.5em;
+        top: -1.5em;
+    }
+
+
+
+
+
+.bar {
+    width: var(--bar-value);
+    margin: 5px 0;
+    background: linear-gradient(-45deg, rgba(255,121,118,1) 0%, rgba(251,98,160,1) 100%);
+    border-radius: 0 3px 3px 0;
+}
+
+    .bar:hover {
+        opacity: 0.7;
+    }
+
+    .bar::after {
+        content: attr(data-name);
+        margin: 20px;
+        white-space: nowrap;
+    }
