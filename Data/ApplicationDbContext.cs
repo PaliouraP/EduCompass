@@ -759,6 +759,30 @@ namespace EduCompass.Data
                 new Answer { Id = 20, QuestionId = 20, Answer1 = "VRML: sensors και animation, γενικές αρχές μοντελοποίησης σκελετού, πρότυπα μοντελοποίησης κίνησης σώματος (H-Anim, κ.ά.), scripting, ενσωμάτωση σε εφαρμογές, PROTOs, προτεινόμενες πρακτικές σχεδιασμού και ανάπτυξης.", Answer2 = "VRML: σύνταξη, υλοποιήσεις, βασικά εργαλεία, γεωμετρία, μετασχηματισμοί, επαναχρησιμοποίηση κόμβων, εξωτερικές αναφορές, υλικά/χρώμα, φωτισμός, υφή, viewpoints, background, ήχος, κείμενο, billboards, HUDs.", Answer3 = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης.", Answer4 = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης.", CorrectAnswer = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης." },
 
                 // android
+                new Answer { Id = 21, QuestionId = 21, Answer1 = "Να εφαρμόζουν πρακτικά τεχνολογίες ασφάλειας πληροφοριακών συστημάτων σε πραγματικές συνθήκες", Answer2 = "Να αναλύει και να συγκρίνει μοντέλα ανάπτυξης λογισμικού", Answer3 = "Να αναπτύσσει native mobile apps κάνοντας χρήση του Android SDK", Answer4 = "Να χρησιμοποιεί πρακτικά τις πλέον σύγχρονες υπηρεσίες Cloud και Mobile backend as a service που παρέχει η Firebase", CorrectAnswer = "Να εφαρμόζουν πρακτικά τεχνολογίες ασφάλειας πληροφοριακών συστημάτων σε πραγματικές συνθήκες" },
+                new Answer { Id = 22, QuestionId = 22, Answer1 = "Android Studio", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "Android Studio" },
+                new Answer { Id = 23, QuestionId = 23, Answer1 = "Να σχεδιάζει και να αναπτύσσει εφαρμογές για κινητές και φορητές συσκευές υλοποιώντας τις πλέον σύγχρονες τεχνικές προγραμματισμού.", Answer2 = "Να εκμεταλλεύεται τοπικές (SQLite) βάσεις δεδομένων.", Answer3 = "Να επιλέγει μοντέλα ανάπτυξης λογισμικού ανάλογα με τις ανάγκες και να τα χρησιμοποιεί.", Answer4 = "Να γνωρίζει τις τεχνικές σηματοδοσίας, διαχείρισης κινητικότητας και το πρωτόκολλο Mobile IP.", CorrectAnswer = "Να γνωρίζει τις τεχνικές σηματοδοσίας, διαχείρισης κινητικότητας και το πρωτόκολλο Mobile IP." },
+                new Answer { Id = 24, QuestionId = 24, Answer1 = "Να διασφαλίζει την αποτελεσματικότητα των λογισμικών μέσω των προαναφερθέντων εφαρμογών.", Answer2 = "Να αναγνωρίζει αρχές σχεδίασης λογισμικού με REST.", Answer3 = "Να αξιοποιεί το εργαλείο Android Studio για την ανάπτυξη κινητών εφαρμογών.", Answer4 = "Να γνωρίζει τις πλέον σύγχρονες υπηρεσίες Cloud και Mobile backend as a service που παρέχει η Firebase", CorrectAnswer = "Να αναγνωρίζει αρχές σχεδίασης λογισμικού με REST." },
+                new Answer { Id = 25, QuestionId = 25, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 26, QuestionId = 26, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Λάθος" },
+                new Answer { Id = 27, QuestionId = 27, Answer1 = "Δομημένη", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "Δομημένη" },
+                new Answer { Id = 28, QuestionId = 28, Answer1 = "Scrum", Answer2 = "Firebase", Answer3 = "Rational Unified Process", Answer4 = "DevOps", CorrectAnswer = "Rational Unified Process" },
+                new Answer { Id = 29, QuestionId = 29, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 30, QuestionId = 30, Answer1 = "Cloud", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "Cloud" },
+                
+                // intelligent agents
+                new Answer { Id = 31, QuestionId = 31, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 32, QuestionId = 32, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 33, QuestionId = 33, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 34, QuestionId = 34, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 35, QuestionId = 35, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 36, QuestionId = 36, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 37, QuestionId = 37, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 38, QuestionId = 38, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 39, QuestionId = 39, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 40, QuestionId = 40, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                
+                // video games
                 new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
                 new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
                 new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
