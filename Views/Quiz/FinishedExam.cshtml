@@ -1,4 +1,6 @@
-﻿@{
+﻿@model CourseQuizGrade
+
+@{
     ViewData["Title"] = "FinishedExam";
 }
 
@@ -20,7 +22,7 @@
     <div class="container center">
         <div class="center">
             <h1 class="d-flex justify-content-evenly mt-5"><b>Συγχαρητήρια!</b></h1>
-            <h6 class="d-flex justify-content-evenly">Ολοκληρώσατε το τεστ με σκορ -σκορ-! Μπορείτε να μεταβείτε στην αρχική κάνωντας κλικ στο παρακάτω κουμπί.</h6>
+            <h6 class="d-flex justify-content-evenly">Ολοκληρώσατε το τεστ με σκορ @Model.Grade%! Μπορείτε να μεταβείτε στην αρχική κάνωντας κλικ στο παρακάτω κουμπί.</h6>
             <div class="d-flex justify-content-evenly">
                 <img src="~/images/finished-quiz.png"
                      alt="login form" class="main-img" />

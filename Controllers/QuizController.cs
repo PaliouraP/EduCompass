@@ -163,7 +163,13 @@ public class QuizController : Controller
 
     public IActionResult FinishedExam()
     {
-        return View();
+        TempData.Keep("QuizId");
+        
+        // get the quiz object
+        int quizId = int.Parse(TempData["QuizId"].ToString());
+        var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
+        
+        return View(quiz);
     }
     
     private static List<T> RandomizeList<T>(List<T> list)
