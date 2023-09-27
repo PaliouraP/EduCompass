@@ -38,6 +38,7 @@ namespace EduCompass.Data
             SeedDataToCoefficientPgi(modelBuilder);
             SeedDataToCoefficientsCourses(modelBuilder);
             SeedDataToCareer(modelBuilder);
+            SeedDataToQuestionsAndAnswers(modelBuilder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -650,6 +651,161 @@ namespace EduCompass.Data
                 new Career { Name = "Web Designer", NameInGreek = "Σχεδιαστής Ιστοσελίδων", CoefficientName = "WebDev" },
                 new Career { Name = "Web App Developer", NameInGreek = "Προγραμματιστής Διαδικτυακών Εφαρμογών", CoefficientName = "WebDev" }
                 );
+        }
+
+        private void SeedDataToQuestionsAndAnswers(ModelBuilder modelBuilder)
+        {
+            // QUESTIONS
+            modelBuilder.Entity<Question>().HasData(
+                
+                // OOP
+                new Question { Id = 1, Content = "Ένα από τα αντικέιμενα του μαθήματος Αντικειμενοστρεφής Προγραμματισμός η ομαδική εργασία.", CourseId = 3 },
+                new Question { Id = 2, Content = "Ποιο από τα παρακάτω αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Αντικειμενοστρεφής Προγραμματισμός;", CourseId = 3 },
+                new Question { Id = 3, Content = "Ποιο από τα παρακάτω αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Αντικειμενοστρεφής Προγραμματισμός;", CourseId = 3 },
+                new Question { Id = 4, Content = "Παρακολουθώντας το μάθημα Αντικειμενοστρεφής Προγραμματισμός, οι φοιτητές είναι ικανοί να θα παράγουν εφαρμογές πελάτη-εξυπηρετητή.", CourseId = 3 },
+                new Question { Id = 5, Content = "Το κύριο αντικείμενο του μαθήματος Αντικειμενοστρεφής Προγραμματισμός  είναι η εισαγωγή στον αντικειμενοστρεφή προγραμματισμό με πλήρη ανάλυση της γλώσσας προγραμματισμού ______.", CourseId = 3 },
+                new Question { Id = 6, Content = "Στα πλαίσια του μαθήματος Αντικειμενοστρεφής Προγραμματισμός οι φοιτητές μαθαίνουν να χειρίζονται αρχεία προορισμένα για _________ και αποθήκευση δεδομένων.", CourseId = 3 },
+                new Question { Id = 7, Content = "Στα πλαίσια του μαθήματος Αντικειμενοστρεφής Προγραμματισμός οι φοιτητές μαθαίνουν την έννοια της κληρονομικότητας.", CourseId = 3 },
+                new Question { Id = 8, Content = "Παρακολουθώντας το μάθημα Αντικειμενοστρεφής Προγραμματισμός, οι φοιτητές είναι ικανοί  να παράγουν εφαρμογές με αποδοτικό και ταχύ ρυθμό.", CourseId = 3 },
+                new Question { Id = 9, Content = "Στα πλαίσια του μαθήματος Αντικειμενοστρεφής Προγραμματισμός οι φοιτητές μαθαίνουν να διαχειρίζονται αποτελεσματικά και με χρήση των κατάλληλων εργαλείων τις ________ που ανακύπτουν.", CourseId = 3 },
+                new Question { Id = 10, Content = "Ποιο από τα παρακάτω ΔΕΝ ανήκει στο αντικείμενο του μαθήματος Αντικειμενοστρεφής Προγραμματισμός;", CourseId = 3 },
+            
+                // VR
+                new Question { Id = 11, Content = "Η Εικονική Πραγματικότητα είναι το επιστημονικό πεδίο με αντικείμενο την αναπαράσταση κόσμων με τη βοήθεια ηλεκτρονικών υπολογιστών.", CourseId = 4 },
+                new Question { Id = 12, Content = "Τα ______ με υπολογιστές διαδραματίζουν βασικό ρόλο στην Εικονική Πραγματικότητα.", CourseId = 4 },
+                new Question { Id = 13, Content = "Η Εικονική Πραγματικότητα, κυρίως μέσω των _______ Εικονικών Συστημάτων, έχει πλήθος εφαρμογών στην εκπαίδευση, την ψυχαγωγία, την προσομοίωση, την αλληλεπίδραση ανθρώπου – υπολογιστή και την επιστημονική έρευνα", CourseId = 4 },
+                new Question { Id = 14, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί αντικείμενο του μαθήματος Εικονική Πραγματικότητα;", CourseId = 4 },
+                new Question { Id = 15, Content = "Στόχος του μαθήματος Εικονική Πραγματικότητα είναι να αποκτήσουν οι φοιτητές γνώσεις και ικανότητες χρήσης/δημιουργίας μετρικών αξιολόγησης παιχνιδιών βάσει των στόχων που τέθηκαν κατά τη σχεδίασή τους.", CourseId = 4 },
+                new Question { Id = 16, Content = "Πως ονομάζεται το περιβάλλον με το οποίο θα εξοικιωθούν οι φοιτητές για την ανάπτηξη συστημάτων Εικονικής Πραγματικότητας;", CourseId = 4 },
+                new Question { Id = 17, Content = "Στόχος του μαθήματος Εικονική Πραγματικότητα είναι η εξοικείωση των φοιτητών με σύγχρονες τεχνολογίες, μεθόδους και εργαλεία για τη δημιουργία ολοκληρωμένων εφαρμογών Εικονικής Πραγματικότητας.", CourseId = 4 },
+                new Question { Id = 18, Content = "Μέσω της παρακολούθησης του μαθήματος Εικονική Πραγματικότητα ο φοιτητής γνωρίζει τις ________ ενός συστήματος Εικονικής Πραγματικότητας.", CourseId = 4 },
+                new Question { Id = 19, Content = "Ποιο από τα παρακάτω αποτελεί διδακτική ενότητα του μαθήματος Εικονική Πραγματικότητα;", CourseId = 4 },
+                new Question { Id = 20, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί διδακτική ενότητα του μαθήματος Εικονική Πραγματικότητα;", CourseId = 4 },
+                
+                // android
+                new Question { Id = 21, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 1 },
+                new Question { Id = 22, Content = "Η ανάπτυξη των mobile apps στο μάθημα Σύγχρονα Θέματα Τεχνολογίας Λογισμικού  υλοποιείται με τη χρήση του περιβάλλοντος ανάπτυξης λογισμικού ___________.", CourseId = 1 },
+                new Question { Id = 23, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 1 },
+                new Question { Id = 24, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 1 },
+                new Question { Id = 25, Content = "Tο μάθημα Σύγχρονα Θέματα Τεχνολογίας Λογισμικού καλύπτει και την ύλη που αφορά στους αισθητήρες των κινητών συσκευών, στις υπηρεσίες γεοεντοπισμού και σε πλήθος άλλων προχωρημένων τεχνικών προγραμματισμού.", CourseId = 1 },
+                new Question { Id = 26, Content = "Η ύλη του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού περιλαμβάνει κυρίως τη χρήση της αντικειμενοστρεφούς γλώσσας προγραμματισμού C#.", CourseId = 1 },
+                new Question { Id = 27, Content = "Ένα από τα αντκείμενα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού είναι η “Ανάλυση απαιτήσεων: __________ Ανάλυση και Αντικειμενοστρεφής Ανάλυση”.", CourseId = 1 },
+                new Question { Id = 28, Content = "Ποιο από τα παρακάτω αποτελεί μοντέλο ανάπτυξης λογισμικού που αναλύεται στα πλαίσια του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 1 },
+                new Question { Id = 29, Content = "Ένα από τα αντικέιμενα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού είναι προϋπολογισμός κόστους λογισμικού.", CourseId = 1 },
+                new Question { Id = 30, Content = "Παρακολουθώντας το μάθημα Σύγχρονα Θέματα Τεχνολογίας Λογισμικού, μπορεί κανείς να χρησιμοποιεί πρακτικά τις πλέον σύγχρονες υπηρεσίες ______ και Mobile backend as a service που παρέχει η Firebase.", CourseId = 1 },
+
+                // intelligent agents
+                new Question { Id = 31, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μπορεί να εφαρμόζει τα μοντέλα “αντιλαμβάνομαι-αποφασίζω-ενεργώ” (Sense-Decide-Act), BDI (Belief-Desire-Intention), σε διάφορες περιπτώσεις πρακτόρων.", CourseId = 5 },
+                new Question { Id = 32, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής διακρίνει και εκτιμά πότε είναι απαραίτητος ένας _________ πράκτορας και πότε βουλητικός πράκτορας.", CourseId = 5 },
+                new Question { Id = 33, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής κατανοεί την ____ ενός ευφυούς πράκτορα", CourseId = 5 },
+                new Question { Id = 34, Content = "Ποίο από τα παρακάτω αποτελεί είδος ευφυούς πράκτορα που μελετάται στο μάθυμα Ευφυείς Πράκτορες;", CourseId = 5 },
+                new Question { Id = 35, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες  ο φοιτητής  αναπτύσσει αλγορίθμους για εύρεση μονοπατιού (path finding), και σχεδιασμό ενεργειών (plan generation)", CourseId = 5 },
+                new Question { Id = 36, Content = "Πως ονομάζεται το περιβάλλον με το οποίο θα εξοικιωθούν οι φοιτητές για την ανάπτηξη εφαρμογών ευφυή πρακτόρων;", CourseId = 5 },
+                new Question { Id = 37, Content = "Η συναισθηματική διαλεκτική σε ευφυείς πράκτορες αποτελεί αντικείμενο του μαθήματος Ευφυείς Πράκτορες.", CourseId = 5 },
+                new Question { Id = 38, Content = "Μέσω της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μαθαίνει να εφαρμόζει το μοντέλο “αντιλαμβάνομαι-αποφασίζω-________”", CourseId = 5 },
+                new Question { Id = 39, Content = "Αντικείμενο του μαθήματος Ευφυείς Πράκτορες είναι  ο σχεδιασμός ενεργειών, βασισμένος σε κίνητρα και η πυραμίδα του ________.", CourseId = 5 },
+                new Question { Id = 40, Content = "Mε ποιο είδος πρακτόρων θα ασχοληθούν οι φοιτητές στα πλαίσια του μαθληματος Ευφυείς Πράκτορες;", CourseId = 5 },
+                
+                // video games
+                new Question { Id = 41, Content = "Παρακολουθώντας το μάθημα Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών, οι φοιτητές θα μπορούν να αναπτύσουν εφαρμογές ηλεκτρονικών παιχνιδιών στο περιβάλλον της Python.", CourseId = 6 },
+                new Question { Id = 42, Content = "Στόχος του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών είναι να αποκτήσουν οι φοιτητές βασικές γνώσεις για τον ρόλο, τους τύπους και τα ________ των παιχνιδιών, καθώς και για τη συνολική διαδικασία δημιουργίας ενός παιχνιδιού.", CourseId = 6 },
+                new Question { Id = 43, Content = "Στόχος του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών είναι να αποκτήσουν οι φοιτητές ικανότητες σχεδίασης και _________ παιχνιδιών αξιοποιώντας σύγχρονα εργαλεία, διασυνδέσεις και γλώσσες προγραμματισμού,", CourseId = 6 },
+                new Question { Id = 44, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί κατηγορία ηλεκτρονικών παιχνιδιών;", CourseId = 6 },
+                new Question { Id = 45, Content = "Στόχος του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών είναι να αποκτήσουν οι φοιτητές γνώσεις και ικανότητες χρήσης/δημιουργίας μετρικών αξιολόγησης παιχνιδιών βάσει των στόχων που τέθηκαν κατά τη σχεδίασή τους.", CourseId = 6 },
+                new Question { Id = 46, Content = "Στα πλάισια του μαθήαμτος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών ο φοιτητής μαθαίνει να συνοψίζει τις απαιτούμενες γνώσεις σχετικά με την ανάπτυξη ηλεκτρονικών παιχνιδιών στο περιβάλλον της ________", CourseId = 6 },
+                new Question { Id = 47, Content = "Στόχος του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών είναι η εξοικείωση των φοιτητών με σύγχρονες τεχνολογίες, μεθόδους και εργαλεία για τη δημιουργία ολοκληρωμένων διαδικτυακών εφαρμογών.", CourseId = 6 },
+                new Question { Id = 48, Content = "Το αντικείενο του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών περιλαμβάνει τη σχεδίαση ενός παιχνιδιού σε ________.", CourseId = 6 },
+                new Question { Id = 49, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί συστατικά ηλεκτρονικών παιχνιδιών στο Διαδίκτυο;", CourseId = 6 },
+                new Question { Id = 50, Content = "Ο κόσμος ενός ηλεκτρονικού αποτελείται από χαρακτήρες που μπορεί να είναι...;", CourseId = 6 },
+                
+                // antikeimenostrefhs anaptyxh
+                new Question { Id = 51, Content = "Η ύλη του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών περιλαμβάνει κυρίως τη χρήση της αντικειμενοστρεφούς γλώσσας προγραμματισμού C#.", CourseId = 2 },
+                new Question { Id = 52, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές μαθαίνουν να αναπτύσσουν _______, web, ή/και mobile εφαρμογές.", CourseId = 2 },
+                new Question { Id = 53, Content = "Ποιο εργαλείο ανάπτυξης εφαρμογών χρησιμοποιείται στα πλαίσια του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών;", CourseId = 2 },
+                new Question { Id = 54, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές μαθαίνουν να αναπτύσσουν λογισμικό για ένα μεγάλο πλήθος από πεδία, συμπεριλαμβανομένων των παραθυρικών εφαρμογών, των εφαρμογών κονσόλας, των εφαρμογών web και των mobile εφαρμογών.", CourseId = 2 },
+                new Question { Id = 55, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές εκτίθονται σε σύγχρονες τεχνικές προγραμματισμού με στόχο την ποιότητα του παραγόμενου _________, καθώς και την ταχύτητα ανάπτυξης σύνθετων και πολύπλοκων προγραμμάτων/έργων.", CourseId = 2 },
+                new Question { Id = 56, Content = "Στο πλαίσιο του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών δίνεται ιδιαίτερη έμφαση στα ολοκληρωμένα περιβάλλοντα ανάπτυξης τα οποία ονομάζονται και:", CourseId = 2 },
+                new Question { Id = 57, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές μαθαίνουν να αναγνωρίζουν και να εξηγούν τι είναι γλώσσα και γραμματική και πώς συμβολίζονται.", CourseId = 2 },
+                new Question { Id = 58, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές μαθάινουν να κάνουν ________ λογισμικού με τα πλέον σύγχρονα εργαλεία.", CourseId = 2 },
+                new Question { Id = 59, Content = "Ποιο από τα παρακάτω αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών;", CourseId = 2 },
+                new Question { Id = 60, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών , οι φοιτητές μαθάινουν να παράγουν εφαρμογές με _______ και ταχύ ρυθμό.", CourseId = 2 }
+            );
+
+            // ANSWERS
+            modelBuilder.Entity<Answer>().HasData(
+                
+                // OOP
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 2, QuestionId = 2, Answer1 = "Να δημιουργούν τάξεις, διεπαφές και αντικείμενα", Answer2 = "Να γνωρίζουν τις βασικές αρχές της γλώσσας C#", Answer3 = "Να μπορούν να αξιοποιήσουν τις βασικές αλγοριθμικές δομές σε γλώσσα C++", Answer4 = "Να μπορούν να υλοποιούν προγραμματισμό sockets (TCP sockets και UDP sockets).", CorrectAnswer = "Να δημιουργούν τάξεις, διεπαφές και αντικείμενα." },
+                new Answer { Id = 3, QuestionId = 3, Answer1 = "Να μπορούν να σχεδιάζουν και να υλοποιούν αλγόριθμους για την αποτελεσματική κατασκευή συνδυαστικών αντικειμένων.", Answer2 = "Να αναγνωρίζουν και να κατανοούν σύγχρονες τεχνικές σχεδίασης ολοκληρωμένων εφαρμογών λογισμικού με υπηρεσίες.", Answer3 = "Να εντοπίζουν, αξιολογούν και αξιοποιούν λογισμικό που υλοποιείται σύμφωνα με τις βασικές αρχές της αντικειμενοστρεφούς σχεδίασης.", Answer4 = "Να σχεδιάζουν αρχιτεκτονικά σχέδια λογισμικού βασισμένα σε γλώσσες μοντελοποίησης και διαγράμματα.", CorrectAnswer = "Να εντοπίζουν, αξιολογούν και αξιοποιούν λογισμικό που υλοποιείται σύμφωνα με τις βασικές αρχές της αντικειμενοστρεφούς σχεδίασης." },
+                new Answer { Id = 4, QuestionId = 4, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 5, QuestionId = 5, Answer1 = "Java", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Java" },
+                new Answer { Id = 6, QuestionId = 6, Answer1 = "Ανάγνωση", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Ανάγνωση" },
+                new Answer { Id = 7, QuestionId = 7, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 8, QuestionId = 8, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 9, QuestionId = 9, Answer1 = "Εξαιρέσεις", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Εξαιρέσεις" },
+                new Answer { Id = 10, QuestionId = 10, Answer1 = "Αυτόνομη εργασία", Answer2 = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)", Answer3 = "Προσαρμογή σε νέες καταστάσεις", Answer4 = "Σχεδιασμός και διαχείριση έργων", CorrectAnswer = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)" },
+                
+                // VR
+                new Answer { Id = 11, QuestionId = 11, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 12, QuestionId = 12, Answer1 = "γραφικά", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "γραφικά" },
+                new Answer { Id = 13, QuestionId = 13, Answer1 = "ευφυών", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "ευφυών" },
+                new Answer { Id = 14, QuestionId = 14, Answer1 = "Υφή επιφάνειας αντικειμένων. Διαχείριση πηγών φωτός, ήχων, κάμερας. Animations.", Answer2 = "Ανάπτυξη εφαρμογών εικονικής πραγματικότητας στην πλατφόρμα Unity3D.", Answer3 = "Κόσμοι τρισδιάστατων γραφικών. Τρισδιάστατα μοντέλα αντικειμένων.", Answer4 = "Δομή και λειτουργία ενός ηλεκτρονικού παιχνιδιού.", CorrectAnswer = "Δομή και λειτουργία ενός ηλεκτρονικού παιχνιδιού." },
+                new Answer { Id = 15, QuestionId = 15, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 16, QuestionId = 16, Answer1 = "Unity3D", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Unity3D" },
+                new Answer { Id = 17, QuestionId = 17, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 18, QuestionId = 18, Answer1 = "συνιστώσες", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "συνιστώσες" },
+                new Answer { Id = 19, QuestionId = 19, Answer1 = "Μετρήσεις Αντικειμένου Εικόνας", Answer2 = "Εισαγωγή στα Γραφικά με Υπολογιστές, συστήματα απεικόνισης, χρώμα, γεωμετρικά σχήματα, μετασχηματισμοί, κίνηση.", Answer3 = "Δομή και την λειτουργία ενός ευφυούς πράκτορα μέσα σε ένα περιβάλλον.", Answer4 = "Αντιδρασιακοί πράκτορες (Reactive Agents) και Βουλητικοί πράκτορες (Deliberative Agents).", CorrectAnswer = "Εισαγωγή στα Γραφικά με Υπολογιστές, συστήματα απεικόνισης, χρώμα, γεωμετρικά σχήματα, μετασχηματισμοί, κίνηση." },
+                new Answer { Id = 20, QuestionId = 20, Answer1 = "VRML: sensors και animation, γενικές αρχές μοντελοποίησης σκελετού, πρότυπα μοντελοποίησης κίνησης σώματος (H-Anim, κ.ά.), scripting, ενσωμάτωση σε εφαρμογές, PROTOs, προτεινόμενες πρακτικές σχεδιασμού και ανάπτυξης.", Answer2 = "VRML: σύνταξη, υλοποιήσεις, βασικά εργαλεία, γεωμετρία, μετασχηματισμοί, επαναχρησιμοποίηση κόμβων, εξωτερικές αναφορές, υλικά/χρώμα, φωτισμός, υφή, viewpoints, background, ήχος, κείμενο, billboards, HUDs.", Answer3 = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης.", Answer4 = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης.", CorrectAnswer = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης." },
+
+                // android
+                new Answer { Id = 21, QuestionId = 21, Answer1 = "Να εφαρμόζουν πρακτικά τεχνολογίες ασφάλειας πληροφοριακών συστημάτων σε πραγματικές συνθήκες", Answer2 = "Να αναλύει και να συγκρίνει μοντέλα ανάπτυξης λογισμικού", Answer3 = "Να αναπτύσσει native mobile apps κάνοντας χρήση του Android SDK", Answer4 = "Να χρησιμοποιεί πρακτικά τις πλέον σύγχρονες υπηρεσίες Cloud και Mobile backend as a service που παρέχει η Firebase", CorrectAnswer = "Να εφαρμόζουν πρακτικά τεχνολογίες ασφάλειας πληροφοριακών συστημάτων σε πραγματικές συνθήκες" },
+                new Answer { Id = 22, QuestionId = 22, Answer1 = "Android Studio", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Android Studio" },
+                new Answer { Id = 23, QuestionId = 23, Answer1 = "Να σχεδιάζει και να αναπτύσσει εφαρμογές για κινητές και φορητές συσκευές υλοποιώντας τις πλέον σύγχρονες τεχνικές προγραμματισμού.", Answer2 = "Να εκμεταλλεύεται τοπικές (SQLite) βάσεις δεδομένων.", Answer3 = "Να επιλέγει μοντέλα ανάπτυξης λογισμικού ανάλογα με τις ανάγκες και να τα χρησιμοποιεί.", Answer4 = "Να γνωρίζει τις τεχνικές σηματοδοσίας, διαχείρισης κινητικότητας και το πρωτόκολλο Mobile IP.", CorrectAnswer = "Να γνωρίζει τις τεχνικές σηματοδοσίας, διαχείρισης κινητικότητας και το πρωτόκολλο Mobile IP." },
+                new Answer { Id = 24, QuestionId = 24, Answer1 = "Να διασφαλίζει την αποτελεσματικότητα των λογισμικών μέσω των προαναφερθέντων εφαρμογών.", Answer2 = "Να αναγνωρίζει αρχές σχεδίασης λογισμικού με REST.", Answer3 = "Να αξιοποιεί το εργαλείο Android Studio για την ανάπτυξη κινητών εφαρμογών.", Answer4 = "Να γνωρίζει τις πλέον σύγχρονες υπηρεσίες Cloud και Mobile backend as a service που παρέχει η Firebase", CorrectAnswer = "Να αναγνωρίζει αρχές σχεδίασης λογισμικού με REST." },
+                new Answer { Id = 25, QuestionId = 25, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 26, QuestionId = 26, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 27, QuestionId = 27, Answer1 = "Δομημένη", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Δομημένη" },
+                new Answer { Id = 28, QuestionId = 28, Answer1 = "Scrum", Answer2 = "Firebase", Answer3 = "Rational Unified Process", Answer4 = "DevOps", CorrectAnswer = "Rational Unified Process" },
+                new Answer { Id = 29, QuestionId = 29, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 30, QuestionId = 30, Answer1 = "Cloud", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Cloud" },
+                
+                // intelligent agents
+                new Answer { Id = 31, QuestionId = 31, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 32, QuestionId = 32, Answer1 = "αντιδρασιακός", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "αντιδρασιακός" },
+                new Answer { Id = 33, QuestionId = 33, Answer1 = "δομή", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "δομή" },
+                new Answer { Id = 34, QuestionId = 34, Answer1 = "Cleaning Agents", Answer2 = "Radioactive Agents", Answer3 = "Deliberative Agents", Answer4 = "Federal Agents", CorrectAnswer = "Deliberative Agents" },
+                new Answer { Id = 35, QuestionId = 35, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 36, QuestionId = 36, Answer1 = "Unity3D", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Unity3D" },
+                new Answer { Id = 37, QuestionId = 37, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 38, QuestionId = 38, Answer1 = "ενεργώ", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "ενεργώ" },
+                new Answer { Id = 39, QuestionId = 39, Answer1 = "Maslow", Answer2 = "Khafre", Answer3 = "Djoser", Answer4 = "Cheops", CorrectAnswer = "Maslow" },
+                new Answer { Id = 40, QuestionId = 40, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
+                
+                // video games
+                new Answer { Id = 41, QuestionId = 41, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 42, QuestionId = 42, Answer1 = "χαρακτηριστικά", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "χαρακτηριστικά" },
+                new Answer { Id = 43, QuestionId = 43, Answer1 = "υλοποίησης", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "υλοποίησης" },
+                new Answer { Id = 44, QuestionId = 44, Answer1 = "First Person", Answer2 = "Educational", Answer3 = "Role-playing", Answer4 = "Fourth Person", CorrectAnswer = "Fourth Person" },
+                new Answer { Id = 45, QuestionId = 45, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 46, QuestionId = 46, Answer1 = "Unity3D", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Unity3D" },
+                new Answer { Id = 47, QuestionId = 47, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 48, QuestionId = 48, Answer1 = "C", Answer2 = "C++", Answer3 = "PythonFmu", Answer4 = "C#", CorrectAnswer = "C#" },
+                new Answer { Id = 49, QuestionId = 49, Answer1 = "3D μοντέλα", Answer2 = "bolts", Answer3 = "sprites", Answer4 = "animations", CorrectAnswer = "bolts" },
+                new Answer { Id = 50, QuestionId = 50, Answer1 = "Παίκτες", Answer2 = "Πράκτορες", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
+                
+                // antikeimenostrfhs anmptyjh
+                new Answer { Id = 51, QuestionId = 51, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 52, QuestionId = 52, Answer1 = "desktop", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "desktop" },
+                new Answer { Id = 53, QuestionId = 53, Answer1 = "Visual Studio Enterprise Edition", Answer2 = "IntelliJ IDEA", Answer3 = "Visual Studio Code", Answer4 = "QtSpim", CorrectAnswer = "Visual Studio Enterprise Edition" },
+                new Answer { Id = 54, QuestionId = 54, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 55, QuestionId = 55, Answer1 = "λογισμικού", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "λογισμικού" },
+                new Answer { Id = 56, QuestionId = 56, Answer1 = "IDEs", Answer2 = "GUIs", Answer3 = "GNUs", Answer4 = "ICPs", CorrectAnswer = "IDEs" },
+                new Answer { Id = 57, QuestionId = 57, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 58, QuestionId = 58, Answer1 = "αποσφαλμάτωση", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "αποσφαλμάτωση" },
+                new Answer { Id = 59, QuestionId = 59, Answer1 = "Να εντοπίζουν, αξιολογούν και αξιοποιούν λογισμικό που υλοποιείται σύμφωνα με τις βασικές αρχές της αντικειμενοστρεφούς σχεδίασης.", Answer2 = "Να σχεδιάζουν αρχιτεκτονικά σχέδια λογισμικού βασισμένα σε γλώσσες μοντελοποίησης και διαγράμματα.", Answer3 = "Να μαθαίνουν, να αξιολογούν και να εντοπίζουν λογισμικό υλοποιημένο με εργαλεία οπτικού προγραμματισμού.", Answer4 = "Να αναγνωρίζουν και να κατανοούν σύγχρονες τεχνικές σχεδίασης ολοκληρωμένων εφαρμογών λογισμικού με υπηρεσίες.", CorrectAnswer = "Να μαθαίνουν, να αξιολογούν και να εντοπίζουν λογισμικό υλοποιημένο με εργαλεία οπτικού προγραμματισμού." },
+                new Answer { Id = 60, QuestionId = 60, Answer1 = "αποδοτικό", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "αποδοτικό" }
+            );
         }
     }
 }
