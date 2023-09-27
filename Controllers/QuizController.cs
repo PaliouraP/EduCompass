@@ -115,13 +115,15 @@ public class QuizController : Controller
         // get the quiz object
         int quizId = int.Parse(TempData["QuizId"].ToString());
         var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
+
+        var questionIds = quiz.QuestionIds.Split(';');
         
         // get the user's answers
-        var answer1 = Request.Form["answer-1"].ToString();
-        var answer2 = Request.Form["answer-2"].ToString();
-        var answer3 = Request.Form["answer-3"].ToString();
-        var answer4 = Request.Form["answer-4"].ToString();
-        var answer5 = Request.Form["answer-5"].ToString();
+        var answer1 = Request.Form[$"answer-{questionIds[0]}"].ToString();
+        var answer2 = Request.Form[$"answer-{questionIds[1]}"].ToString();
+        var answer3 = Request.Form[$"answer-{questionIds[2]}"].ToString();
+        var answer4 = Request.Form[$"answer-{questionIds[3]}"].ToString();
+        var answer5 = Request.Form[$"answer-{questionIds[4]}"].ToString();
 
         // create the answer string to store it to the database.
         string answersString = $"{answer1};{answer2};{answer3};{answer4};{answer5}";
@@ -131,9 +133,7 @@ public class QuizController : Controller
         
         for (int i = 0; i < 5; i++)
         {
-            var stringAnswers = answersString.Split(';');
             var stringQuestions = quiz.QuestionIds.Split(';');
-            Array.Sort(stringQuestions);
             
             // get the question object from the id
             int questionId = int.Parse(stringQuestions[i]);
@@ -141,7 +141,7 @@ public class QuizController : Controller
             // get the answers of that question
             Answer answers = _database.Answers.First(a => a.QuestionId == questionId);
 
-            if (string.Equals(answers.CorrectAnswer, stringAnswers[i], StringComparison.CurrentCultureIgnoreCase))
+            if (string.Equals(answers.CorrectAnswer, Request.Form[$"answer-{questionId}"].ToString(), StringComparison.CurrentCultureIgnoreCase))
                 correctAnswerCounter++;
         }
 
@@ -158,10 +158,24 @@ public class QuizController : Controller
         _database.SaveChanges();
 
         // return to finished
-        return RedirectToAction("FinishedExam");
+        if (grade >= 50)
+            return RedirectToAction("FinishedExam");
+
+        return RedirectToAction("FailedExam");
     }
 
     public IActionResult FinishedExam()
+    {
+        TempData.Keep("QuizId");
+        
+        // get the quiz object
+        int quizId = int.Parse(TempData["QuizId"].ToString());
+        var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
+        
+        return View(quiz);
+    }
+
+    public IActionResult FailedExam()
     {
         TempData.Keep("QuizId");
         
