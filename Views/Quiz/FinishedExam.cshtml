@@ -19,7 +19,7 @@
 
 
 <body class="vh-100">
-    <div class="container center">
+    <div class="container center" style="overflow:auto;">
         <div class="center">
             <h1 class="d-flex justify-content-evenly mt-5"><b>Συγχαρητήρια!</b></h1>
             <h6 class="d-flex justify-content-evenly">Ολοκληρώσατε το τεστ με σκορ @Model.Item1.Grade%! Μπορείτε να μεταβείτε στην αρχική κάνωντας κλικ στο παρακάτω κουμπί.</h6>
@@ -28,14 +28,14 @@
                      alt="login form" class="main-img" />
             </div>
             
-            ΟΙ ΑΠΑΝΤΗΣΕΙΣ ΣΑΣ:
+            <h3 style="color:#3D348B">ΟΙ ΑΠΑΝΤΗΣΕΙΣ ΣΑΣ:</h3>
                         
             @foreach (var item in Model.Item2)
             {
-                <h5>@item.Key.Content</h5>
-                             @item.Value
+                <h5 class="mt-3">@item.Key.Content</h5>
+                <p class="mb-3">@item.Value</p>
                              
-                             <br/>
+                             
             }
             
             <div class="d-flex justify-content-evenly pt-1 my-3">
