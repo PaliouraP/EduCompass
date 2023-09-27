@@ -771,28 +771,28 @@ namespace EduCompass.Data
                 new Answer { Id = 30, QuestionId = 30, Answer1 = "Cloud", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "Cloud" },
                 
                 // intelligent agents
-                new Answer { Id = 31, QuestionId = 31, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 32, QuestionId = 32, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 33, QuestionId = 33, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 34, QuestionId = 34, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 35, QuestionId = 35, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 36, QuestionId = 36, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 37, QuestionId = 37, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 38, QuestionId = 38, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 39, QuestionId = 39, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 40, QuestionId = 40, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 31, QuestionId = 31, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 32, QuestionId = 32, Answer1 = "αντιδρασιακός", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "αντιδρασιακός" },
+                new Answer { Id = 33, QuestionId = 33, Answer1 = "δομή", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "δομή" },
+                new Answer { Id = 34, QuestionId = 34, Answer1 = "Cleaning Agents", Answer2 = "Radioactive Agents", Answer3 = "Deliberative Agents", Answer4 = "Federal Agents", CorrectAnswer = "Deliberative Agents" },
+                new Answer { Id = 35, QuestionId = 35, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 36, QuestionId = 36, Answer1 = "Unity3D", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "Unity3D" },
+                new Answer { Id = 37, QuestionId = 37, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Λάθος" },
+                new Answer { Id = 38, QuestionId = 38, Answer1 = "ενεργώ", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "ενεργώ" },
+                new Answer { Id = 39, QuestionId = 39, Answer1 = "Maslow", Answer2 = "Khafre", Answer3 = "Djoser", Answer4 = "Cheops", CorrectAnswer = "Maslow" },
+                new Answer { Id = 40, QuestionId = 40, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
                 
                 // video games
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" }
+                new Answer { Id = 41, QuestionId = 41, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 42, QuestionId = 42, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 43, QuestionId = 43, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 44, QuestionId = 44, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 45, QuestionId = 45, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 46, QuestionId = 46, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 47, QuestionId = 47, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 48, QuestionId = 48, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 49, QuestionId = 49, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 50, QuestionId = 50, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" }
             );
         }
     }
