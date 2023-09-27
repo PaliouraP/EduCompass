@@ -795,16 +795,16 @@ namespace EduCompass.Data
                 new Answer { Id = 50, QuestionId = 50, Answer1 = "Παίκτες", Answer2 = "Πράκτορες", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
                 
                 // antikeimenostrfhs anmptyjh
-                new Answer { Id = 51, QuestionId = 51, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 52, QuestionId = 52, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 53, QuestionId = 53, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 54, QuestionId = 54, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 55, QuestionId = 55, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 56, QuestionId = 56, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 57, QuestionId = 57, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 58, QuestionId = 58, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 59, QuestionId = 59, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
-                new Answer { Id = 60, QuestionId = 60, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" }
+                new Answer { Id = 51, QuestionId = 51, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 52, QuestionId = 52, Answer1 = "desktop", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "desktop" },
+                new Answer { Id = 53, QuestionId = 53, Answer1 = "Visual Studio Enterprise Edition", Answer2 = "IntelliJ IDEA", Answer3 = "Visual Studio Code", Answer4 = "QtSpim", CorrectAnswer = "Visual Studio Enterprise Edition" },
+                new Answer { Id = 54, QuestionId = 54, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 55, QuestionId = 55, Answer1 = "λογισμικού", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "λογισμικού" },
+                new Answer { Id = 56, QuestionId = 56, Answer1 = "IDEs", Answer2 = "GUIs", Answer3 = "GNUs", Answer4 = "ICPs", CorrectAnswer = "IDEs" },
+                new Answer { Id = 57, QuestionId = 57, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Λάθος" },
+                new Answer { Id = 58, QuestionId = 58, Answer1 = "αποσφαλμάτωση", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "αποσφαλμάτωση" },
+                new Answer { Id = 59, QuestionId = 59, Answer1 = "Να εντοπίζουν, αξιολογούν και αξιοποιούν λογισμικό που υλοποιείται σύμφωνα με τις βασικές αρχές της αντικειμενοστρεφούς σχεδίασης.", Answer2 = "Να σχεδιάζουν αρχιτεκτονικά σχέδια λογισμικού βασισμένα σε γλώσσες μοντελοποίησης και διαγράμματα.", Answer3 = "Να μαθαίνουν, να αξιολογούν και να εντοπίζουν λογισμικό υλοποιημένο με εργαλεία οπτικού προγραμματισμού.", Answer4 = "Να αναγνωρίζουν και να κατανοούν σύγχρονες τεχνικές σχεδίασης ολοκληρωμένων εφαρμογών λογισμικού με υπηρεσίες.", CorrectAnswer = "Να μαθαίνουν, να αξιολογούν και να εντοπίζουν λογισμικό υλοποιημένο με εργαλεία οπτικού προγραμματισμού." },
+                new Answer { Id = 60, QuestionId = 60, Answer1 = "αποδοτικό", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "αποδοτικό" }
             );
         }
     }
