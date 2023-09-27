@@ -733,6 +733,7 @@ namespace EduCompass.Data
 
             // ANSWERS
             modelBuilder.Entity<Answer>().HasData(
+                
                 // OOP
                 new Answer { Id = 1, QuestionId = 1, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
                 new Answer { Id = 2, QuestionId = 2, Answer1 = "Να δημιουργούν τάξεις, διεπαφές και αντικείμενα", Answer2 = "Να γνωρίζουν τις βασικές αρχές της γλώσσας C#", Answer3 = "Να μπορούν να αξιοποιήσουν τις βασικές αλγοριθμικές δομές σε γλώσσα C++", Answer4 = "Να μπορούν να υλοποιούν προγραμματισμό sockets (TCP sockets και UDP sockets).", CorrectAnswer = "Να δημιουργούν τάξεις, διεπαφές και αντικείμενα." },
@@ -743,10 +744,31 @@ namespace EduCompass.Data
                 new Answer { Id = 7, QuestionId = 7, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
                 new Answer { Id = 8, QuestionId = 8, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Λάθος" },
                 new Answer { Id = 9, QuestionId = 9, Answer1 = "Εξαιρέσεις", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "Εξαιρέσεις" },
-                new Answer { Id = 10, QuestionId = 10, Answer1 = "Αυτόνομη εργασία", Answer2 = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)", Answer3 = "Προσαρμογή σε νέες καταστάσεις", Answer4 = "Σχεδιασμός και διαχείριση έργων", CorrectAnswer = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)" }
+                new Answer { Id = 10, QuestionId = 10, Answer1 = "Αυτόνομη εργασία", Answer2 = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)", Answer3 = "Προσαρμογή σε νέες καταστάσεις", Answer4 = "Σχεδιασμός και διαχείριση έργων", CorrectAnswer = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)" },
+                
+                // VR
+                new Answer { Id = 11, QuestionId = 11, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 12, QuestionId = 12, Answer1 = "γραφικά", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "γραφικά" },
+                new Answer { Id = 13, QuestionId = 13, Answer1 = "ευφυών", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "ευφυών" },
+                new Answer { Id = 14, QuestionId = 14, Answer1 = "Υφή επιφάνειας αντικειμένων. Διαχείριση πηγών φωτός, ήχων, κάμερας. Animations.", Answer2 = "Ανάπτυξη εφαρμογών εικονικής πραγματικότητας στην πλατφόρμα Unity3D.", Answer3 = "Κόσμοι τρισδιάστατων γραφικών. Τρισδιάστατα μοντέλα αντικειμένων.", Answer4 = "Δομή και λειτουργία ενός ηλεκτρονικού παιχνιδιού.", CorrectAnswer = "Δομή και λειτουργία ενός ηλεκτρονικού παιχνιδιού." },
+                new Answer { Id = 15, QuestionId = 15, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Λάθος" },
+                new Answer { Id = 16, QuestionId = 16, Answer1 = "Unity3D", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "Unity3D" },
+                new Answer { Id = 17, QuestionId = 17, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = null, Answer4 = null, CorrectAnswer = "Σωστό" },
+                new Answer { Id = 18, QuestionId = 18, Answer1 = "συνιστώσες", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "συνιστώσες" },
+                new Answer { Id = 19, QuestionId = 19, Answer1 = "Μετρήσεις Αντικειμένου Εικόνας", Answer2 = "Εισαγωγή στα Γραφικά με Υπολογιστές, συστήματα απεικόνισης, χρώμα, γεωμετρικά σχήματα, μετασχηματισμοί, κίνηση.", Answer3 = "Δομή και την λειτουργία ενός ευφυούς πράκτορα μέσα σε ένα περιβάλλον.", Answer4 = "Αντιδρασιακοί πράκτορες (Reactive Agents) και Βουλητικοί πράκτορες (Deliberative Agents).", CorrectAnswer = "Εισαγωγή στα Γραφικά με Υπολογιστές, συστήματα απεικόνισης, χρώμα, γεωμετρικά σχήματα, μετασχηματισμοί, κίνηση." },
+                new Answer { Id = 20, QuestionId = 20, Answer1 = "VRML: sensors και animation, γενικές αρχές μοντελοποίησης σκελετού, πρότυπα μοντελοποίησης κίνησης σώματος (H-Anim, κ.ά.), scripting, ενσωμάτωση σε εφαρμογές, PROTOs, προτεινόμενες πρακτικές σχεδιασμού και ανάπτυξης.", Answer2 = "VRML: σύνταξη, υλοποιήσεις, βασικά εργαλεία, γεωμετρία, μετασχηματισμοί, επαναχρησιμοποίηση κόμβων, εξωτερικές αναφορές, υλικά/χρώμα, φωτισμός, υφή, viewpoints, background, ήχος, κείμενο, billboards, HUDs.", Answer3 = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης.", Answer4 = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης.", CorrectAnswer = "Σχεδιασμός Κατανεμημένων Περιβαλλόντων Μάθησης." },
 
-
-                // 
+                // android
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" },
+                new Answer { Id = 1, QuestionId = 1, Answer1 = "", Answer2 = null, Answer3 = null, Answer4 = null, CorrectAnswer = "" }
             );
         }
     }
