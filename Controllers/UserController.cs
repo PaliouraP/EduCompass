@@ -77,7 +77,6 @@ namespace EduCompass.Controllers
             userToBeEdited.Email = string.IsNullOrEmpty(email) ? userToBeEdited.Email : email;
             userToBeEdited.FirstName = string.IsNullOrEmpty(firstname) ? userToBeEdited.FirstName : firstname;
             userToBeEdited.LastName = string.IsNullOrEmpty(lastname) ? userToBeEdited.LastName : lastname;
-            userToBeEdited.Semester = semester == 0 ? userToBeEdited.Semester : semester;
             
             // apply the edited properties.
             _database.Users.Update(userToBeEdited);

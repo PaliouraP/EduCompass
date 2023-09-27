@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Tuple<CourseQuizGrade, Dictionary<Question, string>>
+
+@{
     ViewData["Title"] = "FailedExam";
 }
 
@@ -20,11 +22,21 @@
     <div class="container center">
         <div class="center">
             <h1 class="d-flex justify-content-evenly mt-5"><b>Ουπς!</b></h1>
-            <h6 class="d-flex justify-content-evenly">Το σκορ σας είναι -σκορ-. Χρειάζεστε τουλάχιστον 50% για να περάσετε το μάθημα.</h6>
+            <h6 class="d-flex justify-content-evenly">Το σκορ σας είναι @Model.Item1.Grade%. Χρειάζεστε τουλάχιστον 50% για να περάσετε το μάθημα.</h6>
             <div class="d-flex justify-content-evenly">
                 <img src="~/images/failed-test.png"
                      alt="login form" class="main-img" />
             </div>
+            
+            @foreach (var item in Model.Item2)
+                        {
+                            <h5>@item.Key.Content</h5>
+                                         @item.Value
+                                         
+                                         <br/>
+                        }
+            
+            
             <div class="d-flex justify-content-evenly pt-1 my-5">
                 <a href="#" class="px-auto">Δες σε ποιες ερωτήσεις απάντησες λάθος</a>
             </div>

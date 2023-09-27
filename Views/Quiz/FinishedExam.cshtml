@@ -1,4 +1,4 @@
-﻿@model CourseQuizGrade
+﻿@model Tuple<CourseQuizGrade, Dictionary<Question, string>>
 
 @{
     ViewData["Title"] = "FinishedExam";
@@ -22,17 +22,27 @@
     <div class="container center">
         <div class="center">
             <h1 class="d-flex justify-content-evenly mt-5"><b>Συγχαρητήρια!</b></h1>
-            <h6 class="d-flex justify-content-evenly">Ολοκληρώσατε το τεστ με σκορ @Model.Grade%! Μπορείτε να μεταβείτε στην αρχική κάνωντας κλικ στο παρακάτω κουμπί.</h6>
+            <h6 class="d-flex justify-content-evenly">Ολοκληρώσατε το τεστ με σκορ @Model.Item1.Grade%! Μπορείτε να μεταβείτε στην αρχική κάνωντας κλικ στο παρακάτω κουμπί.</h6>
             <div class="d-flex justify-content-evenly">
                 <img src="~/images/finished-quiz.png"
                      alt="login form" class="main-img" />
             </div>
+            
+            ΟΙ ΑΠΑΝΤΗΣΕΙΣ ΣΑΣ:
+                        
+            @foreach (var item in Model.Item2)
+            {
+                <h5>@item.Key.Content</h5>
+                             @item.Value
+                             
+                             <br/>
+            }
+            
             <div class="d-flex justify-content-evenly pt-1 my-3">
                 <a href="/Home/Dashboard" class="btn-long btn-proceed px-auto">Αρχική σελίδα</a>
             </div>
-            <div class="d-flex justify-content-evenly pt-1 mb-5">
-                <a href="#" class="px-auto">Δες σε ποιες ερωτήσεις απάντησες λάθος</a>
-            </div>
+            
+            
             
         </div>
         

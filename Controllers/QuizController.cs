@@ -34,7 +34,7 @@ public class QuizController : Controller
         _currentUser = _database.Users.First(u => u.Username == HttpContext.Session.GetString("username"));
     }
 
-    public IActionResult StartQuiz(string courseUUID)
+    public IActionResult StartCourseQuiz(string courseUUID)
     {
         // retrieve the course
         var course = _database.Courses.First(c => c.UUID == courseUUID);
@@ -73,10 +73,10 @@ public class QuizController : Controller
         TempData.Keep("QuizId");
         
         // go to the quiz page
-        return RedirectToAction("Quiz");
+        return RedirectToAction("CourseQuiz");
     }
 
-    public IActionResult Quiz()
+    public IActionResult CourseQuiz()
     {
         TempData.Keep("QuizId");
         
@@ -141,7 +141,7 @@ public class QuizController : Controller
             // get the answers of that question
             Answer answers = _database.Answers.First(a => a.QuestionId == questionId);
 
-            if (string.Equals(answers.CorrectAnswer, Request.Form[$"answer-{questionId}"].ToString(), StringComparison.CurrentCultureIgnoreCase))
+            if (answers.CorrectAnswer.ToLower().Trim().Equals(Request.Form[$"answer-{questionId}"].ToString().Trim().ToLower()))
                 correctAnswerCounter++;
         }
 
@@ -171,8 +171,30 @@ public class QuizController : Controller
         // get the quiz object
         int quizId = int.Parse(TempData["QuizId"].ToString());
         var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
+
+        // get the questions the and the user's answers
+        var questionIdsArray = quiz.QuestionIds.Split(';');
+        var answerStrings = quiz.AnswerIds.Split(';');
         
-        return View(quiz);
+        // create a dictionary mapping two strings
+        var quizWithQuestionsAndCorrectAnswers = new Dictionary<Question, string>();
+
+        for (int i = 0; i < questionIdsArray.Length; i++)
+        {
+            // get question and right answer
+            Question currentQuestion = _database.Questions.First(q => q.Id == int.Parse(questionIdsArray[i]));
+            var correctAnswer = _database.Answers.First(a => a.QuestionId == currentQuestion.Id).CorrectAnswer;
+
+            // see if the answer was right and write it down.
+            string answerString = correctAnswer == answerStrings[i] ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) <br> Σωστή Απάντηση: {correctAnswer}";
+
+            // add it to the dictionary
+            quizWithQuestionsAndCorrectAnswers.Add(currentQuestion, answerString);
+        }
+
+        // create the model and return it.
+        var model = new Tuple<CourseQuizGrade, Dictionary<Question, string>>(quiz, quizWithQuestionsAndCorrectAnswers);
+        return View(model);
     }
 
     public IActionResult FailedExam()
@@ -182,8 +204,30 @@ public class QuizController : Controller
         // get the quiz object
         int quizId = int.Parse(TempData["QuizId"].ToString());
         var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
+
+        // get the questions the and the user's answers
+        var questionIdsArray = quiz.QuestionIds.Split(';');
+        var answerStrings = quiz.AnswerIds.Split(';');
         
-        return View(quiz);
+        // create a dictionary mapping two strings
+        var quizWithQuestionsAndCorrectAnswers = new Dictionary<Question, string>();
+
+        for (int i = 0; i < questionIdsArray.Length; i++)
+        {
+            // get question and right answer
+            Question currentQuestion = _database.Questions.First(q => q.Id == int.Parse(questionIdsArray[i]));
+            var correctAnswer = _database.Answers.First(a => a.QuestionId == currentQuestion.Id).CorrectAnswer;
+
+            // see if the answer was right and write it down.
+            string answerString = correctAnswer == answerStrings[i] ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) <br> Σωστή Απάντηση: {correctAnswer}";
+
+            // add it to the dictionary
+            quizWithQuestionsAndCorrectAnswers.Add(currentQuestion, answerString);
+        }
+
+        // create the model and return it.
+        var model = new Tuple<CourseQuizGrade, Dictionary<Question, string>>(quiz, quizWithQuestionsAndCorrectAnswers);
+        return View(model);
     }
     
     private static List<T> RandomizeList<T>(List<T> list)
