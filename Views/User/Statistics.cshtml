@@ -5,12 +5,32 @@
 @section Styles {
     <link rel="stylesheet" href="~/css/statistics.css" />
     <link rel="stylesheet" href="~/css/horizontal_bar_chart.css" />
+    <link rel="stylesheet" href="~/css/vertical_bar_chart.css" />
 }
 
 
-<div class="chart-wrap vertical">
-    <h2 class="mt-5">Σύγκριση προσανατολισμών</h2>
+<div class="mx-5 mt-5">
+    <h2>Στατιστικά στοιχεία</h2>
+    <div class="row">
+        <p class="col-8 d-flex align-items-center">
+            Στην παρακάτω σελίδα μπορείτε να δείτε τα στατιστικά στοιχεία που έχουμε μαζέψει τόσο για την κλήση σας προς συγκεκριμένους προσανατολισμούς,
+            όσο και για τον χρόνο που έχετε αφιερώσει στις σελίδες των μαθημάτων της εφαρμογής.
+        </p>
+        <img src="~/images/statistics.png"
+             alt="statistics" class="col-3" />
+    </div>
+    
+</div>
 
+<div class="chart-wrap vertical">
+    <h4 class="mt-5">Σύγκριση προσανατολισμών</h4>
+    <p class="me-5">Παρακάτω παρουσιάζεται η βαθμολογία σας σε καθέναν από τους προσανατολισμούς της εφαρμογής σύμφωνα με την βαρύτητα του κάθε μαθήματος. 
+        Μπορείτε να δείτε την σύγκριση των προσανατολισμών ως προς τους βαθμούς σας στο πανεπιστήμιο, τους βαθμούς σας στα τεστ της εφαρμογής,
+        το ενδιαφέρον σας προς αυτά, και συνδυάζοντας όλα τα παραπάνω με προκαθωρισμένους συντελεστές βαρύτητας. <br /><i style="color:#7678ED">
+            Σημείωση: Ο συντελεστής βαρύτητας
+            κάθε μαθήματος είναι διαφορετικός για κάθε προσανατολισμό.
+        </i>
+    </p>
     <div class="row my-5">
         <div class="col-5">
             <h6 class="mb-4">Βαθμοί μαθημάτων</h6>
@@ -80,24 +100,26 @@
 </div>
 
 <div class="chart-wrap vertical">
-    <h2 class="mt-5">Αφιερωμένος χρόνος </h2>
+    <h4 class="mt-5">Αφιερωμένος χρόνος ανά μάθημα</h4>
 
-    <div class="row my-5">
-
-        <div class="chart-wrap vertical">
-            <h2 class="title">Aνά μάθημα</h2>
-
-            <div class="grid">
-                <div class="bar" style="--bar-value:85%;" data-name="Your Blog" title="Your Blog 85%"></div>
-                <div class="bar" style="--bar-value:23%;" data-name="Medium" title="Medium 23%"></div>
-                <div class="bar" style="--bar-value:7%;" data-name="Tumblr" title="Tumblr 7%"></div>
-                <div class="bar" style="--bar-value:38%;" data-name="Facebook" title="Facebook 38%"></div>
-                <div class="bar" style="--bar-value:35%;" data-name="YouTube" title="YouTube 35%"></div>
-                <div class="bar" style="--bar-value:30%;" data-name="LinkedIn" title="LinkedIn 30%"></div>
-                <div class="bar" style="--bar-value:5%;" data-name="Twitter" title="Twitter 5%"></div>
-                <div class="bar" style="--bar-value:20%;" data-name="Other" title="Other 20%"></div>
-            </div>
-        </div>
+    <div class="row">  
+        <p>Στoν παρακάτω πίνακα φαίνεται ο συνολικός χρόνος που έχετε αφιερώσει στις σελίδες καθενός από τα μαθήματα της εφαρμογής.</p>
+        <!--TODO: sort based on time-->
+            <table class="table mx-3">
+                <tr>
+                    <th>Μάθημα</th>
+                    <th>Χρόνος σε λεπτά</th>
+                </tr>
+                <tr>
+                    <td>Μάθημα 1</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>Μάθημα 2</td>
+                    <td>23</td>
+                </tr>
+            </table>
+        
 
     </div>
  
