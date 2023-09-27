@@ -15,7 +15,7 @@ public class Answer
     
     [NotNull]
     public string Answer1 { get; set; } = string.Empty;
-    
+
     [AllowNull]
     public string Answer2 { get; set; }
     

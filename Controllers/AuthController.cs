@@ -59,7 +59,7 @@ public class AuthController : Controller
 
     //POST
     [HttpPost]
-    public IActionResult SignUp(string usrnm, string email, string name, string srname, string term, string pswrd, string pswrd2)
+    public IActionResult SignUp(string usrnm, string email, string name, string srname, string pswrd, string pswrd2)
     {
         // test cases for failing.
         if ( (from user in _database.Users where user.Username == usrnm select user).Any() )
@@ -93,7 +93,6 @@ public class AuthController : Controller
             Email = email,
             FirstName = name,
             LastName = srname,
-            Semester = int.Parse(term),
             Password = PasswordManager.HashPassword(pswrd)
         };
 

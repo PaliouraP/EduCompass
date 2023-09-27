@@ -24,9 +24,7 @@ namespace EduCompass.Models
 
         [Required]
         public string LastName { get; set; }
-
-        public int Semester { get; set; }
-
+        
         public bool HasCompletedIntroTest { get; set; } = false;
 
         public DateTime Created { get; set; } = DateTime.Now;
