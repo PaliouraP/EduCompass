@@ -1,4 +1,4 @@
-﻿@model Tuple<List<Coefficient>, List<CourseHasCoefficient>, List<Course>, List<CourseQuizGrade>, List<PrerequisiteCourse>>
+﻿@model Tuple<Dictionary<Coefficient, string>, Dictionary<Course, bool>, Dictionary<Course, int>, Dictionary<Coefficient, List<Course>>>
 
 @{
     ViewData["Title"] = "OrientationPage";
@@ -24,7 +24,7 @@
             int j = 0;
         }
 
-        @foreach (Coefficient coefficient in Model.Item1)
+        @foreach (var coefficientListCoursePair in Model.Item4)
         {
             <div class="orientation-template px-4 py-3">
  
@@ -32,10 +32,10 @@
                    aria-controls="collapseExample" class="row details collapsed">
                     <div class="col-8">
                         <div class="orientation-title">
-                            @coefficient.NameInGreek
+                            @coefficientListCoursePair.Key.NameInGreek
                         </div>
                         <div class="orientation-progress ">
-                            2/4 <!-- Πόσα μαθήματα έχεις περάσει - replace with actual value-->
+                            @Model.Item1[@coefficientListCoursePair.Key] <!-- σαν να λες «δείξε μου το πόσα μαθήματα έχει και πόσα είναι περασμένα -->
                         </div>
                     </div>
                     <div class="expand-arrow d-flex justify-content-end align-items-center col-4">
@@ -47,32 +47,13 @@
                 <div class="collapse subjects-list my-4" id="coefficient-@i">
                     <div class="subjects-list">
 
-                        @foreach (Course course in Model.Item3)
+                        @foreach (Course course in coefficientListCoursePair.Value)
                         {
-                            <!-- Εμφάνισε μαθήματα που 'ναι μέσα σε αυτό το coefficient -->
-                            @if (!Model.Item2.Any(cc => cc.CoefficientName == coefficient.Name && course.Id == cc.CourseId && cc.Value > 0))
-                                continue;
-
-                            <!-- Show the Grade. If there is no grade, show 0 -->
-                            var grade = 0;
-                            var gradeObject = Model.Item4.Where(g => g.CourseId == course.Id).ToArray();
-                            if (gradeObject.Any())
-                                grade = gradeObject[0].Grade;
-
-                            <!-- Locking ability. If this course is a prerequisite of another and has a score less than 50 "lock" it. -->
-                            var thisCourseIsPrerequisite = Model.Item5.Where(pc => pc.BaseCourseId == course.Id).ToList();
-                            var locked = false;
-                            foreach (var prerequisiteCourse in thisCourseIsPrerequisite)
-                            {
-                                if (Model.Item4.Any(g => g.CourseId == prerequisiteCourse.PrerequisiteCourseId && g.Grade < 50))
-                                    locked = true;
-                            }
-
                             <!-- TODO: add locked ability -->
                             <div class="subject-card">
                                 <label for="file"> @course.Name 
                                     
-                                    @if (locked)
+                                    @if (Model.Item2[course])
                                     {
                                         <b>🔒</b>
                                     }
@@ -85,7 +66,7 @@
                                 
                                 <br/>
                                 
-                                <progress id="progress-@j" value="@grade" max="100"> </progress>
+                                <progress id="progress-@j" value="@Model.Item3[course]" max="100"> </progress>
                                 <script>
                                     check_value('progress-@j');
                                 </script>

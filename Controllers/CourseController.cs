@@ -40,9 +40,100 @@ namespace EduCompass.Controllers
 
         public IActionResult OrientationPage()
         {
-            var model = new Tuple<List<Coefficient>, List<CourseHasCoefficient>, List<Course>, List<CourseQuizGrade>, List<PrerequisiteCourse>>
-                (_database.Coefficients.ToList(), _database.CourseHasCoefficients.ToList(), _database.Courses.ToList(), _database.CourseQuizGrades.ToList(), _database.PrerequisiteCourses.ToList());
+            // COEFFICIENTS WITH PASSED LESSONS.
+            var coefficientsWithCompletedCourses = new Dictionary<Coefficient, string>();
+
+            // take all coefficients
+            foreach (var coefficient in _database.Coefficients.ToArray())
+            {
+                // start with zero passed courses.
+                int completedCoursesInCoefficient = 0;
+                int coursesInCoefficient = 0;
+                
+                // and for every course in the database
+                foreach (var course in _database.Courses.ToArray())
+                {
+                    // see if there is this coefficient present in it.
+                    if (!_database.CourseHasCoefficients.Any(chc =>
+                            chc.CoefficientName == coefficient.Name && chc.CourseId == course.Id && chc.Value > 0))
+                        continue;
+
+                    coursesInCoefficient++;
+                    
+                    // see also if the quiz grade is above 50%
+                    if (!_database.CourseQuizGrades.Any(cqg => cqg.Grade > 50 && cqg.CourseId == course.Id))
+                        continue;
+
+                    // and if all of the above are true, this course is passed in this coefficient.
+                    completedCoursesInCoefficient++;
+                }
+                
+                // add this value in the dictionary.
+                coefficientsWithCompletedCourses.Add(coefficient, $"{completedCoursesInCoefficient}/{coursesInCoefficient}");
+            }
+
+            // LOCKED COURSES.
+            var lockedCourses = new Dictionary<Course, bool>();
+            foreach (var course in _database.Courses.ToArray())
+            {
+                // start at false
+                var locked = false;
+                
+                // get all of the prerequisite courses of this course
+                var thisCoursesPrerequisites =
+                    _database.PrerequisiteCourses.ToList().Where(pc => pc.BaseCourseId == course.Id);
+
+                // search all prerequisite courses of this one
+                foreach (var prerequisiteCourse in thisCoursesPrerequisites)
+                {
+                    // and see if any of them has a grade of 50. If NONE has a grade above 50, then lock it.
+                    if (_database.CourseQuizGrades.All(g =>
+                            g.CourseId == prerequisiteCourse.PrerequisiteCourseId && g.Grade < 50))
+                    {
+                        locked = true;
+                    }
+                }
+                
+                lockedCourses.Add(course, locked);
+            }
             
+            // COURSE GRADES
+            var coursesWithTheirGrades = new Dictionary<Course, int>();
+            foreach (var course in _database.Courses.ToArray())
+            {
+                // start with an initial value of 0.
+                int grade = 0;
+                
+                // get the maximum grade of a quiz...
+                var maxGrade = _database.CourseQuizGrades.OrderBy(t => t.Grade).LastOrDefault(t => t.CourseId == course.Id);
+                
+                // ...if the quiz exists.
+                if (maxGrade != null)
+                    grade = maxGrade.Grade;
+                
+                coursesWithTheirGrades.Add(course, grade);
+            }
+            
+            // COEFFICIENTS WITH THEIR COURSES.
+            var coefficientsWithTheirCourses = new Dictionary<Coefficient, List<Course>>();
+            foreach (var coefficient in _database.Coefficients.ToArray())
+            {
+                var coursesInThisCoefficient = new List<Course>();
+                
+                foreach (var course in _database.Courses.ToArray())
+                {
+                    if (!_database.CourseHasCoefficients.Any(chc =>
+                               chc.CoefficientName == coefficient.Name && chc.CourseId == course.Id && chc.Value > 0))
+                        continue;
+                    
+                    coursesInThisCoefficient.Add(course);
+                }
+                
+                coefficientsWithTheirCourses.Add(coefficient, coursesInThisCoefficient.OrderBy(c => c.Semester).ToList());
+            }
+
+            // return all these to the model.
+            var model = new Tuple<Dictionary<Coefficient, string>, Dictionary<Course, bool>, Dictionary<Course, int>, Dictionary<Coefficient, List<Course>>>(coefficientsWithCompletedCourses, lockedCourses, coursesWithTheirGrades, coefficientsWithTheirCourses);
             return View(model);
         }
         
