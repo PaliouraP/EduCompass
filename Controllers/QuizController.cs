@@ -361,6 +361,16 @@ public class QuizController : Controller
 
         return RedirectToAction("FailedEvaluation");
     }
+
+    public IActionResult FailedEvaluation()
+    {
+        return View();
+    }
+
+    public IActionResult FinishedEvaluation()
+    {
+        return View();
+    }
     
     private static List<T> RandomizeList<T>(List<T> list)
     {
