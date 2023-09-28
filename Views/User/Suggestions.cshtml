@@ -14,28 +14,42 @@
 
 <div>
     <div class="suggestions-card-body px-5 py-5 mx-4">
-        <h5 class="mb-3" id="subject"><b>Σύμφωνα με τις επιδώσεις σας στα τεστ...</b></h5>
-        <p>Ο επαγγελματικός προσανατολισμός που σας ταιριάζει είναι <b>«@Model.Item3.NameInGreek»</b>.</p>
-
-        <p>Τα σχετικά επαγγέλματα είναι τα:</p>
-        <ul>
-            @foreach (var career in Model.Item1)
-            {
-                <li>
-                    <b>@career.NameInGreek</b> (@career.Name)
-                </li>
-            }
-        </ul>
         
-        <p>Παρακάτω μπορείτε να δείτε και κάποια μεταπτυχιακά προγράμματα που θα σας βοηθήσουν να εμπλουτίσετε τις γνώσεις σας στο συγκεκριμένο αντικείμενο. </p>
-        <ul>
-            @foreach (var pgi in Model.Item2)
-            {
-                <li class="">
-                    <a href="@pgi.Hyperlink"><b>@pgi.Department </b> | @pgi.Name</a> (@pgi.Town)
-                </li>
-            }
-        </ul>
+        
+        @if (Model.Item1.Count != 0 && Model.Item2.Count != 0)
+        {
+            <h5 class="mb-3" id="subject"><b>Σύμφωνα με τις επιδώσεις σας στα τεστ...</b></h5>
+            
+            <p>Ο επαγγελματικός προσανατολισμός που σας ταιριάζει είναι <b>«@Model.Item3.NameInGreek»</b>.</p>
+
+            <p>Τα σχετικά επαγγέλματα είναι τα:</p>
+            <ul>
+                @foreach (var career in Model.Item1)
+                {
+                    <li>
+                        <b>@career.NameInGreek</b> (@career.Name)
+                    </li>
+                }
+            </ul>
+        
+            <p>Παρακάτω μπορείτε να δείτε και κάποια μεταπτυχιακά προγράμματα που θα σας βοηθήσουν να εμπλουτίσετε τις γνώσεις σας στο συγκεκριμένο αντικείμενο. </p>
+            <ul>
+                @foreach (var pgi in Model.Item2)
+                {
+                    <li class="">
+                        <a href="@pgi.Hyperlink"><b>@pgi.Department </b> | @pgi.Name</a> (@pgi.Town)
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {   
+            <h5 class="mb-3" id="subject"><b>Δεν υπάρχει τίποτα εδώ...</b></h5>
+            
+            <p>Προς το παρόν, δεν έχετε κάποιον επαγγελματικό προσανατολισμό που να σας ταιριάζει. <b>Μπορείτε να μεταβείτε στη σελίδα των μαθημάτων, και να αρχίσετε να κάνετε κουίζ, για να δείτε τι σας ταιριάζει περισσότερο!</b></p>
+        }
+        
+        
         
         <img src="~/images/career.png" alt="logo" class="main-img" />
         

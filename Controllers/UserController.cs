@@ -95,6 +95,17 @@ namespace EduCompass.Controllers
         {
             // retrieve the top three coefficients of the user
             var userBestCoefficients = _database.UserHasCoefficients.ToList().OrderByDescending(uhc => uhc.Percentage).Take(3).ToArray();
+
+            // if the user has no coefficients, return empty lists.
+            if (userBestCoefficients.Length == 0)
+            {
+                var emptyCareerList = new List<Career>();
+                var emptyPgiList = new List<PostGraduateInstitution>();
+                Coefficient coefficient = _database.Coefficients.First();
+
+                var emptyTuple = new Tuple<List<Career>, List<PostGraduateInstitution>, Coefficient>(emptyCareerList, emptyPgiList, coefficient);
+                return View(emptyTuple);
+            }
             
             // retrieve the post graduate institutions based on the top coefficient of the user
             var bestPostGraduateIds = _database.PostGraduateInstitutionHasCoefficients.ToList().Where(pgic =>
