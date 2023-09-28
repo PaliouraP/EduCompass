@@ -11,9 +11,9 @@ public class CoefficientQuizGrade
     [ForeignKey("User")]
     public int UserId { get; set; }
 
-    [ForeignKey("Coefficient")]
-    public string CoefficientName;
-    
+    [ForeignKey("Coefficient")] 
+    public string CoefficientName { get; set; }
+
     public DateTime TimeStarted { get; set; }
     
     public DateTime TimeFinished { get; set; }
