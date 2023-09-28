@@ -131,9 +131,21 @@ namespace EduCompass.Controllers
                 
                 coefficientsWithTheirCourses.Add(coefficient, coursesInThisCoefficient.OrderBy(c => c.Semester).ToList());
             }
+            
+            // COEFFICIENTS WITH THEIR GRADES.
+            var coefficientsWithTheirGrades = new Dictionary<Coefficient, string>();
+            foreach(var coefficient in _database.Coefficients.ToArray())
+            {
+                string gradeString;
+                
+                CoefficientQuizGrade grade = _database.CoefficientQuizGrades.OrderBy(quiz => quiz.Grade).LastOrDefault(quiz => quiz.CoefficientName == coefficient.Name);
+
+                gradeString = grade == null ? "-" : $"{grade.Grade}%";
+                coefficientsWithTheirGrades.Add(coefficient, gradeString);
+            }
 
             // return all these to the model.
-            var model = new Tuple<Dictionary<Coefficient, string>, Dictionary<Course, bool>, Dictionary<Course, int>, Dictionary<Coefficient, List<Course>>>(coefficientsWithCompletedCourses, lockedCourses, coursesWithTheirGrades, coefficientsWithTheirCourses);
+            var model = new Tuple<Dictionary<Coefficient, string>, Dictionary<Course, bool>, Dictionary<Course, int>, Dictionary<Coefficient, List<Course>>, Dictionary<Coefficient, string>>(coefficientsWithCompletedCourses, lockedCourses, coursesWithTheirGrades, coefficientsWithTheirCourses, coefficientsWithTheirGrades);
             return View(model);
         }
         

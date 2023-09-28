@@ -1,4 +1,4 @@
-﻿@model Tuple<Dictionary<Coefficient, string>, Dictionary<Course, bool>, Dictionary<Course, int>, Dictionary<Coefficient, List<Course>>>
+﻿@model Tuple<Dictionary<Coefficient, string>, Dictionary<Course, bool>, Dictionary<Course, int>, Dictionary<Coefficient, List<Course>>, Dictionary<Coefficient, string>>
 
 @{
     ViewData["Title"] = "OrientationPage";
@@ -35,10 +35,10 @@
                             @coefficientListCoursePair.Key.NameInGreek
                         </div>
                         <div class="orientation-progress ">
-                            Περασμένα μαθήματα: @Model.Item1[@coefficientListCoursePair.Key] <!-- σαν να λες «δείξε μου το πόσα μαθήματα έχει και πόσα είναι περασμένα -->
+                            Περασμένα μαθήματα: <b>@Model.Item1[@coefficientListCoursePair.Key]</b>
                         </div>
                         <div class="orientation-progress ">
-                            Βαθμός Επαναληπτικού Τεστ:
+                            Βαθμός Επαναληπτικού Τεστ: <b>@Model.Item5[@coefficientListCoursePair.Key]</b>
                         </div>
                     </div>
                     <div class="expand-arrow d-flex justify-content-end align-items-center col-4">
