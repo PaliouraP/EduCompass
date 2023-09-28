@@ -88,7 +88,45 @@ namespace EduCompass.Controllers
 
         public IActionResult Statistics()
         {
-            return View();
+            var allCoefficients = _database.Coefficients.ToArray();
+
+            var CoefficientActualGradeDictionary = new Dictionary<Coefficient, double>();
+            var CoefficientInterestScoreDictionary = new Dictionary<Coefficient, double>();
+
+            foreach (var coefficient in allCoefficients)
+            {
+                var coursesInThatCoefficient = _database.CourseHasCoefficients
+                    .Where(chc => chc.CoefficientName == coefficient.Name).ToArray();
+
+                int totalCoefficientPoints = 0;
+                
+                double totalActualGrade = 0f;
+                double totalInterestScore = 0f;
+
+                foreach (var course in coursesInThatCoefficient)
+                {
+                    Grade? userCourseGrade =
+                        _database.Grades.FirstOrDefault(g => g.CourseId == course.CourseId && g.UserId == _currentUser.Id);
+                    
+                    if (userCourseGrade == null)
+                        continue;
+
+                    totalCoefficientPoints += course.Value;
+                    
+                    totalActualGrade += ((double)(userCourseGrade.FinalGrade))/10 * course.Value;
+                    totalInterestScore += ((double)(userCourseGrade.InterestScore))/5 * course.Value;
+                }
+                
+                totalActualGrade = 100 * totalActualGrade / totalCoefficientPoints;
+                totalInterestScore = 100 * totalInterestScore / totalCoefficientPoints;
+                
+                CoefficientActualGradeDictionary.Add(coefficient, totalActualGrade);
+                CoefficientInterestScoreDictionary.Add(coefficient, totalInterestScore);
+            }
+
+            var model = new Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>>(
+                CoefficientActualGradeDictionary, CoefficientInterestScoreDictionary);
+            return View(model);
         }
 
         public IActionResult Suggestions()
