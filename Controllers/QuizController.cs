@@ -75,6 +75,7 @@ public class QuizController : Controller
         // go to the quiz page
         return RedirectToAction("CourseQuiz");
     }
+    
 
     public IActionResult CourseQuiz()
     {
@@ -186,7 +187,7 @@ public class QuizController : Controller
             var correctAnswer = _database.Answers.First(a => a.QuestionId == currentQuestion.Id).CorrectAnswer;
 
             // see if the answer was right and write it down.
-            string answerString = correctAnswer == answerStrings[i] ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) <br> Σωστή Απάντηση: {correctAnswer}";
+            string answerString = correctAnswer.Trim().ToLower().Equals(answerStrings[i].Trim().ToLower()) ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) <br> Σωστή Απάντηση: {correctAnswer}";
 
             // add it to the dictionary
             quizWithQuestionsAndCorrectAnswers.Add(currentQuestion, answerString);
@@ -228,6 +229,137 @@ public class QuizController : Controller
         // create the model and return it.
         var model = new Tuple<CourseQuizGrade, Dictionary<Question, string>>(quiz, quizWithQuestionsAndCorrectAnswers);
         return View(model);
+    }
+
+    public IActionResult StartEvaluationTest(string coefficientName)
+    {
+        var quiz = new CoefficientQuizGrade();
+
+        // get course Ids with that coefficient.
+        var courseIdsWithThatCoefficient =
+            _database.CourseHasCoefficients.Where(chc => chc.CoefficientName == coefficientName && chc.Value > 0).ToList();
+
+        var allQuestions = new List<Question>();
+        
+        // get 3 questions from each course.
+        foreach (var courseId in courseIdsWithThatCoefficient)
+        {
+            // take all questions from each course, and then randomize them.
+            var questionsFromThisCourse = _database.Questions.Where(q => q.CourseId == courseId.CourseId).ToList();
+            questionsFromThisCourse = RandomizeList(questionsFromThisCourse);
+            
+            // then take three and save them to the all questions list.
+            questionsFromThisCourse = questionsFromThisCourse.Take(3).ToList();
+            questionsFromThisCourse.ForEach(q => allQuestions.Add(q));
+        }
+
+        // get the question ids and save it to the string.
+        int[] allQuestionIds = allQuestions.Select(q => q.Id).ToArray();
+        string stringQuestionIds = string.Join(';', allQuestionIds);
+
+        // create the quiz.
+        quiz.CoefficientName = coefficientName;
+        quiz.QuestionIds = stringQuestionIds;
+        quiz.TimeStarted = DateTime.Now;
+        quiz.AnswerStrings = string.Empty;
+        quiz.UserId = _currentUser.Id;
+        
+        // and add it to the database.
+        _database.CoefficientQuizGrades.Add(quiz);
+        _database.SaveChanges();
+
+        // save the id
+        TempData["coefficientQuizId"] = quiz.Id;
+        TempData.Keep("coefficientQuizId");
+
+        return RedirectToAction("EvaluationQuiz");
+    }
+
+    public IActionResult EvaluationQuiz()
+    {
+        // evaluation test ids
+        TempData.Keep("coefficientQuizId");
+        int quizId = int.Parse(TempData["coefficientQuizId"].ToString());
+        
+        // get the object.
+        var evaluationTest = _database.CoefficientQuizGrades.First(cq => cq.Id == quizId);
+        
+        // create a list that maps the question for its answers
+        var questionsAndAnswers = new Dictionary<Question, Answer>();
+        
+        foreach (var questionIdString in evaluationTest.QuestionIds.Split(';'))
+        {
+            // get the question object from the id
+            int questionId = int.Parse(questionIdString);
+            Question question = _database.Questions.First(q => q.Id == questionId);
+            
+            // get the answers of that question
+            Answer answers = _database.Answers.First(a => a.QuestionId == questionId);
+
+            questionsAndAnswers.Add(question, answers);
+        }
+        
+        // get the course that the quiz is about.
+        var coefficient = _database.Coefficients.First(c => c.Name == evaluationTest.CoefficientName);
+        
+        // return the model.
+        var model = new Tuple<Coefficient, Dictionary<Question, Answer>>(coefficient, questionsAndAnswers);
+        return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult PostEvaluationAnswers()
+    {
+        // find the evaluation test id.
+        TempData.Keep("coefficientQuizId");
+        int quizId = int.Parse(TempData["coefficientQuizId"].ToString());
+        
+        // get the object.
+        var evaluationTest = _database.CoefficientQuizGrades.First(cq => cq.Id == quizId);
+        
+        // get the question ids.
+        var questionIds = evaluationTest.QuestionIds.Split(';');
+        var userAnswers = new List<string>();
+
+        // get the user's answers
+        for (int i = 0; i < questionIds.Length; i++)
+        {
+            var userAnswer = Request.Form[$"answer-{questionIds[i]}"].ToString();
+            userAnswers.Add(userAnswer);
+        }
+
+        // create the string to save it to the quiz
+        string answersString = string.Join(';', userAnswers);
+
+        // calculate the correct answer count.
+        int correctAnswerCounter = 0;
+        for (int i = 0; i < questionIds.Length; i++)
+        {
+            // get the question id and the answer that corresponds to it.
+            int questionId = int.Parse(questionIds[i]);
+            Answer answer = _database.Answers.First(a => a.QuestionId == questionId);
+
+            if (answer.CorrectAnswer.ToLower().Trim().Equals(userAnswers[i].ToLower().Trim()))
+                correctAnswerCounter++;
+        }
+
+        // calculate the grade.
+        int grade = 100 * correctAnswerCounter / questionIds.Length;
+        
+        // update the evaluation test object.
+        evaluationTest.Grade = grade;
+        evaluationTest.AnswerStrings = answersString;
+        evaluationTest.TimeFinished = DateTime.Now;
+        
+        // store it to the database.
+        _database.CoefficientQuizGrades.Update(evaluationTest);
+        _database.SaveChanges();
+        
+        // redirect to finished.
+        if (grade >= 50)
+            return RedirectToAction("FinishedEvaluation");
+
+        return RedirectToAction("FailedEvaluation");
     }
     
     private static List<T> RandomizeList<T>(List<T> list)

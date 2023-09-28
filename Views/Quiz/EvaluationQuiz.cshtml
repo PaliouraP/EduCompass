@@ -1,0 +1,92 @@
+﻿@model Tuple<Course, Dictionary<Question, Answer>>
+
+@{
+    ViewData["Title"] = "Quiz";
+}
+
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/test.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+}
+
+<div class="px-5 py-5" style="height:inherit">
+    <h1 class="d-flex justify-content-evenly my-5"><b>@Model.Item1.Name</b></h1>
+    <form asp-action="PostAnswers" method="post">
+        @foreach (var item in Model.Item2)
+        {
+            <div>
+                <!-- Κείμενο Ερώτησης -->
+                <h4 class="d-flex justify-content-start mt-5">@item.Key.Content</h4>
+
+                @switch (item.Value.GetQuestionType())
+                {
+                    case QuestionType.TrueOrFalse:
+
+                        <div class="row radio-group type-choose">
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer1"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer1</label>
+                            </div>
+
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer2"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer2</label>
+                            </div>
+                        </div>
+                    
+                        break;
+                        
+                    case QuestionType.FillTheBlank:
+
+                        <h6 class="d-flex justify-content-start mt-5">Απάντηση:</h6>
+                        <div class="row type-write">
+                            <input type="text" name="answer-@item.Key.Id" id="text-answer" class="form-control form-control-lg"/>
+                        </div>
+                        
+                        break;
+                    case QuestionType.MultipleChoice:
+
+                        <div class="row radio-group type-choose ">
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer1"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer1</label>
+                            </div>
+
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer2"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer2</label>
+                            </div>
+
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer3"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer3</label>
+                            </div>
+
+                            <div class="row radio-group my-1">
+                                <input type="radio" name="answer-@item.Key.Id" class="col-1" id="" value="@item.Value.Answer4"/>
+                                <label class="form-check-label col-9" for="answer-@item.Key.Id">@item.Value.Answer4</label>
+                            </div>
+                        </div>
+                        
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            </div>
+        }
+        
+        <!-- buttons -->
+        <div class="row d-flex justify-content-evenly mt-5">
+            <button class="btn-long-alt" type="submit">Ακύρωση</button>
+            <button class="btn-long" type="submit">Τέλος τεστ</button>
+        </div>
+        
+    </form>
+</div>
+
+
+
