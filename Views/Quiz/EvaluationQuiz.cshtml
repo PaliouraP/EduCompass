@@ -1,4 +1,4 @@
-﻿@model Tuple<Course, Dictionary<Question, Answer>>
+﻿@model Tuple<Coefficient, Dictionary<Question, Answer>>
 
 @{
     ViewData["Title"] = "Quiz";
@@ -14,8 +14,8 @@
 }
 
 <div class="px-5 py-5" style="height:inherit">
-    <h1 class="d-flex justify-content-evenly my-5"><b>@Model.Item1.Name</b></h1>
-    <form asp-action="PostAnswers" method="post">
+    <h1 class="d-flex justify-content-evenly my-5"><b>@Model.Item1.NameInGreek</b></h1>
+    <form asp-action="PostEvaluationAnswers" method="post">
         @foreach (var item in Model.Item2)
         {
             <div>

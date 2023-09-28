@@ -187,7 +187,7 @@ public class QuizController : Controller
             var correctAnswer = _database.Answers.First(a => a.QuestionId == currentQuestion.Id).CorrectAnswer;
 
             // see if the answer was right and write it down.
-            string answerString = correctAnswer.Trim().ToLower().Equals(answerStrings[i].Trim().ToLower()) ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) <br> Σωστή Απάντηση: {correctAnswer}";
+            string answerString = correctAnswer.Trim().ToLower().Equals(answerStrings[i].Trim().ToLower()) ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) Σωστή Απάντηση: {correctAnswer}";
 
             // add it to the dictionary
             quizWithQuestionsAndCorrectAnswers.Add(currentQuestion, answerString);
@@ -220,7 +220,7 @@ public class QuizController : Controller
             var correctAnswer = _database.Answers.First(a => a.QuestionId == currentQuestion.Id).CorrectAnswer;
 
             // see if the answer was right and write it down.
-            string answerString = correctAnswer == answerStrings[i] ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) <br> Σωστή Απάντηση: {correctAnswer}";
+            string answerString = correctAnswer.Trim().ToLower().Equals(answerStrings[i].Trim().ToLower()) ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) Σωστή Απάντηση: {correctAnswer}";
 
             // add it to the dictionary
             quizWithQuestionsAndCorrectAnswers.Add(currentQuestion, answerString);
@@ -298,7 +298,7 @@ public class QuizController : Controller
 
             questionsAndAnswers.Add(question, answers);
         }
-        
+
         // get the course that the quiz is about.
         var coefficient = _database.Coefficients.First(c => c.Name == evaluationTest.CoefficientName);
         
@@ -361,15 +361,71 @@ public class QuizController : Controller
 
         return RedirectToAction("FailedEvaluation");
     }
-
+    
     public IActionResult FailedEvaluation()
     {
-        return View();
+        // find the evaluation test id.
+        TempData.Keep("coefficientQuizId");
+        
+        int quizId = int.Parse(TempData["coefficientQuizId"].ToString());
+        var quiz = _database.CoefficientQuizGrades.First(q => q.Id == quizId);
+        
+        // get the questions the and the user's answers
+        var questionIdsArray = quiz.QuestionIds.Split(';');
+        var answerStrings = quiz.AnswerStrings.Split(';');
+        
+        // create a dictionary mapping two strings
+        var quizWithQuestionsAndCorrectAnswers = new Dictionary<Question, string>();
+        
+        for (int i = 0; i < questionIdsArray.Length; i++)
+        {
+            // get question and right answer
+            Question currentQuestion = _database.Questions.First(q => q.Id == int.Parse(questionIdsArray[i]));
+            var correctAnswer = _database.Answers.First(a => a.QuestionId == currentQuestion.Id).CorrectAnswer;
+
+            // see if the answer was right and write it down.
+            string answerString = correctAnswer.Trim().ToLower().Equals(answerStrings[i].Trim().ToLower()) ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) Σωστή Απάντηση: {correctAnswer}";
+
+            // add it to the dictionary
+            quizWithQuestionsAndCorrectAnswers.Add(currentQuestion, answerString);
+        }
+        
+        // create the model and return it.
+        var model = new Tuple<CoefficientQuizGrade, Dictionary<Question, string>>(quiz, quizWithQuestionsAndCorrectAnswers);
+        return View(model);
     }
 
     public IActionResult FinishedEvaluation()
     {
-        return View();
+        // find the evaluation test id.
+        TempData.Keep("coefficientQuizId");
+        
+        int quizId = int.Parse(TempData["coefficientQuizId"].ToString());
+        var quiz = _database.CoefficientQuizGrades.First(q => q.Id == quizId);
+        
+        // get the questions the and the user's answers
+        var questionIdsArray = quiz.QuestionIds.Split(';');
+        var answerStrings = quiz.AnswerStrings.Split(';');
+        
+        // create a dictionary mapping two strings
+        var quizWithQuestionsAndCorrectAnswers = new Dictionary<Question, string>();
+        
+        for (int i = 0; i < questionIdsArray.Length; i++)
+        {
+            // get question and right answer
+            Question currentQuestion = _database.Questions.First(q => q.Id == int.Parse(questionIdsArray[i]));
+            var correctAnswer = _database.Answers.First(a => a.QuestionId == currentQuestion.Id).CorrectAnswer;
+
+            // see if the answer was right and write it down.
+            string answerString = correctAnswer.Trim().ToLower().Equals(answerStrings[i].Trim().ToLower()) ? $"{correctAnswer} (ΣΩΣΤΗ ΑΠΑΝΤΗΣΗ)" : $"{answerStrings[i]} (ΛΑΘΟΣ ΑΠΑΝΤΗΣΗ) Σωστή Απάντηση: {correctAnswer}";
+
+            // add it to the dictionary
+            quizWithQuestionsAndCorrectAnswers.Add(currentQuestion, answerString);
+        }
+        
+        // create the model and return it.
+        var model = new Tuple<CoefficientQuizGrade, Dictionary<Question, string>>(quiz, quizWithQuestionsAndCorrectAnswers);
+        return View(model);
     }
     
     private static List<T> RandomizeList<T>(List<T> list)

@@ -26,7 +26,7 @@
 
         @foreach (var coefficientListCoursePair in Model.Item4)
         {
-            <div class="orientation-template px-4 py-3">
+            <div class="orientation-template my-4 px-4 py-3">
  
                 <a data-bs-toggle="collapse" href="#coefficient-@i" role="button" aria-expanded="false"
                    aria-controls="collapseExample" class="row details collapsed">
@@ -35,7 +35,10 @@
                             @coefficientListCoursePair.Key.NameInGreek
                         </div>
                         <div class="orientation-progress ">
-                            @Model.Item1[@coefficientListCoursePair.Key] <!-- σαν να λες «δείξε μου το πόσα μαθήματα έχει και πόσα είναι περασμένα -->
+                            Περασμένα μαθήματα: @Model.Item1[@coefficientListCoursePair.Key] <!-- σαν να λες «δείξε μου το πόσα μαθήματα έχει και πόσα είναι περασμένα -->
+                        </div>
+                        <div class="orientation-progress ">
+                            Βαθμός Επαναληπτικού Τεστ:
                         </div>
                     </div>
                     <div class="expand-arrow d-flex justify-content-end align-items-center col-4">
@@ -49,8 +52,7 @@
 
                         @foreach (Course course in coefficientListCoursePair.Value)
                         {
-                            <!-- TODO: add locked ability -->
-                            <div class="subject-card">
+                            <div class="subject-card my-4">
                                 <label for="file"> @course.Name 
                                     
                                     @if (Model.Item2[course])
@@ -79,11 +81,26 @@
                         
 
                     </div>
-                <div class="row  d-flex justify-content-evenly pt-1">
-                    <!--if locked href empty and add locked icon-->
-                    <a href="#" class="btn-long-alt-2  d-flex justify-content-center align-items-center">Επαναληπτικό Τεστ<span title="Χρειάζεστε προσβάσιμο βαθμό σε όλα τα μαθήματα του προσανατολισμού."><i class="fas fa-lock locked mx-2"></i></span></a>
+                    <div class="row  d-flex justify-content-evenly pt-1">
+                        
+                        @{
+                            var numberOfPassedLessons = Model.Item1[coefficientListCoursePair.Key].Split('/').First();
+                            var requiredLessons = Model.Item1[coefficientListCoursePair.Key].Split('/').Last();
 
-                </div>
+                            bool locked = numberOfPassedLessons != requiredLessons;
+                        }
+                        
+                        @if (locked)
+                        {
+                            <button dsiabled class="btn-long-alt-2  d-flex justify-content-center align-items-center">Επαναληπτικό Τεστ<span title="Χρειάζεστε προσβάσιμο βαθμό σε όλα τα μαθήματα του προσανατολισμού."><i class="fas fa-lock locked mx-2"></i></span></button>
+                        }
+                        else
+                        {
+                            <a asp-controller="Quiz" asp-action="StartEvaluationTest" asp-route-coefficientName="@coefficientListCoursePair.Key.Name" class="btn-long-alt-2  d-flex justify-content-center align-items-center">Επαναληπτικό Τεστ</a>
+                        }
+                        
+
+                    </div>
                 </div>
             </div>
             
