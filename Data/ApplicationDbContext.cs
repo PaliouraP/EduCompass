@@ -23,6 +23,7 @@ namespace EduCompass.Data
         public DbSet<Answer> Answers { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<CourseQuizGrade> CourseQuizGrades { get; set; }
+        public DbSet<CoefficientQuizGrade> CoefficientQuizGrades { get; set; }
         
         // COEFFICIENT TABLES
         public DbSet<Coefficient> Coefficients { get; set; }
