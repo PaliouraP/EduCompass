@@ -25,6 +25,13 @@ public class AuthController : Controller
     [HttpPost]
     public IActionResult Login(string usrnm, string pswrd)
     {
+        // if any of the fields is empty.
+        if (string.IsNullOrEmpty(usrnm) || string.IsNullOrEmpty(pswrd))
+        {
+            TempData["Error"] = "Παρακαλώ συμπληρώστε όλα τα στοιχεία σας.";
+            return RedirectToAction("SignUp");
+        }
+        
         // Search by username first and then by email.
         var user = _database.Users.FirstOrDefault(u => u.Username == usrnm || u.Email == usrnm);
 
@@ -61,6 +68,14 @@ public class AuthController : Controller
     [HttpPost]
     public IActionResult SignUp(string usrnm, string email, string name, string srname, string pswrd, string pswrd2)
     {
+        // if any of the fields is empty.
+        if (string.IsNullOrEmpty(usrnm) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(name) ||
+            string.IsNullOrEmpty(srname) || string.IsNullOrEmpty(pswrd) || string.IsNullOrEmpty(pswrd2))
+        {
+            TempData["Error"] = "Παρακαλώ συμπληρώστε όλα τα στοιχεία σας.";
+            return RedirectToAction("SignUp");
+        }
+            
         // test cases for failing.
         if ( (from user in _database.Users where user.Username == usrnm select user).Any() )
         {
