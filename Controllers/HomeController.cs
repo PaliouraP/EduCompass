@@ -36,12 +36,7 @@ namespace EduCompass.Controllers
 
         public IActionResult Dashboard()
         {
-            return View();
-        }
-
-        public IActionResult Quiz()
-        {
-            return View();
+            return View(_currentUser);
         }
     }
 }

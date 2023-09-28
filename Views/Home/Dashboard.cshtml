@@ -1,4 +1,6 @@
-﻿@{
+﻿@model User
+
+@{
     ViewData["Title"] = "Dashboard";
 }
 
@@ -16,7 +18,7 @@
 <div class="px-5 py-5">
     <div class="welcome-card row py-4 px-4">
         <div class="col-7">
-            <h3 class="py-3">Γεια σας user! 👋</h3>
+            <h3 class="py-3">Γεια σας @Model.FirstName @Model.LastName 👋</h3>
             <p>
                 <i class="fas fa-info-circle"></i> Το <b>EduCompass</b> πρόκειται για μια διαδικτυακή εφαρμογή για προπτυχιακούς και μεταπτυχιακούς
                 φοιτητές πληροφορικής που ψάχνουν τα επόμενα επαγγελματικά τους βήματα. </p>
