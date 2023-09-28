@@ -1,4 +1,4 @@
-﻿@model Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>>
+﻿@model Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>>
 
 @{
     ViewData["Title"] = "Statistics";
@@ -46,16 +46,10 @@
         <div class="col-5 offset-1">
             <h6 class="mb-4">Βαθμοί τεστ</h6>
             <div class="grid">
-                <div class="bar" style="--bar-value:85%;" data-name="Προσανατολισμός 1" title="Προσανατολισμός 1: 85%"></div>
-                <div class="bar" style="--bar-value:45%;" data-name="Προσανατολισμός 2"></div>
-                <div class="bar" style="--bar-value:25%;" data-name="Προσανατολισμός 3"></div>
-                <div class="bar" style="--bar-value:5%;" data-name="Προσανατολισμός 4"></div>
-                <div class="bar" style="--bar-value:35%;" data-name="Προσανατολισμός 5"></div>
-                <div class="bar" style="--bar-value:95%;" data-name="Προσανατολισμός 6"></div>
-                <div class="bar" style="--bar-value:15%;" data-name="Προσανατολισμός 7"></div>
-                <div class="bar" style="--bar-value:55%;" data-name="Προσανατολισμός 8"></div>
-                <div class="bar" style="--bar-value:75%;" data-name="Προσανατολισμός 9"></div>
-                <div class="bar" style="--bar-value:65%;" data-name="Προσανατολισμός 10"></div>
+                @foreach (var pair in Model.Item2)
+                {
+                    <div class="bar" style="--bar-value:@pair.Value%;" data-name="@pair.Key.NameInGreek" title="@pair.Key.NameInGreek: @pair.Value%"></div>
+                }
             </div>
         </div>
     </div>
@@ -63,7 +57,7 @@
         <div class="col-5">
             <h6 class="mb-4">Ενδιαφέρον μαθημάτων</h6>
             <div class="grid">
-                @foreach (var pair in Model.Item2)
+                @foreach (var pair in Model.Item3)
                 {
                     <div class="bar" style="--bar-value:@pair.Value%;" data-name="@pair.Key.NameInGreek" title="@pair.Key.NameInGreek: @pair.Value%"></div>
                 }

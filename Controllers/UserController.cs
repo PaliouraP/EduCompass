@@ -92,6 +92,7 @@ namespace EduCompass.Controllers
 
             var CoefficientActualGradeDictionary = new Dictionary<Coefficient, double>();
             var CoefficientInterestScoreDictionary = new Dictionary<Coefficient, double>();
+            var CoefficientQuizScoreDictionary = new Dictionary<Coefficient, double>();
 
             foreach (var coefficient in allCoefficients)
             {
@@ -102,23 +103,33 @@ namespace EduCompass.Controllers
                 
                 double totalActualGrade = 0f;
                 double totalInterestScore = 0f;
+                double totalQuizGradeScore = 0f;
 
                 foreach (var course in coursesInThatCoefficient)
                 {
                     Grade? userCourseGrade =
                         _database.Grades.FirstOrDefault(g => g.CourseId == course.CourseId && g.UserId == _currentUser.Id);
-                    
-                    if (userCourseGrade == null)
-                        continue;
 
-                    totalCoefficientPoints += course.Value;
+                    CourseQuizGrade? userQuizGrade = _database.CourseQuizGrades.FirstOrDefault(cg =>
+                        cg.CourseId == course.CourseId && cg.UserId == _currentUser.Id);
                     
-                    totalActualGrade += ((double)(userCourseGrade.FinalGrade))/10 * course.Value;
-                    totalInterestScore += ((double)(userCourseGrade.InterestScore))/5 * course.Value;
+                    totalCoefficientPoints += course.Value;
+
+                    if (userCourseGrade != null)
+                    {
+                        totalActualGrade += ((double)(userCourseGrade.FinalGrade))/10 * course.Value;
+                        totalInterestScore += ((double)(userCourseGrade.InterestScore))/5 * course.Value;
+                    }
+
+                    if (userQuizGrade != null)
+                    {
+                        totalQuizGradeScore += ((double)userQuizGrade.Grade) / 100 * course.Value;
+                    }
                 }
                 
                 totalActualGrade = 100 * totalActualGrade / totalCoefficientPoints;
                 totalInterestScore = 100 * totalInterestScore / totalCoefficientPoints;
+                totalQuizGradeScore = 100 * totalQuizGradeScore / totalCoefficientPoints;
 
                 if (double.IsNaN(totalActualGrade))
                     totalActualGrade = 0f;
@@ -126,12 +137,16 @@ namespace EduCompass.Controllers
                 if (double.IsNaN(totalInterestScore))
                     totalInterestScore = 0f;
                 
+                if (double.IsNaN(totalQuizGradeScore))
+                    totalQuizGradeScore = 0f;
+                
                 CoefficientActualGradeDictionary.Add(coefficient, totalActualGrade);
                 CoefficientInterestScoreDictionary.Add(coefficient, totalInterestScore);
+                CoefficientQuizScoreDictionary.Add(coefficient, totalQuizGradeScore);
             }
 
-            var model = new Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>>(
-                CoefficientActualGradeDictionary, CoefficientInterestScoreDictionary);
+            var model = new Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>>(
+                CoefficientActualGradeDictionary, CoefficientQuizScoreDictionary, CoefficientInterestScoreDictionary);
             return View(model);
         }
 
