@@ -119,6 +119,12 @@ namespace EduCompass.Controllers
                 
                 totalActualGrade = 100 * totalActualGrade / totalCoefficientPoints;
                 totalInterestScore = 100 * totalInterestScore / totalCoefficientPoints;
+
+                if (double.IsNaN(totalActualGrade))
+                    totalActualGrade = 0f;
+
+                if (double.IsNaN(totalInterestScore))
+                    totalInterestScore = 0f;
                 
                 CoefficientActualGradeDictionary.Add(coefficient, totalActualGrade);
                 CoefficientInterestScoreDictionary.Add(coefficient, totalInterestScore);
