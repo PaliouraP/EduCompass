@@ -93,6 +93,9 @@ namespace EduCompass.Controllers
             var CoefficientActualGradeDictionary = new Dictionary<Coefficient, double>();
             var CoefficientInterestScoreDictionary = new Dictionary<Coefficient, double>();
             var CoefficientQuizScoreDictionary = new Dictionary<Coefficient, double>();
+            var CoefficientGeneralDictionary = new Dictionary<Coefficient, double>();
+
+            _currentUser.CalculateUserCoefficients(_database);
 
             foreach (var coefficient in allCoefficients)
             {
@@ -139,14 +142,25 @@ namespace EduCompass.Controllers
                 
                 if (double.IsNaN(totalQuizGradeScore))
                     totalQuizGradeScore = 0f;
+
+                var userHasPercentage = _database.UserHasCoefficients.FirstOrDefault(u => u.UserId == _currentUser.Id && u.CoefficientName == coefficient.Name);
+
+                if (userHasPercentage != null)
+                {
+                    CoefficientGeneralDictionary.Add(coefficient, userHasPercentage.Percentage);
+                }
+                else
+                {
+                    CoefficientGeneralDictionary.Add(coefficient, 0f);
+                }
                 
                 CoefficientActualGradeDictionary.Add(coefficient, totalActualGrade);
                 CoefficientInterestScoreDictionary.Add(coefficient, totalInterestScore);
                 CoefficientQuizScoreDictionary.Add(coefficient, totalQuizGradeScore);
             }
-
-            var model = new Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>>(
-                CoefficientActualGradeDictionary, CoefficientQuizScoreDictionary, CoefficientInterestScoreDictionary);
+            
+            var model = new Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>>(
+                CoefficientActualGradeDictionary, CoefficientQuizScoreDictionary, CoefficientInterestScoreDictionary, CoefficientGeneralDictionary);
             return View(model);
         }
 
