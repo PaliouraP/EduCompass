@@ -34,6 +34,7 @@ namespace EduCompass.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             SeedDataToCourses(modelBuilder);
+            SeedDataToPrerequisiteCourses(modelBuilder);
             SeedDataToPostGraduate(modelBuilder);
             SeedDataToCoefficients(modelBuilder);
             SeedDataToCoefficientPgi(modelBuilder);
@@ -72,7 +73,8 @@ namespace EduCompass.Data
                 new Course { Id = 19, Name = "Δίκτυα Υπολογιστών", UUID = "ΠΛΠΛΗ44", Semester = 4, Description = "", Content = "", AudioFileName = "" },
                 new Course { Id = 20, Name = "Ανάλυση Εικόνας", UUID = "ΠΛΕΙΚ01", Semester = 7, Description = "", Content = "", AudioFileName = "" },
                 new Course { Id = 21, Name = "Τεχνολογία Λογισμικού", UUID = "ΠΛΠΛΗ46", Semester = 6, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 22, Name = "Πρότυπα Ανάπυτξης Λογισμικού", UUID = "ΠΛΠΡΑΝΑΛ01", Semester = 6, Description = "", Content = "", AudioFileName = "" }
+                new Course { Id = 22, Name = "Πρότυπα Ανάπυτξης Λογισμικού", UUID = "ΠΛΠΡΑΝΑΛ01", Semester = 6, Description = "", Content = "", AudioFileName = "" },
+                new Course { Id = 23, Name = "Συστήματα Πολυμέσων", UUID = "ΠΛΠΛΗ48", Semester = 6, Description = "", Content = "", AudioFileName = "" }
             );
         }
 
@@ -86,15 +88,21 @@ namespace EduCompass.Data
                 new PrerequisiteCourse { BaseCourseId = 11, PrerequisiteCourseId = 2 },
                 
                 new PrerequisiteCourse { BaseCourseId = 13, PrerequisiteCourseId = 12 },
-                new PrerequisiteCourse { BaseCourseId = 8, PrerequisiteCourseId = 7 },
-                new PrerequisiteCourse { BaseCourseId = 8, PrerequisiteCourseId = 7 },
-                new PrerequisiteCourse { BaseCourseId = 8, PrerequisiteCourseId = 7 },
-                new PrerequisiteCourse { BaseCourseId = 8, PrerequisiteCourseId = 7 },
-                new PrerequisiteCourse { BaseCourseId = 8, PrerequisiteCourseId = 7 },
-                new PrerequisiteCourse { BaseCourseId = 8, PrerequisiteCourseId = 7 },
-                new PrerequisiteCourse { BaseCourseId = 8, PrerequisiteCourseId = 7 }
-
+                new PrerequisiteCourse { BaseCourseId = 14, PrerequisiteCourseId = 13 },
+                new PrerequisiteCourse { BaseCourseId = 5, PrerequisiteCourseId = 13 },
                 
+                new PrerequisiteCourse { BaseCourseId = 16, PrerequisiteCourseId = 15 },
+                new PrerequisiteCourse { BaseCourseId = 14, PrerequisiteCourseId = 16 },
+
+                new PrerequisiteCourse { BaseCourseId = 19, PrerequisiteCourseId = 10 },
+                new PrerequisiteCourse { BaseCourseId = 9, PrerequisiteCourseId = 19 },
+                
+                new PrerequisiteCourse { BaseCourseId = 29, PrerequisiteCourseId = 12 },
+                new PrerequisiteCourse { BaseCourseId = 20, PrerequisiteCourseId = 29 },
+                
+                new PrerequisiteCourse { BaseCourseId = 21, PrerequisiteCourseId = 2 },
+                new PrerequisiteCourse { BaseCourseId = 22, PrerequisiteCourseId = 21 },
+                new PrerequisiteCourse { BaseCourseId = 1, PrerequisiteCourseId = 22 }
             );
         }
         
@@ -466,143 +474,56 @@ namespace EduCompass.Data
         {
             modelBuilder.Entity<CourseHasCoefficient>().HasData(
 
-                // Android
+                // mobile dev
+                new CourseHasCoefficient { CourseId = 3, CoefficientName = "MobileDev", Value = 2 },
+                new CourseHasCoefficient { CourseId = 2, CoefficientName = "MobileDev", Value = 5 },
+                new CourseHasCoefficient { CourseId = 1, CoefficientName = "MobileDev", Value = 10 },
                 
-                new CourseHasCoefficient
-                {
-                    CourseId = 1,
-                    CoefficientName = "MobileAppDev",
-                    Value = 10
-                },
+                // game dev
+                new CourseHasCoefficient { CourseId = 4, CoefficientName = "GameDev", Value = 6 },
+                new CourseHasCoefficient { CourseId = 6, CoefficientName = "GameDev", Value = 10 },
+                new CourseHasCoefficient { CourseId = 5, CoefficientName = "GameDev", Value = 9 },
                 
-                new CourseHasCoefficient
-                {
-                    CourseId = 1,
-                    CoefficientName = "SoftwareEngineering",
-                    Value = 10
-                },
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 1,
-                    CoefficientName = "WebDev",
-                    Value = 5
-                },
+                // security
+                new CourseHasCoefficient { CourseId = 7, CoefficientName = "Security", Value = 8 },
+                new CourseHasCoefficient { CourseId = 8, CoefficientName = "Security", Value = 10 },
+                new CourseHasCoefficient { CourseId = 9, CoefficientName = "Security", Value = 10 },
 
-                // Αντικειμενοστρεφής Ανάπτυξη
+                // ui/ux
+                new CourseHasCoefficient { CourseId = 10, CoefficientName = "UI_UX", Value = 3 },
+                new CourseHasCoefficient { CourseId = 2, CoefficientName = "UI_UX", Value = 4 },
+                new CourseHasCoefficient { CourseId = 11, CoefficientName = "UI_UX", Value = 10 },
                 
-                new CourseHasCoefficient
-                {
-                    CourseId = 2,
-                    CoefficientName = "SoftwareEngineering",
-                    Value = 10
-                },
+                // ai/ml
+                new CourseHasCoefficient { CourseId = 12, CoefficientName = "AI_ML", Value = 7 },
+                new CourseHasCoefficient { CourseId = 13, CoefficientName = "AI_ML", Value = 8 },
+                new CourseHasCoefficient { CourseId = 14, CoefficientName = "AI_ML", Value = 9 },
+                new CourseHasCoefficient { CourseId = 5, CoefficientName = "AI_ML", Value = 10 },
                 
-                new CourseHasCoefficient
-                {
-                    CourseId = 2,
-                    CoefficientName = "WebDev",
-                    Value = 4
-                },
+                // web dev
+                new CourseHasCoefficient { CourseId = 10, CoefficientName = "WebDev", Value = 5 },
+                new CourseHasCoefficient { CourseId = 17, CoefficientName = "WebDev", Value = 9 },
+                new CourseHasCoefficient { CourseId = 18, CoefficientName = "WebDev", Value = 10 },
                 
-                new CourseHasCoefficient
-                {
-                    CourseId = 2,
-                    CoefficientName = "MobileAppDev",
-                    Value = 3
-                },
+                // data eng
+                new CourseHasCoefficient { CourseId = 15, CoefficientName = "DatabaseEngineering", Value = 6 },
+                new CourseHasCoefficient { CourseId = 16, CoefficientName = "DatabaseEngineering", Value = 10 },
+                new CourseHasCoefficient { CourseId = 14, CoefficientName = "DatabaseEngineering", Value = 10 },
+
+                // networks
+                new CourseHasCoefficient { CourseId = 10, CoefficientName = "ComputerNetworks", Value = 3 },
+                new CourseHasCoefficient { CourseId = 19, CoefficientName = "ComputerNetworks", Value = 10 },
+                new CourseHasCoefficient { CourseId = 9, CoefficientName = "ComputerNetworks", Value = 7 },
                 
-                new CourseHasCoefficient
-                {
-                    CourseId = 2,
-                    CoefficientName = "DatabaseEngineering",
-                    Value = 1
-                },
+                // computer vision
+                new CourseHasCoefficient { CourseId = 12, CoefficientName = "ComputerVisionAndGraphics", Value = 6 },
+                new CourseHasCoefficient { CourseId = 23, CoefficientName = "ComputerVisionAndGraphics", Value = 9 },
+                new CourseHasCoefficient { CourseId = 20, CoefficientName = "ComputerVisionAndGraphics", Value = 10 },
                 
-                new CourseHasCoefficient
-                {
-                    CourseId = 2,
-                    CoefficientName = "GameDev",
-                    Value = 1
-                },
-                
-                // OOP
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 3,
-                    CoefficientName = "SoftwareEngineering",
-                    Value = 10
-                },
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 3,
-                    CoefficientName = "MobileAppDev",
-                    Value = 2
-                },
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 3,
-                    CoefficientName = "WebDev",
-                    Value = 1
-                },
-                
-                // VR
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 4,
-                    CoefficientName = "GameDev",
-                    Value = 10
-                },
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 4,
-                    CoefficientName = "ComputerVisionAndGraphics",
-                    Value = 7
-                },
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 4,
-                    CoefficientName = "AI_ML",
-                    Value = 2
-                },
-                
-                // intelligent agents
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 5,
-                    CoefficientName = "AI_ML",
-                    Value = 10
-                },
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 5,
-                    CoefficientName = "GameDev",
-                    Value = 8
-                },
-                
-                // video games
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 6,
-                    CoefficientName = "GameDev",
-                    Value = 10
-                },
-                
-                new CourseHasCoefficient
-                {
-                    CourseId = 6,
-                    CoefficientName = "SoftwareEngineering",
-                    Value = 3
-                }
+                // software engineering
+                new CourseHasCoefficient { CourseId = 2, CoefficientName = "SoftwareEngineering", Value = 6 },
+                new CourseHasCoefficient { CourseId = 21, CoefficientName = "SoftwareEngineering", Value = 10 },
+                new CourseHasCoefficient { CourseId = 22, CoefficientName = "SoftwareEngineering", Value = 10 }
             );
         }
 
