@@ -52,29 +52,29 @@ namespace EduCompass.Data
         {
             modelBuilder.Entity<Course>().HasData(
                 
-                new Course { Id = 1, Name = "Σύγχρονα Θέματα Τεχνολογίας Λογισμικού", UUID = "ΠΛΘΕΤΚΑΕ01", Semester = 7, Description = "", Content = AndroidDesc(), AudioFileName = "" },
-                new Course { Id = 2, Name = "Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών", UUID = "ΠΛΠΛΗ37-3", Semester = 3, Description = "", Content = AAEDesc(), AudioFileName = "" },
-                new Course { Id = 3, Name = "Αντικειμενοστρεφής Προγραμματισμός", UUID = "ΠΛΠΛΗ37-2", Semester = 2, Description = "", Content = OOPDesc(), AudioFileName = "" },
-                new Course { Id = 4, Name = "Εικονική Πραγματικότητα", UUID = "ΠΛΕΙΚ03", Semester = 7, Description = "", Content = VRDesc(), AudioFileName = "" },
-                new Course { Id = 5, Name = "Ευφυείς Πράκτορες", UUID = "ΠΛΕΥΠΡ01", Semester = 8, Description = "", Content = IntelligentAgentsDesc(), AudioFileName = "" },
-                new Course { Id = 6, Name = "Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών", UUID = "ΠΛΤΑΗΠ01", Semester = 7, Description = "", Content = VideoGamesDesc(), AudioFileName = "" },
-                new Course { Id = 7, Name = "Κρυπτογραφία", UUID = "ΠΛΚΡΥ01", Semester = 5, Description = "", Content = CryptographyDesc(), AudioFileName = "" },
-                new Course { Id = 8, Name = "Ασφάλεια Πληροφοριακών Συστημάτων", UUID = "ΠΛΠΛΗ47", Semester = 7, Description = "", Content = AsfaleiaPSDesc(), AudioFileName = "" },
-                new Course { Id = 9, Name = "Ασφάλεια Δικτύων", UUID = "ΠΛΑΣΦΔ01", Semester = 8, Description = "", Content = AsfaleiaDiktywnDesc(), AudioFileName = "" },
-                new Course { Id = 10, Name = "Τεχνολογίες Διαδικτύου", UUID = "ΠΛΠΛΗ90", Semester = 1, Description = "", Content = TexnologiesDiadiktyouDesc(), AudioFileName = "" },
-                new Course { Id = 11, Name = "Αλληλεπίδραση Ανθρώπου και Υπολογιστή", UUID = "ΠΛΠΛΗ20", Semester = 5, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 12, Name = "Αναγνώριση Προτύπων", UUID = "ΠΛΠΛΗ81-2", Semester = 5, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 13, Name = "Τεχνητή Νοημοσύνη και Έμπειρα Συστήματα", UUID = "ΠΛΠΛΗ18-1", Semester = 6, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 14, Name = "Αναλυτική Δεδομένων", UUID = "ΠΛΑΝΑΔΕ01", Semester = 6, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 15, Name = "Βάσεις Δεδομένων", UUID = "ΠΛΠΛΗ30-1", Semester = 4, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 16, Name = "Συστήματα Διαχείρισης Βάσεων Δεδομένων", UUID = "ΠΛΠΛΗ33-2", Semester = 5, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 17, Name = "Προγραμματισμός στο Διαδίκτυο και στον Παγκόσμιο Ιστό", UUID = "ΠΛΔΠΙ01", Semester = 4, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 18, Name = "Πληροφοριακά Συστήματα στο Διαδίκτυο", UUID = "ΠΛΣΥΔ01", Semester = 8, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 19, Name = "Δίκτυα Υπολογιστών", UUID = "ΠΛΠΛΗ44", Semester = 4, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 20, Name = "Ανάλυση Εικόνας", UUID = "ΠΛΕΙΚ01", Semester = 7, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 21, Name = "Τεχνολογία Λογισμικού", UUID = "ΠΛΠΛΗ46", Semester = 6, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 22, Name = "Πρότυπα Ανάπυτξης Λογισμικού", UUID = "ΠΛΠΡΑΝΑΛ01", Semester = 6, Description = "", Content = "", AudioFileName = "" },
-                new Course { Id = 23, Name = "Συστήματα Πολυμέσων", UUID = "ΠΛΠΛΗ48", Semester = 6, Description = "", Content = "", AudioFileName = "" }
+                new Course { Id = 1, Name = "Σύγχρονα Θέματα Τεχνολογίας Λογισμικού", UUID = "ΠΛΘΕΤΚΑΕ01", Semester = 7, Description = "", Content = AndroidDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 2, Name = "Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών", UUID = "ΠΛΠΛΗ37-3", Semester = 3, Description = "", Content = AAEDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 3, Name = "Αντικειμενοστρεφής Προγραμματισμός", UUID = "ΠΛΠΛΗ37-2", Semester = 2, Description = "", Content = OOPDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 4, Name = "Εικονική Πραγματικότητα", UUID = "ΠΛΕΙΚ03", Semester = 7, Description = "", Content = VRDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 5, Name = "Ευφυείς Πράκτορες", UUID = "ΠΛΕΥΠΡ01", Semester = 8, Description = "", Content = IntelligentAgentsDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 6, Name = "Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών", UUID = "ΠΛΤΑΗΠ01", Semester = 7, Description = "", Content = VideoGamesDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 7, Name = "Κρυπτογραφία", UUID = "ΠΛΚΡΥ01", Semester = 5, Description = "", Content = CryptographyDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 8, Name = "Ασφάλεια Πληροφοριακών Συστημάτων", UUID = "ΠΛΠΛΗ47", Semester = 7, Description = "", Content = AsfaleiaPSDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 9, Name = "Ασφάλεια Δικτύων", UUID = "ΠΛΑΣΦΔ01", Semester = 8, Description = "", Content = AsfaleiaDiktywnDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 10, Name = "Τεχνολογίες Διαδικτύου", UUID = "ΠΛΠΛΗ90", Semester = 1, Description = "", Content = TexnologiesDiadiktyouDesc(), AudioFileName = "correct.mp3" },
+                new Course { Id = 11, Name = "Αλληλεπίδραση Ανθρώπου και Υπολογιστή", UUID = "ΠΛΠΛΗ20", Semester = 5, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 12, Name = "Αναγνώριση Προτύπων", UUID = "ΠΛΠΛΗ81-2", Semester = 5, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 13, Name = "Τεχνητή Νοημοσύνη και Έμπειρα Συστήματα", UUID = "ΠΛΠΛΗ18-1", Semester = 6, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 14, Name = "Αναλυτική Δεδομένων", UUID = "ΠΛΑΝΑΔΕ01", Semester = 6, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 15, Name = "Βάσεις Δεδομένων", UUID = "ΠΛΠΛΗ30-1", Semester = 4, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 16, Name = "Συστήματα Διαχείρισης Βάσεων Δεδομένων", UUID = "ΠΛΠΛΗ33-2", Semester = 5, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 17, Name = "Προγραμματισμός στο Διαδίκτυο και στον Παγκόσμιο Ιστό", UUID = "ΠΛΔΠΙ01", Semester = 4, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 18, Name = "Πληροφοριακά Συστήματα στο Διαδίκτυο", UUID = "ΠΛΣΥΔ01", Semester = 8, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 19, Name = "Δίκτυα Υπολογιστών", UUID = "ΠΛΠΛΗ44", Semester = 4, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 20, Name = "Ανάλυση Εικόνας", UUID = "ΠΛΕΙΚ01", Semester = 7, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 21, Name = "Τεχνολογία Λογισμικού", UUID = "ΠΛΠΛΗ46", Semester = 6, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 22, Name = "Πρότυπα Ανάπυτξης Λογισμικού", UUID = "ΠΛΠΡΑΝΑΛ01", Semester = 6, Description = "", Content = "", AudioFileName = "correct.mp3" },
+                new Course { Id = 23, Name = "Συστήματα Πολυμέσων", UUID = "ΠΛΠΛΗ48", Semester = 6, Description = "", Content = "", AudioFileName = "correct.mp3" }
             );
         }
 
@@ -475,9 +475,9 @@ namespace EduCompass.Data
             modelBuilder.Entity<CourseHasCoefficient>().HasData(
 
                 // mobile dev
-                new CourseHasCoefficient { CourseId = 3, CoefficientName = "MobileDev", Value = 2 },
-                new CourseHasCoefficient { CourseId = 2, CoefficientName = "MobileDev", Value = 5 },
-                new CourseHasCoefficient { CourseId = 1, CoefficientName = "MobileDev", Value = 10 },
+                new CourseHasCoefficient { CourseId = 3, CoefficientName = "MobileAppDev", Value = 2 },
+                new CourseHasCoefficient { CourseId = 2, CoefficientName = "MobileAppDev", Value = 5 },
+                new CourseHasCoefficient { CourseId = 1, CoefficientName = "MobileAppDev", Value = 10 },
                 
                 // game dev
                 new CourseHasCoefficient { CourseId = 4, CoefficientName = "GameDev", Value = 6 },
