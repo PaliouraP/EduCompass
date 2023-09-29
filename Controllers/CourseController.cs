@@ -61,7 +61,7 @@ namespace EduCompass.Controllers
                     coursesInCoefficient++;
                     
                     // see also if the quiz grade is above 50%
-                    if (!_database.CourseQuizGrades.Any(cqg => cqg.Grade > 50 && cqg.CourseId == course.Id))
+                    if (!_database.CourseQuizGrades.Any(cqg => cqg.Grade >= 50 && cqg.CourseId == course.Id && cqg.UserId == _currentUser.Id))
                         continue;
 
                     // and if all of the above are true, this course is passed in this coefficient.
@@ -81,20 +81,30 @@ namespace EduCompass.Controllers
                 
                 // get all of the prerequisite courses of this course
                 var thisCoursesPrerequisites =
-                    _database.PrerequisiteCourses.ToList().Where(pc => pc.BaseCourseId == course.Id);
-
+                    _database.PrerequisiteCourses.Where(pc => pc.BaseCourseId == course.Id).ToArray();
+                
+                if (thisCoursesPrerequisites.Length == 0)
+                    lockedCourses.Add(course, locked);
+                
                 // search all prerequisite courses of this one
                 foreach (var prerequisiteCourse in thisCoursesPrerequisites)
                 {
-                    // and see if any of them has a grade of 50. If NONE has a grade above 50, then lock it.
-                    if (_database.CourseQuizGrades.All(g =>
-                            g.CourseId == prerequisiteCourse.PrerequisiteCourseId && g.Grade < 50))
+                    // if the user hasn't yet done a quiz, in any of the prerequisite courses, lock the course.
+                    if (!_database.CourseQuizGrades.Any(g =>
+                            g.CourseId == prerequisiteCourse.PrerequisiteCourseId && g.UserId == _currentUser.Id))
                     {
                         locked = true;
                     }
+
+                    // and see if any of them has a grade of 50. If NONE has a grade above 50, then lock it.
+                    if (_database.CourseQuizGrades.All(g =>
+                            g.CourseId == prerequisiteCourse.PrerequisiteCourseId && g.Grade < 50 && g.UserId == _currentUser.Id))
+                    {
+                        locked = true;
+                    }
+                    
+                    lockedCourses.Add(course, locked);
                 }
-                
-                lockedCourses.Add(course, locked);
             }
             
             // COURSE GRADES
@@ -105,7 +115,7 @@ namespace EduCompass.Controllers
                 int grade = 0;
                 
                 // get the maximum grade of a quiz...
-                var maxGrade = _database.CourseQuizGrades.OrderBy(t => t.Grade).LastOrDefault(t => t.CourseId == course.Id);
+                var maxGrade = _database.CourseQuizGrades.OrderBy(t => t.Grade).LastOrDefault(t => t.CourseId == course.Id && t.UserId == _currentUser.Id);
                 
                 // ...if the quiz exists.
                 if (maxGrade != null)
@@ -138,7 +148,7 @@ namespace EduCompass.Controllers
             {
                 string gradeString;
                 
-                CoefficientQuizGrade grade = _database.CoefficientQuizGrades.OrderBy(quiz => quiz.Grade).LastOrDefault(quiz => quiz.CoefficientName == coefficient.Name);
+                CoefficientQuizGrade grade = _database.CoefficientQuizGrades.OrderBy(quiz => quiz.Grade).LastOrDefault(quiz => quiz.CoefficientName == coefficient.Name && quiz.UserId == _currentUser.Id);
 
                 gradeString = grade == null ? "-" : $"{grade.Grade}%";
                 coefficientsWithTheirGrades.Add(coefficient, gradeString);
@@ -152,23 +162,30 @@ namespace EduCompass.Controllers
         [HttpGet]
         public IActionResult CoursePage(string uuid)
         {
-            // TODO: Add check for locked course.
+            // get the course.
             var course = _database.Courses.First(c => c.UUID == uuid);
-            
-            //if (course == null)
-                //throw new Exception("This course doesn't exist!");
-            
+
+            var locked = true;
+
             // prerequisite courses.
             var necessaryCourseIds = _database.PrerequisiteCourses.Where(p => p.BaseCourseId == course.Id).ToList();
             var necessaryCourses = (from pc in necessaryCourseIds join _course in _database.Courses on pc.PrerequisiteCourseId equals _course.Id select _course).ToList();
 
+            foreach (var necessaryCourse in necessaryCourseIds)
+            {
+                if (_database.CourseQuizGrades.Any(c =>
+                        c.Grade >= 50 && c.CourseId == necessaryCourse.PrerequisiteCourseId &&
+                        c.UserId == _currentUser.Id))
+                    locked = false;
+            }
+            
             // coefficients related to a career
             var baseCourseCoefficients = _database.CourseHasCoefficients.Where(chc => chc.Value > 5 && chc.CourseId == course.Id).ToList();
             var careers = (from chc in baseCourseCoefficients
                 join career in _database.Careers on chc.CoefficientName equals career.CoefficientName
                 select career).ToList();
 
-            var model = new Tuple<Course, List<Course>, List<Career>, List<CourseQuizGrade>>(course, necessaryCourses, careers, _database.CourseQuizGrades.ToList());
+            var model = new Tuple<Course, List<Course>, List<Career>, bool>(course, necessaryCourses, careers, locked);
             
             return View(model);
         }

@@ -58,6 +58,8 @@
                                     @if (Model.Item2[course])
                                     {
                                         <b>🔒</b>
+                                        <a asp-controller="Course" asp-route-uuid="@course.UUID" asp-action="CoursePage">
+                                            <i class="fas fa-link hyperlink"></i></a>
                                     }
                                     else
                                     {

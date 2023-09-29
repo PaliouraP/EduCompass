@@ -1,4 +1,4 @@
-﻿@model Tuple<Course, List<Course>, List<Career>, List<CourseQuizGrade>>
+﻿@model Tuple<Course, List<Course>, List<Career>, bool>
 
 @{
     ViewData["Title"] = "CoursePage";
@@ -48,21 +48,12 @@
         
     </div>
     <div class="row mt-3">
-        @{
-            var locked = false;
-            foreach (var prerequisiteCourse in Model.Item2)
-            {
-                if (Model.Item4.Any(g => g.CourseId == prerequisiteCourse.Id && g.Grade < 50))
-                    locked = true;
-            }
-        }
-        
         <!--if unlcoked-->
-        @if (!locked)
+        @if (!Model.Item4)
         {
             <div class="col">
                 <h3>Περιεχόμενο</h3>
-                <p id="course_content">
+                <p id="course_content" style="white-space:pre-line">
                     @Model.Item1.Content
                 </p>
             </div>

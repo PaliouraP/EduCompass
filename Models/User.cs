@@ -52,9 +52,9 @@ namespace EduCompass.Models
                     
                     if (quizGrade != null && introGrade != null)
                     {
-                        userTotalCoefficientPoints += (double)quizGrade.Grade / 100 * 0.5 * course.Value;
-                        userTotalCoefficientPoints += (double)introGrade.FinalGrade / 10 * 0.3 * course.Value;
-                        userTotalCoefficientPoints += (double)introGrade.InterestScore / 5 * 0.2 * course.Value;
+                        userTotalCoefficientPoints += ((double)quizGrade.Grade / 100) * (double)(0.5 * (double)course.Value);
+                        userTotalCoefficientPoints += ((double)introGrade.FinalGrade / 10) * (double)(0.3 * (double)course.Value);
+                        userTotalCoefficientPoints += ((double)introGrade.InterestScore / 5) * (double)(0.2 * (double)course.Value);
                     }
                     
                     else if (quizGrade == null && introGrade != null)
