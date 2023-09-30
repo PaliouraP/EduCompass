@@ -706,10 +706,19 @@ namespace EduCompass.Data
                 new Question { Id = 77, Content = "Στόχος του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών είναι η εξοικείωση των φοιτητών με σύγχρονες τεχνολογίες, μεθόδους και εργαλεία για τη δημιουργία ολοκληρωμένων διαδικτυακών εφαρμογών.", CourseId = 8 },
                 new Question { Id = 78, Content = "Το αντικείενο του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών περιλαμβάνει τη σχεδίαση ενός παιχνιδιού σε ________.", CourseId = 8 },
                 new Question { Id = 79, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί συστατικά ηλεκτρονικών παιχνιδιών στο Διαδίκτυο;", CourseId = 8 },
-                new Question { Id = 80, Content = "Ο κόσμος ενός ηλεκτρονικού αποτελείται από χαρακτήρες που μπορεί να είναι...;", CourseId = 8 }
+                new Question { Id = 80, Content = "Ο κόσμος ενός ηλεκτρονικού αποτελείται από χαρακτήρες που μπορεί να είναι...;", CourseId = 8 },
                 
                 // asfaleia d.
-                
+                new Question { Id = 81, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μπορεί να εφαρμόζει τα μοντέλα “αντιλαμβάνομαι-αποφασίζω-ενεργώ” (Sense-Decide-Act), BDI (Belief-Desire-Intention), σε διάφορες περιπτώσεις πρακτόρων.", CourseId = 9 },
+                new Question { Id = 82, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής διακρίνει και εκτιμά πότε είναι απαραίτητος ένας _________ πράκτορας και πότε βουλητικός πράκτορας.", CourseId = 9 },
+                new Question { Id = 83, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής κατανοεί την ____ ενός ευφυούς πράκτορα", CourseId = 9 },
+                new Question { Id = 84, Content = "Ποίο από τα παρακάτω αποτελεί είδος ευφυούς πράκτορα που μελετάται στο μάθυμα Ευφυείς Πράκτορες;", CourseId = 9 },
+                new Question { Id = 85, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες  ο φοιτητής  αναπτύσσει αλγορίθμους για εύρεση μονοπατιού (path finding), και σχεδιασμό ενεργειών (plan generation)", CourseId = 9 },
+                new Question { Id = 86, Content = "Πως ονομάζεται το περιβάλλον με το οποίο θα εξοικιωθούν οι φοιτητές για την ανάπτηξη εφαρμογών ευφυή πρακτόρων;", CourseId = 9 },
+                new Question { Id = 87, Content = "Η συναισθηματική διαλεκτική σε ευφυείς πράκτορες αποτελεί αντικείμενο του μαθήματος Ευφυείς Πράκτορες.", CourseId = 9 },
+                new Question { Id = 88, Content = "Μέσω της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μαθαίνει να εφαρμόζει το μοντέλο “αντιλαμβάνομαι-αποφασίζω-________”", CourseId = 9 },
+                new Question { Id = 89, Content = "Αντικείμενο του μαθήματος Ευφυείς Πράκτορες είναι  ο σχεδιασμός ενεργειών, βασισμένος σε κίνητρα και η πυραμίδα του ________.", CourseId = 9 },
+                new Question { Id = 90, Content = "Mε ποιο είδος πρακτόρων θα ασχοληθούν οι φοιτητές στα πλαίσια του μαθληματος Ευφυείς Πράκτορες;", CourseId = 9 }
                 
             );
 
@@ -810,7 +819,19 @@ namespace EduCompass.Data
                 new Answer { Id = 77, QuestionId = 77, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
                 new Answer { Id = 78, QuestionId = 78, Answer1 = "C", Answer2 = "C++", Answer3 = "PythonFmu", Answer4 = "C#", CorrectAnswer = "C#" },
                 new Answer { Id = 79, QuestionId = 79, Answer1 = "3D μοντέλα", Answer2 = "bolts", Answer3 = "sprites", Answer4 = "animations", CorrectAnswer = "bolts" },
-                new Answer { Id = 80, QuestionId = 80, Answer1 = "Παίκτες", Answer2 = "Πράκτορες", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" }
+                new Answer { Id = 80, QuestionId = 80, Answer1 = "Παίκτες", Answer2 = "Πράκτορες", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
+                
+                // asfaleia d.
+                new Answer { Id = 81, QuestionId = 81, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 82, QuestionId = 82, Answer1 = "αντιδρασιακός", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "αντιδρασιακός" },
+                new Answer { Id = 83, QuestionId = 83, Answer1 = "δομή", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "δομή" },
+                new Answer { Id = 84, QuestionId = 84, Answer1 = "Cleaning Agents", Answer2 = "Radioactive Agents", Answer3 = "Deliberative Agents", Answer4 = "Federal Agents", CorrectAnswer = "Deliberative Agents" },
+                new Answer { Id = 85, QuestionId = 85, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 86, QuestionId = 86, Answer1 = "Unity3D", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Unity3D" },
+                new Answer { Id = 87, QuestionId = 87, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 88, QuestionId = 88, Answer1 = "ενεργώ", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "ενεργώ" },
+                new Answer { Id = 89, QuestionId = 89, Answer1 = "Maslow", Answer2 = "Khafre", Answer3 = "Djoser", Answer4 = "Cheops", CorrectAnswer = "Maslow" },
+                new Answer { Id = 90, QuestionId = 90, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" }
             );
         }
 
