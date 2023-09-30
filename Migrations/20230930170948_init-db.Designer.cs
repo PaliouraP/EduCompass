@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCompass.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230930010322_init-database")]
-    partial class initdatabase
+    [Migration("20230930170948_init-db")]
+    partial class initdb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
