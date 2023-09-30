@@ -188,19 +188,23 @@ namespace EduCompass.Controllers
                 CoefficientQuizScoreDictionary.Add(coefficient, totalQuizGradeScore);
             }
 
-            var CourseWithTimeDictionary = new Dictionary<Course, int>();
-            var userCourseTimeSpents = _database.TimeSpents.Where(t => t.UserId == _currentUser.Id).ToArray();
+            var CourseWithTimeDictionary = new Dictionary<Course, string>();
+            var userCourseTimeSpents = _database.TimeSpents.OrderByDescending(t => t.TotalTime).Where(t => t.UserId == _currentUser.Id).ToArray();
             foreach (var timeSpent in userCourseTimeSpents)
             {
                 var course = _database.Courses.First(c => c.Id == timeSpent.CourseId);
                 var timeValue = timeSpent.TotalTime;
+
+                int hours = timeValue / 3600;
+                int minutes = (timeValue % 3600) / 60;
+                int seconds = timeValue % 60;
+
+                string formattedTime = $"{hours} ώρες, {minutes} λεπτά, {seconds} δευτερόλεπτα.";
                     
-                CourseWithTimeDictionary.Add(course, timeValue);
+                CourseWithTimeDictionary.Add(course, formattedTime);
             }
-            
-            CourseWithTimeDictionary = CourseWithTimeDictionary.OrderByDescending(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
-            
-            var model = new Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Course, int>>(
+
+            var model = new Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Course, string>>(
                 CoefficientActualGradeDictionary, CoefficientQuizScoreDictionary, CoefficientInterestScoreDictionary, CoefficientGeneralDictionary, CourseWithTimeDictionary);
             
             return View(model);
