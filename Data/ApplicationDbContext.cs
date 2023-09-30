@@ -742,7 +742,31 @@ namespace EduCompass.Data
                 new Question { Id = 107, Content = "Ένα από τα αντκείμενα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού είναι η “Ανάλυση απαιτήσεων: __________ Ανάλυση και Αντικειμενοστρεφής Ανάλυση”.", CourseId = 19 },
                 new Question { Id = 108, Content = "Ποιο από τα παρακάτω αποτελεί μοντέλο ανάπτυξης λογισμικού που αναλύεται στα πλαίσια του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 19 },
                 new Question { Id = 109, Content = "Ένα από τα αντικέιμενα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού είναι προϋπολογισμός κόστους λογισμικού.", CourseId = 19 },
-                new Question { Id = 110, Content = "Παρακολουθώντας το μάθημα Σύγχρονα Θέματα Τεχνολογίας Λογισμικού, μπορεί κανείς να χρησιμοποιεί πρακτικά τις πλέον σύγχρονες υπηρεσίες ______ και Mobile backend as a service που παρέχει η Firebase.", CourseId = 19 }
+                new Question { Id = 110, Content = "Παρακολουθώντας το μάθημα Σύγχρονα Θέματα Τεχνολογίας Λογισμικού, μπορεί κανείς να χρησιμοποιεί πρακτικά τις πλέον σύγχρονες υπηρεσίες ______ και Mobile backend as a service που παρέχει η Firebase.", CourseId = 19 },
+                
+                // allilepidrash
+                new Question { Id = 111, Content = "Η ύλη του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών περιλαμβάνει κυρίως τη χρήση της αντικειμενοστρεφούς γλώσσας προγραμματισμού C#.", CourseId = 11 },
+                new Question { Id = 112, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές μαθαίνουν να αναπτύσσουν _______, web, ή/και mobile εφαρμογές.", CourseId = 11 },
+                new Question { Id = 113, Content = "Ποιο εργαλείο ανάπτυξης εφαρμογών χρησιμοποιείται στα πλαίσια του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών;", CourseId = 11 },
+                new Question { Id = 114, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές μαθαίνουν να αναπτύσσουν λογισμικό για ένα μεγάλο πλήθος από πεδία, συμπεριλαμβανομένων των παραθυρικών εφαρμογών, των εφαρμογών κονσόλας, των εφαρμογών web και των mobile εφαρμογών.", CourseId = 11 },
+                new Question { Id = 115, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές εκτίθονται σε σύγχρονες τεχνικές προγραμματισμού με στόχο την ποιότητα του παραγόμενου _________, καθώς και την ταχύτητα ανάπτυξης σύνθετων και πολύπλοκων προγραμμάτων/έργων.", CourseId = 11 },
+                new Question { Id = 116, Content = "Στο πλαίσιο του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών δίνεται ιδιαίτερη έμφαση στα ολοκληρωμένα περιβάλλοντα ανάπτυξης τα οποία ονομάζονται και:", CourseId = 11 },
+                new Question { Id = 117, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές μαθαίνουν να αναγνωρίζουν και να εξηγούν τι είναι γλώσσα και γραμματική και πώς συμβολίζονται.", CourseId = 11 },
+                new Question { Id = 118, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών, οι φοιτητές μαθάινουν να κάνουν ________ λογισμικού με τα πλέον σύγχρονα εργαλεία.", CourseId = 11 },
+                new Question { Id = 119, Content = "Ποιο από τα παρακάτω αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών;", CourseId = 11 },
+                new Question { Id = 120, Content = "Μέσω του μαθήματος Αντικειμενοστρεφής Ανάπτυξη Εφαρμογών , οι φοιτητές μαθάινουν να παράγουν εφαρμογές με _______ και ταχύ ρυθμό.", CourseId = 11 },
+                
+                // programmatismos sto diadiktyo kai ston pagkosmio isto
+                new Question { Id = 121, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μπορεί να εφαρμόζει τα μοντέλα “αντιλαμβάνομαι-αποφασίζω-ενεργώ” (Sense-Decide-Act), BDI (Belief-Desire-Intention), σε διάφορες περιπτώσεις πρακτόρων.", CourseId = 17 },
+                new Question { Id = 122, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής διακρίνει και εκτιμά πότε είναι απαραίτητος ένας _________ πράκτορας και πότε βουλητικός πράκτορας.", CourseId = 17 },
+                new Question { Id = 123, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής κατανοεί την ____ ενός ευφυούς πράκτορα", CourseId = 17 },
+                new Question { Id = 124, Content = "Ποίο από τα παρακάτω αποτελεί είδος ευφυούς πράκτορα που μελετάται στο μάθυμα Ευφυείς Πράκτορες;", CourseId = 17 },
+                new Question { Id = 125, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες  ο φοιτητής  αναπτύσσει αλγορίθμους για εύρεση μονοπατιού (path finding), και σχεδιασμό ενεργειών (plan generation)", CourseId = 17 },
+                new Question { Id = 126, Content = "Πως ονομάζεται το περιβάλλον με το οποίο θα εξοικιωθούν οι φοιτητές για την ανάπτηξη εφαρμογών ευφυή πρακτόρων;", CourseId = 17 },
+                new Question { Id = 127, Content = "Η συναισθηματική διαλεκτική σε ευφυείς πράκτορες αποτελεί αντικείμενο του μαθήματος Ευφυείς Πράκτορες.", CourseId = 17 },
+                new Question { Id = 128, Content = "Μέσω της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μαθαίνει να εφαρμόζει το μοντέλο “αντιλαμβάνομαι-αποφασίζω-________”", CourseId = 17 },
+                new Question { Id = 129, Content = "Αντικείμενο του μαθήματος Ευφυείς Πράκτορες είναι  ο σχεδιασμός ενεργειών, βασισμένος σε κίνητρα και η πυραμίδα του ________.", CourseId = 17 },
+                new Question { Id = 130, Content = "Mε ποιο είδος πρακτόρων θα ασχοληθούν οι φοιτητές στα πλαίσια του μαθληματος Ευφυείς Πράκτορες;", CourseId = 17 }
                 
             );
 
@@ -879,9 +903,31 @@ namespace EduCompass.Data
                 new Answer { Id = 107, QuestionId = 107, Answer1 = "Δομημένη", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Δομημένη" },
                 new Answer { Id = 108, QuestionId = 108, Answer1 = "Scrum", Answer2 = "Firebase", Answer3 = "Rational Unified Process", Answer4 = "DevOps", CorrectAnswer = "Rational Unified Process" },
                 new Answer { Id = 109, QuestionId = 109, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
-                new Answer { Id = 110, QuestionId = 110, Answer1 = "Cloud", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Cloud" }
+                new Answer { Id = 110, QuestionId = 110, Answer1 = "Cloud", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Cloud" },
                 
                 // allilepidrasi
+                new Answer { Id = 111, QuestionId = 111, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 112, QuestionId = 112, Answer1 = "desktop", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "desktop" },
+                new Answer { Id = 113, QuestionId = 113, Answer1 = "Visual Studio Enterprise Edition", Answer2 = "IntelliJ IDEA", Answer3 = "Visual Studio Code", Answer4 = "QtSpim", CorrectAnswer = "Visual Studio Enterprise Edition" },
+                new Answer { Id = 114, QuestionId = 114, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 115, QuestionId = 115, Answer1 = "λογισμικού", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "λογισμικού" },
+                new Answer { Id = 116, QuestionId = 116, Answer1 = "IDEs", Answer2 = "GUIs", Answer3 = "GNUs", Answer4 = "ICPs", CorrectAnswer = "IDEs" },
+                new Answer { Id = 117, QuestionId = 117, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 118, QuestionId = 118, Answer1 = "αποσφαλμάτωση", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "αποσφαλμάτωση" },
+                new Answer { Id = 119, QuestionId = 119, Answer1 = "Να εντοπίζουν, αξιολογούν και αξιοποιούν λογισμικό που υλοποιείται σύμφωνα με τις βασικές αρχές της αντικειμενοστρεφούς σχεδίασης.", Answer2 = "Να σχεδιάζουν αρχιτεκτονικά σχέδια λογισμικού βασισμένα σε γλώσσες μοντελοποίησης και διαγράμματα.", Answer3 = "Να μαθαίνουν, να αξιολογούν και να εντοπίζουν λογισμικό υλοποιημένο με εργαλεία οπτικού προγραμματισμού.", Answer4 = "Να αναγνωρίζουν και να κατανοούν σύγχρονες τεχνικές σχεδίασης ολοκληρωμένων εφαρμογών λογισμικού με υπηρεσίες.", CorrectAnswer = "Να μαθαίνουν, να αξιολογούν και να εντοπίζουν λογισμικό υλοποιημένο με εργαλεία οπτικού προγραμματισμού." },
+                new Answer { Id = 120, QuestionId = 120, Answer1 = "αποδοτικό", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "αποδοτικό" },
+                
+                // programmatismos sto diadiktyo kai ston pagkosmio isto
+                new Answer { Id = 121, QuestionId = 121, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 122, QuestionId = 122, Answer1 = "αντιδρασιακός", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "αντιδρασιακός" },
+                new Answer { Id = 123, QuestionId = 123, Answer1 = "δομή", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "δομή" },
+                new Answer { Id = 124, QuestionId = 124, Answer1 = "Cleaning Agents", Answer2 = "Radioactive Agents", Answer3 = "Deliberative Agents", Answer4 = "Federal Agents", CorrectAnswer = "Deliberative Agents" },
+                new Answer { Id = 125, QuestionId = 125, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 126, QuestionId = 126, Answer1 = "Unity3D", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Unity3D" },
+                new Answer { Id = 127, QuestionId = 127, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 128, QuestionId = 128, Answer1 = "ενεργώ", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "ενεργώ" },
+                new Answer { Id = 129, QuestionId = 129, Answer1 = "Maslow", Answer2 = "Khafre", Answer3 = "Djoser", Answer4 = "Cheops", CorrectAnswer = "Maslow" },
+                new Answer { Id = 130, QuestionId = 130, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" }
             );
         }
 
