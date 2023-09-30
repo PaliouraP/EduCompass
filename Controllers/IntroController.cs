@@ -65,19 +65,33 @@ public class IntroController : Controller
         {
             // find the current course that the user is in.
             var course = _database.Courses.First(c => c.UUID == currentUuid);
-
-            // add the grade to the database.
-            var grade = new Grade
+            
+            var existingGrade = _database.Grades.FirstOrDefault(g => g.CourseId == course.Id && g.UserId == _currentUser.Id);
+            
+            if (existingGrade != null)
             {
-                CourseId = course.Id,
-                Created = DateTime.Now,
-                FinalGrade = finalGrade ?? -1,
-                InterestScore = interestScore ?? -1,
-                UserId = _currentUser.Id
-            };
+                existingGrade.FinalGrade = finalGrade ?? -1;
+                existingGrade.InterestScore = interestScore ?? -1;
+                existingGrade.Created = DateTime.Now;
+
+                _database.Grades.Update(existingGrade);
+                _database.SaveChanges();
+            }
+            else
+            {
+                // add the grade to the database.
+                var grade = new Grade
+                {
+                    CourseId = course.Id,
+                    Created = DateTime.Now,
+                    FinalGrade = finalGrade ?? -1,
+                    InterestScore = interestScore ?? -1,
+                    UserId = _currentUser.Id
+                };
         
-            _database.Grades.Add(grade);
-            _database.SaveChanges();
+                _database.Grades.Add(grade);
+                _database.SaveChanges();
+            }
 
             // find the index of that course.
             int index = Array.IndexOf(_courseIdsInSemesterOrder, course.Id);
