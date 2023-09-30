@@ -778,7 +778,19 @@ namespace EduCompass.Data
                 new Question { Id = 137, Content = "Στα πλαίσια του μαθήματος Αντικειμενοστρεφής Προγραμματισμός οι φοιτητές μαθαίνουν την έννοια της κληρονομικότητας.", CourseId = 18 },
                 new Question { Id = 138, Content = "Παρακολουθώντας το μάθημα Αντικειμενοστρεφής Προγραμματισμός, οι φοιτητές είναι ικανοί  να παράγουν εφαρμογές με αποδοτικό και ταχύ ρυθμό.", CourseId = 18 },
                 new Question { Id = 139, Content = "Στα πλαίσια του μαθήματος Αντικειμενοστρεφής Προγραμματισμός οι φοιτητές μαθαίνουν να διαχειρίζονται αποτελεσματικά και με χρήση των κατάλληλων εργαλείων τις ________ που ανακύπτουν.", CourseId = 18 },
-                new Question { Id = 140, Content = "Ποιο από τα παρακάτω ΔΕΝ ανήκει στο αντικείμενο του μαθήματος Αντικειμενοστρεφής Προγραμματισμός;", CourseId = 18 }
+                new Question { Id = 140, Content = "Ποιο από τα παρακάτω ΔΕΝ ανήκει στο αντικείμενο του μαθήματος Αντικειμενοστρεφής Προγραμματισμός;", CourseId = 18 },
+                
+                // texnologia logismikou
+                new Question { Id = 141, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μπορεί να εφαρμόζει τα μοντέλα “αντιλαμβάνομαι-αποφασίζω-ενεργώ” (Sense-Decide-Act), BDI (Belief-Desire-Intention), σε διάφορες περιπτώσεις πρακτόρων.", CourseId = 21 },
+                new Question { Id = 142, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής διακρίνει και εκτιμά πότε είναι απαραίτητος ένας _________ πράκτορας και πότε βουλητικός πράκτορας.", CourseId = 21 },
+                new Question { Id = 143, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής κατανοεί την ____ ενός ευφυούς πράκτορα", CourseId = 21 },
+                new Question { Id = 144, Content = "Ποίο από τα παρακάτω αποτελεί είδος ευφυούς πράκτορα που μελετάται στο μάθυμα Ευφυείς Πράκτορες;", CourseId = 21 },
+                new Question { Id = 145, Content = "Μετά την ολοκλήρωση της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες  ο φοιτητής  αναπτύσσει αλγορίθμους για εύρεση μονοπατιού (path finding), και σχεδιασμό ενεργειών (plan generation)", CourseId = 21 },
+                new Question { Id = 146, Content = "Πως ονομάζεται το περιβάλλον με το οποίο θα εξοικιωθούν οι φοιτητές για την ανάπτηξη εφαρμογών ευφυή πρακτόρων;", CourseId = 21 },
+                new Question { Id = 147, Content = "Η συναισθηματική διαλεκτική σε ευφυείς πράκτορες αποτελεί αντικείμενο του μαθήματος Ευφυείς Πράκτορες.", CourseId = 21 },
+                new Question { Id = 148, Content = "Μέσω της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μαθαίνει να εφαρμόζει το μοντέλο “αντιλαμβάνομαι-αποφασίζω-________”", CourseId = 21 },
+                new Question { Id = 149, Content = "Αντικείμενο του μαθήματος Ευφυείς Πράκτορες είναι  ο σχεδιασμός ενεργειών, βασισμένος σε κίνητρα και η πυραμίδα του ________.", CourseId = 21 },
+                new Question { Id = 150, Content = "Mε ποιο είδος πρακτόρων θα ασχοληθούν οι φοιτητές στα πλαίσια του μαθληματος Ευφυείς Πράκτορες;", CourseId = 21 }
             );
 
             // ANSWERS
@@ -950,7 +962,19 @@ namespace EduCompass.Data
                 new Answer { Id = 137, QuestionId = 137, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
                 new Answer { Id = 138, QuestionId = 138, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
                 new Answer { Id = 139, QuestionId = 139, Answer1 = "Εξαιρέσεις", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Εξαιρέσεις" },
-                new Answer { Id = 140, QuestionId = 140, Answer1 = "Αυτόνομη εργασία", Answer2 = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)", Answer3 = "Προσαρμογή σε νέες καταστάσεις", Answer4 = "Σχεδιασμός και διαχείριση έργων", CorrectAnswer = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)" }
+                new Answer { Id = 140, QuestionId = 140, Answer1 = "Αυτόνομη εργασία", Answer2 = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)", Answer3 = "Προσαρμογή σε νέες καταστάσεις", Answer4 = "Σχεδιασμός και διαχείριση έργων", CorrectAnswer = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)" },
+                
+                // texnologia logismikou
+                new Answer { Id = 141, QuestionId = 141, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 142, QuestionId = 142, Answer1 = "αντιδρασιακός", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "αντιδρασιακός" },
+                new Answer { Id = 143, QuestionId = 143, Answer1 = "δομή", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "δομή" },
+                new Answer { Id = 144, QuestionId = 144, Answer1 = "Cleaning Agents", Answer2 = "Radioactive Agents", Answer3 = "Deliberative Agents", Answer4 = "Federal Agents", CorrectAnswer = "Deliberative Agents" },
+                new Answer { Id = 145, QuestionId = 145, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 146, QuestionId = 146, Answer1 = "Unity3D", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Unity3D" },
+                new Answer { Id = 147, QuestionId = 147, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 148, QuestionId = 148, Answer1 = "ενεργώ", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "ενεργώ" },
+                new Answer { Id = 149, QuestionId = 149, Answer1 = "Maslow", Answer2 = "Khafre", Answer3 = "Djoser", Answer4 = "Cheops", CorrectAnswer = "Maslow" },
+                new Answer { Id = 150, QuestionId = 150, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" }
             );
         }
 
