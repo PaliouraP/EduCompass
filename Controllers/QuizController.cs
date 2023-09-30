@@ -3,6 +3,7 @@ using EduCompass.Data;
 using EduCompass.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EduCompass.Controllers;
 
@@ -112,10 +113,16 @@ public class QuizController : Controller
     public IActionResult PostAnswers()
     {
         TempData.Keep("QuizId");
-        
+
         // get the quiz object
         int quizId = int.Parse(TempData["QuizId"].ToString());
         var quiz = _database.CourseQuizGrades.First(q => q.Id == quizId);
+
+        if (!Request.Form["cancel"].ToString().IsNullOrEmpty())
+        {
+            var courseUUID = _database.Courses.First(c => c.Id == quiz.CourseId).UUID;
+            return RedirectToAction("CoursePage", "Course", new { uuid = courseUUID });
+        }
 
         var questionIds = quiz.QuestionIds.Split(';');
         
@@ -313,6 +320,9 @@ public class QuizController : Controller
         // find the evaluation test id.
         TempData.Keep("coefficientQuizId");
         int quizId = int.Parse(TempData["coefficientQuizId"].ToString());
+        
+        if (!Request.Form["cancel"].ToString().IsNullOrEmpty())
+            return RedirectToAction("OrientationPage", "Course");
         
         // get the object.
         var evaluationTest = _database.CoefficientQuizGrades.First(cq => cq.Id == quizId);
