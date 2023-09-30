@@ -1,4 +1,4 @@
-﻿@model Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>>
+﻿@model Tuple<Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Coefficient, double>, Dictionary<Course, int>>
 
 @{
     ViewData["Title"] = "Statistics";
@@ -83,20 +83,20 @@
     <div class="row">  
         <p>Στoν παρακάτω πίνακα φαίνεται ο συνολικός χρόνος που έχετε αφιερώσει στις σελίδες καθενός από τα μαθήματα της εφαρμογής.</p>
         <!--TODO: sort based on time-->
-            <table class="table mx-3">
+        <table class="table mx-3">
+            <tr>
+                <th>Μάθημα</th>
+                <th>Συνολικός Χρόνος</th>
+            </tr>
+            
+            @foreach (var pair in Model.Item5)
+            {
                 <tr>
-                    <th>Μάθημα</th>
-                    <th>Χρόνος σε λεπτά</th>
+                    <td>@pair.Key.Name</td>
+                    <td>@pair.Value</td>
                 </tr>
-                <tr>
-                    <td>Μάθημα 1</td>
-                    <td>45</td>
-                </tr>
-                <tr>
-                    <td>Μάθημα 2</td>
-                    <td>23</td>
-                </tr>
-            </table>
+            }
+        </table>
         
 
     </div>

@@ -109,7 +109,7 @@ namespace EduCompass.Controllers
                     }
                 }
 
-                if (lockedCounter == thisCoursesPrerequisites.Length)
+                if (thisCoursesPrerequisites.Length != 0 && lockedCounter == thisCoursesPrerequisites.Length)
                     locked = true;
                 
                 Debug.WriteLine($"Adding {course.Name} isn't duplicate here.");
@@ -196,7 +196,7 @@ namespace EduCompass.Controllers
                     locked = true;
             }
 
-            if (lockedCounter == necessaryCourseIds.Count)
+            if (necessaryCourseIds.Count != 0 && lockedCounter == necessaryCourseIds.Count)
                 locked = true;
             
             // coefficients related to a career
