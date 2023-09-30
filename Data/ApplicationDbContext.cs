@@ -850,7 +850,20 @@ namespace EduCompass.Data
                 new Question { Id = 197, Content = "Στόχος του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών είναι η εξοικείωση των φοιτητών με σύγχρονες τεχνολογίες, μεθόδους και εργαλεία για τη δημιουργία ολοκληρωμένων διαδικτυακών εφαρμογών.", CourseId = 13 },
                 new Question { Id = 198, Content = "Το αντικείενο του μαθήματος Τεχνολογίες Ανάπτυξης Ηλεκτρονικών Παιχνιδιών περιλαμβάνει τη σχεδίαση ενός παιχνιδιού σε ________.", CourseId = 13 },
                 new Question { Id = 199, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί συστατικά ηλεκτρονικών παιχνιδιών στο Διαδίκτυο;", CourseId = 13 },
-                new Question { Id = 200, Content = "Ο κόσμος ενός ηλεκτρονικού αποτελείται από χαρακτήρες που μπορεί να είναι...;", CourseId = 13 }
+                new Question { Id = 200, Content = "Ο κόσμος ενός ηλεκτρονικού αποτελείται από χαρακτήρες που μπορεί να είναι...;", CourseId = 13 },
+                
+                // data analytics
+                new Question { Id = 201, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 14 },
+                new Question { Id = 202, Content = "Η ανάπτυξη των mobile apps στο μάθημα Σύγχρονα Θέματα Τεχνολογίας Λογισμικού  υλοποιείται με τη χρήση του περιβάλλοντος ανάπτυξης λογισμικού ___________.", CourseId = 14 },
+                new Question { Id = 203, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 14 },
+                new Question { Id = 204, Content = "Ποιο από τα παρακάτω ΔΕΝ αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 14 },
+                new Question { Id = 205, Content = "Tο μάθημα Σύγχρονα Θέματα Τεχνολογίας Λογισμικού καλύπτει και την ύλη που αφορά στους αισθητήρες των κινητών συσκευών, στις υπηρεσίες γεοεντοπισμού και σε πλήθος άλλων προχωρημένων τεχνικών προγραμματισμού.", CourseId = 14 },
+                new Question { Id = 206, Content = "Η ύλη του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού περιλαμβάνει κυρίως τη χρήση της αντικειμενοστρεφούς γλώσσας προγραμματισμού C#.", CourseId = 14 },
+                new Question { Id = 207, Content = "Ένα από τα αντκείμενα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού είναι η “Ανάλυση απαιτήσεων: __________ Ανάλυση και Αντικειμενοστρεφής Ανάλυση”.", CourseId = 14 },
+                new Question { Id = 208, Content = "Ποιο από τα παρακάτω αποτελεί μοντέλο ανάπτυξης λογισμικού που αναλύεται στα πλαίσια του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού;", CourseId = 14 },
+                new Question { Id = 209, Content = "Ένα από τα αντικέιμενα του μαθήματος Σύγχρονα Θέματα Τεχνολογίας Λογισμικού είναι προϋπολογισμός κόστους λογισμικού.", CourseId = 14 },
+                new Question { Id = 210, Content = "Παρακολουθώντας το μάθημα Σύγχρονα Θέματα Τεχνολογίας Λογισμικού, μπορεί κανείς να χρησιμοποιεί πρακτικά τις πλέον σύγχρονες υπηρεσίες ______ και Mobile backend as a service που παρέχει η Firebase.", CourseId = 14 }
+                
             );
 
             // ANSWERS
@@ -1094,7 +1107,19 @@ namespace EduCompass.Data
                 new Answer { Id = 197, QuestionId = 197, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
                 new Answer { Id = 198, QuestionId = 198, Answer1 = "C", Answer2 = "C++", Answer3 = "PythonFmu", Answer4 = "C#", CorrectAnswer = "C#" },
                 new Answer { Id = 199, QuestionId = 199, Answer1 = "3D μοντέλα", Answer2 = "bolts", Answer3 = "sprites", Answer4 = "animations", CorrectAnswer = "bolts" },
-                new Answer { Id = 200, QuestionId = 200, Answer1 = "Παίκτες", Answer2 = "Πράκτορες", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" }
+                new Answer { Id = 200, QuestionId = 200, Answer1 = "Παίκτες", Answer2 = "Πράκτορες", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
+                
+                // data analytics
+                new Answer { Id = 201, QuestionId = 201, Answer1 = "Να εφαρμόζουν πρακτικά τεχνολογίες ασφάλειας πληροφοριακών συστημάτων σε πραγματικές συνθήκες", Answer2 = "Να αναλύει και να συγκρίνει μοντέλα ανάπτυξης λογισμικού", Answer3 = "Να αναπτύσσει native mobile apps κάνοντας χρήση του Android SDK", Answer4 = "Να χρησιμοποιεί πρακτικά τις πλέον σύγχρονες υπηρεσίες Cloud και Mobile backend as a service που παρέχει η Firebase", CorrectAnswer = "Να εφαρμόζουν πρακτικά τεχνολογίες ασφάλειας πληροφοριακών συστημάτων σε πραγματικές συνθήκες" },
+                new Answer { Id = 202, QuestionId = 202, Answer1 = "Android Studio", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Android Studio" },
+                new Answer { Id = 203, QuestionId = 203, Answer1 = "Να σχεδιάζει και να αναπτύσσει εφαρμογές για κινητές και φορητές συσκευές υλοποιώντας τις πλέον σύγχρονες τεχνικές προγραμματισμού.", Answer2 = "Να εκμεταλλεύεται τοπικές (SQLite) βάσεις δεδομένων.", Answer3 = "Να επιλέγει μοντέλα ανάπτυξης λογισμικού ανάλογα με τις ανάγκες και να τα χρησιμοποιεί.", Answer4 = "Να γνωρίζει τις τεχνικές σηματοδοσίας, διαχείρισης κινητικότητας και το πρωτόκολλο Mobile IP.", CorrectAnswer = "Να γνωρίζει τις τεχνικές σηματοδοσίας, διαχείρισης κινητικότητας και το πρωτόκολλο Mobile IP." },
+                new Answer { Id = 204, QuestionId = 204, Answer1 = "Να διασφαλίζει την αποτελεσματικότητα των λογισμικών μέσω των προαναφερθέντων εφαρμογών.", Answer2 = "Να αναγνωρίζει αρχές σχεδίασης λογισμικού με REST.", Answer3 = "Να αξιοποιεί το εργαλείο Android Studio για την ανάπτυξη κινητών εφαρμογών.", Answer4 = "Να γνωρίζει τις πλέον σύγχρονες υπηρεσίες Cloud και Mobile backend as a service που παρέχει η Firebase", CorrectAnswer = "Να αναγνωρίζει αρχές σχεδίασης λογισμικού με REST." },
+                new Answer { Id = 205, QuestionId = 205, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 206, QuestionId = 206, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 207, QuestionId = 207, Answer1 = "Δομημένη", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Δομημένη" },
+                new Answer { Id = 208, QuestionId = 208, Answer1 = "Scrum", Answer2 = "Firebase", Answer3 = "Rational Unified Process", Answer4 = "DevOps", CorrectAnswer = "Rational Unified Process" },
+                new Answer { Id = 209, QuestionId = 209, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 210, QuestionId = 210, Answer1 = "Cloud", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Cloud" }
             );
         }
 
