@@ -48,6 +48,22 @@ namespace EduCompass.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public IActionResult RedoIntroTest()
+        {
+            // delete all the user grades.
+            var userGrades = _database.Grades.Where(g => g.UserId == _currentUser.Id).ToArray();
+            foreach (var userGrade in userGrades)
+                _database.Grades.Remove(userGrade);
+
+            // also remove the hascompletedintro in the user.
+            _currentUser.HasCompletedIntroTest = false;
+            _database.Users.Update(_currentUser);
+
+            // redirect to the correct action
+            return RedirectToAction("StartIntroTest", "Intro");
+        }
+
         [HttpPost]
         public IActionResult EditProfile(string username, string email, string firstname, string lastname, int semester)
         {
@@ -167,7 +183,7 @@ namespace EduCompass.Controllers
         public IActionResult Suggestions()
         {
             // retrieve the top three coefficients of the user
-            var userBestCoefficients = _database.UserHasCoefficients.ToList().OrderByDescending(uhc => uhc.Percentage).Take(3).ToArray();
+            var userBestCoefficients = _database.UserHasCoefficients.Where(p => p.UserId == _currentUser.Id).ToList().OrderByDescending(uhc => uhc.Percentage).Take(3).ToArray();
 
             // if the user has no coefficients, return empty lists.
             if (userBestCoefficients.Length == 0)

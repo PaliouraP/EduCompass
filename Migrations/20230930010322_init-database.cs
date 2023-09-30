@@ -43,6 +43,25 @@ namespace EduCompass.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CoefficientQuizGrades",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CoefficientName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TimeStarted = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TimeFinished = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    QuestionIds = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AnswerStrings = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Grade = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CoefficientQuizGrades", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Coefficients",
                 columns: table => new
                 {
@@ -231,6 +250,9 @@ namespace EduCompass.Migrations
 
             migrationBuilder.DropTable(
                 name: "Careers");
+
+            migrationBuilder.DropTable(
+                name: "CoefficientQuizGrades");
 
             migrationBuilder.DropTable(
                 name: "Coefficients");

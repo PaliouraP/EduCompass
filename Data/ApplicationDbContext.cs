@@ -81,28 +81,46 @@ namespace EduCompass.Data
         private void SeedDataToPrerequisiteCourses(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PrerequisiteCourse>().HasData(
+                
+                // security
                 new PrerequisiteCourse { BaseCourseId = 8, PrerequisiteCourseId = 7 },
                 new PrerequisiteCourse { BaseCourseId = 9, PrerequisiteCourseId = 8 },
                 
-                new PrerequisiteCourse { BaseCourseId = 2, PrerequisiteCourseId = 10 },
-                new PrerequisiteCourse { BaseCourseId = 11, PrerequisiteCourseId = 2 },
+                // networks
+                new PrerequisiteCourse { BaseCourseId = 19, PrerequisiteCourseId = 10 },
+                new PrerequisiteCourse { BaseCourseId = 9, PrerequisiteCourseId = 19 },
                 
+                // ui-ux
+                new PrerequisiteCourse { BaseCourseId = 11, PrerequisiteCourseId = 10 },
+
+                // web app dev
+                new PrerequisiteCourse { BaseCourseId = 17, PrerequisiteCourseId = 10 },
+                new PrerequisiteCourse { BaseCourseId = 18, PrerequisiteCourseId = 17 },
+                
+                // android
+                new PrerequisiteCourse { BaseCourseId = 2, PrerequisiteCourseId = 3 },
+                new PrerequisiteCourse { BaseCourseId = 1, PrerequisiteCourseId = 2 },
+                
+                // softeng
+                new PrerequisiteCourse { BaseCourseId = 22, PrerequisiteCourseId = 21 },
+                new PrerequisiteCourse { BaseCourseId = 1, PrerequisiteCourseId = 22 },
+                
+                // cptr vision
+                new PrerequisiteCourse { BaseCourseId = 23, PrerequisiteCourseId = 12 },
+                new PrerequisiteCourse { BaseCourseId = 20, PrerequisiteCourseId = 23 },
+                
+                // ai-ml
                 new PrerequisiteCourse { BaseCourseId = 13, PrerequisiteCourseId = 12 },
                 new PrerequisiteCourse { BaseCourseId = 14, PrerequisiteCourseId = 13 },
                 new PrerequisiteCourse { BaseCourseId = 5, PrerequisiteCourseId = 13 },
                 
+                // data eng
                 new PrerequisiteCourse { BaseCourseId = 16, PrerequisiteCourseId = 15 },
                 new PrerequisiteCourse { BaseCourseId = 14, PrerequisiteCourseId = 16 },
-
-                new PrerequisiteCourse { BaseCourseId = 19, PrerequisiteCourseId = 10 },
-                new PrerequisiteCourse { BaseCourseId = 9, PrerequisiteCourseId = 19 },
                 
-                new PrerequisiteCourse { BaseCourseId = 29, PrerequisiteCourseId = 12 },
-                new PrerequisiteCourse { BaseCourseId = 20, PrerequisiteCourseId = 29 },
-                
-                new PrerequisiteCourse { BaseCourseId = 21, PrerequisiteCourseId = 2 },
-                new PrerequisiteCourse { BaseCourseId = 22, PrerequisiteCourseId = 21 },
-                new PrerequisiteCourse { BaseCourseId = 1, PrerequisiteCourseId = 22 }
+                // game dev
+                new PrerequisiteCourse { BaseCourseId = 6, PrerequisiteCourseId = 4 },
+                new PrerequisiteCourse { BaseCourseId = 5, PrerequisiteCourseId = 6 }
             );
         }
         
@@ -491,7 +509,6 @@ namespace EduCompass.Data
 
                 // ui/ux
                 new CourseHasCoefficient { CourseId = 10, CoefficientName = "UI_UX", Value = 3 },
-                new CourseHasCoefficient { CourseId = 2, CoefficientName = "UI_UX", Value = 4 },
                 new CourseHasCoefficient { CourseId = 11, CoefficientName = "UI_UX", Value = 10 },
                 
                 // ai/ml
@@ -521,7 +538,7 @@ namespace EduCompass.Data
                 new CourseHasCoefficient { CourseId = 20, CoefficientName = "ComputerVisionAndGraphics", Value = 10 },
                 
                 // software engineering
-                new CourseHasCoefficient { CourseId = 2, CoefficientName = "SoftwareEngineering", Value = 6 },
+                new CourseHasCoefficient { CourseId = 1, CoefficientName = "SoftwareEngineering", Value = 10 },
                 new CourseHasCoefficient { CourseId = 21, CoefficientName = "SoftwareEngineering", Value = 10 },
                 new CourseHasCoefficient { CourseId = 22, CoefficientName = "SoftwareEngineering", Value = 10 }
             );

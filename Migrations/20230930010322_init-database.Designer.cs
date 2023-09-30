@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduCompass.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230927202239_init-database")]
+    [Migration("20230930010322_init-database")]
     partial class initdatabase
     {
         /// <inheritdoc />
@@ -91,6 +91,43 @@ namespace EduCompass.Migrations
                     b.HasKey("Name");
 
                     b.ToTable("Coefficients");
+                });
+
+            modelBuilder.Entity("EduCompass.Models.CoefficientQuizGrade", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AnswerStrings")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CoefficientName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Grade")
+                        .HasColumnType("int");
+
+                    b.Property<string>("QuestionIds")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TimeFinished")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("TimeStarted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CoefficientQuizGrades");
                 });
 
             modelBuilder.Entity("EduCompass.Models.Course", b =>
