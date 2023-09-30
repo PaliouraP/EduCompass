@@ -186,7 +186,7 @@ namespace EduCompass.Controllers
 
                 // if the user has quized it but never got a 50% in any of the prerequisites, lock it.)
                 if (_database.CourseQuizGrades.Any(c =>
-                        c.Grade >= 50 && c.CourseId == necessaryCourse.PrerequisiteCourseId &&
+                        c.Grade < 50 && c.CourseId == necessaryCourse.PrerequisiteCourseId &&
                         c.UserId == _currentUser.Id))
                     locked = true;
             }
