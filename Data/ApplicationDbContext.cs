@@ -766,8 +766,19 @@ namespace EduCompass.Data
                 new Question { Id = 127, Content = "Η συναισθηματική διαλεκτική σε ευφυείς πράκτορες αποτελεί αντικείμενο του μαθήματος Ευφυείς Πράκτορες.", CourseId = 17 },
                 new Question { Id = 128, Content = "Μέσω της παρακολούθησης του μαθήματος Ευφυείς Πράκτορες ο φοιτητής μαθαίνει να εφαρμόζει το μοντέλο “αντιλαμβάνομαι-αποφασίζω-________”", CourseId = 17 },
                 new Question { Id = 129, Content = "Αντικείμενο του μαθήματος Ευφυείς Πράκτορες είναι  ο σχεδιασμός ενεργειών, βασισμένος σε κίνητρα και η πυραμίδα του ________.", CourseId = 17 },
-                new Question { Id = 130, Content = "Mε ποιο είδος πρακτόρων θα ασχοληθούν οι φοιτητές στα πλαίσια του μαθληματος Ευφυείς Πράκτορες;", CourseId = 17 }
+                new Question { Id = 130, Content = "Mε ποιο είδος πρακτόρων θα ασχοληθούν οι φοιτητές στα πλαίσια του μαθληματος Ευφυείς Πράκτορες;", CourseId = 17 },
                 
+                // pliroforiaka sistimata sto diadiktyo
+                new Question { Id = 131, Content = "Ένα από τα αντικέιμενα του μαθήματος Αντικειμενοστρεφής Προγραμματισμός η ομαδική εργασία.", CourseId = 18 },
+                new Question { Id = 132, Content = "Ποιο από τα παρακάτω αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Αντικειμενοστρεφής Προγραμματισμός;", CourseId = 18 },
+                new Question { Id = 133, Content = "Ποιο από τα παρακάτω αποτελεί μαθησιακό αποτέλεσμα του μαθήματος Αντικειμενοστρεφής Προγραμματισμός;", CourseId = 18 },
+                new Question { Id = 134, Content = "Παρακολουθώντας το μάθημα Αντικειμενοστρεφής Προγραμματισμός, οι φοιτητές είναι ικανοί να θα παράγουν εφαρμογές πελάτη-εξυπηρετητή.", CourseId = 18 },
+                new Question { Id = 135, Content = "Το κύριο αντικείμενο του μαθήματος Αντικειμενοστρεφής Προγραμματισμός  είναι η εισαγωγή στον αντικειμενοστρεφή προγραμματισμό με πλήρη ανάλυση της γλώσσας προγραμματισμού ______.", CourseId = 18 },
+                new Question { Id = 136, Content = "Στα πλαίσια του μαθήματος Αντικειμενοστρεφής Προγραμματισμός οι φοιτητές μαθαίνουν να χειρίζονται αρχεία προορισμένα για _________ και αποθήκευση δεδομένων.", CourseId = 18 },
+                new Question { Id = 137, Content = "Στα πλαίσια του μαθήματος Αντικειμενοστρεφής Προγραμματισμός οι φοιτητές μαθαίνουν την έννοια της κληρονομικότητας.", CourseId = 18 },
+                new Question { Id = 138, Content = "Παρακολουθώντας το μάθημα Αντικειμενοστρεφής Προγραμματισμός, οι φοιτητές είναι ικανοί  να παράγουν εφαρμογές με αποδοτικό και ταχύ ρυθμό.", CourseId = 18 },
+                new Question { Id = 139, Content = "Στα πλαίσια του μαθήματος Αντικειμενοστρεφής Προγραμματισμός οι φοιτητές μαθαίνουν να διαχειρίζονται αποτελεσματικά και με χρήση των κατάλληλων εργαλείων τις ________ που ανακύπτουν.", CourseId = 18 },
+                new Question { Id = 140, Content = "Ποιο από τα παρακάτω ΔΕΝ ανήκει στο αντικείμενο του μαθήματος Αντικειμενοστρεφής Προγραμματισμός;", CourseId = 18 }
             );
 
             // ANSWERS
@@ -927,7 +938,19 @@ namespace EduCompass.Data
                 new Answer { Id = 127, QuestionId = 127, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
                 new Answer { Id = 128, QuestionId = 128, Answer1 = "ενεργώ", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "ενεργώ" },
                 new Answer { Id = 129, QuestionId = 129, Answer1 = "Maslow", Answer2 = "Khafre", Answer3 = "Djoser", Answer4 = "Cheops", CorrectAnswer = "Maslow" },
-                new Answer { Id = 130, QuestionId = 130, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" }
+                new Answer { Id = 130, QuestionId = 130, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
+                
+                // pliroforiaka systimata sto diadiktyo
+                new Answer { Id = 131, QuestionId = 131, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 132, QuestionId = 132, Answer1 = "Να δημιουργούν τάξεις, διεπαφές και αντικείμενα", Answer2 = "Να γνωρίζουν τις βασικές αρχές της γλώσσας C#", Answer3 = "Να μπορούν να αξιοποιήσουν τις βασικές αλγοριθμικές δομές σε γλώσσα C++", Answer4 = "Να μπορούν να υλοποιούν προγραμματισμό sockets (TCP sockets και UDP sockets).", CorrectAnswer = "Να δημιουργούν τάξεις, διεπαφές και αντικείμενα" },
+                new Answer { Id = 133, QuestionId = 133, Answer1 = "Να μπορούν να σχεδιάζουν και να υλοποιούν αλγόριθμους για την αποτελεσματική κατασκευή συνδυαστικών αντικειμένων.", Answer2 = "Να αναγνωρίζουν και να κατανοούν σύγχρονες τεχνικές σχεδίασης ολοκληρωμένων εφαρμογών λογισμικού με υπηρεσίες.", Answer3 = "Να εντοπίζουν, αξιολογούν και αξιοποιούν λογισμικό που υλοποιείται σύμφωνα με τις βασικές αρχές της αντικειμενοστρεφούς σχεδίασης.", Answer4 = "Να σχεδιάζουν αρχιτεκτονικά σχέδια λογισμικού βασισμένα σε γλώσσες μοντελοποίησης και διαγράμματα.", CorrectAnswer = "Να εντοπίζουν, αξιολογούν και αξιοποιούν λογισμικό που υλοποιείται σύμφωνα με τις βασικές αρχές της αντικειμενοστρεφούς σχεδίασης." },
+                new Answer { Id = 134, QuestionId = 134, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 135, QuestionId = 135, Answer1 = "Java", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Java" },
+                new Answer { Id = 136, QuestionId = 136, Answer1 = "Ανάγνωση", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Ανάγνωση" },
+                new Answer { Id = 137, QuestionId = 137, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 138, QuestionId = 138, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
+                new Answer { Id = 139, QuestionId = 139, Answer1 = "Εξαιρέσεις", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "Εξαιρέσεις" },
+                new Answer { Id = 140, QuestionId = 140, Answer1 = "Αυτόνομη εργασία", Answer2 = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)", Answer3 = "Προσαρμογή σε νέες καταστάσεις", Answer4 = "Σχεδιασμός και διαχείριση έργων", CorrectAnswer = "Αρχιτεκτονική Πελάτη-Εξυπηρετητή (Client-Server)" }
             );
         }
 
