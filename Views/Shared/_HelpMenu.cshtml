@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EduCompass</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/navigation.css" />
+    <link rel="stylesheet" href="~/css/submenu.css" />
+    <link rel="stylesheet" href="~/css/help.css" />
+</head>
+<body class="vh-100">
+    <div class="container center row px-0">
+        <!---Help Index--->
+        <div class="nav-bg col-auto col-md-3 col-xl-2 d-flex flex-column px-0">
+            <!--logo-->
+            <div class="d-flex justify-content-center py-4">
+                <img src="~/images/logo-2.png" alt="logo" class="logo-img" />
+            </div>
+            <!--table of contents-->
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <li class="navigation-item">
+                    <a href="~/Help/HelpStart" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">On-line help</span>
+                    </a>
+                </li>
+
+                <li class="dropdown navigation-item">
+                    <a href="#" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">Σύνδεση/Εγγραφή</span>
+                    </a>
+                    <ul class="dropdown-content">
+                        <li class="navigation-item">
+                            <a href="~/Help/HelpLogin" class="row navigation-link align-middle px-auto">
+                                <span class="d-flex ">Σύνδεση</span>
+                            </a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="~/Help/HelpSignUp" class="row navigation-link align-middle px-auto">
+                                <span class="d-flex ">Εγγραφή</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="navigation-item">
+                    <a href="~/Help/HelpIntroTest" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">Εισαγωγικό Τεστ</span>
+                    </a>
+                </li>
+
+                <li class="navigation-item">
+                    <a href="~/Help/HelpDashboard" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">Αρχική</span>
+                    </a>
+                </li>
+
+                <li class="dropdown navigation-item">
+                    <a href="#" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">Μαθήματα</span>
+                    </a>
+                    <ul class="dropdown-content">
+                        <li class="navigation-item">
+                            <a href="~/Help/HelpOrientations" class="row navigation-link align-middle px-auto">
+                                <span class="d-flex ">Επαγγελματικοί προσανατολισμοί</span>
+                            </a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="~/Help/HelpCourse" class="row navigation-link align-middle px-auto">
+                                <span class="d-flex ">Η σελίδα Μαθήματος </span>
+                            </a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="~/Help/HelpCourseTest" class="row navigation-link align-middle px-auto">
+                                <span class="d-flex ">Τεστ Μαθήματος </span>
+                            </a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="~/Help/HelpEvaluationTest" class="row navigation-link align-middle px-auto">
+                                <span class="d-flex ">Επαναληπτικό Τεστ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="navigation-item">
+                    <a href="~/Help/HelpStatistics" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">Στατιστικά</span>
+                    </a>
+                </li>
+
+                <li class="navigation-item">
+                    <a href="~/Help/HelpSuggestions" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">Συστάσεις συστήματος</span>
+                    </a>
+                </li>
+
+                <li class="dropdown navigation-item">
+                    <a href="#" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">Διαχείρηση Προφίλ</span>
+                    </a>
+                    <ul class="dropdown-content">
+                        <li class="navigation-item">
+                            <a href="~/Help/HelpProfile" class="row navigation-link align-middle px-auto">
+                                <span class="d-flex ">Προφίλ</span>
+                            </a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="~/Help/HelpEditProfile" class="row navigation-link align-middle px-auto">
+                                <span class="d-flex ">Επεξεργασία Προφίλ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="navigation-item">
+                    <a href="~/Help/HelpSignout" class="row navigation-link align-middle px-auto">
+                        <span class="d-flex ">Αποσύνδεση</span>
+                    </a>
+                </li>
+                
+            </ul>
+
+        </div>
+        <!--content-->
+        <div class="col-auto col-md-9 col-xl-10" style="overflow:auto; height:100%;">
+             @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>
