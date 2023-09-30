@@ -134,7 +134,7 @@ namespace EduCompass.Controllers
                     
                     totalCoefficientPoints += course.Value;
 
-                    if (userCourseGrade != null)
+                    if (userCourseGrade != null && userCourseGrade.InterestScore != -1 && userCourseGrade.FinalGrade != -1)
                     {
                         totalActualGrade += ((double)(userCourseGrade.FinalGrade))/10 * course.Value;
                         totalInterestScore += ((double)(userCourseGrade.InterestScore))/5 * course.Value;

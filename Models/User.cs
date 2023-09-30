@@ -41,8 +41,7 @@ namespace EduCompass.Models
                 
                 double totalCoefficientPoints = 0f;
                 double userTotalCoefficientPoints = 0f;
-                double userPercentage = 0f;
-                
+
                 foreach (var course in coursesWithThisCoefficient)
                 {
                     CourseQuizGrade? quizGrade = db.CourseQuizGrades.Where(q => q.UserId == this.Id && q.CourseId == course.CourseId).OrderByDescending(q => q.Grade).FirstOrDefault();
@@ -52,7 +51,7 @@ namespace EduCompass.Models
                     
                     if (quizGrade != null)
                     {
-                        userTotalCoefficientPoints += ((double)quizGrade.Grade / 100) * (double)(0.5 * (double)course.Value);
+                        userTotalCoefficientPoints += ((double)quizGrade.Grade / 100) * 0.5 * course.Value;
                     }
                     else
                     {
@@ -61,8 +60,8 @@ namespace EduCompass.Models
 
                     if (introGrade != null && introGrade.FinalGrade != -1 && introGrade.InterestScore != -1)
                     {
-                        userTotalCoefficientPoints += ((double)introGrade.FinalGrade / 10) * (double)(0.3 * (double)course.Value);
-                        userTotalCoefficientPoints += ((double)introGrade.InterestScore / 5) * (double)(0.2 * (double)course.Value);
+                        userTotalCoefficientPoints += ((double)introGrade.FinalGrade / 10) * 0.3 * course.Value;
+                        userTotalCoefficientPoints += ((double)introGrade.InterestScore / 5) * 0.2 * course.Value;
                     }
                     else
                     {
@@ -71,10 +70,10 @@ namespace EduCompass.Models
                     
                 }
                 
-                userPercentage = 100 * userTotalCoefficientPoints / totalCoefficientPoints;
+                double userPercentage = 100 * userTotalCoefficientPoints / totalCoefficientPoints;
 
-                if (double.IsNaN(userPercentage) || userPercentage == 0)
-                    continue;
+                if (double.IsNaN(userPercentage))
+                    userPercentage = 0f;
                 
                 var userCoefficient = db.UserHasCoefficients.FirstOrDefault(uhc => uhc.CoefficientName == coefficient.Name && uhc.UserId == this.Id);
 
