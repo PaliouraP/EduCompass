@@ -209,5 +209,43 @@ namespace EduCompass.Controllers
             
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult TrackTime([FromBody] TimeTrackingModel model)
+        {
+            Debug.WriteLine($"===-==== GOT IN THIS PART OF THE CODE AND RECEIVED: {model.ElapsedTime/1000}");
+
+            int id = int.Parse(HttpContext.Request.Query["id"].ToString());
+            var course = _database.Courses.First(c => c.Id == id);
+
+            var timeSpentOnThisPage =
+                _database.TimeSpents.FirstOrDefault(t => t.CourseId == course.Id && t.UserId == _currentUser.Id);
+
+            if (timeSpentOnThisPage == null)
+            {
+                var timeSpent = new TimeSpent
+                {
+                    UserId = _currentUser.Id,
+                    CourseId = course.Id,
+                    TotalTime = (int)model.ElapsedTime / 1000
+                };
+
+                _database.TimeSpents.Add(timeSpent);
+                _database.SaveChanges();
+            }
+            else
+            {
+                timeSpentOnThisPage.TotalTime += (int)model.ElapsedTime / 1000;
+                _database.TimeSpents.Update(timeSpentOnThisPage);
+                _database.SaveChanges();
+            }
+            
+            return Ok();
+        }
     }
+}
+
+public class TimeTrackingModel
+{
+    public long ElapsedTime { get; set; }
 }

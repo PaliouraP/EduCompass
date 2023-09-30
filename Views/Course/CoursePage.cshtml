@@ -80,5 +80,35 @@
             <h4>Το μάθημα αυτό είναι κλειδωμένο!</h4>
         }
         
+        <!-- Include jQuery or use vanilla JavaScript for the AJAX request -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+        <script>
+            var startTime = Date.now(); // Record the start time when the user enters the view
+            
+            console.log("UUID: ", '@Model.Item1.Id');
+        
+            // Add an event listener for when the user leaves the view
+            $(window).on('beforeunload', function() {
+                var endTime = Date.now(); // Record the current time when the user leaves
+                var elapsedTime = endTime - startTime; // Calculate elapsed time in milliseconds
+        
+                // Send an AJAX request to your controller
+                $.ajax({
+                    type: 'POST',
+                    url: '/Course/TrackTime?id=@Model.Item1.Id',
+                    data: JSON.stringify({ elapsedTime: elapsedTime }),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        // Handle the response from the server if needed
+                    },
+                    error: function(error) {
+                        // Handle any errors
+                    }
+                });
+            });
+        </script>
+        
+        
     </div>
 </div>
