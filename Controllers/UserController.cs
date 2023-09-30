@@ -208,6 +208,9 @@ namespace EduCompass.Controllers
 
         public IActionResult Suggestions()
         {
+            // do the calculation for the user.
+            _currentUser.CalculateUserCoefficients(_database);
+            
             // retrieve the top three coefficients of the user
             var userBestCoefficients = _database.UserHasCoefficients.Where(p => p.UserId == _currentUser.Id).ToList().OrderByDescending(uhc => uhc.Percentage).Take(3).ToArray();
 
