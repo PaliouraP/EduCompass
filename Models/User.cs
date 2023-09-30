@@ -71,9 +71,20 @@ namespace EduCompass.Models
                 }
                 
                 double userPercentage = 100 * userTotalCoefficientPoints / totalCoefficientPoints;
-
+                
                 if (double.IsNaN(userPercentage))
                     userPercentage = 0f;
+
+                var userEvaluationTest = db.CoefficientQuizGrades.OrderByDescending(t => t.Grade).FirstOrDefault(t => t.UserId == this.Id && t.CoefficientName == coefficient.Name);
+
+                if (userEvaluationTest == null)
+                {
+                    userPercentage /= 2;
+                }
+                else
+                {
+                    userPercentage = (userPercentage + userEvaluationTest.Grade) / 2;
+                }
                 
                 var userCoefficient = db.UserHasCoefficients.FirstOrDefault(uhc => uhc.CoefficientName == coefficient.Name && uhc.UserId == this.Id);
 

@@ -158,7 +158,18 @@ namespace EduCompass.Controllers
                 
                 if (double.IsNaN(totalQuizGradeScore))
                     totalQuizGradeScore = 0f;
-
+                
+                var userEvaluationTest = _database.CoefficientQuizGrades.OrderByDescending(t => t.Grade).FirstOrDefault(t => t.UserId == _currentUser.Id && t.CoefficientName == coefficient.Name);
+                if (userEvaluationTest == null)
+                {
+                    totalQuizGradeScore /= 2;
+                }
+                else
+                {
+                    totalQuizGradeScore = (totalQuizGradeScore + userEvaluationTest.Grade) / 2;
+                }
+                
+                
                 var userHasPercentage = _database.UserHasCoefficients.FirstOrDefault(u => u.UserId == _currentUser.Id && u.CoefficientName == coefficient.Name);
 
                 if (userHasPercentage != null)

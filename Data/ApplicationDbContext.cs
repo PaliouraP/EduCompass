@@ -737,7 +737,7 @@ namespace EduCompass.Data
                 new Answer { Id = 40, QuestionId = 40, Answer1 = "Reactive Agents", Answer2 = "Deliberative Agents", Answer3 = "Κανένα από τα δύο", Answer4 = "Και τα δύο", CorrectAnswer = "Και τα δύο" },
                 
                 // video games
-                new Answer { Id = 41, QuestionId = 41, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Σωστό" },
+                new Answer { Id = 41, QuestionId = 41, Answer1 = "Σωστό", Answer2 = "Λάθος", Answer3 = "", Answer4 = "", CorrectAnswer = "Λάθος" },
                 new Answer { Id = 42, QuestionId = 42, Answer1 = "χαρακτηριστικά", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "χαρακτηριστικά" },
                 new Answer { Id = 43, QuestionId = 43, Answer1 = "υλοποίησης", Answer2 = "", Answer3 = "", Answer4 = "", CorrectAnswer = "υλοποίησης" },
                 new Answer { Id = 44, QuestionId = 44, Answer1 = "First Person", Answer2 = "Educational", Answer3 = "Role-playing", Answer4 = "Fourth Person", CorrectAnswer = "Fourth Person" },

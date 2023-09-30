@@ -89,8 +89,8 @@ namespace EduCompass.Controllers
                     lockedCourses.Add(course, locked);
                     continue;
                 }
-                    
-                
+
+                int lockedCounter = 0;
                 // search all prerequisite courses of this one
                 foreach (var prerequisiteCourse in thisCoursesPrerequisites)
                 {
@@ -98,7 +98,7 @@ namespace EduCompass.Controllers
                     if (!_database.CourseQuizGrades.Any(g =>
                             g.CourseId == prerequisiteCourse.PrerequisiteCourseId && g.UserId == _currentUser.Id))
                     {
-                        locked = true;
+                        lockedCounter++;
                     }
 
                     // and see if any of them has a grade of 50. If NONE has a grade above 50, then lock it.
@@ -108,6 +108,9 @@ namespace EduCompass.Controllers
                         locked = true;
                     }
                 }
+
+                if (lockedCounter == thisCoursesPrerequisites.Length)
+                    locked = true;
                 
                 Debug.WriteLine($"Adding {course.Name} isn't duplicate here.");
                 lockedCourses.Add(course, locked);
@@ -178,11 +181,13 @@ namespace EduCompass.Controllers
             var necessaryCourses = (from pc in necessaryCourseIds join _course in _database.Courses on pc.PrerequisiteCourseId equals _course.Id select _course).ToList();
 
             // search for quizes that the user has done (if the course has prerequisites.)
+            int lockedCounter = 0;
             foreach (var necessaryCourse in necessaryCourseIds)
             {
                 // if the user has never quized this course, lock it.
-                if (!_database.CourseQuizGrades.Any(c => c.CourseId == necessaryCourse.PrerequisiteCourseId && c.UserId == _currentUser.Id))
-                    locked = true;
+                if (!_database.CourseQuizGrades.Any(c =>
+                        c.CourseId == necessaryCourse.PrerequisiteCourseId && c.UserId == _currentUser.Id))
+                    lockedCounter++;
 
                 // if the user has quized it but never got a 50% in any of the prerequisites, lock it.)
                 if (_database.CourseQuizGrades.Any(c =>
@@ -190,6 +195,9 @@ namespace EduCompass.Controllers
                         c.UserId == _currentUser.Id))
                     locked = true;
             }
+
+            if (lockedCounter == necessaryCourseIds.Count)
+                locked = true;
             
             // coefficients related to a career
             var baseCourseCoefficients = _database.CourseHasCoefficients.Where(chc => chc.Value > 5 && chc.CourseId == course.Id).ToList();
